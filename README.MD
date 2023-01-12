@@ -1,5 +1,3 @@
-## <span id="h.jam6jg2d41m4">BizTech New IT Hire Documentation & Reference Guide</span>
-
 ## <span id="h.qt9lysx9sp59">List of Helpful Onsite IT Tools</span>
 
 
