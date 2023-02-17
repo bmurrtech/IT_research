@@ -59,20 +59,80 @@
 
 # Introduction to Python
 
-Why pick Python? Well, we chose Python for a few reasons. First off, programming in Python usually feels similar to using a human language.
+Python isn't new. Its first version was released by __Guido van Rossum back in 1991__. Since then, the community that develops it has grown and the language has advanced a lot. Whenever there's a significant change to the semantics or syntax of the language, a new major version is released. In 2000, Python 2 was released. In 2008, we got Python 3.
+
+#### Why pick Python?
+
+Well, we chose Python for a few reasons. First off, programming in Python usually feels similar to using a human language.
+
+You can use Python to:
+- calculate statistics,
+- run your e-commerce site,
+- process images,
+- interact with web services...
+
+_Python is perfect for automation_. It lets you automate everyday tasks by writing simple scripts that are easy to understand and easy to maintain. That's why Python is the language of choice for lots of people working in IT support.
+
+- Python is:
+  - a general purpose scripting language;
+  - a popular language used to code a variety of applications;
+  - a frequently used tool for automation;
+  - a cross-platform compatible language;
+  - a beginner-friendly language.
+
+- Python is not: 
+  - a platform-specific / OS-specific scripting language;
+  - a client-side scripting language;
+  - a purely object-oriented programming language.
+
+#### Glimpse of Python Code
 
 ```python
 friends = ['Taylor', 'Alex ' , 'Pat', 'Eli']
 for friend in friends:
     print ("Hi" + friend)
 ```
+
+#### Similarites of Coding Languages
+
+Python :
+
+```python
+for i in range(l0):
+        print ("Hello World!")
+```
+
+Bash:
+
+```bash
+for i in {1..10}; do
+    echo Hello, World!
+done
+```
+
+PowerShell:
+```ps
+for ($1=1; $1 -le 10; $i++) {
+Write-Host "Hello, World! "
+```
+
+Similarity breakdown:
+* Each language must somehow put text on the screen
+    * Python `print`
+    * Bash: `echo`
+    * PowerShell `Write-Host`
+* Counting mechinism (counting to 10):
+  * Python specifies the range
+  * Bash uses a seqence notation to count from 1 to 10
+  * PS has the most complex syntax, but it, like Bash, starts at 1 and counts up to 10.
+
 - __Python interpreter__ In programming, an interpreter is the program that reads and executes code.
 
 > Remember how we said a computer program is like a recipe with step-by-step instructions? Well, if your recipe is written in Python, the Python interpreter is the program that reads what is in the recipe and translates it into instructions for your computer to follow.
 
-#### Getting Hands-on with Python
+### Getting Hands-on with Python
 
-- You can execute the interpreter by running the python3 command (or just python on Windows), and you can close it by typing exit() or Ctrl-D.
+- You can execute the interpreter by running the python3 command (or just python on Windows), and you can close it by typing `exit()` or `CTRL + D`.
 
 ##### Python Practice Resources
 
@@ -120,3 +180,17 @@ Common semantic errors:
 - Poor logic structures in the design of the code
 
 When working with the code blocks in exercises for this course, be mindful of syntax and semantic (logic) errors, along with the overall result of your code. Just because you fixed an error doesn't mean that the code will have the desired effect when it runs! Once you’ve fixed an error in your code, don't forget to click Run to check your work.
+
+### Key Terms for Intro to Python
+
+- Platform-specific / OS specific scripting language - Platform-specific scripting languages, like PowerShell (for Windows) and Bash (for Linux), are used by system administrators on those platforms. 
+
+- Client-side scripting language - Client-side scripting languages, like JavaScript, are used mostly for web programming. The scripts are transferred from a web server to the end-user’s internet browser, then executed in the browser.
+
+- Machine language - Machine language is the lowest-level computer language. It communicates directly with computing machines in binary code (ones and zeros). In binary code, one equals a pulse of electricity and zero equals no electrical pulse. Machine language instructions are made from translating languages like Python into complex patterns of ones and zeros. 
+
+- Cross-platform language - Programming language that is compatible with one or more platforms / operating systems (e.g., Windows, Linux, Mac, iOS, Android).
+
+- Object-oriented programming language - In object-oriented programming languages, most coding elements are considered to be objects with configurable properties. For example, a form field is an object that can be configured to accept only dates as input in the mm/dd/yy format, and can be configured to read from and write to a specific database. 
+
+- Python interpreter - An interpreter is the program that reads and executes Python code by translating Python code into computer instructions.
