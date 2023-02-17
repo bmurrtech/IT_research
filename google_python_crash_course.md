@@ -321,4 +321,172 @@ For more information about the concepts covered in this reading, please visit:
 [Python Keywords](https://www.w3schools.com/python/python_ref_keywords.asp) - Lists Python’s reserved keywords and a brief description of what each keyword does.
 
 [Different Arithmetic](https://flexiple.com/python/arithmetic-operators-in-python/) operators in Python - Provides more examples of the proper syntax for using arithmetic operators in Python.
-          
+
+# Expressions and Variables
+
+#### Data Types
+The text between "" is known as a __string__
+
+```py
+print ("Hollow world...")
+```
+
+In the example above the string would be: "Hollow world..."
+
+A string is as known as a "_data type_". A data type could be defined as: classes of data (e.g., string, int, float, Boolean, etc.), which include the properties and behaviors of instances of the data type (variables).
+
+ Data types include:
+ - __integer__ which represents whole numbers __without__ a fraction. Ex. 1, 7, 342 are all integers.
+ - __float__, which represents real numbers or in other words, a number __with a fractional part__ like 2.5. Ex. 5.3, 3.14159 and 6.0 are all floats.
+ -  An integer is a whole number, without a fraction, while a float is a real number that can contain a fractional part.
+
+If you mix _data types_, you will get a _syntax error_. For example:
+
+ ```py
+print (7 + "8")
+ ```
+
+ You will get an error like this:
+
+ ```py
+TypeError: unsupported call last): 1, in <module> operand type(s) for +: 'int' and 'str'
+ ```
+In this case, an _integer_ has been mixed with a _string_. It's like telling a human to add a the letter A with the number 12. It does not compute; it's a syntax error.
+
+> Tip: You can always check the _data type_ by using the `type ()` function, see below:
+
+```py
+print(type(2.3))
+print (type(5))
+```
+
+This code will return the following data:
+
+```py
+<class 'float'>
+<class 'int'>
+```
+
+> Note: Integers and floats are compatiable. For example: `print(7+5.2)` will work but that is only because Python converts the integer into a float. This process is known as __implicit conversion__. See more about this below.
+
+#### Variables
+
+__Variables__ are names that we give to certain values in our programs. Think of variables as _containers for data_. 
+
+```py
+base = 5
+height = 3
+area = base * height/2
+
+print(area)
+```
+In the above example, "base = 5" is a _variable_. The formular of creating a variable is __variable = value__.
+
+Generally, you can name variables whatever you like but there are some restrictions.
+ - Don't use keywords or functions that Python
+reserves for its own (like print).
+- Don't use spaces.
+- Must start with a letter or an underscore (_)
+- Must be made up of only letters, numbers,
+and underscores (_)
+
+| Variable | Valid/Invalid |
+| ----------- | ----------- |
+| i_am_a_variable | valid
+| i_am_a_variable2 | valid |
+| 1_is_a_number | invalid b/c variables must start with an underscore or letter |
+| apples_&_oranges | invalid b/c special character is used |
+
+__Remebmer that__:
+- Capitalization matters:
+  - name
+  - NAME
+  - Name
+- These all are valid and qualify as _different_ and unique variable names.
+
+__Assignment__ is the process of storing a value inside a variable.
+
+__Expression__ is a combination of numbers, symbols or other variables that produce a result when evaluated.
+
+A use case of variables in action in automation for IT would be:
+- Say we have a script that performs a specific operation on a file.
+- We can extend that script to perform the same operation on any file _but only if the program used a variable_ to store the file name.
+
+#### Expressions, Numbers, and Type Conversions
+
+__Implicit Conversion__ automatically converts one data type into another.
+
+__Explicit Conversion__ is the manual conversion of one data type into another.
+
+Explicit conversion code includes:
+- `str()` - converts a value (often numeric) to a string data type
+- `int()` - converts a value (usually a float) to an integer data type
+- `float()` - converts a value (usually an integer) to a float data type 
+
+We can utilize the `str()` function to explicitly convert the variable and make the print function compatiably work. For example:
+
+```py
+total = 2048 + 4357 + 97658 + 125 + 8
+files = 5
+average = total / files
+print("The average size is:" + str(average))
+```
+
+##### Example Code:
+
+```py
+# The following lines assign the variable to the left of the = 
+# assignment operator with the values and arithmetic expressions 
+# on the right side of the = assignment operator.
+hotel_room = 100
+tax = hotel_room * 0.08
+total = hotel_room + tax
+room_guests = 4
+share_per_person = total/room_guests 
+ 
+# This line outputs the result of the final calculation stored
+# in the variable "share_per_person"
+print("Each person needs to pay: " + str(share_per_person)) # change a data type
+```
+
+```py
+# The following 5 lines assign strings to a list of variables.
+salutation = "Dr."
+first_name = "Prisha"
+middle_name = "Jai"
+last_name = "Agarwal"
+suffix = "Ph.D."
+ 
+print(salutation + " " + first_name + " " + middle_name + " " + last_name + ", " + suffix) 
+# The comma as a string ", " adds the conventional use of a comma plus a 
+# space to separate the last name from the suffix.
+ 
+# Alternatively, you could use commas in place of the + connector:
+print(salutation, first_name, middle_name, last_name,",", suffix)
+# However, you will find that this produces a space before a comma within a string.
+```
+
+```py
+print("5 * 3 = " + (5*3)) 
+ 
+# Resolution: 
+# print("5 * 3 = " + str(5*3))
+#
+# To avoid a type error between the string and the integer within the
+# print() function, you can make an explicit data type conversion by
+# using the str() function to convert the integer to a string.
+```
+
+```py
+numerator = 7
+denominator = 0   # Possible resolution: Change the denominator value 
+result = numerator / denominator
+print(result)
+ 
+# One possible assumption for a number divided by zero error might
+# include the issue of a null value as a denominator (could happen when
+# using a loop to iterate over values in a database). In such cases, the
+# desired outcome may be to leave the numerator value intact. The
+# numerator value can be preserved by reassigning the denominator with 
+# the integer value of 1. The result would then equal the numerator.
+```
