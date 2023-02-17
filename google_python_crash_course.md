@@ -34,7 +34,7 @@
     - investigation
     - or designing is not.
 
-### Introdcution to Programming | Key Terms
+### Introduction to Programming | Key Terms
 - Programming code - Programming code is a set of written computer instructions, guided by rules, using a computer programming language. It might help to think of the computer instructions as a detailed, step-by-step recipe for performing tasks. The instructions tell computers and machines how to perform an action. Programming code may also be referred to as source code or scripts.
 
 - Programming languages - Programming languages are similar to human spoken languages in that they both use syntax and semantics. Programming languages are used to write computer programs.  Some common programming languages include Python, Java, C, C++, C#, and R.
@@ -87,10 +87,44 @@ _Python is perfect for automation_. It lets you automate everyday tasks by writi
 
 #### Glimpse of Python Code
 
+```py
+print ("Hello world~")
+```
+
+```py
+# Syntax for printing a string of text
+print("I love Python!")
+
+# Syntax for printing numeric values
+print(360)
+print(32*45)
+
+# Syntax for printing the value of a variable
+value = 8*6
+print(value)
+```
+
 ```python
 friends = ['Taylor', 'Alex ' , 'Pat', 'Eli']
 for friend in friends:
     print ("Hi" + friend)
+```
+
+##### Getting Info from Input
+
+```python
+name = "Brook"
+    print ("Hello " + name)
+```
+##### Python Calculator
+
+```python
+print (4+5)
+print (9*7)
+print (-1/4)
+print (1/3)
+print (((2050/5)-32)/9)
+print (2**10)
 ```
 
 #### Similarites of Coding Languages
@@ -121,7 +155,7 @@ Similarity breakdown:
     * Python `print`
     * Bash: `echo`
     * PowerShell `Write-Host`
-* Counting mechinism (counting to 10):
+* Counting mechaninism (counting to 10):
   * Python specifies the range
   * Bash uses a seqence notation to count from 1 to 10
   * PS has the most complex syntax, but it, like Bash, starts at 1 and counts up to 10.
@@ -136,17 +170,17 @@ Similarity breakdown:
 
 ##### Python Practice Resources
 
-- https://www.python.org/shell/
+- [Welcome to Python](https://www.python.org/shell/)
 
-- https://www.onlinegdb.com/online_python_interpreter
+- [Online Python Interpreter](https://www.onlinegdb.com/online_python_interpreter)
 
-- https://repl.it/languages/python3
+- [Create a New Repl](https://repl.it/languages/python3)
 
-- https://www.tutorialspoint.com/execute_python3_online.php
+- [Online Python-3 Compiler](https://www.tutorialspoint.com/execute_python3_online.php)
 
-- https://rextester.com/l/python3_online_compiler
+- [Compile Python 3 Online](https://rextester.com/l/python3_online_compiler)
 
-- https://trinket.io/python3
+- [Your Python Trinket](https://trinket.io/python3)
 
 Read the [official Python documentation](https://docs.python.org/3/).
 
@@ -194,3 +228,97 @@ When working with the code blocks in exercises for this course, be mindful of sy
 - Object-oriented programming language - In object-oriented programming languages, most coding elements are considered to be objects with configurable properties. For example, a form field is an object that can be configured to accept only dates as input in the mm/dd/yy format, and can be configured to read from and write to a specific database. 
 
 - Python interpreter - An interpreter is the program that reads and executes Python code by translating Python code into computer instructions.
+
+# First Programing Concepts
+
+A __function__ _is a piece of code that performs a unit of work_. In the examples you've seen so far, you have only encountered the print() function, which outputs a message to the screen.
+
+```py
+# Syntax for printing a string of text. Click Run to check the result.
+print("Hello world!")
+```
+
+A keyword is a reserved word in a programming language that performs a specific purpose. In your first Python example, you briefly encountered the keywords for and in.  Note that keywords will often appear in bold in this course.
+
+Examples are:
+
+- Values: __True, False, None__
+- Conditions: __if, elif, else__
+- Logical __operators: and, or, not__
+- Loops: __for, in, while, break, continue__
+- Functions: __def, return__
+
+#### Arithmetic operators
+Python can calculate numbers using common mathematical operators.
+
+Example:
+```py
+# Assignment of values to the variables:
+years = 10
+weeks_in_a_year = 52
+# This variable is assigned an arithmetic calculation:
+weeks_in_a_decade = years * weeks_in_a_year
+# Prints the calculation stored in the "weeks_in_a_decade" variable:
+print(weeks_in_a_decade)
+```
+
+```py
+days = 365
+hours = 24
+min = 60
+min_in_year = days * hours * min
+print(min_in_year)
+```
+
+There are some special operators, too:  
+
+| Syntax | Description |
+| ----------- | ----------- |
+| x + y  | Addition + operator returns the sum of x  |
+| x - y  | Subtraction - operator returns the difference of x minus y |
+| x * y  | Multiplication * operator returns the product of x times y |
+| x / y  | Division / operator returns the quotient of x divided by y |
+| x**e  | Exponent ** operator returns the result of raising x to the power of e  |
+| x**2 | Square expression returns x squared
+ |
+| x**3 | Cube expression returns x cubed |
+| x**(1/2) | Square root (½) or (0.5) fractional exponent operator returns the square root of x |
+| x // y  | Floor division operator returns the integer part of the integer division of x by y |
+| x % y | Modulo operator returns the remainder part of the integer division of x by y |
+
+```py
+# Multiplication, division, addition, and subtraction
+print(3*8/2+5-1)
+ 
+# Exponents
+print(4**6) # Syntax means 4 to the power of 6
+print(4**2) # To square a number
+print(4**3) # To cube a number
+print(4**0.5) # To find the square root of a number
+
+# To calculate how many different possible combinations can be
+# formed using a set of "x" characters with each character in "x"
+# having "y" number of possible values, you will need to use an 
+# exponent for the calculation:
+x = 4
+y = 26
+print(y**x)
+```
+
+#### Order of Operations
+
+1. __P__arentheses ( ), { }, [ ]
+1. __E__xponents x^e^ (x**e)
+1. __M__ultiplication * and __D__ivision /  
+1. __A__ddition + and __S__ubtraction -
+
+You might find the __PEMDAS__ mnemonic device to be helpful in remembering the order.
+
+For more information about the concepts covered in this reading, please visit:
+
+[Built-in Functions](https://docs.python.org/3/library/functions.html) - Lists and summarizes Python’s built-in functions.
+
+[Python Keywords](https://www.w3schools.com/python/python_ref_keywords.asp) - Lists Python’s reserved keywords and a brief description of what each keyword does.
+
+[Different Arithmetic](https://flexiple.com/python/arithmetic-operators-in-python/) operators in Python - Provides more examples of the proper syntax for using arithmetic operators in Python.
+          
