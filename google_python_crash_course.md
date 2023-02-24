@@ -490,3 +490,119 @@ print(result)
 # numerator value can be preserved by reassigning the denominator with 
 # the integer value of 1. The result would then equal the numerator.
 ```
+
+
+# Expressions and Variables Functions
+
+#### Defining Functions
+
+```py
+def greeting(name, department):
+    print("Welcome, " + name)
+    print("You are part of " + department)
+
+    return = greeting("Ben" + "the NOC Team")
+```
+
+
+- To define a function, we use the def keyword. In this example, the __function's name__ is _greeting_. 
+
+- After the name, we have the __parameters__ of the function which are written between parentheses. In this example, we only have two __parameters__, name and department, followed by a colon at the end of the line.
+
+- After the colon, we have the __body__ of the function. That's _where we state what we want our function to do_.  he body of a function can have as many lines as we want.
+
+- Note how the body is indented to the right. _We can add as many lines as we'd like_ to the body of the function but each line must be indented the same number of spaces to the right. We could use two or eight or any other number _as long as they're all consistent_.
+
+```py
+def area_triangle(base, height):
+    return base*height/2
+
+area_a = area_triangle(5,4)
+area_b = area_triangle(7,3)
+sum = area_a + area_b
+print ("The sum of both areas is: " + str(sum))
+```
+
+__None__ is a very special data type in Python used to indicate that things are empty or that they return nothing. Wow. That was a lot to learn about functions and the return values. 
+
+Code: You only have a duration in seconds, and you wish to convert to hours and mintues.
+```py
+def convert_seconds(seconds):
+    hours = seconds // 3600
+    minutes = (seconds - hours * 3600) // 60
+    remaining_seconds = seconds - hours * 3600 - minutes * 60
+    return hours, minutes, remaining_seconds
+
+hours, minutes, seconds = convert_seconds(5000)
+print(hours, minutes, seconds)
+```
+
+- That __double slash__ operator ( // ) is called __floor division__. A floor division divides a number and takes the integer part of the division as the result. For example, five slash slash two is two instead of 2.5 (5 / 2 = 2.5, but 5 // 2 = 2 because it is the integer value not the float value.)
+- In the above seconds converter code, the first operation is calculating how many hours are in a given amount of seconds.
+
+#### Return Value
+
+Sometimes we don't want a function to simply run and finish. We may want a function to manipulate data we passed it and then return the result to us. This is where the concept of return values comes in handy. We use the return keyword in a function, which tells the function to pass data back. When we call the function, we can store the returned value in a variable. Return values allow our functions to be more flexible and powerful, so they can be reused and called multiple times.
+
+Functions can even return multiple values. Just don't forget to store all returned values in variables! You could also have a function return nothing, in which case the function simply exits.
+
+#### Princples of Code Reuse
+
+
+```py
+name = "Kay"
+number = len(name) * 9
+
+print ("Hello " + name + ". Your luck number is " + str(number))
+
+name = "Cameron"
+number = len(name) * 9
+
+print ("Hello " + name + Your lucky number is + str(number))
+```
+
+_When you find code __duplication__ in your scripts_, it's a good idea to check if you can clean things up a bit by using a function. For exemple:
+
+```py
+def lucky_number(name):
+    number = ten(name) * 9
+    print ("Hello " + name + ". Your lucky number is " + str(number))
+lucky_number("Kay")
+lucky_number("Cameron)
+```
+
+First, we've defined a __function__ called lucky number, which carries out our calculation and prints it for us. Then we call the function twice, once with each name. Since we've grouped the calculation and print statements into a function, our code is not only easier to read but it's also now reusable. We can execute the code inside the lucky number function as many times as we need it, by just calling it with a different name. So we don't have to write it out again and again for each new name.
+
+#### Code Style
+
+__Self-documenting code__ is written in a way that's readable and doesn't conceal its intent. This principle can be applied to all aspects of writing code from picking your variable names to writing clear concise expressions.
+
+Bad Example:
+```py
+def calculate(d):
+    q = 3.14
+    z = q * (d ** 2)
+    print(z)
+calculate(5)
+```
+
+Better Example (__Refactoring__):
+
+```py
+def circle_area(radius)
+    pi = 3.14
+    area = pi * (radious ** 2)
+    print(area)
+circle_area(5)
+```
+Which code is easier to understand? If you want to add more clarity, you can add a __comment__.
+
+```py
+def circle_area(radius)
+    pi = 3.14
+
+# Pi is caclucated by the float 3.14
+    area = pi * (radious ** 2)
+    print(area)
+circle_area(5)
+```
