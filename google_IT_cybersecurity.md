@@ -258,4 +258,33 @@ Common results from a cryptanalysis attack include:
 - __Asymmetric Encryption__ generates _different_ keys are used to encrypt and decrypt. In asymmetric encryption, algorithm is chosen as a key exchange mechanism or cipher. What this means is that, the symmetric encryption key or shared secret, is transmitted securely to the other party using asymmetric encryption to keep the shared secret secure in transit. Once the shared secret is received, data can be sent quickly and efficiently and securely using an asymmetric encryption cipher.
 - __MACs or Message Authentication Codes__ Not to be confused with Media Access Control or MAC addresses. A MAC is a bit of information that allows authentication of a received message, ensuring that the message came from the alleged sender and not a third party masquerading as them. It also ensures that the message wasn't modified in some way in order to provide data integrity.
 - __HMAC or a keyed hash message authentication code__ uses a cryptographic hash function along with a secret key to generate a MAC. Any cryptographic hash functions can be used like SHA-1 or MD5.
-- __CBC-MACs or Cipher-Based Message Authentication Codes__ CBC-MAC is a mechanism for building MACs using block ciphers. This works by taking a message and encrypting it using a block cipher operating in CBC mode. It is similar to HMAC, but instead of using a hashing function to produce a digest, a _symmetric_ cipher with a shared key is used to encrypt the message and the resulting output is used as the MAC. 
+- __CBC-MACs or Cipher-Based Message Authentication Codes__ CBC-MAC is a mechanism for building MACs using block ciphers. This works by taking a message and encrypting it using a block cipher operating in CBC mode. It is similar to HMAC, but instead of using a hashing function to produce a digest, a _symmetric_ cipher with a shared key is used to encrypt the message and the resulting output is used as the MAC.
+
+### Hashing
+
+Hashing or a hash function is a type of function or operation that takes in an arbitrary data input and maps it to an output of a fixed size called a hash or a digest. What this means exactly is that you feed in any amount of data into a hash function and the resulting output will always be the same size, but the output should be unique to the input, such that two different inputs should never yield the same output.
+
+Hashing can also be used to identify duplicate datasets and databases or archives to speed up searching of tables or to remove duplicate data to save space.
+
+Cryptographic hashing is distinctly different from encryption because cryptographic hash functions should be one-directional. The ideal cryptographic hash function should be deterministic, meaning that the same input value should always return the same hash value. The function should be quick to compute and be efficient, it should be infeasible to reverse the function and recover the plain text from the hash digest. A small change in the input should result in a change in the output so that there is no correlation between the change in the input and the resulting change in the output. Finally, the function should not allow for __hash collisions__, _meaning two different inputs mapping to the same output._
+
+```
+"Hello World" | [hash function] | E49AOOFF
+INPUT: "hello world" | [hash function] | FF1832AE
+```
+Real Example:
+
+```bash
+$ echo 'Hello World' | md5sum | e59ff97941044f85df5297e1c302d260
+$ echo 'hello worldl | md5sum | 6f5902ac237024bddOc176cb93063dc4
+```
+Note that the hash is different for each example which indicates a divergence.
+
+__MD5__ is a popular and widely used hash function designed in the early 1990s as a cryptographic hashing function.
+- It operates on a 512 bit blocks and generates 128 bit hash digest. While MD5 was published in 1992, _a design flaw was discovered in 1996__, and in 2004, it was discovered that MD5 is susceptible to __hash collisions__, _allowing for a bad actor to craft a malicious file that can generate the same MD5 digest as another different legitimate file_.
+- Shortly after this flaw was discovered, _security researchers were able to generate two different files that have __matching__ MD5 hash digest_. In 2008, security researchers took this a step further and demonstrated the ability to create a fake SSL certificate that validated due to an MD5 hash collision.
+- In 2012, this hash collision was used for nefarious purposes in the Flame malware, which used the forage Microsoft digital certificate to sign their malware, which resulted in the malware appearing to be from legitimate software that came from Microsoft.
+- When design flaws were discovered in MD5, it was recommended to use SHA1 as a replacement.
+- __SHA1__ is part of the Secure Hash Algorithm suite of functions designed by the NSA and published in 1995. SHA1 is another widely used cryptographic hashing functions _used in popular protocols like TLS/SSL, PGP/SSH, and IPSec_. SHA1 is also used in version control systems like Git, which uses hashes to identify revisions and ensure data integrity by detecting corruption or tampering. However, significant computational is required to cause a hash collision.
+    - For example: A full collisions using these methods requires significant computing power. One such attack was _estimated to require $2.77 million in Cloud computing CPU resources_.
+    - However, due to increasing computational power of modern CPUs and GPUs,(especially in the space of GPU accelerated computations and Cloud resources), a full collision with _this attack method was estimated to be feasible using CPU and GPU Cloud computing for approximately $75K to $120,000_, much cheaper than previous attacks.
