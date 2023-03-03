@@ -155,7 +155,7 @@ __Dumpster Diving__: This in-person attack involves the attacker literally diggi
 
 __Evil twin__: This type of attack involves the cybercriminal installing Wi-Fi routers that appear to belong to an organization's network. These Wi-Fi access points may not require a password and might appear to offer a stronger signal than the real Wi-Fi router. When victims connect to the fake Wi-Fi access point, the cybercriminal gains access to the victim’s wireless transmissions, which can include login credentials and other sensitive information.
 
-# Terms Glossary
+## Terms Glossary
 
 - Adware: Software that displays advertisements and collects data
 - Attack: An actual attempt at causing harm to a system
@@ -204,3 +204,58 @@ __Evil twin__: This type of attack involves the cybercriminal installing Wi-Fi r
 - Vulnerability: A flaw in the system that could be exploited to compromise the system
 - Worms: They are similar to viruses except that instead of having to attach themselves onto something to spread, worms can live on their own and spread through channels like the network
 - 0-Day Vulnerability (Zero Day): A vulnerability that is not known to the software developer or vendor, but is known to an attacker
+
+# Symmetric Encryption
+Encryption is the act of taking a message called plaintext and applying an operation to it called a cipher so that you receive a garbled, unreadable message as the output called ciphertext. The reverse process, taking the garbled output and transforming it back into the readable plaintext, is called decryption.
+
+History of Cryptology
+
+One of the first practical asymmetric cryptography systems to be developed is RSA. Named for the initials of the three co-inventors Ron Rivest, Adi Shamir, and Leonard Alderman. This crypto system was patented in 1983 and was released to the public domain by RSA security in the year 2000. The RSA system specifies mechanisms for generation and distribution of keys, along with encryption and decryption operation using these keys.
+
+DES key as an example, 64 bits long minus the eight parity bits gives us a key length of 56 bits. This means that there are a maximum of 2^56 power or 72 quadrillion possible keys. That seems like a ton of keys and back in the 1970s, it was. But as technology advanced and computers got faster and more efficient, 64 bit keys quickly proved to be too small. What were once only theoretical attacks on the key size became reality in 1998 when the EFF, _Electronic Frontier Foundation decrypted a DES encrypted message_ __in only 56 hours.__
+
+RC4 supports key sizes from 40 bits to 2048 bits, so the weakness isn't due to brute force attacks, but there are lots of examples showing RC4 being broken. A recent example of RC4 being broken is the RC4 normal more attack. This attack was able to recover an authentication cookie from a TLS encrypted connection __in just 52 hours__. It was also supported in SSL and TLS until 2015 when RC4 was dropped in all versions of TLS because of inherent weaknesses. For this reason, [most major web browsers have dropped support for RC4 entirely in 2015](https://www.rc4nomore.com/). The preferred secure configuration is __TLS 1.2 with AES GCM__, a specific mode of operation for the AES block cipher that essentially turns it into a stream cipher.
+
+In 2001, adopted AES, Advanced Encryption Standard after an international competition. AES is also the first and only public cipher that's approved for use with top secret information by the United States National Security Agency. Because of the large key size, brute-force attacks on AES are only theoretical right now because the computing power required or time required using modern technology exceeds anything feasible today; however, __quantum computing__ may change the encryption game entirely. For example: _the NSA has expressed concern about EC encryption being potentially vulnerable to quantum computing attacks, as quantum computing technology continues to evolve and mature_.
+
+__It's important to call out that the security of the system__ is dependent on choosing a random seed value that's incorporated into the signing process. _If this value is leaked_ or if it can be inferred, if the prime number isn't truly random, then it's possible for _an attacker to recover the private key_.
+
+#### The Sony Playstation 3 Cispher Hack
+[This actually happened in 2010 to Sony with their PlayStation 3 Game Console](https://nakedsecurity.sophos.com/2012/10/25/sony-ps3-hacked-for-good-master-keys-revealed/). It turns out they weren't ensuring this randomized value was changed for every signature. This resulted in a hacker group called Fail0verflow being able to recover the private key that Sony used to sign software for their platform. This allowed matters to write and sign custom software that was allowed to run on the otherwise very lockdown Console platform. This resulted in [game piracy becoming a problem for Sony](https://www.theguardian.com/technology/gamesblog/2011/jan/07/playstation-3-hack-ps3) as this facilitated the illicit copying and distribution of games which caused significant losses in sales. 
+
+__Cryptography__ is a method of protecting information and communications using codes so that only the intended person can read and process them. Cryptography has mainly stemmed from the manual encoding of messages and information using a formula to convert any given letter or number to a new value. Encryption is the process that encodes the data making it harder to decode. The goal of encrypting data is to keep internal information secure. 
+
+__Cryptanalysis__ uses technology to improve the process of encrypting data and innovates new ways to defend companies from attacks that can access and decode their data.  
+
+### Types of cryptanalysis attack
+There are several types of attacks that hackers or security professionals employ to get data from a network using cryptanalysis. The attacks all use a different way into the network to gain encoded information and translate it from the encoded form into information that can be easily read. 
+
+The following are the most common cryptanalytic attacks:
+
+__Known-Plaintext Analysis (KPA)__ requires access to some or all of the plaintext of the encrypted information. The plaintext is not computationally tagged, specially formatted, or written in code. The analyst's goal is to examine the known plaintext to determine the key used to encrypt the message. Then they use the  key to decrypt the encoded information. 
+
+__Chosen-Plaintext Analysis (CPA)__ requires that the attacker knows the encryption algorithm or has access to the device used to do the encryption. The analyst can encrypt one block of chosen plaintext with the targeted algorithm to get information about the key. Once the analyst obtains the key, they can decrypt and use sensitive information. 
+
+__Ciphertext-Only Analysis (COA)__ requires access to one or more encrypted messages. No information is needed about the plaintext data, the algorithm, or data about the cryptographic key. Intelligence agencies face this challenge when intercepting encrypted communications with no key.
+
+__Adaptive Chosen-Plaintext Attack (ACPA)__ is similar to a chosen-plaintext attack. Unlike a CPA, it can use smaller lines of plaintext to receive its encrypted ciphertext and then crack the encryption code using the ciphertext.  
+
+__Meddler-in-the-Middle (MITM)__ uses cryptanalysts to insert a meddler between two communication devices or applications to exchange their keys for secure communication. The meddler replies as the user and then performs a key exchange with each party. The users or systems think they communicate with each other, not the meddler. These attacks allow the meddler to obtain login credentials and other sensitive information.
+
+### Results from a Cryptanalysis Attack
+There are various results of a cryptanalysis attack. Some attacks result in a total break in the encryption and some result in more information that can help the attacker cause other damage or get closer to the goal of a total break.    
+
+Common results from a cryptanalysis attack include:
+
+- __Instance deduction__ where the attacker discovers additional plain or cipher text. While the key isn’t found to break the code, the additional plaintext or ciphertext can be used to cause problems or continue attacks. 
+- __Information deduction__ where the attacker obtains some information about plain or cipher text not previously known. The additional information can lead to more information about the encryption key. 
+- __Distinguishing algorithm__ where the attacker can distinguish the encryption algorithm from a random alteration. This information reveals clues about the encryption algorithm and can lead to more significant breaks.
+- __Global deduction__ where the attacker finds an algorithm that is functionally equivalent to the one used in the key. This algorithm is then used to decrypt all information and messages. 
+- __Total break__ where the attacker can gain the entire key. With the entire key, the attacker can decrypt all messages and information.
+
+# Public Key (or Asymmetric Cryptography)
+
+- __Asymmetric Encryption__ generates _different_ keys are used to encrypt and decrypt. In asymmetric encryption, algorithm is chosen as a key exchange mechanism or cipher. What this means is that, the symmetric encryption key or shared secret, is transmitted securely to the other party using asymmetric encryption to keep the shared secret secure in transit. Once the shared secret is received, data can be sent quickly and efficiently and securely using an asymmetric encryption cipher.
+- __MACs or Message Authentication Codes__ Not to be confused with Media Access Control or MAC addresses. A MAC is a bit of information that allows authentication of a received message, ensuring that the message came from the alleged sender and not a third party masquerading as them. It also ensures that the message wasn't modified in some way in order to provide data integrity.
+- __HMAC or a keyed hash message authentication code__ uses a cryptographic hash function along with a secret key to generate a MAC. Any cryptographic hash functions can be used like SHA-1 or MD5.
+- __CBC-MACs or Cipher-Based Message Authentication Codes__ CBC-MAC is a mechanism for building MACs using block ciphers. This works by taking a message and encrypting it using a block cipher operating in CBC mode. It is similar to HMAC, but instead of using a hashing function to produce a digest, a _symmetric_ cipher with a shared key is used to encrypt the message and the resulting output is used as the MAC. 
