@@ -260,41 +260,18 @@ Common results from a cryptanalysis attack include:
 - __HMAC or a keyed hash message authentication code__ uses a cryptographic hash function along with a secret key to generate a MAC. Any cryptographic hash functions can be used like SHA-1 or MD5.
 - __CBC-MACs or Cipher-Based Message Authentication Codes__ CBC-MAC is a mechanism for building MACs using block ciphers. This works by taking a message and encrypting it using a block cipher operating in CBC mode. It is similar to HMAC, but instead of using a hashing function to produce a digest, a _symmetric_ cipher with a shared key is used to encrypt the message and the resulting output is used as the MAC.
 
-### Hashing
+### Hashing Rainbow Tables and How to Defend Against It
+[!alt_text](https://photos.app.goo.gl/RyMsesTisLeR2FjD9)
 
-Hashing or a hash function is a type of function or operation that takes in an arbitrary data input and maps it to an output of a fixed size called a hash or a digest. What this means exactly is that you feed in any amount of data into a hash function and the resulting output will always be the same size, but the output should be unique to the input, such that two different inputs should never yield the same output.
+A __rainbow table__ is just _a pre computed table of all possible password values, and their corresponding hashes_. These tables are used by bad actors to help speed up the process of recovering passwords from stolen password hashes. 
+ - The idea behind rainbow table attacks is to trade computational power for disk space, by pre computing the hashes and storing them in a table.
+ - An attacker can determine what the corresponding password is for a given hash, by just looking up the hash in their rainbow table. This is unlike a brute force attack, where the hash is computed for each guess attempt. It's possible to download rainbow tables from the internet for popular password lists and hashing functions. This further reduces the need for computational resources, requiring large amounts of storage space to keep all the password and hash data.
 
-Hashing can also be used to identify duplicate datasets and databases or archives to speed up searching of tables or to remove duplicate data to save space.
-
-Cryptographic hashing is distinctly different from encryption because cryptographic hash functions should be one-directional. The ideal cryptographic hash function should be deterministic, meaning that the same input value should always return the same hash value. The function should be quick to compute and be efficient, it should be infeasible to reverse the function and recover the plain text from the hash digest. A small change in the input should result in a change in the output so that there is no correlation between the change in the input and the resulting change in the output. Finally, the function should not allow for __hash collisions__, _meaning two different inputs mapping to the same output._
-
-```
-"Hello World" | [hash function] | E49AOOFF
-INPUT: "hello world" | [hash function] | FF1832AE
-```
-Real Example:
-
-```bash
-$ echo 'Hello World' | md5sum | e59ff97941044f85df5297e1c302d260
-$ echo 'hello worldl | md5sum | 6f5902ac237024bddOc176cb93063dc4
-```
-Note that the hash is different for each example which indicates a divergence.
-
-__MD5__ is a popular and widely used hash function designed in the early 1990s as a cryptographic hashing function.
-- It operates on a 512 bit blocks and generates 128 bit hash digest. While MD5 was published in 1992, _a design flaw was discovered in 1996__, and in 2004, it was discovered that MD5 is susceptible to __hash collisions__, _allowing for a bad actor to craft a malicious file that can generate the same MD5 digest as another different legitimate file_.
-- Shortly after this flaw was discovered, _security researchers were able to generate two different files that have __matching__ MD5 hash digest_. In 2008, security researchers took this a step further and demonstrated the ability to create a fake SSL certificate that validated due to an MD5 hash collision.
-- In 2012, this hash collision was used for nefarious purposes in the Flame malware, which used the forage Microsoft digital certificate to sign their malware, which resulted in the malware appearing to be from legitimate software that came from Microsoft.
-- When design flaws were discovered in MD5, it was recommended to use SHA1 as a replacement.
-
-__SHA1__ is part of the Secure Hash Algorithm suite of functions designed by the NSA and published in 1995. SHA1 is another widely used cryptographic hashing functions _used in popular protocols like TLS/SSL, PGP/SSH, and IPSec_. SHA1 is also used in version control systems like Git, which uses hashes to identify revisions and _ensure data integrity by detecting corruption or tampering_. However, _significant computational could theoreticaly cause a hash collision_.
-- For example: A full collisions using these methods requires significant computing power. One such attack was _estimated to require $2.77 million in Cloud computing CPU resources_.
-- However, due to increasing computational power of modern CPUs and GPUs,(especially in the space of GPU accelerated computations and Cloud resources), a full collision with _this attack method was estimated to be feasible using CPU and GPU Cloud computing for approximately $75K to $120,000_, much cheaper than previous attacks.
-- [In early 2017, using significant CPU and GPU resources, two unique PDF files were created that result in the same SHA1 hash](https://shattered.io/). The estimated processing power required to do this was described as equivalent of 6,500 years of a single CPU and 110 years of a single GPU computing non-stop.
-A __MIC (Message Integrity Check)__ is essentially a hash digest of the message in question.
-- You can think of it as a checksum for the message, ensuring that the contents of the message weren't modified in transit.
-- But this is distinctly different from a MAC that we talked about earlier. It doesn't use secret keys, which means the message isn't authenticated.
-- Therefore, _there's nothing stopping an attacker from altering the message_, recomputing the checksum, and modifying the MIC attached to the message.
-- You can think of MICs as protecting against accidental corruption or loss, but not protecting against tampering or malicious actions.
+ A __password salt__ _is additional randomized data that's added into the hashing function to generate a hash that's unique to the password and salt combination_. Here's how it works: 
+ - A randomly chosen large salt is concatenated or attacked onto the end of the password. The combination of salt and password is then run through the hashing function to generate the hash, which is then stored alongside the salt.
+ - What this means now for an attacker, is _that they'd have to compute a rainbow table for each possible salt value_. If a large salt is used, the computational and storage requirements to generate useful rainbow tables becomes almost infeasible. Early UNIX systems used a 12 bit salt, which amounts to a total of 4096 possible salts.
+ - An attacker would have to generate hashes for every password in their database 4096 times over. _Modern systems like Linux, BSD and Solaris use a 128 bit salt. That means, there are 2 to the 128th power possible salt values, which is over 340 undecillion, that's 340 with 36 zeros following._
+ - Clearly, 128 bit salt raises the bar high enough that a rainbow table attack wouldn't be possible in any realistic timeframe. 
 
 ### How to Check Hashes
 
