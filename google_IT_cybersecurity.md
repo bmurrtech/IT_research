@@ -99,7 +99,10 @@ Malware can be devastating for a company’s computer network. As an IT support 
 - A __denial-of-service or DoS attack__ is an attack that tries to prevent access to a service for legitimate users by overwhelming the network or server. Think about how you normally get on a website. Most major websites are capable of serving millions of users, but for this example, imagine you have a website that could only serve ten users. If someone was performing a denial of service attack, _they would just take up all ten of those spots and legitimate users would have been denied the service because there's no more room for them_.
     - The __ping of death or POD__ is a pretty simple example of a DoS attack. It works by sending a malformed ping to a computer. The ping would be larger in size than what the internet protocol was made to handle. So it results in a buffer overflow. This can cause the system to crash and potentially allow the execution of malicious code.
     - Another example is a __ping flood__ which sends tons of ping packets to a system. More specifically, it sends ICMP echo requests since a ping expects an equal number of ICMP echo replies. If a computer can't keep up with this, then it's prone to being overwhelmed and taken down.
-    - Similar to a ping flood is a __SNC flood__ or __half-open attacks__ Remember that to make a TCP connection, a client sends a SYN packet to a server, it wants to connect to next, the server sends back a SYN-ACK message. Then the client sends an ACK message. In a SYN flood, the server is being bombarded with these sim packets. The server is sending back SYN-ACK packets, but the attacker is not sending ACK messages. _This means that the connection stays open and is taking up the server's resources. Other users will be unable to connect to the server_, which is a big problem, since the TCP connection is half open _we also refer to SYN floods as_ __half-open attacks__. [syn_flood](https://photos.app.goo.gl/EQpG1ofCdA5d2ikG7)
+    - Similar to a ping flood is a __SNC flood__ or __half-open attacks__ Remember that to make a TCP connection, a client sends a SYN packet to a server, it wants to connect to next, the server sends back a SYN-ACK message. Then the client sends an ACK message. In a SYN flood, the server is being bombarded with these sim packets. The server is sending back SYN-ACK packets, but the attacker is not sending ACK messages. _This means that the connection stays open and is taking up the server's resources. Other users will be unable to connect to the server_, which is a big problem, since the TCP connection is half open _we also refer to SYN floods as_ __half-open attacks__.
+
+    [syn_flood](https://i.imgur.com/yvyz6Ny.png)
+
     - What if Attackers could utilize multiple machines? A _DoS attack using multiple systems_ is called a __distributed denial of service attack or DDoS__. It would require a large volume of systems to carry out an attack. And they're usually helped by botnet attackers, in that scenario, they can gain access to large volumes of machines to perform an attack.
         - In October of 2016 a DDoS attack occurred when the DNS service provider DYN was the target of a DDoS, fake DNS look up requests along with SYN floods that botnets were performing overloaded their system. DYN handled the DNS for major websites like Reddit, Git hub, Twitter, etc. So once it went down, it also took down its customers, making those services inaccessible.
 
@@ -143,7 +146,7 @@ __Whaling__: When a cybercriminal wants to spear phish a big target or “whale,
 
 __Vishing__: Cybercriminals use Voice over IP (VoIP) to make phone calls or leave voice messages pretending to be from reputable companies in order to trick victims into revealing personal information, such as banking details and credit card numbers. Although telephone scams have been running for decades, vishing with VoIP makes it easier for cybercriminals to hide their true identity. VoIP calls are significantly more difficult to trace than landline calls.
 
-#### Targeted and in-person deceptive attacks 
+#### Targeted and in-person Deceptive Attacks 
 
 __Shoulder surfing__: This malicious attack might have a specific victim or organization as their target. Shoulder surfing happens _when a person looks over a victim’s shoulder to watch them enter login credentials, credit card numbers, or other sensitive information_. For example, a temporary contractor for an organization may look over the shoulder of an employee to watch the employee enter their login info. The temporary employee’s goal might be to steal credentials in order to illegally obtain confidential company data or plant ransomware. 
 
@@ -227,7 +230,7 @@ __Cryptography__ is a method of protecting information and communications using 
 
 __Cryptanalysis__ uses technology to improve the process of encrypting data and innovates new ways to defend companies from attacks that can access and decode their data.  
 
-### Types of cryptanalysis attack
+### Types of Cryptanalysis Attack
 There are several types of attacks that hackers or security professionals employ to get data from a network using cryptanalysis. The attacks all use a different way into the network to gain encoded information and translate it from the encoded form into information that can be easily read. 
 
 The following are the most common cryptanalytic attacks:
@@ -260,8 +263,44 @@ Common results from a cryptanalysis attack include:
 - __HMAC or a keyed hash message authentication code__ uses a cryptographic hash function along with a secret key to generate a MAC. Any cryptographic hash functions can be used like SHA-1 or MD5.
 - __CBC-MACs or Cipher-Based Message Authentication Codes__ CBC-MAC is a mechanism for building MACs using block ciphers. This works by taking a message and encrypting it using a block cipher operating in CBC mode. It is similar to HMAC, but instead of using a hashing function to produce a digest, a _symmetric_ cipher with a shared key is used to encrypt the message and the resulting output is used as the MAC.
 
+### Hashing
+
+Hashing or a hash function is a type of function or operation that takes in an arbitrary data input and maps it to an output of a fixed size called a hash or a digest. What this means exactly is that you feed in any amount of data into a hash function and the resulting output will always be the same size, but the output should be unique to the input, such that two different inputs should never yield the same output.
+
+Hashing can also be used to identify duplicate datasets and databases or archives to speed up searching of tables or to remove duplicate data to save space.
+
+Cryptographic hashing is distinctly different from encryption because cryptographic hash functions should be one-directional. The ideal cryptographic hash function should be deterministic, meaning that the same input value should always return the same hash value. The function should be quick to compute and be efficient, it should be infeasible to reverse the function and recover the plain text from the hash digest. A small change in the input should result in a change in the output so that there is no correlation between the change in the input and the resulting change in the output. Finally, the function should not allow for __hash collisions__, _meaning two different inputs mapping to the same output._
+
+```
+"Hello World" | [hash function] | E49AOOFF
+INPUT: "hello world" | [hash function] | FF1832AE
+```
+Real Example:
+
+```bash
+$ echo 'Hello World' | md5sum | e59ff97941044f85df5297e1c302d260
+$ echo 'hello worldl | md5sum | 6f5902ac237024bddOc176cb93063dc4
+```
+Note that the hash is different for each example which indicates a divergence.
+
+__MD5__ is a popular and widely used hash function designed in the early 1990s as a cryptographic hashing function.
+- It operates on a 512 bit blocks and generates 128 bit hash digest. While MD5 was published in 1992, _a design flaw was discovered in 1996__, and in 2004, it was discovered that MD5 is susceptible to __hash collisions__, _allowing for a bad actor to craft a malicious file that can generate the same MD5 digest as another different legitimate file_.
+- Shortly after this flaw was discovered, _security researchers were able to generate two different files that have __matching__ MD5 hash digest_. In 2008, security researchers took this a step further and demonstrated the ability to create a fake SSL certificate that validated due to an MD5 hash collision.
+- In 2012, this hash collision was used for nefarious purposes in the Flame malware, which used the forage Microsoft digital certificate to sign their malware, which resulted in the malware appearing to be from legitimate software that came from Microsoft.
+- When design flaws were discovered in MD5, it was recommended to use SHA1 as a replacement.
+
+__SHA1__ is part of the Secure Hash Algorithm suite of functions designed by the NSA and published in 1995. SHA1 is another widely used cryptographic hashing functions _used in popular protocols like TLS/SSL, PGP/SSH, and IPSec_. SHA1 is also used in version control systems like Git, which uses hashes to identify revisions and _ensure data integrity by detecting corruption or tampering_. However, _significant computational could theoreticaly cause a hash collision_.
+- For example: A full collisions using these methods requires significant computing power. One such attack was _estimated to require $2.77 million in Cloud computing CPU resources_.
+- However, due to increasing computational power of modern CPUs and GPUs,(especially in the space of GPU accelerated computations and Cloud resources), a full collision with _this attack method was estimated to be feasible using CPU and GPU Cloud computing for approximately $75K to $120,000_, much cheaper than previous attacks.
+- [In early 2017, using significant CPU and GPU resources, two unique PDF files were created that result in the same SHA1 hash](https://shattered.io/). The estimated processing power required to do this was described as equivalent of 6,500 years of a single CPU and 110 years of a single GPU computing non-stop.
+A __MIC (Message Integrity Check)__ is essentially a hash digest of the message in question.
+- You can think of it as a checksum for the message, ensuring that the contents of the message weren't modified in transit.
+- But this is distinctly different from a MAC that we talked about earlier. It doesn't use secret keys, which means the message isn't authenticated.
+- Therefore, _there's nothing stopping an attacker from altering the message_, recomputing the checksum, and modifying the MIC attached to the message.
+- You can think of MICs as protecting against accidental corruption or loss, but not protecting against tampering or malicious actions.
+
 ### Hashing Rainbow Tables and How to Defend Against It
-[!alt_text](https://photos.app.goo.gl/RyMsesTisLeR2FjD9)
+[rainbow_table](https://i.imgur.com/uvn7F29.png)
 
 A __rainbow table__ is just _a pre computed table of all possible password values, and their corresponding hashes_. These tables are used by bad actors to help speed up the process of recovering passwords from stolen password hashes. 
  - The idea behind rainbow table attacks is to trade computational power for disk space, by pre computing the hashes and storing them in a table.
@@ -321,3 +360,102 @@ md5sum /path/to/file.iso
 sha1sum /path/to/file.iso
 sha256sum /path/to/file.iso
 ```
+
+# Cryptography Applications
+
+A __PKI (Public Key Infrastructure)__ is a system that defines the creation, storage, and distribution of digital certificates. A digital certificate is a file that proves that an entity owns a certain public key. A certificate contains information about the public key, the entity it belongs to, and a digital signature from another party that has verified this information.
+
+The entity that is responsible for storing, issuing, and signing certificates is referred to as __CA, or Certificate Authority__. It's a crucial component of a PKI system. There's also an __RA or Registration Authority__ that's _responsible for verifying the identities of any entities requesting certificates to be signed and stored with the CA_. This role is usually lumped together with the CA.
+
+_A central repository is needed to securely store and index keys, and a certificate management system of some sort, makes managing access to storage certificates and issuance of certificates easier_. There were a few different types of certificates that have different applications or uses. The one you're probably most familiar with is SSL or TLS server certificate. This is a certificate that a web server presents to a client as part of the initial secure setup of an SSL/TLS connection.
+In some cases, a __wildcard certificate__ can be issued where _the host name is replaced with an asterix denoting validity for all host names within a domain_. It's also possible for a server to use what's called a __self-signed certificate__. You may have guessed from the name, this certificate _has been signed by the same entity that issued the certificate_.
+
+Another certificate type is an __SSL/TLS client certificate__. This is an optional component of SSL/TLS connections and is less commonly seen than server certificates. As the name implies, these are certificates that are bound to clients and are used to authenticate the client to the server, allowing access control to an SSL/TLS service.
+- These are different from server certificates, in that the client certificates aren't issued by a public CA. Usually, the service operator would have their own internal CA which issues and manages client certificates for their service.
+
+There are also __code signing certificates__ which are used for signing executable programs. This allows users of the signed applications to verify the signatures and ensure that the application was not tampered with. It also lets them verify that the application came from the software author and is not a malicious twin.
+
+_A certificate that has no authority as a CA_ is referred to as an __end-entity or leaf certificate__. Similar to a leaf on a tree, it's the end of the tree structure and can be considered the opposite of the roots.
+ - In order to bootstrap this chain of trust, you have to trust a root CA certificate, otherwise, the whole chain is untrusted. This is done by distributing root CA certificates via alternative channels. Each major OS vendor ships a large number of trusted root CA certificates with their OS. They typically have their own programs to facilitate distribution of root CA certificates.
+
+ ### Certificates
+
+#### X.509 Standard
+The [__X.509 standard__](https://www.ietf.org/rfc/rfc5280.txt) is _what defines the format of digital certificates_. It also defines a certificate revocation list, or CRL, which is a means to distribute a list of certificates that are no longer valid. The fields defined in an X.509 certificate are:
+ - __The Version__ what version of the X.509 standard the certificate adheres to
+ - The __Serial Number__  a unique identifier for the certificate assigned by the CA, which allows the CA to manage and identify individual certificates. 
+ - __Certificates signature algorithm__ indicates what public key algorithm is used for the public key and what hashing algorithm is used to sign the certificate.
+ - __Issuer name__ contains information about the authority that sign the certificate.
+ - __Validity__ contains two subfields, Not Before and Not After, which define the dates when the certificate is valid for.
+ - __Subject__ contains identifying information about the entity the certificate was issued to.
+ - __Subject public key info__. These two subfields define the algorithm of the public key along with the public key itself.
+ - __Certificates signature algorithm__ same as the subject public key and field, these two fields must match.
+ - __Certificate signature value__, the digital signature data itself.
+
+#### Web of Trust
+Alternative to the centralized PKI model of establishing trust and binding identities is what's called the __web of trust__.
+
+- A __web of trust__ is where individuals, instead of certificate authorities, sign other individuals public keys.
+
+[web_trust](https://i.imgur.com/ppxAYgc.png)
+
+- Before an individual signs a key, they should first verify the person's identity through an agreed upon mechanism, usually by checking some form of identification, driver's license, passport, etc.
+- Once they've determined the person is who they claim to be, signing their public key is basically vouching for this person. You're saying that you trust that this public key belongs to this individual.
+- In the future when one of these participants in the initial key signing party establishes trust with a new member. The web of trust extends to include this new member and other individuals they also trust. This allows separate webs of trust to be bridged by individuals and allows the network of trust to grow.
+
+### HTTP vs HTTPS
+#### Port 80 - HTTP (Hypertext Transfer Protocol)
+...is the way data is sent and received over a network
+Example: i.e. http://website.com is a client computer browser request to the server hosting the website to respond by providing the information/data from the server to the client machine via HTTP.
+HTTP requests/responses are sent across the internet as plaintext; therefore, any data exchanged is viewable to anyone monitoring the connection.
+
+HTTP is a security risk because:
+- Essentially, a malicious actor can just read the text in the request or the response and know exactly what information someone is asking for, sending, or receiving, and even manipulate the communication.
+- For example: An attacker could gain control of a Linux distribution’s website and modify the hashes that appear on it, or an attacker could perform a man-in-the-middle attack and modify the web page in transit if you were accessing the website via HTTP instead of encrypted HTTPS.
+- For example: Linux Mint’s website was hacked, and a modified ISO was put up for download that included a backdoor. While the problem was fixed quickly, it demonstrates the importance of checking Linux ISO files you download.
+
+#### Port 443 - HTTPS (Hypertext Transfer Protocol Secure)
+- a.k.a. HTTP over TLS or SSL (Security Socket Layer)
+- HTTPS prevents Man-in-the-middle attacks, DNS hijacking, and domain spoofing through cryptographic keys.
+- What makes HTTPS secure is the cryptographic encryption (public key/hash and a private key/hash) of a CA (Certificate Authority) which cryptographically signs the exchange of data.
+- When a client machine wants to connect to the HTTPS web server through a browser, each machine must verify identity. This is accomplished by the two devices using the public and private key to agree on new keys, called session keys.
+- Think of the private keys as an ID card.
+- In addition, any communication between client and server is encrypted (i.e. credit card/payment information cannot be stolen by anyone monitoring the connection because it is encrypted).
+
+### TCB vs UDP Protocol
+| TCP vs | UDP Protocol |
+| ----------- | ----------- |
+| Secure  | Unsecure  |
+| Slow  | Fast  |
+| Guaranteed Transmission  | No Guaranteed Transmission  |
+| Critical Application Use  | Real-team Application Use  |
+| Flow Control  | None  |
+| Advance Error Checks  | Basic Error Checks (Checksum)  |
+| DNS, HTTPS, FTP. SMTP, ect.  | DNS, DHCP, SNMP, TFTP, etc.  |
+| Connection-oriented (must have a connection between client &] server before data transfer)  | Connectionless (data transfer happens w/o connection between client and server)  |
+
+### Securing Network traffic
+
+What if our application doesn't utilize encryption or what if we want to provide remote access to internal resources too sensitive to expose directly to the internet? We use a VPN or virtual private network solution.
+
+A __VPN (Vitrual Private Network)__ is a mechanism that allows you to remotely connect a host or network to an internal private network, passing the data over a public channel like the internet.
+- You can think of this as a sort of encrypted tunnel where all of our remote systems network traffic would flow, transparently channeling our packets via the tunnel through the remote private network.
+- A VPN can also be point to point where two gateways are connected via a VPN, essentially bridging two private networks through an encrypted tunnel.
+- SSL, TLS is also used in some VPN implementations to secure network traffic as opposed to individual sessions or connections. An example of this is [__OpenVPN__](https://openvpn.net/index.php/open-source.html) which uses the open SSL library to handle key exchange and encryption of data along with control channels. This also enables OpenVPN to make use of all the ciphers implemented by the open SSL library.
+- It should be called out that OpenVPN doesn't implement user name password authentication directly, it uses modules to plug into authentication systems. OpenVPN can operate over either TCP or UDP, typically over ports 1194.
+- It supports pushing network configuration options from the server to a client and it supports two interfaces for networking. It can either rely on a layer 3 IP tunnel or a layer 2 ethernet tap. The ethernet tap is more flexible, allowing it to carry a wider range of traffic. From the security perspective, OpenVPN supports up to 256 bit encryption through the OpenSSL library. 
+
+[ipsec](https://i.imgur.com/c1MJJx9.png)
+
+__IPsec__ works by encrypting an IP packet and encapsulating the encrypted packet inside an IPsec packet. This encrypted packet then gets routed to the VPN end-point where the packet is de-encapsulated and decrypted then sent to the final destination. IPsec supports two modes of operations, transport mode and tunnel mode.
+- While not a VPN solution itself, [__L2TP or layer two tunneling protocol__](https://tools.ietf.org/html/rfc3193) is typically used to support VPNs. A common implementation of L2TP is in conjunction with IPsec when data confidentiality is needed. Since L2TP doesn't provide encryption itself, it's a simple tunneling protocol that allows encapsulation of different protocols or traffic over a network that may not support the type of traffic being sent. L2TP can also just segregate and manage the traffic. ISPs will use L2TP to deliver network access to a customer's end point.
+- For example, the combination of L2TP and IPsec is referred to as L2TP IPsec and was officially standardized in IETF RFC 3193.
+- An important distinction to make in this setup is the difference between the tunnel and the secure channel. The tunnel is provided by L2TP which permits the passing of unmodified packets from one network to another. The secure channel, on the other hand, is provided by IPsec which provides confidentiality, integrity and authentication of data being passed.
+
+### Cryptographic Hardware
+[tmp](https://i.imgur.com/ISGmyih.png)
+
+__TPM (trusted platform module)__ This is a hardware device that's typically integrated into the hardware of a computer that's a dedicated crypto processor.
+-    TPMs offer secure generation of keys, random number generation, remote attestation, and data binding and seiling.
+- A TPM has unique secret RSA key burned into the hardware at the time of manufacturer, which allows the TPM to perform things like hardware authentication.
+- This can detect unauthorized hardware changes to a system. 
