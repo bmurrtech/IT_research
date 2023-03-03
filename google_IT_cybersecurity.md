@@ -285,6 +285,62 @@ __MD5__ is a popular and widely used hash function designed in the early 1990s a
 - Shortly after this flaw was discovered, _security researchers were able to generate two different files that have __matching__ MD5 hash digest_. In 2008, security researchers took this a step further and demonstrated the ability to create a fake SSL certificate that validated due to an MD5 hash collision.
 - In 2012, this hash collision was used for nefarious purposes in the Flame malware, which used the forage Microsoft digital certificate to sign their malware, which resulted in the malware appearing to be from legitimate software that came from Microsoft.
 - When design flaws were discovered in MD5, it was recommended to use SHA1 as a replacement.
-- __SHA1__ is part of the Secure Hash Algorithm suite of functions designed by the NSA and published in 1995. SHA1 is another widely used cryptographic hashing functions _used in popular protocols like TLS/SSL, PGP/SSH, and IPSec_. SHA1 is also used in version control systems like Git, which uses hashes to identify revisions and ensure data integrity by detecting corruption or tampering. However, significant computational is required to cause a hash collision.
-    - For example: A full collisions using these methods requires significant computing power. One such attack was _estimated to require $2.77 million in Cloud computing CPU resources_.
-    - However, due to increasing computational power of modern CPUs and GPUs,(especially in the space of GPU accelerated computations and Cloud resources), a full collision with _this attack method was estimated to be feasible using CPU and GPU Cloud computing for approximately $75K to $120,000_, much cheaper than previous attacks.
+
+__SHA1__ is part of the Secure Hash Algorithm suite of functions designed by the NSA and published in 1995. SHA1 is another widely used cryptographic hashing functions _used in popular protocols like TLS/SSL, PGP/SSH, and IPSec_. SHA1 is also used in version control systems like Git, which uses hashes to identify revisions and _ensure data integrity by detecting corruption or tampering_. However, _significant computational could theoreticaly cause a hash collision_.
+- For example: A full collisions using these methods requires significant computing power. One such attack was _estimated to require $2.77 million in Cloud computing CPU resources_.
+- However, due to increasing computational power of modern CPUs and GPUs,(especially in the space of GPU accelerated computations and Cloud resources), a full collision with _this attack method was estimated to be feasible using CPU and GPU Cloud computing for approximately $75K to $120,000_, much cheaper than previous attacks.
+- [In early 2017, using significant CPU and GPU resources, two unique PDF files were created that result in the same SHA1 hash](https://shattered.io/). The estimated processing power required to do this was described as equivalent of 6,500 years of a single CPU and 110 years of a single GPU computing non-stop.
+A __MIC (Message Integrity Check)__ is essentially a hash digest of the message in question.
+- You can think of it as a checksum for the message, ensuring that the contents of the message weren't modified in transit.
+- But this is distinctly different from a MAC that we talked about earlier. It doesn't use secret keys, which means the message isn't authenticated.
+- Therefore, _there's nothing stopping an attacker from altering the message_, recomputing the checksum, and modifying the MIC attached to the message.
+- You can think of MICs as protecting against accidental corruption or loss, but not protecting against tampering or malicious actions.
+
+### How to Check Hashes
+
+[VirusTotal](https://www.virustotal.com/gui/home/upload) is a free online tool that can check the file hash. However, you can use your computer's CLI to check the hash, too.
+
+#### [PowerShell](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3 ):
+
+```powershell
+Get-FileHash -Path [C:\path\to\file.iso] -Algorithm [hash_type] | Format-List
+```
+> Note: You can specify which Hash to use by adding a -Algorithm [hash_name]. Hash names available are:
+> - MD5
+> - SHA1
+> - SHA256
+> - SHA384
+> - MACTripleDES
+> - RIPMD160
+
+For example:
+
+```ps
+Get-FileHash -path C:\users\user_name\downloads\proxmox-ve_7.3-1.iso -algorithm sha256 | format-list
+```
+
+Output Example:
+```
+Algorithm : SHA256
+Hash      : 539A2ACD3A921F76F08C759058A12C7FA97E1E1E4956AD6389F25FD4F3C3085B
+Path      : C:\users\bmurray\downloads\proxmox-ve_7.3-1.iso
+```
+
+#### MacOS (Terminal):
+
+```
+[hash_name] /path/to/file.iso
+```
+Hashnames include:
+- md5
+- shasum
+- shasum -1
+- shasum -256
+
+#### Linux Examples
+
+```
+md5sum /path/to/file.iso
+sha1sum /path/to/file.iso
+sha256sum /path/to/file.iso
+```
