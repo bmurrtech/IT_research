@@ -748,7 +748,7 @@ Verified OK
 
 __Security Note__: If _any other output_ was shown, it would indicate that the contents of the file had been changed, and it's likely no longer safe.
 
-# Hashing and Hash Verification
+# Hashing and Hash Verification Lab
 #### MD5
 
 Let's kick things off by creating a text file containing some data. Feel free to substitute your own text data, if you want. This command creates a text file called "file.txt" with a single line of basic text in it:
@@ -1006,3 +1006,223 @@ For more information about methods of authentication to protect data, please vis
 [What is the Difference Between NFC and RFID?](https://www.globalpaymentsintegrated.com/en-us/blog/2020/04/21/what-is-the-difference-between-nfc-and-rfid) - A comparison of NFC and RFID technologies.
 
 [Fingerprint Reader Replacement Guide](https://guides.frame.work/Guide/Fingerprint+Reader+Replacement+Guide/91) - Provides photos of internal fingerprint scanner hardware parts, as well as instructions on how to replace a fingerprint scanner on a laptop. Like these [kids clever enough to skip school](https://www.hindustantimes.com/mumbai-news/you-will-be-glued-to-this-mumbai-college-s-students-trick-biometric-system/story-W64f1jdMtecxKDml2DakeI.html) did.
+
+# Authentication 
+
+#### RADIUS
+__RADIUS or remote authentication dial in user service__ is a protocol that provides AAA services for users on a network. It's a very common protocol used to manage access to internal networks, WiFi networks, email services and VPN services.
+
+- While it's unlikely that you'd be responsible for configuring RADIUS server as an IT support specialist, you might be supporting clients that authenticate against a RADIUS back end server. 
+- When a client wants to access a resource that's protected, the client will present authentication credentials
+- Once the RADIUS server has evaluated the user authentication request. It replies with one of three messages, access, reject access challenge or access except.
+
+#### Kerberos
+__Kerberos, is a network authentication protocol__ that uses tickets to allow entities to prove their identity over potentially insecure channels to provide mutual authentication. 
+[kerberos](https://i.imgur.com/jdpMZyT.png)
+- It also uses symmetric encryption to protect protocol messages from eavesdropping and replay attacks.
+- Kerberos was originally developed at the Massachusetts Institute of Technology in the US. And was published in the 1980s as version four. Years later in 1993 Version 5 was published. Today, _Kerberos supports AES encryption and implements check sums_ to ensure data integrity and confidentiality.
+- Details of how the Kerberos protocol operates:
+  1. A user that wants to authenticate, enters their user name and password on their client machine. Their Kerberos client software, will then take the password and generate a symmetric encryption key from it.
+  1. Next, the client sends a plain text message to the Kerberos AS or authentication server which includes the user ID of the authenticating user. The password or secret key derived from the password aren't transmitted. The AS uses the user ID to check if there's an account in the authentication database, like an active directory server. If so the AS will generate the secret key using the hashed passwords stored in the key distribution center server. The AS will then use the secret key to encrypt and send a message containing the client TGS session key.
+  1. This is a secret key used for encrypting communications, with the ticket granting service or TGS, which is already known by the authentication server. The AS also sends a second message, with a ticket granting ticket or a TGT, which is encrypted using the TGS secret key. 
+  1. Now, the client has enough information to authenticate with the ticket granting server. Since the client has authenticated and received a valid ticket granting ticket, it can use the ticket granting ticket, to request access to services from within the Kerberos realm.
+  1. Next it checks the client ID of these two messages to ensure they match. If they do, it sends two messages back to the client. The first one, contains the client to server ticket which is comprised of the client ID, client address, validity period and the client server session key, encrypted using the services Secret key.
+  1. Finally, the client has enough information to authenticate itself to the service server or SS. The client sends two messages to the SS, the first message is the encrypted client to server ticket, received from the ticket granting service. The second, is a new authenticator with the client ID and timestamp encrypted using the client server session key. The SS decrypt the first message, using its secret key which provides it with the client server session key. The key is then used to decrypt the second message and it compares the client ID in the authenticator to the one included in the client to server ticket.
+
+#### TACACS+
+TACACS plus is primarily used for device administration, authentication, authorization, and accounting, as opposed to RADIUS, which is mostly used for network access, AAA.
+- T-A-C-A-C-S plus pronounced, TACACS plus. __It stands for Terminal Access Controller Access-Control System plus__. It's a Cisco developed AAA protocol that was released as an open standard in 1993.
+- TACACS plus also took the place of X-T-A-C-A-C-S or extended TACACS, which was a Cisco proprietary extension on top of TACACS.
+- TACACS plus is mainly used as an authentication system for network infrastructure devices, which tend to be high-value targets for attackers.
+
+
+#### Single Sign-on
+[sso](https://i.imgur.com/8v67zMD.png)
+
+__Single sign-on or SSO is an authentication concept that allows users to authenticate once to be granted access to a lot of different services and applications__.
+- Since re-authentication for each service isn't needed, users don't need multiple sets of usernames and passwords across a mix of applications and services.
+- SSO is accomplished by authenticating to a central authentication server, like an LDAP server. This then provides a cookie or token that can be used to get access to applications configured to use SSO. Kerberos is actually a good example of an SSO authentication service.
+
+### Authentication Quiz
+
+__Question 1 How is authentication different from authorization?__
+
+Authentication is verifying an identity; authorization is verifying access to a resource.
+
+They're the same thing.
+
+_Authentication is verifying access to a resource; authorization is verifying an identity._
+
+Authentication is identifying a resource; authorization is verifying access to an identity.
+
+Correct
+Right on! Authentication is proving that an entity is who they claim to be, while authorization is determining whether or not that entity is permitted to access resources.
+
+__Question 2 What are some characteristics of a strong password? Check all that apply.__
+
+Is used across accounts and systems
+
+_Includes numbers and special characters_
+
+_Is at least eight characters long_
+
+Contains dictionary words
+
+Correct
+You got it! A strong password should contain a mix of character types and cases, and should be relatively long -- at least eight characters, but preferably more.
+
+__Question 3 In a multi-factor authentication scheme, a password can be thought of as:__
+
+something you have.
+
+something you use.
+
+_something you know._
+
+something you are. 
+
+Correct
+Since a password is something you memorize, it's something you know when talking about multi-factor authentication schemes.
+
+__Question 4 What are some drawbacks to using biometrics for authentication? Check all that apply.__
+
+Biometrics are easy to share.
+
+_There are potential privacy concerns._
+
+Biometric authentication is much slower than alternatives.
+
+_Biometric authentication is difficult or impossible to change if compromised._
+
+Correct
+That's exactly right! If a biometric characteristic, like your fingerprints, is compromised, your option for changing your "password" is to use a different finger. This makes "password" changes limited. Other biometrics, like iris scans, can't be changed if compromised. If biometric authentication material isn't handled securely, then identifying information about the individual can leak or be stolen.
+
+__Question 5 In what way are U2F tokens more secure than OTP generators?__
+
+They're password-protected.
+
+They can't be cloned.
+
+They're cheaper.
+
+_They're resistant to phishing attacks._
+
+Correct
+Right on! Authentication is proving that an entity is who they claim to be, while authorization is determining whether or not that entity is permitted to access resources.
+
+__Question 6 What elements of a certificate are inspected when a certificate is verified? Check all that apply.__
+
+_"Not valid before" date_
+
+Certificate key size
+
+__"Not valid after" date__
+
+Trust of the signatory CA
+
+Correct
+Yep! To verify a certificate, the period of validity must be checked, along with the signature of the signing certificate authority, to ensure that it's a trusted one.
+
+__Question 7 What is a CRL?__
+
+_Certificate Revocation List_
+
+Certificate Recording Language
+
+Caramel Raspberry Lemon
+
+Certified Recursive Listener
+
+Correct
+Good job! CRL stands for "Certificate Revocation List." It's a list published by a CA, which contains certificates issued by the CA that are explicitly revoked, or made invalid.
+
+__Question 8 What are the names of similar entities that a Directory server organizes entities into?__
+
+Groups
+
+Clusters
+
+Trees
+
+__Organizational Units__
+
+Correct
+Awesome! Directory servers have organizational units, or OUs, that are used to group similar entities.
+
+__Question 9 True or false: The Network Access Server handles the actual authentication in a RADIUS scheme.__
+
+True
+
+_False_
+
+Correct
+Nice work! The Network Access Server only relays the authentication messages between the RADIUS server and the client; it doesn't make an authentication evaluation itself.
+
+__Question 10 True or false: Clients authenticate directly against the RADIUS server.__
+
+True
+
+_False_
+
+__Question 11 What does a Kerberos authentication server issue to a client that successfully authenticates?__
+
+
+_A ticket-granting ticket_
+
+An encryption key
+
+A digital certificate
+
+A master password
+
+Correct
+Exactly! Once authenticated, a Kerberos client receives a ticket-granting ticket from the authentication server. This TGT can then be presented to the ticket-granting service in order to be granted access to a resource.
+
+__Question 12 What advantages does single sign-on offer? Check all that apply.__
+
+It enforces multifactor authentication.
+
+_It reduces time spent authenticating._
+
+_It reduces the total number of credentials._
+
+It provides encrypted authentication.
+
+Correct
+You nailed it! SSO allows one set of credentials to be used to access various services across sites. This reduces the total number of credentials that might be otherwise needed. SSO authentication also issues an authentication token after a user authenticates using username and password. This token then automatically authenticates the user until the token expires. So, users don't need to reauthenticate multiple times throughout a work day.
+
+__Question 13 What does OpenID provide?__
+
+Digital signatures
+
+_Authentication delegation_
+
+Certificate signing
+
+Cryptographic hashing
+
+Correct
+Yep! OpenID allows authentication to be delegated to a third-party authentication service.
+
+# Authorization
+[oauth](https://i.imgur.com/Pdm0snx.png)
+
+__OAuth__ _is an open standard that allows users to grant third party websites and applications access to their information without sharing account credentials._
+- This can be thought of as a form of access delegation because access to the user's account is being delegated to the third party.
+- Once confirmed, the identity provider will supply the third party with a token that gives them access to the user's information. This token can then be used by the third party to access data or services offered by the identity provider directly on behalf of the user.
+- OAuth is commonly used to grant access to third party applications to APIs offered by large internet companies like Google, Microsoft and Facebook.
+- Example: Let's say you want to use a third party meme creation website. This website lets you create memes using templates and gives you the option to save your creations and email them to your friends. Instead of the site sending the emails directly, which would appear to be coming from an address your friends wouldn't recognize. The site uses OAuth to get permission to send the memes using your email account directly. This is done by making an OAuth request to your email provider. Once you approve this request, the email provider issues an access token to the site which grants the site access to your email account. The access token would have a scope which says that it can only be used to access email, not other services associated with the account.
+-  __OAuth permissions can be used in phishing style attacks to gain access to accounts without requiring credentials to be compromised__. This works by sending phishing emails to potential victims that look like legitimate OAuth authorization requests. Which asked the user to grant access to some aspects of their account through OAuth. Once the user grants access, the attacker has access to the account through the OAuth authorization token. [This was used in an OAuth based worm attack in early 2017.](https://www.theverge.com/2017/5/3/15534768/google-docs-phishing-attack-share-this-document-with-you-spam)
+ - There was a rash of phishing emails that appear to be from a friend or colleague who wanted to share a Google doc. When the sharing link was followed, the victim was prompted to log in and authorized access to email, documents. And contacts for some third party service which only identified itself as the name Google Apps. But it was actually a malicious service that would then email contacts from their email account perpetuating the attack.
+
+[oauthvopenid](https://i.imgur.com/y6zHBgq.png)
+
+- It's important to distinguish between OAuth and open ID.
+ - OAuth is specifically an authorization system and open ID is an authentication system though they're usually used together.
+ - Open ID connect is an authentication layer built on top of OAuth point designed to improve upon open ID, and build better integration with OAuth authorizations.
+
+[acl](https://i.imgur.com/e50qMhP.png)
+
+__ACL__ is an _access control list_ is a way of defining permissions or authorizations for objects.
+- A file system would have an ACL which is a table or database, with a list of entries specifying access rights for individuals or groups for various objects on the file system like folders, files, or programs.
+- Network ACLs are used for restricting and controlling access to host their services running on hosts within your network. Network ACLs can be defined for incoming and outgoing traffic. They can also be used to restrict external access to systems and limit outgoing traffic to enforce policies or to prevent unauthorized outbound data transfers.
