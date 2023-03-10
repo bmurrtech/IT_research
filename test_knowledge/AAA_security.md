@@ -50,7 +50,7 @@ To authenticate the CA
 
 Question 6 What type of structure does Lightweight Directory Access Protocol (LDAP) use to hold directory objects?
 
-x Organizational unit
+Organizational unit (not)
 
 Distinguished name
 
@@ -60,7 +60,7 @@ Data information tree
 
 __Question 7 Fill in the blank: Kerberos enforces strict _____ requirements. Otherwise, authentication will fail.__
 
-x AES
+AES (not)
 
 LDAP
 
@@ -70,7 +70,7 @@ strong password
 
 __Question 8 Consider the following scenario: Multiple client switches and routers have been set up at a small military base. The network team decided to implement Terminal Access Controller Access-Control System Plus (TACACS+), along with Kerberos, and an external Lightweight Directory Access Protocol (LDAP) service. What is the primary reason TACACS+ was chosen for this?__
 
-x Single Sign-On
+Single Sign-On (not)
 
 Network access
 
