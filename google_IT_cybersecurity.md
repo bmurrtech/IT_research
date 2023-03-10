@@ -111,7 +111,7 @@ Malware can be devastating for a company’s computer network. As an IT support 
     [syn_flood](https://i.imgur.com/yvyz6Ny.png)
 
     - What if Attackers could utilize multiple machines? A _DoS attack using multiple systems_ is called a __distributed denial of service attack or DDoS__. It would require a large volume of systems to carry out an attack. And they're usually helped by botnet attackers, in that scenario, they can gain access to large volumes of machines to perform an attack.
-        - In October of 2016 a DDoS attack occurred when the DNS service provider DYN was the target of a DDoS, fake DNS look up requests along with SYN floods that botnets were performing overloaded their system. DYN handled the DNS for major websites like Reddit, Git hub, Twitter, etc. So once it went down, it also took down its customers, making those services inaccessible.
+       - In October of 2016 a DDoS attack occurred when the DNS service provider DYN was the target of a DDoS, fake DNS look up requests along with SYN floods that botnets were performing overloaded their system. DYN handled the DNS for major websites like Reddit, Git hub, Twitter, etc. So once it went down, it also took down its customers, making those services inaccessible.
 
 For more information about DDoS attacks how to protect against them, see:
 
@@ -1007,42 +1007,6 @@ For more information about methods of authentication to protect data, please vis
 
 [Fingerprint Reader Replacement Guide](https://guides.frame.work/Guide/Fingerprint+Reader+Replacement+Guide/91) - Provides photos of internal fingerprint scanner hardware parts, as well as instructions on how to replace a fingerprint scanner on a laptop. Like these [kids clever enough to skip school](https://www.hindustantimes.com/mumbai-news/you-will-be-glued-to-this-mumbai-college-s-students-trick-biometric-system/story-W64f1jdMtecxKDml2DakeI.html) did.
 
-# Authentication 
-
-#### RADIUS
-__RADIUS or remote authentication dial in user service__ is a protocol that provides AAA services for users on a network. It's a very common protocol used to manage access to internal networks, WiFi networks, email services and VPN services.
-
-- While it's unlikely that you'd be responsible for configuring RADIUS server as an IT support specialist, you might be supporting clients that authenticate against a RADIUS back end server. 
-- When a client wants to access a resource that's protected, the client will present authentication credentials
-- Once the RADIUS server has evaluated the user authentication request. It replies with one of three messages, access, reject access challenge or access except.
-
-#### Kerberos
-__Kerberos, is a network authentication protocol__ that uses tickets to allow entities to prove their identity over potentially insecure channels to provide mutual authentication. 
-[kerberos](https://i.imgur.com/jdpMZyT.png)
-- It also uses symmetric encryption to protect protocol messages from eavesdropping and replay attacks.
-- Kerberos was originally developed at the Massachusetts Institute of Technology in the US. And was published in the 1980s as version four. Years later in 1993 Version 5 was published. Today, _Kerberos supports AES encryption and implements check sums_ to ensure data integrity and confidentiality.
-- Details of how the Kerberos protocol operates:
-  1. A user that wants to authenticate, enters their user name and password on their client machine. Their Kerberos client software, will then take the password and generate a symmetric encryption key from it.
-  1. Next, the client sends a plain text message to the Kerberos AS or authentication server which includes the user ID of the authenticating user. The password or secret key derived from the password aren't transmitted. The AS uses the user ID to check if there's an account in the authentication database, like an active directory server. If so the AS will generate the secret key using the hashed passwords stored in the key distribution center server. The AS will then use the secret key to encrypt and send a message containing the client TGS session key.
-  1. This is a secret key used for encrypting communications, with the ticket granting service or TGS, which is already known by the authentication server. The AS also sends a second message, with a ticket granting ticket or a TGT, which is encrypted using the TGS secret key. 
-  1. Now, the client has enough information to authenticate with the ticket granting server. Since the client has authenticated and received a valid ticket granting ticket, it can use the ticket granting ticket, to request access to services from within the Kerberos realm.
-  1. Next it checks the client ID of these two messages to ensure they match. If they do, it sends two messages back to the client. The first one, contains the client to server ticket which is comprised of the client ID, client address, validity period and the client server session key, encrypted using the services Secret key.
-  1. Finally, the client has enough information to authenticate itself to the service server or SS. The client sends two messages to the SS, the first message is the encrypted client to server ticket, received from the ticket granting service. The second, is a new authenticator with the client ID and timestamp encrypted using the client server session key. The SS decrypt the first message, using its secret key which provides it with the client server session key. The key is then used to decrypt the second message and it compares the client ID in the authenticator to the one included in the client to server ticket.
-
-#### TACACS+
-TACACS plus is primarily used for device administration, authentication, authorization, and accounting, as opposed to RADIUS, which is mostly used for network access, AAA.
-- T-A-C-A-C-S plus pronounced, TACACS plus. __It stands for Terminal Access Controller Access-Control System plus__. It's a Cisco developed AAA protocol that was released as an open standard in 1993.
-- TACACS plus also took the place of X-T-A-C-A-C-S or extended TACACS, which was a Cisco proprietary extension on top of TACACS.
-- TACACS plus is mainly used as an authentication system for network infrastructure devices, which tend to be high-value targets for attackers.
-
-
-#### Single Sign-on
-[sso](https://i.imgur.com/8v67zMD.png)
-
-__Single sign-on or SSO is an authentication concept that allows users to authenticate once to be granted access to a lot of different services and applications__.
-- Since re-authentication for each service isn't needed, users don't need multiple sets of usernames and passwords across a mix of applications and services.
-- SSO is accomplished by authenticating to a central authentication server, like an LDAP server. This then provides a cookie or token that can be used to get access to applications configured to use SSO. Kerberos is actually a good example of an SSO authentication service.
-
 # Authorization
 [oauth](https://i.imgur.com/Pdm0snx.png)
 
@@ -1065,3 +1029,68 @@ __OAuth__ _is an open standard that allows users to grant third party websites a
 __ACL__ is an _access control list_ is a way of defining permissions or authorizations for objects.
 - A file system would have an ACL which is a table or database, with a list of entries specifying access rights for individuals or groups for various objects on the file system like folders, files, or programs.
 - Network ACLs are used for restricting and controlling access to host their services running on hosts within your network. Network ACLs can be defined for incoming and outgoing traffic. They can also be used to restrict external access to systems and limit outgoing traffic to enforce policies or to prevent unauthorized outbound data transfers.
+
+### Mobile Security Methods
+Laptop computers, tablets, smartphones, and other mobile devices allow people to remain productive from various locations, such as at home or while traveling. This increased flexibility raises various security concerns that IT departments need to address. This reading provides information about the current security measures used to protect mobile devices. 
+
+#### Common mobile security threats and challenges 
+Many of the security threats associated with mobile devices are the same as those of traditionally networked devices, such as hacking and malware. However, mobile devices face additional threats that other devices do not. 
+
+Here are some threats facing mobile device security:
+
+- __Phishing__: Phishing attacks can use SMS messaging, email accounts, messages via numerous social media applications, or malicious links in browsers to target your mobile devices.
+
+- __Malicious applications (malware)__: Malware can take the form of apps designed to collect and transmit personal and corporate information to third parties.
+
+- __Insecure Wi-Fi and “meddler in the middle” attacks__: An attacker places themself in the middle of two hosts that think they're communicating directly. The attacker may monitor the information from these hosts and potentially modify it in transit. Open or "free" Wi-Fi hotspots are especially susceptible to meddler in the middle and similar attacks.
+
+- __Poor update habits for devices and apps__: An example is failure to install security patches regularly deployed through software and firmware updates. Unpatched devices and applications often contain exploits and vulnerabilities that attackers may use to collect sensitive data.
+
+You can imagine how all these issues could threaten confidentiality, integrity, or access (the CIA triad)—but confidentiality is of particular concern for mobile security.
+
+Security measures used to protect mobile devices
+There are several security measures in place to protect mobile devices from these security concerns. 
+
+#### Screen Locks
+Screen locks are methods for preventing unauthorized access to a device. They can be particularly effective for diminishing risks associated with the loss or theft of the device. These measures include: 
+
+- __Facial recognition__: uses a device’s camera to unlock the device once the user’s face is recognized
+- __PIN codes__: uses a sequence of four or more numbers to unlock the device
+- __Fingerprint recognition__: matches a user’s fingerprint with a saved image of the fingerprint to unlock the device 
+- __Pattern uses__: uses a pattern that users must trace to unlock the device
+
+#### Remote wipes 
+Remote wipes are methods to remove data from a device remotely. Remote wiping is another way to diminish risks associated with the loss or theft of a device and include:
+
+- __Locator applications__: apps that help users find lost devices
+- __OS updates__: security patches regularly deployed through Operating System updates (as well as firmware and application updates)
+- __Device encryption__: encryption techniques that protect the device from unauthorized access
+- __Remote backup applications__: apps that allow administrators to remotely remove applications that compromise security
+- __Failed login attempt restrictions__: stops access, either completely or for a set period of time, after too many failed attempts to log in
+- __Antivirus/Antimalware__: software packages for mobile devices often offered by the same vendors as desktop Antivirus programs
+- __Firewalls__: either devices or software that check incoming network traffic and keep out unwanted traffic
+
+#### Policies and procedures 
+IT departments establish policies and procedures to ensure users don’t make security mistakes. They typically include mobile-specific policies such as acceptable use guidelines, preferred mobile security practices, and security platforms or services. 
+
+Once IT staff and management collaborate to build a mobile security policy, there is still work to do. Organizations must find the best way to outline this policy and communicate it to users. A policy is only effective if users understand and adhere to it.
+
+### Key takeaways:
+As your organization embraces the advantages of mobile devices and wireless networks, your IT security strategies must account for the specific risks, vulnerabilities, and threats associated with mobile computing by: 
+
+1. Monitoring for common mobile security concerns such as phishing, malicious applications, insecure Wi-Fi, and poor upgrade habits and applying the current methods for addressing them
+1. Implementing security measures to protect mobile devices like screen lock and remote wipes 
+1. Providing clear mobile security policies and procedures and communicating them to users
+
+# Accounting
+The final A of the triple AAA's of security is __accounting__.
+- This means keeping records of what resources and services your users access or what they did when they were using your systems.
+- A critical component of this is auditing which involves reviewing these records to ensure that nothing is out of the ordinary.
+- For example:
+ - a TACACS+ server would be more concerned with keeping track of user authentication. What systems they authenticated to and what commands they ran during their session. This is because TACACS+ is a device access AAA system that manages who has access to your network devices and what they do on them.
+ - Cisco's AAA system supports accounting of individual commands executed connection to and from network devices. Commands executed in privileged mode and network services and system details like configuration reloads or reboots.
+- Radius would track details like session duration, client location and bandwidth or other resources used during the session. This is because radius is a network access AAA system so it tracks details about network access and usage.
+
+This data can also be used to enforce data or time quotas, limiting the duration of sessions or restricting the amount of data that can be sent or received. 
+
+[isp_accounting](https://i.imgur.com/8RIxAtH.png)
