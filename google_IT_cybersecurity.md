@@ -1170,3 +1170,29 @@ U2F (Universal 2nd Factor): It's a standard developed jointly by Google, Yubico 
 Unbind: It closes the connection to the LDAP server
 
 XTACACS: It stands for Extended TACACS, which was a Cisco proprietary extension on top of TACACS
+
+# Securing Network Architecture
+
+__Network hardening__ is the process of securing a network by reducing its potential vulnerabilities through configuration changes and taking specific steps.
+
+__Implicit deny__ is a network security concept where anything not explicitly permitted or allowed should be denied. This is different from blocking all traffic, since an Implicit deny configuration will still let traffic pass that you've defined as allowed. You can do this through ACO configurations. 
+- Instead of requiring you to specifically block all traffic you don't want, you can just create rules for traffic that you need to go through. _You can think of this as whitelisting as opposed to blacklisting._
+- Before a new service will work, a new rule must be defined for it, reducing convenience a bit.
+
+Another very important component of network security is monitoring and analyzing traffic on your network.
+-  The first is that it lets you establish a baseline of what your typical network traffic looks like. This is key because in order to know what unusual or potential attack traffic looks like, you need to know what normal traffic looks like.
+
+__Analyzing logs__ is the practice of collecting logs from different network and sometimes client devices on your network, then performing an automated analysis on them.
+- This will highlight potential intrusions, signs of malware infections, or a typical behavior. You should pay close attention to any external facing devices or services. They're subject to a lot more potentially malicious traffic, which increases the risk of compromise.
+- Analysis of logs would involve looking for a specific log messages of interests, like with firewall logs.
+- Attempted connections to an internal service from an untrusted source address may be worth investigating. Connections from the internal network to known address ranges of botnet command and control servers could mean there's a compromised machine on the network.
+- __Normalizing log data__ is an important step since logs from different devices and systems may not be formatted in a common way. You might need to convert log components into a common format to make analysis easier for analysts and rule-based detection systems.
+Correlation analysis is the process of taking log data from different systems and matching events across the systems.
+-  You'd want to analyze things like:
+ - firewall logs,
+ - authentication server logs,
+ - and application logs. As an IT support specialist, 
+
+__Logs analysis systems__ are configured using user-defined rules to match interesting or a typical log entries. These can then be surfaced through an alerting system to let security engineers investigate the alert. 
+
+#### Resources
