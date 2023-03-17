@@ -14,10 +14,13 @@
 
 #### Installation Issues
 - If an install goes ary, you can always use the PrxoMox debug mode built into the bootable .iso installer.
-- Try rebooting with the .iso installer plugged in, but this time select "Advance" and choose the "debug" option.
-- This will boot up in a Linux Debian CLI mode that allows you access to powerful CLI commands (i.e. wipe the drives and try reinstalling ProxMox).
+- Try rebooting with the .iso installer plugged in, but this time select "Advance Options" (underneath "Install Proxmox VE") and choose the "Install Proxmox VE (Debug mode)" option.
+- This will boot up in a Linux Debian CLI mode that allows you access to powerful CLI commands (i.e. wipe the drives and try reinstalling ProxMox). Type `exit` after it loads and the prompt is ready.
+- You want to find the drive names. Drive names usually end in "1n1" or "0n1" depending on how many drives you have mounted.
 - The drives are listed in the `/dev` folder path. Type `cd /dev` then type `ls` to list the contents of the folder to get the names of the disks (ex. `/dev/nvme0n1`). Take note of this as you will need it for the next drive wipe command.
 - To wipe a corrupted install, type `wipefs -a /dev/[drive_name] [path_to_second_drive_if_applicable]`. After that, `exit` and `reboot` the endpoint and try the install again.
+- Type `exit` again, wait a second, then type `reboot`. (Make sure the bootable drive is still attached.)
+- The EULA should popup, and you can now attempt to reinstall Proxmox.
 - You can also access BusyBox in dev/debug mode to fix a ZFS error, see below for the error message:
 
 ##### Boot fails and goes into busybox
