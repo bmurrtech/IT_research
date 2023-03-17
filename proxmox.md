@@ -1,7 +1,24 @@
 # Installation
 - Download the latest installer and burn it to a USB drive. Create a bootable drive using either Etcher or Rufus.
-- After burning the bootable .iso to the drive, plug it into the desired endpoint you wish to convert to a ProxMox Hypervisor.
-- Ensure that the device has a conenction to your local network so it can auto-poulate the IP settings.
+- After burning the bootable .iso to the drive, plug it into the desired endpoint you wish to convert to a ProxMox Hypervisor and boot it up.
+> Note: Ensure that the device has a conenction to your local network so it can auto-poulate the IP settings.
+ - The installer page should popup. Proceed with "Install Proxmox VE"
+ - Agree to the EULA
+ - Select the target disk and continue.
+ - Select your country and timezone.
+ - Enter a password that you wish to use to access the Proxmox web UI (remember this).
+ - Select your managment interface (if you have more than one NIC).
+ - Enter your preferred hostname (FQDN is not required, "pve.lan" or "pve0.lan" will work).
+ - Enter the static IP address you wish to use to connect to the Proxmox UI (ex. 192.168.1.100).
+ - The DNS server and gateway should already be auto-populated. Typically, the default gateway for most routers is 192.168.1.1.
+ - The final screen is the install screen (again, take note of the IP address, you will need this to access Proxmox.) Hit the install button and wait.
+ - Remove the installer media after your computer finishes the install and successfully rebootsv (there's a confirmation screen at the end).
+ - If everything was successfull, you should see a mostly black login screen (if you don't see this screen, skip to [Installation Issues](Installation-issues) below).
+ - Now, enter the `https://[IP_address_you_set];8006` in a web browser on another machine connected to the same router and network.
+ - Enter the IP address you set to access the Proxmox UI (ex. https://192.168.1.100:8006).
+ - Your web browser will likely warn you that you are trying to access a dangerous or unsafe webiste, ignore this and continue (it is safe, it's your machine you are accessing, not a dangerous website).
+ - Enter `root` for the username and enter the password you created at setup to access. Done!
+ 
 - Take special note of the IP address you assign
 
 #### Creating a ZFS Pool and Cache
