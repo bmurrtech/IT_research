@@ -1,4 +1,4 @@
-# ProxMox Hypervisor Installation 
+## ProxMox Hypervisor Installation 
 ![alt_text](./images/proxmox-setup.jpg)
 
 - Download the latest "ProxMox ISO [version#] ISO installer" from the [official website](https://www.proxmox.com/en/downloads/category/iso-images-pve)
@@ -23,14 +23,40 @@
  - After ProxMox has finished installing, it will automatically reboot (reboot manually if it did not).
  - Now, enter the `https://[IP_address_you_set];8006` in a web browser on another machine connected to the same router and network.
  - Enter the IP address you set to access the Proxmox UI (ex. https://192.168.1.100:8006).
+
  > Don't forget to include "https://" and add ":8006" at the end of the IP address.
+
  - You will get a warning screen from your web browser telling you the URL address you went to is unsafe, but that's just because you don't have SSL for your ProxMox. It's a false alarm. Just click on whatever options you have to continue to the site.
  - Enter `root` for the username and enter the password you created at setup to access. Done!
 - Next, you will be prompted to login to ProxMox. Input `root` for the username and enter the password you created at setup to gain access.
 
 > Before deploying and VMs, you can consolidate and expand your storage. Do this *before* creating VMs.
 
-### ZFS Configuration
+#### Installation Issues
+- If an install goes ary, you can always use the PrxoMox debug mode built into the bootable .iso installer.
+- Try rebooting with the .iso installer plugged in, but this time select "Advance Options" (underneath "Install Proxmox VE") and choose the "Install Proxmox VE (Debug mode)" option.
+- This will boot up in a Linux Debian CLI mode that allows you access to powerful CLI commands (i.e. wipe the drives and try reinstalling ProxMox). Type `exit` after it loads and the prompt is ready.
+- You want to find the drive names. Drive names usually end in "1n1" or "0n1" depending on how many drives you have mounted.
+- The drives are listed in the `/dev` folder path. Type `cd /dev` then type `ls` to list the contents of the folder to get the names of the disks (ex. `/dev/nvme0n1`). Take note of this as you will need it for the next drive wipe command.
+- To wipe a corrupted install, type `wipefs -a /dev/[drive_name] [path_to_second_drive_if_applicable]`. After that, `exit` and `reboot` the endpoint and try the install again.
+- Type `exit` again, wait a second, then type `reboot`. (Make sure the bootable drive is still attached.)
+- The EULA should popup, and you can now attempt to reinstall Proxmox.
+- You can also access BusyBox in dev/debug mode to fix a ZFS error, see below for the error message:
+
+#### Boot fails and goes into busybox
+If booting fails with something like:
+
+```
+No pool imported. Manually import the root pool
+at the command prompt and then exit.
+Hint: try: zpool import -R /rpool -N rpool
+```
+- This is because zfs is invoked too soon (it has happen sometime when connecting a SSD for future ZIL configuration).
+- To prevent it, boot into debug mode, run Busybox (type `busybox` and hit `ENTER`), then try __ONE__ of the following:
+ - a) edit /etc/default/grub and add "rootdelay=10" at GRUB_CMDLINE_LINUX_DEFAULT (i.e. GRUB_CMDLINE_LINUX_DEFAULT="rootdelay=10 quiet") and then issue a # update-grub
+ - b) edit /etc/default/zfs, set ZFS_INITRD_PRE_MOUNTROOT_SLEEP='4', and then issue a "update-initramfs -k 4.2.6-1-pve -u"
+
+## ZFS Configuration
 
 #### Creating a ZFS Pool and Cache
 > Note:  RAID0 forces stripped drives to the _smallest_ drive size (i.e. 2TB + 118GB = 118GB storage pool size).
@@ -72,31 +98,7 @@
 - Now, wait for the backup to be restored and you should eventraully see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
 
 
-#### Installation Issues
-- If an install goes ary, you can always use the PrxoMox debug mode built into the bootable .iso installer.
-- Try rebooting with the .iso installer plugged in, but this time select "Advance Options" (underneath "Install Proxmox VE") and choose the "Install Proxmox VE (Debug mode)" option.
-- This will boot up in a Linux Debian CLI mode that allows you access to powerful CLI commands (i.e. wipe the drives and try reinstalling ProxMox). Type `exit` after it loads and the prompt is ready.
-- You want to find the drive names. Drive names usually end in "1n1" or "0n1" depending on how many drives you have mounted.
-- The drives are listed in the `/dev` folder path. Type `cd /dev` then type `ls` to list the contents of the folder to get the names of the disks (ex. `/dev/nvme0n1`). Take note of this as you will need it for the next drive wipe command.
-- To wipe a corrupted install, type `wipefs -a /dev/[drive_name] [path_to_second_drive_if_applicable]`. After that, `exit` and `reboot` the endpoint and try the install again.
-- Type `exit` again, wait a second, then type `reboot`. (Make sure the bootable drive is still attached.)
-- The EULA should popup, and you can now attempt to reinstall Proxmox.
-- You can also access BusyBox in dev/debug mode to fix a ZFS error, see below for the error message:
-
-#### Boot fails and goes into busybox
-If booting fails with something like:
-
-```
-No pool imported. Manually import the root pool
-at the command prompt and then exit.
-Hint: try: zpool import -R /rpool -N rpool
-```
-- This is because zfs is invoked too soon (it has happen sometime when connecting a SSD for future ZIL configuration).
-- To prevent it, boot into debug mode, run Busybox (type `busybox` and hit `ENTER`), then try __ONE__ of the following:
- - a) edit /etc/default/grub and add "rootdelay=10" at GRUB_CMDLINE_LINUX_DEFAULT (i.e. GRUB_CMDLINE_LINUX_DEFAULT="rootdelay=10 quiet") and then issue a # update-grub
- - b) edit /etc/default/zfs, set ZFS_INITRD_PRE_MOUNTROOT_SLEEP='4', and then issue a "update-initramfs -k 4.2.6-1-pve -u"
-
-#### VM Time, Baby!
+## VM Time, Baby!
 
 > Before we can write an ISO file to our new ProxMox setup, we must edit the directory to allow `Disk Image`.
 
@@ -126,8 +128,20 @@ Hint: try: zpool import -R /rpool -N rpool
 > Note: You will still have to go through the initial install and setup phase like you normally would when you first are installing a new OS. When you start the system, go through the necessary install process.
 
 > About Creating Containers: You can also create Docker-like containers with ProxMox by downloading Linux container ISOs and uploading them to ProxMox, and then click on the `Create CT` blue button (right next to the `Create VM` button). The process for creating containers is the same as creating VMs.
+
+## Reverse Proxy DDNS
+
+#### Cloudflare DDNS Reverse Proxy
+- [NetworkChuck made a video tutorial](https://www.youtube.com/watch?v=ey4u7OUAF3c) about this, but here's the steps:
+- Buy a domain and create a Cloudflare Nameserver (DNS > Records > Nameservers).
+- Copy the nameservers and add them to your domain registar (nameserver updates can take up to 24hrs, but it is usually updated within minutes).
+- Using [ZeroTrust](https://one.dash.cloudflare.com/899e8be9fba8f3cc125ebdf9263380e0/home/quick-start) create a new tunnel: [ZeroTrust](https://i.imgur.com/FipaEgQ.png) (left navigation pane) > Cloudflare ZeroTrust (navigation pane) > Access (dropdown) > [Tunnels](https://i.imgur.com/nnONYTE.png) > Create at tunnel (button)
+ - Enter the domain name you created...
+
+[zero_trust](https://i.imgur.com/FipaEgQ.png)
+[ztunnels](https://i.imgur.com/nnONYTE.png)
   
-# Kemp LoadMaster
+### Kemp LoadMaster
 - An Enterprise Load-balancer Setup on ProxMox
 > Note: [Cloudflare's Zero Trust automatically load-balances](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/routing-to-tunnel/) internet traffic. Kemp is not required, but is compatible with Cloudflare. 
 - If you opt-out of using Cloudflare's Zero Trust loadbalancer, you can integrate Cloudflare's DNS records with Kemp to get the same load-balancing benefits. 
@@ -186,16 +200,6 @@ scp C:\Users\[user]\[directory]\Free-VLM-VMware-OVF-64bit\Free-VLM-VMware-OVF-64
   ```
   
   > The `ID` number will be whatever the next ID for your VM is available (i.e. if you only made 1 VM then "101" is the next available ID, just check it in the `Server View` and `Datacenter` dropdown menu). The `SERVER` is name of the local storage listed in the `Data center`. It is probably just `local`.
-
-#### Cloudflare DDNS Reverse Proxy
-- [NetworkChuck made a video tutorial](https://www.youtube.com/watch?v=ey4u7OUAF3c) about this, but here's the steps:
-- Buy a domain and create a Cloudflare Nameserver (DNS > Records > Nameservers).
-- Copy the nameservers and add them to your domain registar (nameserver updates can take up to 24hrs, but it is usually updated within minutes).
-- Using [ZeroTrust](https://one.dash.cloudflare.com/899e8be9fba8f3cc125ebdf9263380e0/home/quick-start) create a new tunnel: [ZeroTrust](https://i.imgur.com/FipaEgQ.png) (left navigation pane) > Cloudflare ZeroTrust (navigation pane) > Access (dropdown) > [Tunnels](https://i.imgur.com/nnONYTE.png) > Create at tunnel (button)
- - Enter the domain name you created...
-
-[zero_trust](https://i.imgur.com/FipaEgQ.png)
-[ztunnels](https://i.imgur.com/nnONYTE.png)
 
 > Note to self: Complete Cloudflare DDNS setup process.
 
@@ -263,7 +267,7 @@ nano etc/pve/qemu-server/[ID].conf
  > I want to five credit to Lusk.blog for the helpful insights on setting up Kemp with ProxMox. You can [check out his blog here](https://lusk.blog/how-to/running-free-load-balancer-on-proxmox-or-preventing-a-kemp-loadmaster-boot-loop/). And I thought to leave his helpful last remarks here:
 >> "While the free version of Kemp’s LoadMaster does limit the bandwidth to 20mbps, it’s quite sufficient for a lab environment. If you need something without the limitations and can’t afford (or don’t need) the LoadMaster Commercial version, or if you would just prefer to go with an open-source solution, [HAProxy](https://www.haproxy.org/) would be the tool of choice."
 
-# RDP to VM via Cloudflare Tunnel
+## RDP to VM via Cloudflare Tunnel
 One great use-case of Cloudflare Tunnel is [Remote Desktop connection](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/use_cases/rdp/).
 - iOS RDP options:
  - [Jump Desktop](https://jumpdesktop.com/), supports RD Gateway.
@@ -281,7 +285,7 @@ After you’ve configured a published service on the VM, you can use an iOS app 
 - Tap Connect on the left-hand side and select your new connection.
 - An RDP window opens and prompts you to login to the virtual machine guest OS. You’re now connected to the VM.
 
-# Access an SMB drive through Cloudflare Tunnel
+## Access an SMB drive through Cloudflare Tunnel
 The ability to set up a [secure, public SMB drive](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/use_cases/smb/) is a powerful file sharing tool. Usually, firewalls and ISPs block SMB file shares, but Cloudflare fixes that problem! With Cloudflare Tunnel, you can provide secure and simple SMB access to users outside of your network. The [cloudflared client](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/) to both the server and any machine you wish to access the SMB file share.
 
 #### Connect SMB Server to Cloudflare
