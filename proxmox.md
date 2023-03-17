@@ -4,6 +4,14 @@
 - Ensure that the device has a conenction to your local network so it can auto-poulate the IP settings.
 - Take special note of the IP address you assign
 
+#### Creating a ZFS Pool and Cache
+> Note:  RAID0 forces stripped drives to the _smallest_ drive size (i.e. 2TB + 118GB = 118GB storage pool size).
+> Note: RAID-Z or mirrored (RAID1) ZFS configurations will _not_ work with cache drive setups. 
+
+##### Adding a Cache Drive
+- Using SSH or the console, type the following: `zpool create tank /dev/[primary_drive_name] cache /dev/[cache_drive_name]
+- Type `zpool status tank` for an overivew of your new ZFS pool with cache.
+
 #### Installation Issues
 - If an install goes ary, you can always use the PrxoMox debug mode built into the bootable .iso installer.
 - Try rebooting with the .iso installer plugged in, but this time select "Advance" and choose the "debug" option.
