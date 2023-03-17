@@ -4,7 +4,7 @@
 > Note: Ensure that the device has a conenction to your local network so it can auto-poulate the IP settings.
  - The installer page should popup. Proceed with "Install Proxmox VE"
  - Agree to the EULA
- - Select the target disk and continue.
+ - Select the target disk and continue (if you wish to create a ZFS pool with a second cached drive, see [below](creating-zfs-pool-and-cache) to modify the target drive.
  - Select your country and timezone.
  - Enter a password that you wish to use to access the Proxmox web UI (remember this).
  - Select your managment interface (if you have more than one NIC).
@@ -18,12 +18,17 @@
  - Enter the IP address you set to access the Proxmox UI (ex. https://192.168.1.100:8006).
  - Your web browser will likely warn you that you are trying to access a dangerous or unsafe webiste, ignore this and continue (it is safe, it's your machine you are accessing, not a dangerous website).
  - Enter `root` for the username and enter the password you created at setup to access. Done!
- 
-- Take special note of the IP address you assign
+
 
 #### Creating a ZFS Pool and Cache
 > Note:  RAID0 forces stripped drives to the _smallest_ drive size (i.e. 2TB + 118GB = 118GB storage pool size).
 > Note: RAID-Z or mirrored (RAID1) ZFS configurations will _not_ work with cache drive setups. 
+- When selecting a disk, choose the primary (largest) disk and then click the options button.
+- Change the file system type to the ZFS RAID0 configuration and max out the disk space allotted (should be maxed by default).
+- Exclude the cache disk from the ZFS pool at this time (we will add it later).
+- Choose the l4x compression, and finish out the disk wizard prompts.
+- Finish the Proxmox installation, login, and open a shell to enter the following command `zpool add rpool cache [name_of_cache_drive]` and hit enter to add the cache drive to the ZFS pool created at install.
+- You can check the status of the pool by typing `zpool status [name_of_pool]` (the default pool name is `rpool`). Or, you can check it in the UI. Navigate to Node (pve) > Disks > ZFS. You should see the cache drive in the pool.
 
 ##### Adding a Cache Drive
 - Using SSH or the console, type the following: `zpool create tank /dev/[primary_drive_name] cache /dev/[cache_drive_name]
