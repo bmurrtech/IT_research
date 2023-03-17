@@ -41,8 +41,24 @@
 - You can check the status of the pool by typing `zpool status [name_of_pool]` (the default pool name is `rpool`). Or, you can check it in the UI. Navigate to Node (pve) > Disks > ZFS. You should see the cache drive in the pool.
 
 ##### Adding a Cache Drive
-- Using SSH or the console, type the following: `zpool create tank /dev/[primary_drive_name] cache /dev/[cache_drive_name]
+- Using SSH or the console, type the following: `zpool create rpool /dev/[primary_drive_name] cache /dev/[cache_drive_name]
 - Type `zpool status tank` for an overivew of your new ZFS pool with cache.
+
+#### Create ZFS Datasets
+- You can view your current ZFS pool via `zpool list` and `zfs list`. Take note of the `mountpoint` name (if you created a ZFS pool at installation, this will be called `rpool` by default).
+- To create datasets for storing `ISOs` and VM storage and more, type the following:
+ - `zfs create [mountpoint_pool_name]/backups`
+ - `zfs create [mountpoint_pool_name]/iso`
+ - `zfs create [mountpoint_pool_name]/vm`
+- These dataset will share the total pool size. It dynamically allocates disk space as needed.
+- Now we need to mount/add these datasets at the `Datacenter` level:
+ - Navigate to > Datacenter (node, left-most pane) > Storage (subset) > Add > Directory > Enter the name of the dataset (i.e. `backups`, `iso`, `vm`), and add them one at a time.
+  - ID: `/rpool/iso` | Directory: `/rpool/iso` | Content: `ISO image` and `Container templates`
+  - ID: `/rpool/vm` | Directory: `/rpool/vm` | Content: `Disk image` and `Container`
+  - ID: `/rpool/backups` | Directory: `/rpool/backups` | Disk Image: `VZDump backup file` and `Snippets`
+
+#### Move the Root Disk of VMs
+- Navigate to > Datacenter > PVE Node > [VM] > Resources > Click on Root Disk > Click on Volume Action (button) > Move Storage > Target Storage (dropdown) > Select the `VM` dataset > Check the Delete source (box) > Move Volume (button).
 
 #### Installation Issues
 - If an install goes ary, you can always use the PrxoMox debug mode built into the bootable .iso installer.
