@@ -30,6 +30,8 @@
 
 > Before deploying and VMs, you can consolidate and expand your storage. Do this *before* creating VMs.
 
+### ZFS Configuration
+
 #### Creating a ZFS Pool and Cache
 > Note:  RAID0 forces stripped drives to the _smallest_ drive size (i.e. 2TB + 118GB = 118GB storage pool size).
 > Note: RAID-Z or mirrored (RAID1) ZFS configurations will _not_ work with cache drive setups. 
@@ -40,7 +42,7 @@
 - Finish the Proxmox installation, login, and open a shell to enter the following command `zpool add rpool cache [name_of_cache_drive]` and hit enter to add the cache drive to the ZFS pool created at install.
 - You can check the status of the pool by typing `zpool status [name_of_pool]` (the default pool name is `rpool`). Or, you can check it in the UI. Navigate to Node (pve) > Disks > ZFS. You should see the cache drive in the pool.
 
-##### Adding a Cache Drive
+#### Adding a Cache Drive
 - Using SSH or the console, type the following: `zpool create rpool /dev/[primary_drive_name] cache /dev/[cache_drive_name]
 - Type `zpool status tank` for an overivew of your new ZFS pool with cache.
 
@@ -60,6 +62,16 @@
 #### Move the Root Disk of VMs
 - Navigate to > Datacenter > PVE Node > [VM] > Resources > Click on Root Disk > Click on Volume Action (button) > Move Storage > Target Storage (dropdown) > Select the `VM` dataset > Check the Delete source (box) > Move Volume (button).
 
+#### Creating a Backup and Restore
+- Now that you have created a place to store your backups, you can schedule and restore your VM or containers
+
+> Restoring from a backup is also another way to change the number of the VM/Container.
+
+- To create a backup repository, navigate to: Datacenter (left-most pane) > Backup (menu option) > Add (button) > Schedule: Everyday [3AM] > Selection mode: All > Storage: Backups > Create (button)
+- To restore a backup, navigate to: Datacenter > [proxmox_node_name] > Click on Backups (ZFS dataset) > Backups (menu option on right) > Click on the backup file (ending in `.tar.zst`) > Click Restore (button, top) > Storage: VM (_not_ local) > CT: Enter the desired number (100-999) > Check the "Start after restore" box (if desired) > Do not change the default priviledge settings > Click Restore (button)
+- Now, wait for the backup to be restored and you should eventraully see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
+
+
 #### Installation Issues
 - If an install goes ary, you can always use the PrxoMox debug mode built into the bootable .iso installer.
 - Try rebooting with the .iso installer plugged in, but this time select "Advance Options" (underneath "Install Proxmox VE") and choose the "Install Proxmox VE (Debug mode)" option.
@@ -71,7 +83,7 @@
 - The EULA should popup, and you can now attempt to reinstall Proxmox.
 - You can also access BusyBox in dev/debug mode to fix a ZFS error, see below for the error message:
 
-##### Boot fails and goes into busybox
+#### Boot fails and goes into busybox
 If booting fails with something like:
 
 ```
