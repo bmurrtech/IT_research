@@ -97,8 +97,7 @@ Hint: try: zpool import -R /rpool -N rpool
 - To restore a backup, navigate to: Datacenter > [proxmox_node_name] > Click on Backups (ZFS dataset) > Backups (menu option on right) > Click on the backup file (ending in `.tar.zst`) > Click Restore (button, top) > Storage: VM (_not_ local) > CT: Enter the desired number (100-999) > Check the "Start after restore" box (if desired) > Do not change the default priviledge settings > Click Restore (button)
 - Now, wait for the backup to be restored and you should eventraully see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
 
-
-## VM Time, Baby!
+## Creating VMs and Containers
 
 > Before we can write an ISO file to our new ProxMox setup, we must edit the directory to allow `Disk Image`.
 
@@ -126,6 +125,8 @@ Hint: try: zpool import -R /rpool -N rpool
 - With everything configured, you are now at the final `Confirm` stage. If everything looks good to you, hit finish to spin up a new VM! Within seconds it will be ready to go. You can check on it from the `Server View`.
 
 > Note: You will still have to go through the initial install and setup phase like you normally would when you first are installing a new OS. When you start the system, go through the necessary install process.
+
+### Create Templates
 
 > About Creating Containers: You can also create Docker-like containers with ProxMox by downloading Linux container ISOs and uploading them to ProxMox, and then click on the `Create CT` blue button (right next to the `Create VM` button). The process for creating containers is the same as creating VMs.
 
