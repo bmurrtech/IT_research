@@ -1,8 +1,9 @@
 Table of Contents
-- [ProxMox Hypervisor Installation](proxmox-install)
-- [Creating a ZFS Pool](ZFS-configuration)
-- [Create VMs and Containers](creating-vms)
-- [Access Your Lab Anywhere](cloudflare-ddns)
+- [ProxMox Hypervisor Installation](#proxmox-install)
+- [Creating a ZFS Pool](#zfs-configuration)
+- [Create VMs and Containers](#creating-vms)
+- [Access Your Lab Anywhere](#remote-access)
+- [Homelab Cybersecurity](#secure-homelab)
 
 
 # ProxMox Install 
