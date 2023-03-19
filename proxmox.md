@@ -1,4 +1,11 @@
-## ProxMox Hypervisor Installation 
+Table of Contents
+- [ProxMox Hypervisor Installation](proxmox-install)
+- [Creating a ZFS Pool](ZFS-configuration)
+- [Create VMs and Containers](creating-vms)
+- [Access Your Lab Anywhere](cloudflare-ddns)
+
+
+# ProxMox Install 
 ![alt_text](./images/proxmox-setup.jpg)
 
 - Download the latest "ProxMox ISO [version#] ISO installer" from the [official website](https://www.proxmox.com/en/downloads/category/iso-images-pve)
@@ -56,7 +63,7 @@ Hint: try: zpool import -R /rpool -N rpool
  - a) edit /etc/default/grub and add "rootdelay=10" at GRUB_CMDLINE_LINUX_DEFAULT (i.e. GRUB_CMDLINE_LINUX_DEFAULT="rootdelay=10 quiet") and then issue a # update-grub
  - b) edit /etc/default/zfs, set ZFS_INITRD_PRE_MOUNTROOT_SLEEP='4', and then issue a "update-initramfs -k 4.2.6-1-pve -u"
 
-## ZFS Configuration
+# ZFS Configuration
 
 #### Creating a ZFS Pool and Cache
 > Note:  RAID0 forces stripped drives to the _smallest_ drive size (i.e. 2TB + 118GB = 118GB storage pool size).
@@ -97,7 +104,7 @@ Hint: try: zpool import -R /rpool -N rpool
 - To restore a backup, navigate to: Datacenter > [proxmox_node_name] > Click on Backups (ZFS dataset) > Backups (menu option on right) > Click on the backup file (ending in `.tar.zst`) > Click Restore (button, top) > Storage: VM (_not_ local) > CT: Enter the desired number (100-999) > Check the "Start after restore" box (if desired) > Do not change the default priviledge settings > Click Restore (button)
 - Now, wait for the backup to be restored and you should eventraully see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
 
-## Creating VMs and Containers
+# Creating VMs
 
 > Before we can write an ISO file to our new ProxMox setup, we must edit the directory to allow `Disk Image`.
 
@@ -130,7 +137,7 @@ Hint: try: zpool import -R /rpool -N rpool
 
 > About Creating Containers: You can also create Docker-like containers with ProxMox by downloading Linux container ISOs and uploading them to ProxMox, and then click on the `Create CT` blue button (right next to the `Create VM` button). The process for creating containers is the same as creating VMs.
 
-## Reverse Proxy DDNS
+# Remote Access
 
 #### Cloudflare DDNS Reverse Proxy
 - Instead of setting up Tailscale or enduring the ardous process of installing an enterprise-grade load-balancer like Kemp, you can get a DDNS and reverse proxy setup via CloudFlare in 15 minutes.
@@ -161,7 +168,40 @@ After you’ve configured a published service on the VM, you can use an iOS app 
 - Tap Connect on the left-hand side and select your new connection.
 - An RDP window opens and prompts you to login to the virtual machine guest OS. You’re now connected to the VM.
 
-## Access an SMB drive through Cloudflare Tunnel
+# Secure Homelab
+- Exposing your homelab to the wide-web can be a major security risk unless you implement cybersecurity measures such as IP blocking, 2FA/MFA, and limiting the exposed ports.
+- Using Cloudflare's IP whitelisting, a dedicated IP VPN service, and implementing 2FA/MFA, it is possible to mitigate cybersecuirty attacks.
+- Cybersecuirty to-do:
+ - Cloudflare/Kemp: Close ports.
+ - Cloudflare: Block countries.
+ - Cloudflare: Whitelist home IP and VPN IP (requires a dedicated IP address throug a VPN provider).
+ - Authelia: Integrate Authelia with Cloudflare.
+ - [Dashy](https://dashy.to) serves as a single pane of glass for all your homelab web apps.
+
+#### Authelia
+- [Authelia](https://authelia.com) is a SSO (Single Sign-on: requiring one-time signin for wide-range of apps via a session cookie) which supports 2FA/MFa and password reset. Authelia also prevents brute-force login attempts. It's the perfect gateway secuirty solution for homelabs (and businesses).
+- There are two options to implementing Authelia in your homelab environment: 
+ - [Authelia + Dashy](https://dashy.to/docs/authentication/)
+ - Authelia + Cloudflare
+- Since we want the ability to access our homelab applications from the public internet, and since we are utlilizing Cloudflare as a reverse proxy and DDNS to make that possible (because most ISPs periodically change tenants public IPs), the Authelia + Cloudflare integration is ideal.
+- For integrating Authelia with Cloudflare, see Tamimology's [incredible Authelia + Cloudflare guide](https://github.com/tamimology/cloudflare-authelia)
+
+#### IP Blocking
+- In Cloudflare's settings, you can create default rules and group polices to block non-whitelisted IP address from accessing your homelab services
+- This is especially good if:
+ - A) You want to be extra cautious
+ - B) Only you and people on your home network need access to your homelab apps
+ - C) You (and your friends) have a dedicated VPN IP address you can use to access your homelab when abroad
+- Keep in mind that IP blocking requires:
+ - A) You have a dedicated VPN IP address
+ - B) You only use your homelab when connected to your home network
+
+#### Geo-blocking
+- Limit public internet access to your homelab to only your home country
+- This is especially good to enable in Cloudflare's settings if you plan to use a VPN service to connect to your homelab
+  
+
+# Access an SMB drive through Cloudflare Tunnel
 The ability to set up a [secure, public SMB drive](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/use_cases/smb/) is a powerful file sharing tool. Usually, firewalls and ISPs block SMB file shares, but Cloudflare fixes that problem! With Cloudflare Tunnel, you can provide secure and simple SMB access to users outside of your network. The [cloudflared client](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/) to both the server and any machine you wish to access the SMB file share.
 
 #### Connect SMB Server to Cloudflare
