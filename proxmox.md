@@ -134,8 +134,10 @@ Hint: try: zpool import -R /rpool -N rpool
  - User: `admin`
  - Password: `<your_password>`
  - Host: Leave as default or customize to your preference
- - SSH Public Key: [insert_your_public_SSH_key] 
+ - SSH Public Key: [insert_your_public_SSH_key]. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/). 
  - IP Config: IPv4 DHCP (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, you must set it to DHCP at or edit the values manually.
+
+> Proxmox SSH Key ZFS Bug: When attempting to add a public key, I got the following error: _SSH public key validation error (500)_ . As it turns out, [this is a known bug](https://bugzilla.proxmox.com/show_bug.cgi?id=1188), but it does appear to be fixed. For now, you'll have to add SSH key pairs for the VMs manually on creation. In order to add key pairs to a server, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
 
 > CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
