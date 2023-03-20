@@ -90,10 +90,12 @@ Hint: try: zpool import -R /rpool -N rpool
  - `zfs create [mountpoint_pool_name]/vm`
 - These dataset will share the total pool size. It dynamically allocates disk space as needed.
 - Now we need to mount/add these datasets at the `Datacenter` level:
- - Navigate to > Datacenter (node, left-most pane) > Storage (subset) > Add > Directory > Enter the name of the dataset (i.e. `backups`, `iso`, `vm`), and add them one at a time.
-  - ID: `/rpool/iso` | Directory: `/rpool/iso` | Content: `ISO image` and `Container templates`
-  - ID: `/rpool/vm` | Directory: `/rpool/vm` | Content: `Disk image` and `Container`
-  - ID: `/rpool/backups` | Directory: `/rpool/backups` | Disk Image: `VZDump backup file` and `Snippets`
+ - Navigate to > [Datacenter (node, left-most pane) > Storage (subset) > Add > Directory](https://i.imgur.com/5QuSsWl.png) > Enter the name of the dataset (i.e. `backups`, `iso`, `vm`), and add them one at a time.
+  - ID: `iso` | Directory: `/rpool/iso` | Content: `ISO image` and `Container templates`
+  - ID: `vm` | Directory: `/rpool/vm` | Content: `Disk image` and `Container`
+  - ID: `backups` | Directory: `/rpool/backups` | Disk Image: `VZDump backup file` and `Snippets`
+ - See an [example configuration here](https://i.imgur.com/T9JzxXK.png).
+ - Once the new ZFS Datasets have been successfully mapped to your Datacenter, you should [see them listed in the left navigation pane](https://i.imgur.com/1eOFcHR.png).
 
 #### Move the Root Disk of VMs
 - Navigate to > Datacenter > PVE Node > [VM] > Resources > Click on Root Disk > Click on Volume Action (button) > Move Storage > Target Storage (dropdown) > Select the `VM` dataset > Check the Delete source (box) > Move Volume (button).
@@ -103,42 +105,41 @@ Hint: try: zpool import -R /rpool -N rpool
 
 > Restoring from a backup is also another way to change the number of the VM/Container.
 
-- To create a backup repository, navigate to: Datacenter (left-most pane) > Backup (menu option) > Add (button) > Schedule: Everyday [3AM] > Selection mode: All > Storage: Backups > Create (button)
+- To create a backup repository, navigate to: Datacenter (left-most pane) > Backup (menu option) > Add (button) > Schedule: Everyday [3AM] > Selection mode: All > Storage: Backups > Create (button).
+- See [an example backup configuration here](https://i.imgur.com/qAxMYoc.png). 
 - To restore a backup, navigate to: Datacenter > [proxmox_node_name] > Click on Backups (ZFS dataset) > Backups (menu option on right) > Click on the backup file (ending in `.tar.zst`) > Click Restore (button, top) > Storage: VM (_not_ local) > CT: Enter the desired number (100-999) > Check the "Start after restore" box (if desired) > Do not change the default priviledge settings > Click Restore (button)
-- Now, wait for the backup to be restored and you should eventraully see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
+- Now, wait for the backup to be restored and you should eventually see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
 
-# Creating VMs
+# Creating Cloud Image VMs
 
-> Before we can write an ISO file to our new ProxMox setup, we must edit the directory to allow `Disk Image`.
+> Cloud images and cloud init work together to make lightweight, optimized, distibutions for super-fast deployment possible. Cloud services such AWS, Azure, GCP, etc use cloud init to provision Linux machines and more. To tap into that power, we can create the perfect Proxmox tempate for launching these cloud images for all subesquent VMs we may want to spin up. Here's how:
 
-- Click on `Datacenter` (underneath the "Sever view" pane).
-- Click on `Storage` from the list
-- Click on the ID (the only ID listed should be "local" if you followed the previous step), and then click `Edit`.
-- Click on the `Content` dropdown box and click on `Disk Image` to include it and allow it.
+- Find a focal (current) cloud distro you want. I went with [Ubuntu 20.04](https://cloud-images.ubuntu.com/daily/server/focal/current/).
+- Inside this focal cloud folder, you scroll until you find the [focal-server-cloudimg.amd64.img](https://i.imgur.com/XKVAyIP.png) file and then __copy the URL__ and __paste__ it in a note for later (this image will be used as the hardrive of our vitrual machines).
+- Open up the shell or SSH into your Proxmox server, and type `wget` followed by a space and then the that URL link to the cloud `.img` file. Here is a sample of that command: `wget https://cloud-images.ubuntu.com/daily/server/focal/current/focal-server-cloudimg-amd64.img`. Wait for the image to download to your Proxmox server.
+- Next, we need to run the following command to create a virtual machine and attach that image to this VM: `qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0`
 
-> If you want to create containers inside of ProxMox, then you should also click on `Containers` to include and allow them, too.
+> `8000` is the ID of the template. This can be whatever you wish, but I set mine to a high number to distinguish it as a template.
 
-- Navigate to ISO Images (under the sever view dropdown menu, you have to click on the ProxMox node).
-- Currently, the directory should be empty, so you will need to download your ISOs and then upload them by clicking `Upload`.
-- After uploading the VM you want, now it's time to click on the blue button on the top right of the UI that says `Create VM`.
-- Give the VM a name and click next.
-- Select the ISO image you wish to install (ex. Ubuntu), and click next, and (if you don't want to change any of the default settings) click next again.
-- Now, under the `Disks` tab, set the total disk size you wish to allocate to that VM instance, and hit next again.
-- Now it is time to set the CPU usage for this VM. Set the number of CPUs you want to set apart for this VM and hit next.
-- Now set the memory in MiB.
- 
-> Note: GB is to MiB *not* a 1:1 ratio like GB is to MB. Use [this conversion calculator for reference](https://mbtogb.com/128-gb-to-mb)
+- If you ran the command successfully, you should now see that VM listed under your Proxmox node, but we aren't finished yet. Next, we to set the disk storage: `qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format vmdk` or `qm importdisk <vmid> <source> <storage> --format <pcow2 | vmdk | raw>` if you have different setup than this document.
 
-> Note: You can always edit the disk space, core, and memory allocations later.
+> Note: You can also upload this ISO to a different storage dataset (i.e. local-lvm). Also, any mispellings or deviations from the precise `img` file name will produce errors. Make sure you type in the right `<source>` name.
 
-- Now for network settings. By default, the VM will be bridged to your home network, so it will receive an IP address from your router. If you don't want that, then edit the network settings as desired.
-- With everything configured, you are now at the final `Confirm` stage. If everything looks good to you, hit finish to spin up a new VM! Within seconds it will be ready to go. You can check on it from the `Server View`.
+- I had issues trying to run the `qm set --scsi0` command, so I suggest [using the GUI to assign the Cloud drive to the VM](https://i.imgur.com/ROkgsk3.png): Navitagte to: Datacenter > Node > VM ("8000") > Hardware > right-click Unused Disk > Edit (button) and select "scsi0" from the dropdown menu and add. You should now see the unused disk disappear and the [Hard Disk appear in the VM](https://i.imgur.com/p1D3l8l.png).
+- Now, we need to create a virtual CD-ROM and attach it to the VM template we created: `qm set 8000 -ide2 vm:cloudinit`
+- The following command enables our VM to boot from the cloud drive: `qm set 8000 --boot c --bootdisk scsi0`. As an added bonus, it will speed up boot times.
+- Next, let's create a serial console: `qm set 8000 --serial0 socket --vga serial0` (for the added ability of the web VNC capability to see the terminal).
+- Return to the Proxmox GUI > Datacenter > Node > ubuntu-cloud VM > Cloud-init (menu), and you should now see a the cloud icon for this VM.
+- Edit the Cloud-init settings as follows:
+ - User: `admin`
+ - Password: `<your_password>`
+ - Host: Leave as default or customize to your preference
+ - SSH Public Key: [insert_your_public_SSH_key] 
+ - IP Config: IPv4 DHCP (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, you must set it to DHCP at or edit the values manually.
 
-> Note: You will still have to go through the initial install and setup phase like you normally would when you first are installing a new OS. When you start the system, go through the necessary install process.
+> CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
-### Create Templates
-
-> About Creating Containers: You can also create Docker-like containers with ProxMox by downloading Linux container ISOs and uploading them to ProxMox, and then click on the `Create CT` blue button (right next to the `Create VM` button). The process for creating containers is the same as creating VMs.
+- Right-click the ubuntu-cloud VM and click "Convert to template."
 
 # Remote Access
 
