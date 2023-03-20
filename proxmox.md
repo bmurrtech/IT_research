@@ -112,37 +112,87 @@ Hint: try: zpool import -R /rpool -N rpool
 
 # Creating Cloud Image VMs
 
-> Cloud images and cloud init work together to make lightweight, optimized, distibutions for super-fast deployment possible. Cloud services such AWS, Azure, GCP, etc use cloud init to provision Linux machines and more. To tap into that power, we can create the perfect Proxmox tempate for launching these cloud images for all subesquent VMs we may want to spin up. Here's how:
+> Cloud images and cloud init work together to make lightweight, optimized, distibutions for super-fast deployment possible. Cloud services such AWS, Azure, GCP, etc use cloud init to provision Linux machines and more. To tap into that power, we can create the perfect Proxmox tempate for launching these cloud images for all subesquent VMs we may want to spin up. There's [reference documentation](https://pve.proxmox.com/pve-docs/qm.1.html), but here's how:
 
 - Find a focal (current) cloud distro you want. I went with [Ubuntu 20.04](https://cloud-images.ubuntu.com/daily/server/focal/current/).
 - Inside this focal cloud folder, you scroll until you find the [focal-server-cloudimg.amd64.img](https://i.imgur.com/XKVAyIP.png) file and then __copy the URL__ and __paste__ it in a note for later (this image will be used as the hardrive of our vitrual machines).
-- Open up the shell or SSH into your Proxmox server, and type `wget` followed by a space and then the that URL link to the cloud `.img` file. Here is a sample of that command: `wget https://cloud-images.ubuntu.com/daily/server/focal/current/focal-server-cloudimg-amd64.img`. Wait for the image to download to your Proxmox server.
-- Next, we need to run the following command to create a virtual machine and attach that image to this VM: `qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0`
+- Open up the shell or SSH into your Proxmox server, and type `wget` followed by a space and then the that URL link to the cloud `.img` file. Here is a sample of that command:
+
+```
+wget https://cloud-images.ubuntu.com/daily/server/focal/current/focal-server-cloudimg-amd64.img
+```
+
+- Wait for the image to download to your Proxmox server. Next, we need to run the following command to create a virtual machine and attach that image to this VM:  
+```
+qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
+```
 
 > `8000` is the ID of the template. This can be whatever you wish, but I set mine to a high number to distinguish it as a template.
 
-- If you ran the command successfully, you should now see that VM listed under your Proxmox node, but we aren't finished yet. Next, we to set the disk storage: `qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format vmdk` or `qm importdisk <vmid> <source> <storage> --format <pcow2 | vmdk | raw>` if you have different setup than this document.
+- If you ran the command successfully, you should now see that VM listed under your Proxmox node, but we aren't finished yet. Next, we to set the disk storage: 
+
+```
+qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format vmdk
+```
+
+Or, if you have different setup than this document.
+
+```
+qm importdisk <vmid> <source> <storage> --format <pcow2 | vmdk | raw>
+```
 
 > Note: You can also upload this ISO to a different storage dataset (i.e. local-lvm). Also, any mispellings or deviations from the precise `img` file name will produce errors. Make sure you type in the right `<source>` name.
 
 - I had issues trying to run the `qm set --scsi0` command, so I suggest [using the GUI to assign the Cloud drive to the VM](https://i.imgur.com/ROkgsk3.png): Navitagte to: Datacenter > Node > VM ("8000") > Hardware > right-click Unused Disk > Edit (button) and select "scsi0" from the dropdown menu and add. You should now see the unused disk disappear and the [Hard Disk appear in the VM](https://i.imgur.com/p1D3l8l.png).
-- Now, we need to create a virtual CD-ROM and attach it to the VM template we created: `qm set 8000 -ide2 vm:cloudinit`
-- The following command enables our VM to boot from the cloud drive: `qm set 8000 --boot c --bootdisk scsi0`. As an added bonus, it will speed up boot times.
-- Next, let's create a serial console: `qm set 8000 --serial0 socket --vga serial0` (for the added ability of the web VNC capability to see the terminal).
+- Now, we need to create a virtual CD-ROM and attach it to the VM template we created:
+
+```
+qm set 8000 -ide2 vm:cloudinit
+```
+
+- The following command enables our VM to boot from the cloud drive. As an added bonus, it will speed up boot times.
+
+```
+qm set 8000 --boot c --bootdisk scsi0
+```
+
+- Next, let's create a serial console for the added ability of the web VNC capability to see the terminal.
+
+```
+qm set 8000 --serial0 socket --vga serial0`
+```
+
 - Return to the Proxmox GUI > Datacenter > Node > ubuntu-cloud VM > Cloud-init (menu), and you should now see a the cloud icon for this VM.
 - Edit the Cloud-init settings as follows:
- - User: `admin`
- - Password: `<your_password>`
- - Host: Leave as default or customize to your preference
- - SSH Public Key: [insert_your_public_SSH_key]. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/). 
- - IP Config: IPv4 DHCP (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, you must set it to DHCP at or edit the values manually.
+  - User: `admin`
+  - Password: `<your_password>`
+  - Host: Leave as default or customize to your preference
+  - SSH Public Key: [insert_your_public_SSH_key]. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/). 
+  - IP Config: IPv4 DHCP (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, you must set it to DHCP at or edit the values manually.
 
-> Proxmox SSH Key ZFS Bug: When attempting to add a public key, I got the following error: _SSH public key validation error (500)_ . As it turns out, [this is a known bug](https://bugzilla.proxmox.com/show_bug.cgi?id=1188), but it does appear to be fixed. For now, you'll have to add SSH key pairs for the VMs manually on creation. In order to add key pairs to a server, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
+> Proxmox SSH Key ZFS Bug: When attempting to add a public key, I got the following error: _SSH public key validation error (500)_ . As it turns out, [this is a known bug](https://bugzilla.proxmox.com/show_bug.cgi?id=1188), but it does appear to be fixed. _Make sure to select_ the __RSA__ (radio button) _when generating your SSH keysor else it will not work._
 
 > CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
 - In the end, you should have a hardware configuration that looks [like this](https://i.imgur.com/Wnzn8jX.png). If something looks off, delete the VM and start from scratch (it's not that hard).
-- When you are 100% satisfied with the results, right-click the ubuntu-cloud VM and click "Convert to template."
+- When you are 100% satisfied with the results, right-click the ubuntu-cloud VM and click "Convert to template" or:
+
+```
+qm template 9000
+```
+
+#### Cloning Cloud Template
+- Proxmox has [documentation on the process here](https://pve.proxmox.com/wiki/Cloud-Init_Support).
+- Either clone via the GUI or via CLI:
+
+```
+qm clone 8000 [vm_number] --name [vm_name]
+```
+- Next, let's add a public key follow the steps below, or add the key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
+
+```
+qm set [vm_number] --sshkey ~/.ssh/id_rsa.pub
+```
 
 # Remote Access
 
