@@ -1,7 +1,7 @@
 Table of Contents
 - [ProxMox Hypervisor Installation](#proxmox-install)
 - [Creating a ZFS Pool](#zfs-configuration)
-- [Create VMs and Containers](#creating-vms)
+- [Create Cloud Image VM Template](#create-cloud-image-vms)
 - [Access Your Lab Anywhere](#remote-access)
 - [Homelab Cybersecurity](#secure-homelab)
 - [Block Ads](#ad-blocking)
@@ -110,7 +110,7 @@ Hint: try: zpool import -R /rpool -N rpool
 - To restore a backup, navigate to: Datacenter > [proxmox_node_name] > Click on Backups (ZFS dataset) > Backups (menu option on right) > Click on the backup file (ending in `.tar.zst`) > Click Restore (button, top) > Storage: VM (_not_ local) > CT: Enter the desired number (100-999) > Check the "Start after restore" box (if desired) > Do not change the default priviledge settings > Click Restore (button)
 - Now, wait for the backup to be restored and you should eventually see it populate under the Datacenter > Proxmox Node > [VM/Container_Name]
 
-# Creating Cloud Image VMs
+# Create Cloud Image VMs
 
 > Cloud images and cloud init work together to make lightweight, optimized, distibutions for super-fast deployment possible. Cloud services such AWS, Azure, GCP, etc use cloud init to provision Linux machines and more. To tap into that power, we can create the perfect Proxmox tempate for launching these cloud images for all subesquent VMs we may want to spin up. There's [reference documentation](https://pve.proxmox.com/pve-docs/qm.1.html), but here's how:
 
