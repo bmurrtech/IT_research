@@ -1,6 +1,8 @@
 > Note: WIP (untested)
 
-How to Create a Scrolling RSS Feed for Livestream Lower-third via RTSP
+![TICKR_example](./screenshots/TICKR_example.png)
+
+### How to Create a Scrolling RSS Feed for Livestream Lower-third via RTSP
 1. Create an Ubuntu Desktop container
 2. [Install TICKR](https://open-tickr.net/help.php#building_from_source_howto)
 
@@ -13,7 +15,7 @@ How to Create a Scrolling RSS Feed for Livestream Lower-third via RTSP
 8. Stream VNC feed via RTSP to YouTube
 9. Copy YouTube stream and paste the URL into OBS as a [Browser Source](https://i.imgur.com/Qze1D54.png)
 
-Create a Live VNC Terminal Stock Ticker, Watcher for Livestream
+### Create a Live VNC Terminal Stock Ticker, Watcher for Livestream
 1. Create an Ubuntu Server
 2. Install Docker
 3. [Install Ticker by achannarasappa](https://github.com/achannarasappa/ticker)
