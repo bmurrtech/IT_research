@@ -163,15 +163,18 @@ qm set 8000 --serial0 socket --vga serial0`
 ![cloud_init_settings](https://i.imgur.com/lukuLXY.png)
 
 - Edit the Cloud-init settings as follows:
-  - User: `admin`
-  - Password: `<your_password>`
-  - Host: Leave as default or customize to your preference
-  - SSH Public Key: `ssh-rsa[insert_your_public_SSH_key]`. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/). 
-  - IP Config: IPv4 __DHCP__ (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, __you must set it to DHCP__ at or edit the values manually.
+  - _User_: `admin`
+  - _Password_: `<your_password>` (make sure you _remember it_ and _enter it correctly_ or else you will have to recreate the template)
+  - _Host_: Leave as default or customize to your preference
+  - _SSH Public Key_: `ssh-rsa[insert_your_public_SSH_key]`. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/).
 
 > Proxmox SSH Key ZFS Bug: When attempting to add a public key, I got the following error: _SSH public key validation error (500)_ . As it turns out, [this is a known bug](https://bugzilla.proxmox.com/show_bug.cgi?id=1188), but it does appear to be fixed. _Make sure to select_ Key > __SSH-2 RSA__ > RSA (radio button) when generating your SSH keys _or else it will not work._ Your public key should start with `ssh-rsa`. See example PuTTYGen screenshot below, and don't forget to password protect and save your private key.
 
 ![ssh_2_RSA](https://i.imgur.com/xbsItrt.png)
+
+  - _IP Config: IPv4_ `DHCP` (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, __you must set it to DHCP__ at or edit the values manually.
+
+![ip_dhcp](https://i.imgur.com/KJN61by.png)
 
 > CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
