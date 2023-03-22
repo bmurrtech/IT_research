@@ -204,8 +204,21 @@ qm template [vm_id]
 ```
 qm clone 8000 [new_vm_id] --name [vm_name]
 ```
-- Set a public key by via CLI or manually add the key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
 
+#### SSH to VM
+> Tip: You can always generate or add key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
+
+
+- If you already know the IP addresses on your network open a Command Prompt (Windows) and type `arp -a` to get a list of IPs on your network.
+- If you need more intel, run [Advance IP Scanner](https://www.advanced-ip-scanner.com/) to locate your new VM by its name to identify the IP address you can use for SSH.
+- Once you have your IP address (i.e. 192.168.1.x), download and install (if you haven't already done so) [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+- Open PuTTY, type in the IP address (Host Name), then navigate to Connection > SSH > Auth > Browse (button) and open the `.ppk` private key that you generated and saved when you made your public key (this is necessary to access your server).
+- Enter the user name you created (i.e. `admin`)
+- Enter the password you set for the private key (if applicable), and your in!
+
+> Tip: You can save the profile of this server for future use. You can also assign a static IP so the IP address in your router and do the necessary port forwarding you need for any web apps so it doesn't change via DHCP. 
+
+(Optional)
 ```
 qm set [new_vm_id] --sshkey ~/.ssh/id_rsa.pub
 ```
@@ -220,8 +233,7 @@ qm set [new_vm_id] --sshkey ~/.ssh/id_rsa.pub
 - Using [ZeroTrust](https://one.dash.cloudflare.com/899e8be9fba8f3cc125ebdf9263380e0/home/quick-start) create a new tunnel: [ZeroTrust](https://i.imgur.com/FipaEgQ.png) (left navigation pane) > Cloudflare ZeroTrust (navigation pane) > Access (dropdown) > [Tunnels](https://i.imgur.com/nnONYTE.png) > Create at tunnel (button)
  - Enter the domain name you created...
 
-[zero_trust](https://i.imgur.com/FipaEgQ.png)
-[ztunnels](https://i.imgur.com/nnONYTE.png)
+![zero_trust](https://i.imgur.com/FipaEgQ.png) ![ztunnels](https://i.imgur.com/nnONYTE.png)
 
 # Secure Homelab
 - Exposing your homelab to the wide-web can be a major security risk unless you implement cybersecurity measures such as IP blocking, 2FA/MFA, and limiting the exposed ports.
