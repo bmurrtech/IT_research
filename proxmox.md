@@ -135,7 +135,11 @@ qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format vmdk
 
 > Note: You can also upload this ISO to a different storage dataset (i.e. local-lvm). Also, any mispellings or deviations from the precise `img` file name will produce errors. Make sure you type in the right `<source>` name.
 
-- I had issues trying to run the `qm set --scsi0` command, so I suggest [using the GUI to assign the Cloud drive to the VM](https://i.imgur.com/ROkgsk3.png): Navitagte to: Datacenter > Node > VM ("8000") > Hardware > right-click Unused Disk > Edit (button) and select "scsi0" from the dropdown menu and add. You should now see the unused disk disappear and the [Hard Disk appear in the VM](https://i.imgur.com/p1D3l8l.png).
+- I had issues trying to run the `qm set --scsi0` command, so I suggest using the GUI to assign the Cloud drive to the VM.
+
+![gui_scsi](https://i.imgur.com/o4eyart.png)
+
+- To do this, navitagte to: Datacenter > Node > VM ("8000") > Hardware > click on Unused Disk > Edit (button) and select "SCSI" and "0" from the dropdown menus. Do not change any other settings here, and click the _Add_ button. You should now see the unused disk disappear and the [Hard Disk appear in the VM](https://i.imgur.com/p1D3l8l.png).
 - Now, we need to create a virtual CD-ROM and attach it to the VM template we created:
 
 ```
@@ -171,7 +175,11 @@ qm set 8000 --serial0 socket --vga serial0`
 
 > CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
-- In the end, you should have a hardware configuration that looks [like this](https://i.imgur.com/Wnzn8jX.png). If something looks off, delete the VM and start from scratch (it's not that hard).
+- In the end, you should have a hardware configuration that looks like this:
+ 
+![cloud-hardware](https://i.imgur.com/Wnzn8jX.png).
+
+- If something looks off, delete the VM and start from scratch (it's not that hard).
 - When you are 100% satisfied with the results, right-click the ubuntu-cloud VM and click "Convert to template" or:
 
 ```
