@@ -133,12 +133,6 @@ qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
 qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format vmdk
 ```
 
-Or, if you have different setup than this document.
-
-```
-qm importdisk <vmid> <source> <storage> --format <pcow2 | vmdk | raw>
-```
-
 > Note: You can also upload this ISO to a different storage dataset (i.e. local-lvm). Also, any mispellings or deviations from the precise `img` file name will produce errors. Make sure you type in the right `<source>` name.
 
 - I had issues trying to run the `qm set --scsi0` command, so I suggest [using the GUI to assign the Cloud drive to the VM](https://i.imgur.com/ROkgsk3.png): Navitagte to: Datacenter > Node > VM ("8000") > Hardware > right-click Unused Disk > Edit (button) and select "scsi0" from the dropdown menu and add. You should now see the unused disk disappear and the [Hard Disk appear in the VM](https://i.imgur.com/p1D3l8l.png).
@@ -161,6 +155,9 @@ qm set 8000 --serial0 socket --vga serial0`
 ```
 
 - Return to the Proxmox GUI > Datacenter > Node > ubuntu-cloud VM > Cloud-init (menu), and you should now see a the cloud icon for this VM.
+
+![cloud_init_settings](https://i.imgur.com/lukuLXY.png)
+
 - Edit the Cloud-init settings as follows:
   - User: `admin`
   - Password: `<your_password>`
