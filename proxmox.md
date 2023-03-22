@@ -9,8 +9,6 @@ Table of Contents
 
 
 # ProxMox Install 
-![alt_text](./images/proxmox-setup.jpg)
-
 - Download the latest "ProxMox ISO [version#] ISO installer" from the [official website](https://www.proxmox.com/en/downloads/category/iso-images-pve)
 - Flash the ISO image to a USB drive (at least 8GB in size) using BalenaEtcher or Rufus (free Windows programs)
 - Plug the flashed USB drive into the PC you wish to use as your hypervisor
@@ -183,12 +181,16 @@ qm template 9000
 
 #### Cloning Cloud Template
 - Proxmox has [documentation on the process here](https://pve.proxmox.com/wiki/Cloud-Init_Support).
-- Either clone via the GUI or via CLI:
+- Either clone via the GUI:
+
+![clone_GUI_mode](https://i.imgur.com/RBwBLCy.png)
+
+- Or via CLI:
 
 ```
 qm clone 8000 [vm_number] --name [vm_name]
 ```
-- Next, let's add a public key follow the steps below, or add the key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
+- Set a public key by via CLI or manually add the key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
 
 ```
 qm set [vm_number] --sshkey ~/.ssh/id_rsa.pub
