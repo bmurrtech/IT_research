@@ -162,7 +162,7 @@ qm set 8000 --serial0 socket --vga serial0`
   - User: `admin`
   - Password: `<your_password>`
   - Host: Leave as default or customize to your preference
-  - SSH Public Key: `ssh-rsa[insert_your_public_SSH_key]rsa-key-[creation_date]`. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/). 
+  - SSH Public Key: `ssh-rsa[insert_your_public_SSH_key]`. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/). 
   - IP Config: IPv4 DHCP (radio selector). Note: The default IP value is nothing, so will not get any network access at all by default. Therefore, you must set it to DHCP at or edit the values manually.
 
 > Proxmox SSH Key ZFS Bug: When attempting to add a public key, I got the following error: _SSH public key validation error (500)_ . As it turns out, [this is a known bug](https://bugzilla.proxmox.com/show_bug.cgi?id=1188), but it does appear to be fixed. _Make sure to select_ Key > __SSH-2 RSA__ > RSA (radio button) when generating your SSH keys _or else it will not work._ Your public key should start with `ssh-rsa`. See example PuTTYGen screenshot below, and don't forget to password protect and save your private key.
