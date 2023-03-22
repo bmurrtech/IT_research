@@ -190,7 +190,7 @@ qm set 8000 --serial0 socket --vga serial0`
 - When you are 100% satisfied with the results, right-click the ubuntu-cloud VM and click "Convert to template" or:
 
 ```
-qm template 9000
+qm template [vm_id]
 ```
 
 #### Cloning Cloud Template
@@ -202,12 +202,12 @@ qm template 9000
 - Or via CLI:
 
 ```
-qm clone 8000 [vm_number] --name [vm_name]
+qm clone 8000 [new_vm_id] --name [vm_name]
 ```
 - Set a public key by via CLI or manually add the key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
 
 ```
-qm set [vm_number] --sshkey ~/.ssh/id_rsa.pub
+qm set [new_vm_id] --sshkey ~/.ssh/id_rsa.pub
 ```
 
 # Remote Access
