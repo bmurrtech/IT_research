@@ -176,13 +176,17 @@ qm set 8000 --serial0 socket --vga serial0`
 
 ![ip_dhcp](https://i.imgur.com/KJN61by.png)
 
+- Change the SCSI Controller from the default setting to VirtIO SCSI from the Proxmox GUI.
+
+![VirtIO_SCSI](https://i.imgur.com/Exs2OAE.png)
+
 > CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
 - In the end, you should have a hardware configuration that looks like this:
  
 ![cloud-hardware](https://i.imgur.com/Wnzn8jX.png).
 
-- If something looks off, delete the VM and start from scratch (it's not that hard).
+- If something looks off, modify the VM to match or delete the VM and start from scratch (it's not that hard).
 - When you are 100% satisfied with the results, right-click the ubuntu-cloud VM and click "Convert to template" or:
 
 ```
