@@ -21,7 +21,7 @@
 3. [Install Ticker by achannarasappa](https://github.com/achannarasappa/ticker)
 4. Setup VNC video feed
 5. [Self-host a RTSP Stream](https://www.youtube.com/watch?v=0scjy6Zxzwc)
-6. Stream VNC feed via RTSP to YouTube
+6. Stream terminal ticker from desktop to [YouTube using Ant Media Server](https://resources.antmedia.io/docs/simulcasting-to-social-media-channels)
 7. Copy YouTube stream and paste the URL into OBS as a [Browser Source](https://i.imgur.com/Qze1D54.png)
 
 ### Ant Media Server
@@ -132,6 +132,12 @@ For detailed information about SSL, follow SSL Setup
 
 ```
 cd /usr/local/antmedia
+```
+
+- Stop the Ant Media Service:
+
+```
+sudo service antmedia stop
 ```
 
 - Remove "server.db" file.
