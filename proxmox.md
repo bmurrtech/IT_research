@@ -130,7 +130,7 @@ qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
 - If you ran the command successfully, you should now see that VM listed under your Proxmox node, but we aren't finished yet. Next, we to set the disk storage: 
 
 ```
-qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format vmdk
+qm importdisk 8000 focal-server-cloudimg-amd64.img vm --format qcow2
 ```
 
 > Note: You can also upload this ISO to a different storage dataset (i.e. local-lvm). Also, any mispellings or deviations from the precise `img` file name will produce errors. Make sure you type in the right `<source>` name.
@@ -206,6 +206,9 @@ qm clone 8000 [new_vm_id] --name [vm_name]
 ```
 
 #### Increase Disk Space
+
+> Note: Disk must be formated to __QEMU__/__qcow2__ to be able to resize. VMDK format will not work.
+
 - By default, the VM will not have much hard drive space unless you chagned the settings prior to saving this template.
 - Therfore, you must add more storage to the VM. It's not difficult. Navigat to > VM > Hardware > Hard Disk > Disk Action (top, button dropdown) > Resize > Add the desired amount.
 
