@@ -182,16 +182,19 @@ qm set 8000 --serial0 socket --vga serial0`
 
 > CAUTION: Do __not__ start the VM. If started, it will be boostrap the machine ID and UUID.
 
-- In the end, you should have a hardware configuration that looks like this:
+- In the end, you should have a hardware configuration that looks similar to this:
  
-![cloud-hardware](https://i.imgur.com/Wnzn8jX.png).
+![cloud-hardware](https://i.imgur.com/JAX8z1Q.png).
 
-- If something looks off, modify the VM to match or delete the VM and start from scratch (it's not that hard).
+- Of course, you can play with the default CPU, RAM, and disk space settings, but if anything else looks off, modify the VM to match or delete the VM and start from scratch (it's not that hard).
 - When you are 100% satisfied with the results, right-click the ubuntu-cloud VM and click "Convert to template" or:
 
 ```
 qm template [vm_id]
 ```
+
+- You should see the icon change to a paper icon with a monitor, indicating that it has become a template.
+
 
 #### Cloning Cloud Template
 - Proxmox has [documentation on the process here](https://pve.proxmox.com/wiki/Cloud-Init_Support).
