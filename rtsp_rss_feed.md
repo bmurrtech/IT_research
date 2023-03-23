@@ -122,3 +122,23 @@ For detailed information about SSL, follow SSL Setup
 - If you enabled SSL, open your browser and type the server URL https://Domain_Name:5443 to go to the web panel.
 - If SSL is not enabled, the web panel can be accessed through http://Server_IP_Address:5080
 - If you're having difficulty in accessing the web panel, there maybe some firewall that blocks accessing the port 5080/5443
+
+#### Reset Username Password
+
+- Go to the installation directory of Ant Media Server.
+
+```
+cd /usr/local/antmedia
+```
+
+- Remove "server.db" file.
+
+```
+sudo rm server.db
+```
+
+- Restart Ant Media Server.
+
+```
+sudo service antmedia restart
+```
