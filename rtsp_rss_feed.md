@@ -27,6 +27,8 @@
 ### Ant Media Server
 
 #### About Ant Media Server
+> Only works with Ubuntu LTS (server). Will not install on Ubuntu Desktop.
+
 - Ant Media Server is a streaming engine software that provides adaptive, ultra low latency streaming by using WebRTC technology.
 - The community edition is free, but has [limited features](https://github.com/ant-media/Ant-Media-Server/wiki/Introduction), such as:
   - 8-12 second latency
@@ -48,11 +50,11 @@
 cd \home\admin
 ```
 
-- You an type `wget` and the URL to the download you want to download it to the server. For Ubuntu 20.04, you need a supported Ant Media Release (ver. 2.3.3.1 / 2.4.2 tested):
+- You an type `wget` and the URL to the download you want to download it to the server. For Ubuntu 20.04, you need a supported Ant Media Release (ver. 2.3.3.1 / 2.4.2 / 2.5.3 tested):
 
-__Ver. 2.4.2__ (Tested) 
+__Ver. 2.5.3__ (Tested) 
 ```
-wget https://github.com/ant-media/Ant-Media-Server/releases/download/ams-v2.4.2/ant-media-server-2.4.2-community.zip
+wget https://github.com/ant-media/Ant-Media-Server/releases/download/ams-v2.5.3/ant-media-server-community-2.5.3.zip
 ```
 
 - Next, download the Ant Media Script installer from the official website, give the bash script permission to execute while you are at it:
