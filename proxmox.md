@@ -205,9 +205,14 @@ qm template [vm_id]
 qm clone 8000 [new_vm_id] --name [vm_name]
 ```
 
+#### Increase Disk Space
+- By default, the VM will not have much hard drive space unless you chagned the settings prior to saving this template.
+- Therfore, you must add more storage to the VM. It's not difficult. Navigat to > VM > Hardware > Hard Disk > Disk Action (top, button dropdown) > Resize > Add the desired amount.
+
+> Note: Decreasing the disk space is more difficult than increasing, so don't give it more than necessary, and you can always increase it later if needed.
+
 #### SSH to VM
 > Tip: You can always generate or add key pairs to a server via SCP, see [Step 2 of this article](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server#step-2-copying-an-ssh-public-key-to-your-server)
-
 
 - If you already know the IP addresses on your network open a Command Prompt (Windows) and type `arp -a` to get a list of IPs on your network.
 - If you need more intel, run [Advance IP Scanner](https://www.advanced-ip-scanner.com/) to locate your new VM by its name to identify the IP address you can use for SSH.
@@ -216,12 +221,27 @@ qm clone 8000 [new_vm_id] --name [vm_name]
 - Enter the user name you created (i.e. `admin`)
 - Enter the password you set for the private key (if applicable), and your in!
 
+![puTTY_ssh_IP](https://i.imgur.com/yeq7QN8.png)
+
+[puTTY_ssh_key](https://i.imgur.com/6cygvoL.png)
+
 > Tip: You can save the profile of this server for future use. You can also assign a static IP so the IP address in your router and do the necessary port forwarding you need for any web apps so it doesn't change via DHCP. 
 
 (Optional)
 ```
 qm set [new_vm_id] --sshkey ~/.ssh/id_rsa.pub
 ```
+
+#### Transfer Files via SFTP using FileZilla
+See [FileZilla's How-to](https://wiki.filezilla-project.org/Howto) for more details.
+- Download FileZilla and run it.
+- Navigate to File (top left tab) > Site Manager.
+- Enter the IP address and port (i.e. 22).
+- Enter the username you made for the VM.
+- Browse and add the `.ppk` private key you generated.
+- Connect to the server and transfer the files drag-n-drop style.
+
+![sftp_filezilla](https://i.imgur.com/raDY9mj.png)
 
 # Remote Access
 
