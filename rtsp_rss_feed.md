@@ -40,34 +40,28 @@
 
 #### Ant Media Install (No Docker)
 
-> Note: Ant Media Server is officially supported on Ubuntu 18.04, but auxilary scripts are provided for Ubuntu 20.04 and CentOS 8.
+> Note: Ant Media Server is officially supported on Ubuntu 18.04, but auxilary scripts are provided for Ubuntu 20.04 and CentOS 8. If you are running Ubuntu 18.04, you can [download the latest, stable community edition](https://github.com/ant-media/Ant-Media-Server/releases) zip file (or get the enterprise ver. if you got cash to burn). Otherwise, check the versions to see if it supports other Linux distros.
 
-- If you are running Ubuntu 18.04, you can [download the latest, stable community edition](https://github.com/ant-media/Ant-Media-Server/releases) zip file (or get the enterprise ver. if you got cash to burn).
-- You an type `wget` and the URL to the download you want to download it to the server. For Ubuntu 20.04, you need a supported Ant Media Release (ver. 2.3.3.1 / 2.4.2):
+- First, SSH into your server and `cd` to your user root folder such as:
 
-__Ver. 2.3.3.1__ (Tested) 
 ```
-wget https://github.com/ant-media/Ant-Media-Server/releases/download/ams-v2.3.3.1/ant-media-server-2.3.3.1-community-2.3.3.1-20210609_2132.zip
+cd \home\admin
 ```
+
+- You an type `wget` and the URL to the download you want to download it to the server. For Ubuntu 20.04, you need a supported Ant Media Release (ver. 2.3.3.1 / 2.4.2 tested):
 
 __Ver. 2.4.2__ (Tested) 
 ```
 wget https://github.com/ant-media/Ant-Media-Server/releases/download/ams-v2.4.2/ant-media-server-2.4.2-community.zip
 ```
 
-- Next, download the Ant Media Script installer from the official website.
+- Next, download the Ant Media Script installer from the official website, give the bash script permission to execute while you are at it:
 
 ```
-wget https://raw.githubusercontent.com/ant-media/Scripts/master/install_ant-media-server.sh
+wget https://raw.githubusercontent.com/ant-media/Scripts/master/install_ant-media-server.sh && chmod 755 install_ant-media-server.sh
 ```
 
 > Note: You can check the directory with the `ls` command to see if the installer and zip file are there before continuing.
-
-- You must give the bash script permission to execute:
-
-```
-chmod 755 install_ant-media-server.sh
-```
 
 - And now, you can run the installer bash file, and you should see the terminal run through the installation process. If not, you may need to increase the disk size (if it is a VM) to accomodate the installer file expansion.
 
