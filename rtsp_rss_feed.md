@@ -13,7 +13,7 @@
 6. Setup VNC screencapture of TICKR
 7. [Self-host a RTSP Stream](https://www.youtube.com/watch?v=0scjy6Zxzwc)
 8. Stream VNC feed via RTSP to YouTube
-9. Copy YouTube stream and paste the URL into OBS as a [Browser Source](https://i.imgur.com/Qze1D54.png)
+9. Copy YouTube stream and paste the URL into OBS as a [Browser Source](https://i.imgur.com/Qze1D54.png) [how-to 2](https://medium.com/@khan_honney/webrtc-replay-from-obs-hosted-rtmp-stream-b995d168497); [how-to 3](https://resources.antmedia.io/docs/simulcasting-to-social-media-channels)
 
 ### Create a Live VNC Terminal Stock Ticker, Watcher for Livestream
 1. Create an Ubuntu Server
