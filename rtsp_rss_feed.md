@@ -35,9 +35,90 @@
   - No adaptive bitrate
 - This will not be a problem for the simple purpose of a scrolling RSS feed and stock ticker watcher. Besides, who has $100/m for the enterprise services? 
 
-#### Ant Media Install
+#### Ant Media Docker Install
+- See [Ant Media's Docker documentation here](https://resources.antmedia.io/docs/docker-and-docker-compose-installation) for more details.
 
-> Note: Ant Media Server is built on Ubuntu 18.04.
+#### Ant Media Install (No Docker)
 
-- [Download the latest, stable community edition](https://github.com/ant-media/Ant-Media-Server/releases) zip file (or get the enterprise ver. if you got cash to burn).
-- Copy the contents to your Linux server.
+> Note: Ant Media Server is officially supported on Ubuntu 18.04, but auxilary scripts are provided for Ubuntu 20.04 and CentOS 8.
+
+- If you are running Ubuntu 18.04, you can [download the latest, stable community edition](https://github.com/ant-media/Ant-Media-Server/releases) zip file (or get the enterprise ver. if you got cash to burn).
+- You an type `wget` and the URL to the download you want to download it to the server. For Ubuntu 20.04, you need a supported Ant Media Release (ver. 2.3.3.1)
+`wget https://github.com/ant-media/Ant-Media-Server/releases/download/ams-v2.3.3.1/ant-media-server-2.3.3.1-community-2.3.3.1-20210609_2132.zip`
+
+- Next, download the Ant Media Script installer from the official website.
+
+```
+wget https://raw.githubusercontent.com/ant-media/Scripts/master/install_ant-media-server.sh
+```
+
+> Note: You can check the directory with the `ls` command to see if the installer and zip file are there before continuing.
+
+- You must give the bash script permission to execute:
+
+```
+chmod 755 install_ant-media-server.sh
+```
+
+- And now, you can run the installer bash file, and you should see the terminal run through the installation process. If not, you may need to increase the disk size (if it is a VM) to accomodate the installer file expansion.
+
+```
+sudo ./install_ant-media-server.sh -i [ANT_MEDIA_SERVER_INSTALLATION_FILE]
+```
+
+> Tip: `TAB` will auto-complete the name of the file in the directory. So, you could type, `sudo ./install_ant-media-server.sh -i ant-media[TAB]` and Linux will auto-fill the rest.
+
+- Check if the Ant Media Server is running via:
+
+```
+sudo service antmedia status
+```
+- If you see a green __active (running)__ indicator, then the server is working. If not, check the version you downloaded and your Ubuntu version to ensure they are compatible.
+- We are not finished yet, we still need to configure the firewall. Run the following:
+
+Tip: To exit this status check hit: `CTRL + C` twice.
+
+```
+sudo systemctl status antmedia.service
+```
+
+- Hit: `CTRL + C` twice again, then enter the following:
+
+```
+sudo ufw allow 1935
+sudo ufw allow 5080
+sudo ufw allow 5443
+sudo ufw allow 5554
+```
+
+- You can stop and start the service anytime:
+
+```
+sudo service antmedia stop
+sudo service antmedia start
+```
+
+#### Install SSL for Ant Media Server
+- Please make sure that your server instance has __Public IP__ address and a __domain__ is assigned to its Public IP address. Then go to the folder where Ant Media Server is installed.
+
+Default directory is `/usr/local/antmedia `
+
+```
+cd /usr/local/antmedia
+```
+
+To enable SSL, please run the command
+
+```
+sudo ./enable_ssl.sh -d {DOMAIN_NAME}
+```
+
+Please don't forget to replace {DOMAIN_NAME} with your domain name. e.g., abc.shopping.com
+
+For detailed information about SSL, follow SSL Setup
+
+#### Accessing Ant Media Server Web Panel
+- Once all has been configured, you can access the Ant Media web UI using `https://your-ip-adddress:5080`
+- If you enabled SSL, open your browser and type the server URL https://Domain_Name:5443 to go to the web panel.
+- If SSL is not enabled, the web panel can be accessed through http://Server_IP_Address:5080
+- If you're having difficulty in accessing the web panel, there maybe some firewall that blocks accessing the port 5080/5443
