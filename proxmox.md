@@ -122,10 +122,10 @@ wget https://cloud-images.ubuntu.com/daily/server/focal/current/focal-server-clo
 
 - Wait for the image to download to your Proxmox server. Next, we need to run the following command to create a virtual machine and attach that image to this VM:  
 ```
-qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
+qm create 8000 --memory 2048 --name 20.04-server --net0 virtio,bridge=vmbr0
 ```
 
-> `8000` is the ID of the template. This can be whatever you wish, but I set mine to a high number to distinguish it as a template.
+> You can always change the name in the GUI, but you can't change the ID: `8000` is the ID of the template. This can be whatever you wish, but I set mine to a high number to distinguish it as a template.
 
 - If you ran the command successfully, you should now see that VM listed under your Proxmox node, but we aren't finished yet. Next, we to set the disk storage: 
 
@@ -164,7 +164,7 @@ qm set 8000 --serial0 socket --vga serial0`
 
 - Edit the Cloud-init settings as follows:
   - _User_: `admin`
-  - _Password_: `<your_password>` (make sure you _remember it_ and _enter it correctly_ or else you will have to recreate the template)
+  - _Password_: `<your_password>` (you can modify this later in VM > Cloud-init > Password and then reboot the VM)
   - _Host_: Leave as default or customize to your preference
   - _SSH Public Key_: `ssh-rsa[insert_your_public_SSH_key]`. You can readily find documentation on [how to generate a SSH Public key using PuTTYgen](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-putty/).
 
