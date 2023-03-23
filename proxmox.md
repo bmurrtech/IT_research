@@ -116,6 +116,12 @@ Hint: try: zpool import -R /rpool -N rpool
 - Inside this focal cloud folder, you scroll until you find the [focal-server-cloudimg.amd64.img](https://i.imgur.com/XKVAyIP.png) file and then __copy the URL__ and __paste__ it in a note for later (this image will be used as the hardrive of our vitrual machines).
 - Open up the shell or SSH into your Proxmox server, and type `wget` followed by a space and then the that URL link to the cloud `.img` file. Here is a sample of that command:
 
+Ubuntu __18.04__ LTS
+```
+wget https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
+```
+
+Ubuntu __20.04__ LTS
 ```
 wget https://cloud-images.ubuntu.com/daily/server/focal/current/focal-server-cloudimg-amd64.img
 ```
