@@ -7,6 +7,7 @@
 - [Cryptography Real-world Usecases](#cryptography-applications)
 - [Encryption Generation Linux Lab](#encryption-lab)
 - [Generating Hash and Verifying Linux Lab](#hashing-and-hash-verification-lab)
+- [Securing Network Architecture](#securing-network-architecture)
 
 # Intro to IT Security
 
