@@ -1,4 +1,12 @@
-
+# Table of Contents
+- [Introdution to Cybersecurity](#intro-to-it-security)
+- [Types of Malware](#malware)
+- [About Network Attacks](#network-attacks)
+- [Symetric Encryption](#symmetric-encryption)
+- [Asymmetric Cryptography](#asymmetric-cryptography)
+- [Cryptography Real-world Usecases](#cryptography-applications)
+- [Encryption Generation Linux Lab](#encryption-lab)
+- [Generating Hash and Verifying Linux Lab](#hashing-and-hash-verification-lab)
 
 # Intro to IT Security
 
@@ -263,7 +271,7 @@ Common results from a cryptanalysis attack include:
 - __Global deduction__ where the attacker finds an algorithm that is functionally equivalent to the one used in the key. This algorithm is then used to decrypt all information and messages. 
 - __Total break__ where the attacker can gain the entire key. With the entire key, the attacker can decrypt all messages and information.
 
-# Public Key (or Asymmetric Cryptography)
+# Asymmetric Cryptography
 
 - __Asymmetric Encryption__ generates _different_ keys are used to encrypt and decrypt. In asymmetric encryption, algorithm is chosen as a key exchange mechanism or cipher. What this means is that, the symmetric encryption key or shared secret, is transmitted securely to the other party using asymmetric encryption to keep the shared secret secure in transit. Once the shared secret is received, data can be sent quickly and efficiently and securely using an asymmetric encryption cipher.
 - __MACs or Message Authentication Codes__ Not to be confused with Media Access Control or MAC addresses. A MAC is a bit of information that allows authentication of a received message, ensuring that the message came from the alleged sender and not a third party masquerading as them. It also ensures that the message wasn't modified in some way in order to provide data integrity.
