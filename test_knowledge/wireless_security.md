@@ -1,4 +1,4 @@
-Question 1 What are some weaknesses of the WEP scheme? Select all that apply. 
+__Question 1 What are some weaknesses of the WEP scheme? Select all that apply.__
 
 _Its poor key generation methods_
 
@@ -11,7 +11,7 @@ The RC4 stream cipher had a number of design flaws and weaknesses. WEP also used
 Its use of ASCII characters for passphrases 
 
 
-Question 2 What symmetric encryption algorithm does WPA2 use? 
+__Question 2 What symmetric encryption algorithm does WPA2 use?__
 
 DSA
 
@@ -23,9 +23,7 @@ _AES_
 
 WPA2 uses CCMP. This utilizes AES in counter mode, which turns a block cipher into a stream cipher.
 
-
-
-Question 3 How can you reduce the likelihood of WPS brute-force attacks? Check all that apply. 
+__Question 3 How can you reduce the likelihood of WPS brute-force attacks? Check all that apply.__
 
 _Disable WPS._
 
@@ -38,9 +36,7 @@ Use a very long and complex passphrase.
 
 Update firewall rules.
 
-Question 4
-
-Select the most secure WiFi security configuration from below: 
+__Question 4 Select the most secure WiFi security configuration from below:__
 
 WPA personal 
 
@@ -53,9 +49,7 @@ WEP 128 bit
 _WPA2 enterprise_
 
 
-Question 5
-
-What process authenticates clients to a network?
+__Question 5 What process authenticates clients to a network?__
 
 _Four-way handshake_
 
