@@ -1281,3 +1281,64 @@ When the request is sent to the authentication server there are a couple of meth
   - __Association__ allows the access point or router to record each mobile device so that data is properly delivered. This occurs after authentication is complete. 
 
 These authentication methods are standardized under the IEEE 802.1X protocol.
+
+### Network Software Hardening
+
+Implementing network software hardening includes things like _firewalls, proxies, and VPNs._
+
+- A __host-based firewall__ provides protection for mobile devices, such as a laptop that could be used in an untrusted, potentially malicious environment, like an airport Wi-Fi hotspot.
+- Host-based firewalls are also useful for protecting other hosts from being compromised by corrupt device on the internal network. That's something a __network-based firewall__ may _not_ be able to help defend against. All major operating systems have built-in ones today.
+
+![network_firewall](https://i.imgur.com/QjuIaAV.png)
+
+- A __network-based firewall__ your router at home even has a network-based firewall built-in. .
+
+![site_to_site_VPN](https://i.imgur.com/R2OIJtQ.png)
+
+-  Remember, VPNs are commonly used to provide secure remote access and link two networks securely. The __site-to-site VPN__ can link two offices. Using a _VPN tunnel_, all traffic between the two offices can be secured using encryption.
+- This lets the two remote networks join each other seamlessly. This way, clients on one network can access devices on the other without requiring them to individually connect to a VPN service.
+
+![standard_proxy](https://i.imgur.com/knwj2KW.png)
+- __Proxies__ can be really useful to protect client devices and their traffic. They also provide secure remote access without using a VPN.
+  - Proxies also provide secure remote access _without_ using a VPN.
+  - A standard web proxy can be configured for client devices. This allows web traffic to be proxy through a proxy server that we control for lots of purposes.
+  - This configuration can be used for logging web requests of client devices. The devices can be used for logs and traffic analysis and forensic investigation.
+  - The proxy server can be configured to block content that might be malicious, dangerous, or just against company policy. 
+
+![reverse_proxy](https://i.imgur.com/YAC6Il2.png)
+
+- __Reverse Proxy__ A reverse proxy can be configured _to allow secure remote access to web-based services __without__ requiring a VPN_.
+  - By configuring a reverse proxy at the edge of your network, connection requests to services inside the network coming from outside are _intercepted by the reverse proxy_. They are then forwarded onto the internal service with _the reverse proxy acting as a relay_. These bridges communications between the remote client outside the network and the internal service.
+  - This proxy setup can be secured even more by requiring the use of client TLS certificates, along with username and password authentication.
+  - Specific __ACLs__ can also be configured on the reverse proxy to restrict access even more. Lots of popular proxy solutions support a reverse proxy configuration like _HAProxy, Nginx, and even the Apache_ web server.
+
+
+#### About Proxies
+
+- [HAProxy main documentation](http://www.haproxy.org/#docs)
+- [HAProxy reverse proxy documentation](http://cbonte.github.io/haproxy-dconv/1.8/intro.html#3.3.1)
+- [nginx main documentation](http://nginx.org/en/docs/)
+- [nginx reverse proxy documentation](http://nginx.org/en/docs/beginners_guide.html#proxy)
+- [Apache HTTP server main documentation](http://httpd.apache.org/docs/)
+- [Apache HTTP server reverse proxy documentation](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
+
+### Wireless Security
+
+- __WEP__ or __Wired Equivalent Privacy__ was proven to be seriously bad at providing confidentiality or security for wireless networks. It was quickly discounted in 2004 in favor of more secure systems. __No one should be using WEP anymore.__
+ - Originally, WEP encryption was limited to 64-bit only because of US export restrictions placed on encryption technologies. Now, once those laws were changed, 128-bit encryption became available for use.
+  - But this actually reduces the available keyspace to only valid ASCII characters instead of all possible hex values. Since this is a component of the actual key,
+![](https://i.imgur.com/K8v8QlA.png)
+- WEP authentication originally supported two different modes; open system authentication and shared key authentication.
+- The __open system mode__ didn't require clients to supply credentials. Instead, they were allowed to authenticate and associate with the access point.
+  - But the access point would begin communicating with the client encrypting data frames with the _pre-shared_ WEP key.
+  - If the client didn't have the key or had an incorrect key, it wouldn't be able to decrypt the frames coming from the access point or AP. It also wouldn't be able to communicate back to the AP. 
+- __Shared key authentication__ worked by requiring clients to authenticate through a _four-step challenge response process_. This basically has the AP asking the client to prove that they have the correct key. Here's how it works:
+
+> ![four_step_challenge_response](https://i.imgur.com/lAfFzjL.png)
+> 1) The client sends an authentication request to the AP.
+> 2) The AP replies with a clear text challenge a bit of randomized data that the client is supposed to encrypt using the shared WEP key.
+> 3) The client replies to the AP with the resulting ciphertexts from encrypting this challenge text.
+> 4) The AP verifies this by decrypting the response and checking it against the plain text challenge text. If they match, a positive response is sent back. 
+
+  - Does anything jump out at us potentially insecure in the scheme?
+  - We're transmitting both the plaintext and the ciphertext in a way that exposes both of these messages to potential eavesdroppers. This opens the possibility for _the encryption key to be recovered by the attacker_.
