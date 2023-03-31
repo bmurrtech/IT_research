@@ -316,7 +316,7 @@ A __MIC (Message Integrity Check)__ is essentially a hash digest of the message 
 - Therefore, _there's nothing stopping an attacker from altering the message_, recomputing the checksum, and modifying the MIC attached to the message.
 - You can think of MICs as protecting against accidental corruption or loss, but not protecting against tampering or malicious actions.
 
-### Hashing Rainbow Tables and How to Defend Against It
+### Hashing Rainbow Tables
 
 ![rainbow_table](https://i.imgur.com/uvn7F29.png)
 
@@ -1286,7 +1286,7 @@ When the request is sent to the authentication server there are a couple of meth
 
 These authentication methods are standardized under the IEEE 802.1X protocol.
 
-### Network Software Hardening
+## Network Software Hardening
 
 Implementing network software hardening includes things like _firewalls, proxies, and VPNs._
 
@@ -1326,11 +1326,13 @@ Implementing network software hardening includes things like _firewalls, proxies
 - [Apache HTTP server main documentation](http://httpd.apache.org/docs/)
 - [Apache HTTP server reverse proxy documentation](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
 
-### Wireless Security
+## Wireless Security
 
-- __WEP__ or __Wired Equivalent Privacy__ was proven to be seriously bad at providing confidentiality or security for wireless networks. It was quickly discounted in 2004 in favor of more secure systems. [No one should be using WEP anymore.](https://doi.org/10.1007/3-540-45537-X_1)
+#### WEP 
+__WEP__ or __Wired Equivalent Privacy__ was proven to be seriously bad at providing confidentiality or security for wireless networks. It was quickly discounted in 2004 in favor of more secure systems. [No one should be using WEP anymore.](https://doi.org/10.1007/3-540-45537-X_1)
+
  - Originally, WEP encryption was limited to 64-bit only because of US export restrictions placed on encryption technologies. Now, once those laws were changed, 128-bit encryption became available for use.
-  - But this actually reduces the available keyspace to only valid ASCII characters instead of all possible hex values.
+ - But this actually reduces the available keyspace to only valid ASCII characters instead of all possible hex values.
 
 ![wired_equivalent_privacy](https://i.imgur.com/K8v8QlA.png)
 
@@ -1353,3 +1355,50 @@ Implementing network software hardening includes things like _firewalls, proxies
 - But the encryption key in WEP is just made up of the shared key, which doesn't change frequently.  Since the IV is made up of 24 bits of data, then total number of possible values is not very big by modern computing standards. That's only about 17 million possible unique IVs, which means after roughly 5,000 packets, an IV will be reused.
 -  It's also important to call out that the IV is transmitted in _plain text_. This means an attacker just has to keep track of IVs and watch for repeated ones. The actual attack that lets an attacker recover the WEP key relies on weaknesses in some IVs and how the RC4 cipher generates a key-stream used for encrypting the data payloads. This lets the attacker reconstruct this key-stream using packets encrypted using the weak IVs.
 - You can also take a look at open source tools that demonstrate this attack in action, like __Aircrack-ng or AirSnort__. _They can recover a WEP key in a matter of minutes_.
+
+#### WPA
+WPA or Wi-Fi Protected Access. WPA was designed as a short-term replacement that would be compatible with older WEP-enabled hardware with a simple firmware update.
+- Under WPA, the pre-shared key is the Wi-Fi password you share with people when they come over and want to use your wireless network. This helped with user adoption because it didn't require the purchase of new Wi-Fi hardware.
+-  WPS supports PIN entry authentication, NFC or USB for out-of-band exchange of the network details, or push button authentication. 
+- The passphrase is fed into the __PBKDF2 or Password-Based Key Derivation Function 2__ along with the Wi-Fi network's SSID as a salt.
+- This is then run through the HMAC-SHA1 function 4,096 times to generate a unique encryption key. The SSID salt is incorporated to help defend against [rainbow table attacks](###hashing-rainbow-tables). The 4,096 rounds of HMAC-SHA1 increase the computational power required for a brute force attack.
+
+- __TKIP__ or the __Temporal Key Integrity Protocol__ implemented three new features that made it more secure than WEP. 
+  - a more secure key derivation method was used to more securely incorporate the IV into the per packet encryption key. 
+  - a sequence counter was implemented to prevent replay attacks by rejecting out-of-order packets.
+  - a 64-bit MIC or message integrity check was introduced to prevent forging, tampering, or corruption of packets. 
+- TKIP still use the RC4 cipher as the underlying encryption algorithm, but it addressed the key generation weaknesses of web by using a key mixing function to generate unique encryption keys per packet. It also utilizes 256-bit long keys.
+
+#### WPS
+The Wi-Fi Alliance introduced WPS in 2006. It provides several different methods that allow our wireless client to securely join a wireless network without having to directly enter the pre-shared key. This facilitates the use of very long and secure passphrases without making it unnecessarily complicated.
+- WPS supports PIN entry authentication, NFC or USB for out-of-band exchange of the network details, or push button authentication. You've probably seen the push button mechanism. The push button mechanism works by requiring a button to be pressed on both the AP side and the client side. This requires physical proximity and a short window of time that the client can authenticate with a button press of its own.
+![wpa_button](https://i.imgur.com/iT1b0i7.png)
+
+- The PIN methods are really interesting and also where critical flow was introduced. The PIN authentication mechanism supports two modes:
+1) The client generates a pin, which is then entered into the AP.
+2) The AP has a pin typically _hard-coded into the firmware_, which is entered into the client.
+-  It's the _second mode_ that is [vulnerable to an online brute force attack])(https://www.kb.cert.org/vuls/id/723755). The PIN  is authenticated by the AP in halves. This means the client will send the first four digits of the AP, wait for a positive or negative response, and then send the second half of the pin if the first half was correct. _This means the correct pin can be guessed in only a maximum of 11,000 tries_. It sounds like a lot, but it really isn't.
+  - Without any rate limiting, an attacker could recover the PIN and the pre-shared key in less than _four hours_.
+  - Introducing a lockout period of one minute after three incorrect PIN attempts. This increases the maximum time to guess the pin from four hours to _less than three days_.
+
+![changing_wifi_password_no_fix](https://i.imgur.com/0vLVIb6.png)
+  - Changing your Wi-Fi password in a WPS configuration _wouldn't help_, because the PIN _hard-coded into the firmware_, __the attacker could just reuse the already recovered WPS PIN to get the new password__.
+ 
+#### WPA2 
+WPA2 is a really robust security protocol. The WPA and WPA2 Standard, also introduced in 802.1X authentication to Wi-Fi networks. It's usually called WPA2- Enterprise. The non-802.1X configurations are called either WPA2-Personal or WPA 2- PSK. Since they use a pre-shared key to authenticate clients
+
+![cracking_wifi](https://i.imgur.com/OAQkMPF.png)
+
+- WPA2 is still susceptible to an offline brute-force attack. This dictionary-based attack is dependent on the quality of the password guesses, and it does require a fair amount of computational power to calculate the PMK from the passphrase guesses and SSID values.This requires 4096 iterations of a hashing function which can be massively accelerated through the use of GPU-accelerated computation.
+- Because of the bulk of the computations involving computing the PMK by incorporating the password guesses with the SSIDs, it's possible to pre-compute PMKs in bulk for common SSIDs and password combinations. [Rainbow tables](###hashing-rainbow-tables) are available for download for the top 1000 most commonly seen SSIDs, and one million passwords.
+- Let's walk through the four-way handshake process that authenticates clients of the network. It'll help you understand how WPA2 can be broken. This process also generates the temporary encryption key that will be used to encrypt data for this client.
+
+> ![four_message_WPA2](https://i.imgur.com/86pV7hh.png)
+>
+> The four messages exchanged in order are the AP which sends ANonce to the client. The client then sends its ANonce to the AP. The AP sends the GTK and the client replies with an Ack confirming successful negotiation.
+> - The PTK is actually made up of five individual keys, each with their own purpose. 
+> - Two keys are used for encryption and confirmation of EAPoL packets and the encapsulating protocol carries these messages. 
+> - Two keys are used for sending and receiving message integrity codes and finally, there's a temporal key which is actually used to encrypt data.
+
+- CCMP or Counter Mode CBC-MAC Protocol. It's based on the AES cipher finally getting away from the insecure RC4 cipher. The CBC MAC Digest is computed first, then the resulting authentication code is encrypted along with the message using a block cipher. We're using AES in this case operating encounter mode. This turns a block cipher into a stream cipher by using a random seed value along with an incremental counter to create a key stream to encrypt data with.
+![counter_mode_CBCMAC](https://i.imgur.com/9jRqezV.png)
