@@ -1204,4 +1204,47 @@ Correlation analysis is the process of taking log data from different systems an
 
 __Logs analysis systems__ are configured using user-defined rules to match interesting or a typical log entries. These can then be surfaced through an alerting system to let security engineers investigate the alert. 
 
-#### Resources
+#### Firewall Rule Reading 
+- [Cisco IOS firewall rules](https://www.cisco.com/en/US/docs/routers/access/800/850/software/configuration/guide/firewall.html)
+- [Juniper firewall rules](https://www.juniper.net/documentation/en_US/junos/topics/usage-guidelines/services-configuring-stateful-firewall-rules.html)
+- [Iptables firewall rules](https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands)
+- [UFW - Uncomplicated Firewall rules](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands)
+- [Configuring Mac OS X firewall](https://support.apple.com/en-us/HT201642)
+- [Microsoft firewall rules](https://technet.microsoft.com/en-us/library/cc754274(v=ws.11).aspx)
+
+### Network Hardware Hardening
+
+- To protect against this rogue DHCP server attack, enterprise switches off a feature called DHCP snooping. A switch that has DHCP snooping will monitor DHCP traffic being sent across it. It will also track IP assignments and map them to hosts connected to switch ports. This basically builds a map of assigned IP addresses to physical switch ports. This information can also be used to protect against IP spoofing and ARP poisoning attacks.
+
+![dhcp_snooping](https://i.imgur.com/BnIGnFw.png)
+
+- DHCP snooping also makes you designate either a trusted DHCP server IP if it's operating as a DHCP helper and forwarding DHCP requests to the server. Or you can enable DHCP snooping trust on the uplinked port, where legitimate DHCP responses would now come from.
+- Any DHCP responses coming from either an untrusted IP address or from a downlink switch port would be detected as untrusted and discarded by the switch. 
+
+![DAI](https://i.imgur.com/ay5ZtLy.png)
+-  ARP allows for a Layer 2 man-in-the-middle attack because of the unauthenticated nature of ARP. It allows an attacker to forge an ARP response advertising its MAC address as the physical address matching a victim's IP address. This type of ARP response is called a gratuitous ARP response, since it's effectively answering a query that no one made.
+- The attacker could enable IP forwarding, which would let them transparently monitor traffic intended for the victim. They could also manipulate or modify data. Dynamic ARP Inspection or DAI, is another feature on enterprise switches that prevents this type of attack.
+- __Dynamic ARP Inspection__ or __DAI__, is another feature on enterprise switches that prevents this type of attack. It requires the use of DHCP snooping to establish a trusted binding of IP addresses to switch ports.
+- DAI would detect these forged gratuitous ARP packets and drop them. It does this because it has a table from DHCP snooping that has the authoritative IP address assignments per port. DAI also enforces rate-limiting of ARP packets per port to prevent ARP scanning. 
+- To prevent IP spoofing attacks, __IP Source Guard__ or __IPSG__ can be enabled on enterprise switches along with DHCP snooping.
+- This dropped packets that don't match the IP address for the port based on a DHCP snooping table. 
+- If you really want to lock down your network, you can implement 802.1X. It's important for an IT support specialist to be aware of 802.1X. This is the IEEE standard for encapsulating __EAP or Extensible Authentication Protocol__ traffic over the 802 networks. This is also called __EAP over Lan or EAPoL__.
+
+![](https://i.imgur.com/i7y18fb.png)
+
+- EAP-TLS since it's one of the more common and secure EAP methods. __EAP-TLS is an authentication type supported by EAP that uses TLS to provide mutual authentication of both the client and the authenticating server.__
+- When a client wants to authenticate to a network using 802.1X, there are three parties involved. The client device is what we call the __supplicant__.
+ - It's sometimes also used to refer to the software running on the client machine that handles the authentication process for the user.
+ - The open source Linux utility, WPA supplicant is one of those.
+- The supplicant communicates with the __authenticator, which acts as a gatekeeper for the network__. It requires clients to successfully authenticate to the network before they're allowed to communicate with the network. This is usually an enterprise switch or an access point in the case of wireless networks. It's important to call out that while the supplicant communicates with the authenticator, it's not actually the authenticator that makes the authentication decision. The authenticator acts like a go-between and forwards the authentication request to the authentication server. That's where the actual credential verification and authentication occurs. The authentication server is usually a radius server. 
+
+ ![EAP-TLS](https://i.imgur.com/igsoGur.png)
+
+ - Similarly, most EAP-TLS implementations require client-side certificates. Authentication can be certificate based, which requires a client to present a valid certificate that's signed by the authenticating CA. Or a client can use a certificate in conjunction with a username, password, and even a second factor of authentication like a onetime password. The security of EAP-TLS stems from the inherent security that the TLS protocol and PKI provide.
+ - You have to safeguard private keys appropriately and ensure distribution of the CA certificate to client devices to allow verification of the server side.
+ - Even more secure configuration for EAP-TLS would be to bind the client-side certificates to the client platforms using __TPMs__. This would prevent theft of the certificates from client machines.
+
+![TPM](https://i.imgur.com/ISGmyih.png)
+Example of a TMP (trusted platform module)
+
+ - When you combine this with FDE, even theft of a computer would prevent compromise of the network. 
