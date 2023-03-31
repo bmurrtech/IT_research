@@ -1372,14 +1372,16 @@ WPA or Wi-Fi Protected Access. WPA was designed as a short-term replacement that
 #### WPS
 The Wi-Fi Alliance introduced WPS in 2006. It provides several different methods that allow our wireless client to securely join a wireless network without having to directly enter the pre-shared key. This facilitates the use of very long and secure passphrases without making it unnecessarily complicated.
 - WPS supports PIN entry authentication, NFC or USB for out-of-band exchange of the network details, or push button authentication. You've probably seen the push button mechanism. The push button mechanism works by requiring a button to be pressed on both the AP side and the client side. This requires physical proximity and a short window of time that the client can authenticate with a button press of its own.
+
 ![wpa_button](https://i.imgur.com/iT1b0i7.png)
 
 - The PIN methods are really interesting and also where critical flow was introduced. The PIN authentication mechanism supports two modes:
 1) The client generates a pin, which is then entered into the AP.
 2) The AP has a pin typically _hard-coded into the firmware_, which is entered into the client.
--  It's the _second mode_ that is [vulnerable to an online brute force attack])(https://www.kb.cert.org/vuls/id/723755). The PIN  is authenticated by the AP in halves. This means the client will send the first four digits of the AP, wait for a positive or negative response, and then send the second half of the pin if the first half was correct. _This means the correct pin can be guessed in only a maximum of 11,000 tries_. It sounds like a lot, but it really isn't.
-  - Without any rate limiting, an attacker could recover the PIN and the pre-shared key in less than _four hours_.
-  - Introducing a lockout period of one minute after three incorrect PIN attempts. This increases the maximum time to guess the pin from four hours to _less than three days_.
+
+-  It's the _second mode_ that is [vulnerable to an online brute force attack](https://www.kb.cert.org/vuls/id/723755). The PIN  is authenticated by the AP in halves. This means the client will send the first four digits of the AP, wait for a positive or negative response, and then send the second half of the pin if the first half was correct. _This means the correct pin can be guessed in only a maximum of 11,000 tries_. It sounds like a lot, but it really isn't.
+   - Without any rate limiting, an attacker could recover the PIN and the pre-shared key in less than _four hours_.
+   - Introducing a lockout period of one minute after three incorrect PIN attempts. This increases the maximum time to guess the pin from four hours to _less than three days_.
 
 ![changing_wifi_password_no_fix](https://i.imgur.com/0vLVIb6.png)
   - Changing your Wi-Fi password in a WPS configuration _wouldn't help_, because the PIN _hard-coded into the firmware_, __the attacker could just reuse the already recovered WPS PIN to get the new password__.
