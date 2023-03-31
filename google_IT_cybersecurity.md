@@ -1221,7 +1221,7 @@ __Logs analysis systems__ are configured using user-defined rules to match inter
 - DHCP snooping also makes you designate either a trusted DHCP server IP if it's operating as a DHCP helper and forwarding DHCP requests to the server. Or you can enable DHCP snooping trust on the uplinked port, where legitimate DHCP responses would now come from.
 - Any DHCP responses coming from either an untrusted IP address or from a downlink switch port would be detected as untrusted and discarded by the switch. 
 
-![DAI](https://i.imgur.com/ay5ZtLy.png)
+![dynamic_ARP_inspection](https://i.imgur.com/ay5ZtLy.png)
 -  ARP allows for a Layer 2 man-in-the-middle attack because of the unauthenticated nature of ARP. It allows an attacker to forge an ARP response advertising its MAC address as the physical address matching a victim's IP address. This type of ARP response is called a gratuitous ARP response, since it's effectively answering a query that no one made.
 - The attacker could enable IP forwarding, which would let them transparently monitor traffic intended for the victim. They could also manipulate or modify data. Dynamic ARP Inspection or DAI, is another feature on enterprise switches that prevents this type of attack.
 - __Dynamic ARP Inspection__ or __DAI__, is another feature on enterprise switches that prevents this type of attack. It requires the use of DHCP snooping to establish a trusted binding of IP addresses to switch ports.
@@ -1230,7 +1230,7 @@ __Logs analysis systems__ are configured using user-defined rules to match inter
 - This dropped packets that don't match the IP address for the port based on a DHCP snooping table. 
 - If you really want to lock down your network, you can implement 802.1X. It's important for an IT support specialist to be aware of 802.1X. This is the IEEE standard for encapsulating __EAP or Extensible Authentication Protocol__ traffic over the 802 networks. This is also called __EAP over Lan or EAPoL__.
 
-![](https://i.imgur.com/i7y18fb.png)
+![extensible_authentication_protocol](https://i.imgur.com/i7y18fb.png)
 
 - EAP-TLS since it's one of the more common and secure EAP methods. __EAP-TLS is an authentication type supported by EAP that uses TLS to provide mutual authentication of both the client and the authenticating server.__
 - When a client wants to authenticate to a network using 802.1X, there are three parties involved. The client device is what we call the __supplicant__.
