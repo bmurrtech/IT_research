@@ -1324,10 +1324,12 @@ Implementing network software hardening includes things like _firewalls, proxies
 
 ### Wireless Security
 
-- __WEP__ or __Wired Equivalent Privacy__ was proven to be seriously bad at providing confidentiality or security for wireless networks. It was quickly discounted in 2004 in favor of more secure systems. __No one should be using WEP anymore.__
+- __WEP__ or __Wired Equivalent Privacy__ was proven to be seriously bad at providing confidentiality or security for wireless networks. It was quickly discounted in 2004 in favor of more secure systems. [No one should be using WEP anymore.](https://doi.org/10.1007/3-540-45537-X_1)
  - Originally, WEP encryption was limited to 64-bit only because of US export restrictions placed on encryption technologies. Now, once those laws were changed, 128-bit encryption became available for use.
-  - But this actually reduces the available keyspace to only valid ASCII characters instead of all possible hex values. Since this is a component of the actual key,
-![](https://i.imgur.com/K8v8QlA.png)
+  - But this actually reduces the available keyspace to only valid ASCII characters instead of all possible hex values.
+
+![wired_equivalent_privacy](https://i.imgur.com/K8v8QlA.png)
+
 - WEP authentication originally supported two different modes; open system authentication and shared key authentication.
 - The __open system mode__ didn't require clients to supply credentials. Instead, they were allowed to authenticate and associate with the access point.
   - But the access point would begin communicating with the client encrypting data frames with the _pre-shared_ WEP key.
@@ -1340,5 +1342,10 @@ Implementing network software hardening includes things like _firewalls, proxies
 > 3) The client replies to the AP with the resulting ciphertexts from encrypting this challenge text.
 > 4) The AP verifies this by decrypting the response and checking it against the plain text challenge text. If they match, a positive response is sent back. 
 
-  - Does anything jump out at us potentially insecure in the scheme?
-  - We're transmitting both the plaintext and the ciphertext in a way that exposes both of these messages to potential eavesdroppers. This opens the possibility for _the encryption key to be recovered by the attacker_.
+- Does anything jump out at us potentially insecure in the scheme?
+- We're transmitting both the plaintext and the ciphertext in a way that exposes both of these messages to potential eavesdroppers. This opens the possibility for _the encryption key to be recovered by the attacker_.
+- But WEP's true weakness wasn't related to the authentication schemes. Its _use of the RC4 stream cipher and how the IVs were used to generate encryption keys_ led to WEP's ultimate downfall.
+- When using a stream cipher like RC4, it's _critically important than an encryption key doesn't get reused_. This would allow an attacker to compare two messages encrypted using the same key and recover information.
+- But the encryption key in WEP is just made up of the shared key, which doesn't change frequently.  Since the IV is made up of 24 bits of data, then total number of possible values is not very big by modern computing standards. That's only about 17 million possible unique IVs, which means after roughly 5,000 packets, an IV will be reused.
+-  It's also important to call out that the IV is transmitted in _plain text_. This means an attacker just has to keep track of IVs and watch for repeated ones. The actual attack that lets an attacker recover the WEP key relies on weaknesses in some IVs and how the RC4 cipher generates a key-stream used for encrypting the data payloads. This lets the attacker reconstruct this key-stream using packets encrypted using the weak IVs.
+- You can also take a look at open source tools that demonstrate this attack in action, like __Aircrack-ng or AirSnort__. _They can recover a WEP key in a matter of minutes_.
