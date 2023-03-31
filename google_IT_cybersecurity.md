@@ -1395,7 +1395,7 @@ WPA2 is the second-best security protocol compated to 802.1X with EAP-TLS. The W
 
 ![cracking_wifi](https://i.imgur.com/OAQkMPF.png)
 
-- WPA2 with CCMP or Counter Mode CBC-MAC Protocol is ideal. It is based on the _AES cipher_, finally getting away from the insecure RC4 cipher. The CBC MAC Digest is computed first, then the resulting authentication code is encrypted along with the message using a block cipher. We're using AES in this case operating encounter mode. This turns a block cipher into a stream cipher by using a random seed value along with an incremental counter to create a key stream to encrypt data with.
+- WPA2 uses __CCMP or Counter Mode CBC-MAC Protocol__. This utilizes AES in counter mode, which _turns a block cipher into a stream cipher using a random seed value along with an incremental counter to create a key stream to encrypt data with_. It is based on the _AES cipher_, finally getting away from the insecure RC4 cipher. The CBC MAC Digest is computed first, then the resulting authentication code is encrypted along with the message using a block cipher. We're using AES in this case operating encounter mode.
 ![counter_mode_CBCMAC](https://i.imgur.com/9jRqezV.png)
 
 > Secuirty Note: WPA2 can still be hacked. There are plenty of reports and videos that demonstrate the hackability of WPA2.
