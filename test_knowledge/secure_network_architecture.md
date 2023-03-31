@@ -4,7 +4,7 @@ Log normalizing detects potential attacks.
 
 It's difficult to analyze abnormal logs. 
 
-Uniformly formatted logs are easier to store and analyze. 
+_Uniformly formatted logs are easier to store and analyze._
 
 The data must be decrypted before sending it to the log server.
 
