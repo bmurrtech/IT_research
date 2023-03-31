@@ -7,6 +7,7 @@
 - [Cryptography Real-world Usecases](#cryptography-applications)
 - [Encryption Generation Linux Lab](#encryption-lab)
 - [Generating Hash and Verifying Linux Lab](#hashing-and-hash-verification-lab)
+- [Various Secuirty Methods](physical-privacy-and-security-components)
 - [Securing Network Architecture](#securing-network-architecture)
 
 # Intro to IT Security
@@ -117,7 +118,7 @@ Malware can be devastating for a company’s computer network. As an IT support 
     - Another example is a __ping flood__ which sends tons of ping packets to a system. More specifically, it sends ICMP echo requests since a ping expects an equal number of ICMP echo replies. If a computer can't keep up with this, then it's prone to being overwhelmed and taken down.
     - Similar to a ping flood is a __SNC flood__ or __half-open attacks__ Remember that to make a TCP connection, a client sends a SYN packet to a server, it wants to connect to next, the server sends back a SYN-ACK message. Then the client sends an ACK message. In a SYN flood, the server is being bombarded with these sim packets. The server is sending back SYN-ACK packets, but the attacker is not sending ACK messages. _This means that the connection stays open and is taking up the server's resources. Other users will be unable to connect to the server_, which is a big problem, since the TCP connection is half open _we also refer to SYN floods as_ __half-open attacks__.
 
-    [syn_flood](https://i.imgur.com/yvyz6Ny.png)
+![syn_flood](https://i.imgur.com/yvyz6Ny.png)
 
     - What if Attackers could utilize multiple machines? A _DoS attack using multiple systems_ is called a __distributed denial of service attack or DDoS__. It would require a large volume of systems to carry out an attack. And they're usually helped by botnet attackers, in that scenario, they can gain access to large volumes of machines to perform an attack.
        - In October of 2016 a DDoS attack occurred when the DNS service provider DYN was the target of a DDoS, fake DNS look up requests along with SYN floods that botnets were performing overloaded their system. DYN handled the DNS for major websites like Reddit, Git hub, Twitter, etc. So once it went down, it also took down its customers, making those services inaccessible.
@@ -316,7 +317,8 @@ A __MIC (Message Integrity Check)__ is essentially a hash digest of the message 
 - You can think of MICs as protecting against accidental corruption or loss, but not protecting against tampering or malicious actions.
 
 ### Hashing Rainbow Tables and How to Defend Against It
-[rainbow_table](https://i.imgur.com/uvn7F29.png)
+
+![rainbow_table](https://i.imgur.com/uvn7F29.png)
 
 A __rainbow table__ is just _a pre computed table of all possible password values, and their corresponding hashes_. These tables are used by bad actors to help speed up the process of recovering passwords from stolen password hashes. 
  - The idea behind rainbow table attacks is to trade computational power for disk space, by pre computing the hashes and storing them in a table.
@@ -413,7 +415,7 @@ Alternative to the centralized PKI model of establishing trust and binding ident
 
 - A __web of trust__ is where individuals, instead of certificate authorities, sign other individuals public keys.
 
-[web_trust](https://i.imgur.com/ppxAYgc.png)
+![web_trust](https://i.imgur.com/ppxAYgc.png)
 
 - Before an individual signs a key, they should first verify the person's identity through an agreed upon mechanism, usually by checking some form of identification, driver's license, passport, etc.
 - Once they've determined the person is who they claim to be, signing their public key is basically vouching for this person. You're saying that you trust that this public key belongs to this individual.
@@ -461,7 +463,7 @@ A __VPN (Vitrual Private Network)__ is a mechanism that allows you to remotely c
 - It should be called out that OpenVPN doesn't implement user name password authentication directly, it uses modules to plug into authentication systems. OpenVPN can operate over either TCP or UDP, typically over ports 1194.
 - It supports pushing network configuration options from the server to a client and it supports two interfaces for networking. It can either rely on a layer 3 IP tunnel or a layer 2 ethernet tap. The ethernet tap is more flexible, allowing it to carry a wider range of traffic. From the security perspective, OpenVPN supports up to 256 bit encryption through the OpenSSL library. 
 
-[ipsec](https://i.imgur.com/c1MJJx9.png)
+![ipsec](https://i.imgur.com/c1MJJx9.png)
 
 __IPsec__ works by encrypting an IP packet and encapsulating the encrypted packet inside an IPsec packet. This encrypted packet then gets routed to the VPN end-point where the packet is de-encapsulated and decrypted then sent to the final destination. IPsec supports two modes of operations, transport mode and tunnel mode.
 - While not a VPN solution itself, [__L2TP or layer two tunneling protocol__](https://tools.ietf.org/html/rfc3193) is typically used to support VPNs. A common implementation of L2TP is in conjunction with IPsec when data confidentiality is needed. Since L2TP doesn't provide encryption itself, it's a simple tunneling protocol that allows encapsulation of different protocols or traffic over a network that may not support the type of traffic being sent. L2TP can also just segregate and manage the traffic. ISPs will use L2TP to deliver network access to a customer's end point.
@@ -469,7 +471,8 @@ __IPsec__ works by encrypting an IP packet and encapsulating the encrypted packe
 - An important distinction to make in this setup is the difference between the tunnel and the secure channel. The tunnel is provided by L2TP which permits the passing of unmodified packets from one network to another. The secure channel, on the other hand, is provided by IPsec which provides confidentiality, integrity and authentication of data being passed.
 
 ### Cryptographic Hardware
-[tmp](https://i.imgur.com/ISGmyih.png)
+
+![tmp](https://i.imgur.com/ISGmyih.png)
 
 __TPM (trusted platform module)__ This is a hardware device that's typically integrated into the hardware of a computer that's a dedicated crypto processor.
 -    TPMs offer:
@@ -489,7 +492,7 @@ Like the commercial product, PGP, Bitlocker from Microsoft, which integrates ver
 
 Because the volume is encrypted, the BIOS can't access data on this volume for boot purposes. This is why FTE configurations will have a small unencrypted boot partition that contains elements like the kernel, bootloader and a NRD. At boot time, these elements are loaded which then prompts the user to enter a pass phrase to unlock the disk and continue the boot process.
 
-[file_encrypt](https://i.imgur.com/0NRUxho.png)
+![file_encrypt](https://i.imgur.com/0NRUxho.png)
 
 ### Cryptographic Terms Glossary
 
@@ -1017,7 +1020,8 @@ For more information about methods of authentication to protect data, please vis
 [Fingerprint Reader Replacement Guide](https://guides.frame.work/Guide/Fingerprint+Reader+Replacement+Guide/91) - Provides photos of internal fingerprint scanner hardware parts, as well as instructions on how to replace a fingerprint scanner on a laptop. Like these [kids clever enough to skip school](https://www.hindustantimes.com/mumbai-news/you-will-be-glued-to-this-mumbai-college-s-students-trick-biometric-system/story-W64f1jdMtecxKDml2DakeI.html) did.
 
 # Authorization
-[oauth](https://i.imgur.com/Pdm0snx.png)
+
+![oauth](https://i.imgur.com/Pdm0snx.png)
 
 __OAuth__ _is an open standard that allows users to grant third party websites and applications access to their information without sharing account credentials._
 - This can be thought of as a form of access delegation because access to the user's account is being delegated to the third party.
@@ -1027,13 +1031,13 @@ __OAuth__ _is an open standard that allows users to grant third party websites a
 -  __OAuth permissions can be used in phishing style attacks to gain access to accounts without requiring credentials to be compromised__. This works by sending phishing emails to potential victims that look like legitimate OAuth authorization requests. Which asked the user to grant access to some aspects of their account through OAuth. Once the user grants access, the attacker has access to the account through the OAuth authorization token. [This was used in an OAuth based worm attack in early 2017.](https://www.theverge.com/2017/5/3/15534768/google-docs-phishing-attack-share-this-document-with-you-spam)
  - There was a rash of phishing emails that appear to be from a friend or colleague who wanted to share a Google doc. When the sharing link was followed, the victim was prompted to log in and authorized access to email, documents. And contacts for some third party service which only identified itself as the name Google Apps. But it was actually a malicious service that would then email contacts from their email account perpetuating the attack.
 
-[oauthvopenid](https://i.imgur.com/y6zHBgq.png)
+![oauthvopenid](https://i.imgur.com/y6zHBgq.png)
 
 - It's important to distinguish between OAuth and open ID.
  - OAuth is specifically an authorization system and open ID is an authentication system though they're usually used together.
  - Open ID connect is an authentication layer built on top of OAuth point designed to improve upon open ID, and build better integration with OAuth authorizations.
 
-[acl](https://i.imgur.com/e50qMhP.png)
+![acl](https://i.imgur.com/e50qMhP.png)
 
 __ACL__ is an _access control list_ is a way of defining permissions or authorizations for objects.
 - A file system would have an ACL which is a table or database, with a list of entries specifying access rights for individuals or groups for various objects on the file system like folders, files, or programs.
@@ -1102,7 +1106,7 @@ The final A of the triple AAA's of security is __accounting__.
 
 This data can also be used to enforce data or time quotas, limiting the duration of sessions or restricting the amount of data that can be sent or received. 
 
-[isp_accounting](https://i.imgur.com/8RIxAtH.png)
+![isp_accounting](https://i.imgur.com/8RIxAtH.png)
 
 # AAA Glossary
 
