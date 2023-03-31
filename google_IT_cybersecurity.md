@@ -1261,6 +1261,8 @@ Example of a TMP (trusted platform module)
   - Based on the criteria of the authentication server the supplicator will grant the authentication request and begin the connection process or it will be sent an Access Reject message and terminate the connection.
 - When clients are trying to communicate on a local network, the devices must have a standard method of communication and authentication. The Institute of Electrical and Electronics Engineers (IEEE) created a standard called IEEE 802.1X. This standard specifies a common architecture, functional elements, and protocols that support authentication between the clients of ports attached to the same Local Area Network (LAN). 
 - IEEE 802 networks are deployed in locations that provide access to critical data, support mission critical applications, or charge for service. Port-based network access control regulates access to the network, guarding against attacks by unauthorized parties, network disruption, and data loss.
+- 802.1X with EAP-TLS offers the best protection for wireless networks, assuming proper and secure handling of the PKI aspects of it. But this option also requires a ton of added complexity and overhead. This is because it requires the use of a _radius server_ and an _additional authentication back-end_ at a minimum. If EAP-TLS is implemented, then _all the public key infrastructure components will also be necessary_. This adds even more complexity and management overhead. Not only do you have to _securely deploy PKI on the back-end first certificate management_, but a _system must be in place to sign the client certificates_. You also have to distribute them to each client that would be authenticating to the network. This is usually more overhead than many companies are willing to take on because of the security versus convenience trade-off involved.
+  - __WPA2 with AES is the second best alternative__. A long and complex passphrase that wouldn't be found in a dictionary would increase the amount of time and resources and attacker would need to break the passphrase. Changing the SSID to something uncommon and unique would also make rainbow tables attack less likely. It would require an attacker to do the computations themselves, increasing the time and resources required to pull off an attack. 
 
 #### 3 Compents of Authentication
 
@@ -1385,22 +1387,28 @@ The Wi-Fi Alliance introduced WPS in 2006. It provides several different methods
 
 ![changing_wifi_password_no_fix](https://i.imgur.com/0vLVIb6.png)
   - Changing your Wi-Fi password in a WPS configuration _wouldn't help_, because the PIN _hard-coded into the firmware_, __the attacker could just reuse the already recovered WPS PIN to get the new password__.
+
+> Security Tip: If your company values security over convenience, __you should make sure that WPS isn't enabled on your APs__. Makes sure this feature is disabled on your APs management council. You might want to also verify the feature is actually disabled using a tool like [Kali Linux Wash](https://www.hackingtutorials.org/wifi-hacking-tutorials/wps-wifi-networks-with-kali-linux-wash/), which scans and enumerates APs that have WPS enabled. 
  
 #### WPA2 
-WPA2 is a really robust security protocol. The WPA and WPA2 Standard, also introduced in 802.1X authentication to Wi-Fi networks. It's usually called WPA2- Enterprise. The non-802.1X configurations are called either WPA2-Personal or WPA 2- PSK. Since they use a pre-shared key to authenticate clients
+WPA2 is the second-best security protocol compated to 802.1X with EAP-TLS. The WPA and WPA2 Standard, also introduced in 802.1X authentication to Wi-Fi networks. It's usually called WPA2- Enterprise. The non-802.1X configurations are called either WPA2-Personal or WPA 2- PSK. Since they use a pre-shared key to authenticate clients
 
 ![cracking_wifi](https://i.imgur.com/OAQkMPF.png)
+
+- WPA2 with CCMP or Counter Mode CBC-MAC Protocol is ideal. It is based on the _AES cipher_, finally getting away from the insecure RC4 cipher. The CBC MAC Digest is computed first, then the resulting authentication code is encrypted along with the message using a block cipher. We're using AES in this case operating encounter mode. This turns a block cipher into a stream cipher by using a random seed value along with an incremental counter to create a key stream to encrypt data with.
+![counter_mode_CBCMAC](https://i.imgur.com/9jRqezV.png)
+
+> Secuirty Note: WPA2 can still be hacked. There are plenty of reports and videos that demonstrate the hackability of WPA2.
 
 - WPA2 is still susceptible to an offline brute-force attack. This dictionary-based attack is dependent on the quality of the password guesses, and it does require a fair amount of computational power to calculate the PMK from the passphrase guesses and SSID values.This requires 4096 iterations of a hashing function which can be massively accelerated through the use of GPU-accelerated computation.
 - Because of the bulk of the computations involving computing the PMK by incorporating the password guesses with the SSIDs, it's possible to pre-compute PMKs in bulk for common SSIDs and password combinations. [Rainbow tables](###hashing-rainbow-tables) are available for download for the top 1000 most commonly seen SSIDs, and one million passwords.
 - Let's walk through the four-way handshake process that authenticates clients of the network. It'll help you understand how WPA2 can be broken. This process also generates the temporary encryption key that will be used to encrypt data for this client.
 
-> ![four_message_WPA2](https://i.imgur.com/86pV7hh.png)
->
-> The four messages exchanged in order are the AP which sends ANonce to the client. The client then sends its ANonce to the AP. The AP sends the GTK and the client replies with an Ack confirming successful negotiation.
-> - The PTK is actually made up of five individual keys, each with their own purpose. 
-> - Two keys are used for encryption and confirmation of EAPoL packets and the encapsulating protocol carries these messages. 
-> - Two keys are used for sending and receiving message integrity codes and finally, there's a temporal key which is actually used to encrypt data.
+![four_message_WPA2](https://i.imgur.com/86pV7hh.png)
 
-- CCMP or Counter Mode CBC-MAC Protocol. It's based on the AES cipher finally getting away from the insecure RC4 cipher. The CBC MAC Digest is computed first, then the resulting authentication code is encrypted along with the message using a block cipher. We're using AES in this case operating encounter mode. This turns a block cipher into a stream cipher by using a random seed value along with an incremental counter to create a key stream to encrypt data with.
-![counter_mode_CBCMAC](https://i.imgur.com/9jRqezV.png)
+The four messages exchanged in order are the AP which sends ANonce to the client. The client then sends its ANonce to the AP. The AP sends the GTK and the client replies with an ACK confirming successful negotiation.
+- The PTK is actually made up of five individual keys, each with their own purpose. 
+- Two keys are used for encryption and confirmation of EAPoL packets and the encapsulating protocol carries these messages. 
+- Two keys are used for sending and receiving message integrity codes and finally, there's a temporal key which is actually used to encrypt data.
+
+> Wi-Fi Password Best Practices: A long and complex passphrase that wouldn't be found in a dictionary would increase the amount of time and resources and attacker would need to break the passphrase. Changing the SSID to something uncommon and unique would also make rainbow tables attack less likely. It would require an attacker to do the computations themselves, increasing the time and resources required to pull off an attack. 
