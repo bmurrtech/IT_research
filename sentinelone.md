@@ -3,10 +3,10 @@
 SentinelOne encompasses __AI-powered prevention, detection, response, and threat hunting__ across user endpoints, containers, cloud workloads, and IoT devices. Learn more by watching this video of [SentinelOne Explained in 2-mins](https://youtu.be/Fzji8wNJEc4).
 
 # Table of Contents
+- [S1 Partner Portal & All Resources](#s1-resources)
 - [Sales Fundamentals](#sales-fundamentals)
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
 
-![singularityXDR](https://i.imgur.com/PMpVbjD.png)
 
 Tomer Weingarten, CEO and Co-Founder, SentinelOne describes S1 functions as follows:
 
@@ -41,6 +41,22 @@ _Flexible, Efficient IT and Security_
 - One management console
 - Enterprise-grade and self-serviced
 - SentinelOne provides a cloud, hybrid, and on-premises solution
+
+# S1 Resources
+
+See the [Sentinel One Partner Portal](https://partners.sentinelone.com/English/#home_login) to get access to Partner Program Guides, Sales Decks, Case Studies, Battle Cards, The Partner Demo Toolkit, and so much more.
+
+__Registering to the Partner Portal__
+
+1. Go to partners.sentinelone.com
+1. Use the form on the bottom right to request access from the SentinelOne Channel Team, using your company email address
+1. In the Company Selection: choose the company you are an employee of
+1. Fill in your applicant information
+1. An email with instructions on how to log in to Partner Portal will be sent to you.
+
+> Note: Please check your spam folder for the Partner Portal confirmation email. Have any challenges? Questions? Contact us at channel@sentinelone.com
+
+- Once your account is regsitered and activated, visit [Partner Portal Assets Library](https://partners.sentinelone.com/prm/English/s/assets) for access to all reseller resources.
 
 # Sales Fundamentals
 
@@ -91,6 +107,7 @@ The Two Anti-virus Worlds Converge:
   - Lack of Visibility: The old saying that "You can't protect what you don't know about" applies here. These unknown, unprotected, unpatched, and highly vulnerable systems provide a point of entry for attackers. Whether it is Shadow IT assets, assets acquired through M&A activity, or poor inventory management; organizations suffer from a lack of visibility into the devices on their network. _Once compromised, the attacker has the potential for lateral movement within the network to target higher-value assets. SentinelOne closes this visibility gap by identifying managed systems that do not have SentinelOne installed while providing a mechanism to auto-deploy the SentinelOne agent to these devices, In addition, SentinelOne can locate and profile unknown, IoT, or rogue devices enhancing visibility while delivering policies to mitigate lateral movement in the event of a compromise of these vulnerable systems._
 
 # Why Choose SentinelOne
+![why_s1](https://i.imgur.com/ZUaSo7T.png)
 Discover why customers choose SentinelOne over the following competitors:
 - [Why SentinelOne](https://www.sentinelone.com/why-sentinelone/) - SentinelOne is autonomous cybersecurity built for what’s next. Learn more about how we are different
 - [SentinelOne Vs CrowdStrike](https://www.sentinelone.com/vs/crowdstrike/) - With the rising speed and complexity of cyber threats, leading enterprises around the globe are leaving CrowdStrike’s human-powered solutions behind for real-time, autonomous cybersecurity. See what’s possible with SentinelOne
