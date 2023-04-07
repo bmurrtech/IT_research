@@ -1413,7 +1413,6 @@ The four messages exchanged in order are the AP which sends ANonce to the client
 
 > Wi-Fi Password Best Practices: A long and complex passphrase that wouldn't be found in a dictionary would increase the amount of time and resources and attacker would need to break the passphrase. Changing the SSID to something uncommon and unique would also make rainbow tables attack less likely. It would require an attacker to do the computations themselves, increasing the time and resources required to pull off an attack.
 
-
 ## Network Monitoring
 
 #### Sniffing the Network
@@ -1431,7 +1430,7 @@ The four messages exchanged in order are the AP which sends ANonce to the client
 
 - But _if we wanted to capture and analyze all wireless traffic that we're able to receive in the immediate area_, we can place our wireless interface into a mode called __monitor mode__ which allows us to scan across channels to see all wireless traffic being sent by APs and clients.  To capture wireless traffic all you need is an interface placed into monitor mode. 
 - You need to be near enough to the AP and client to receive a signal, and then _you can begin capturing traffic right out of the air_. There are a number of open source __wireless capture and monitoring utilities__, like __aircrack-ng and Kismet__.
-- 
+
 - > Note: It's important to call out that if a wireless network is encrypted, you can still capture the packets, _but you won't be able to decode the traffic payloads without knowing the password for the wireless network_.
 
 #### Wireshark and TCPDump
@@ -1466,16 +1465,16 @@ The four messages exchanged in order are the AP which sends ANonce to the client
 > Note: The location of the NIDS must be considered carefully When you deploy a system. It needs to be located in the network topology in a way that it has access to the traffic we'd like to monitor. A good way that you can get access to network traffic is using the port mirroring functionality found in many enterprise switches. This allows all packets on a port range or entire villain to be mirrored to another port where our needs hosts would be connected. With this configuration, our NIDS machine would be able to see all packets flowing in and out of hosts on the switch segment.
 
 - __Intrusion detection and prevention systems__ or __IDS/IPS__. IDS or IPS systems operate by monitoring network traffic and analyzing it.
--  The difference between an _IDS_ and an _IPS_ system is that __IDS__ is _only a detection system_. It won't take action to block or prevent an attack when one is detected, it will only log and alert.
--  But an __IPS system__ _can adjust firewall rules on the fly to block or drop the malicious traffic_ when it's detected.
-- [Snort](https://www.snort.org/) and [Zeek](https://zeek.org/) are an examples of __IPS__ systems.
+  -  The difference between an _IDS_ and an _IPS_ system is that __IDS__ is _only a detection system_. It won't take action to block or prevent an attack when one is detected, it will only log and alert.
+  -  But an __IPS system__ _can adjust firewall rules on the fly to block or drop the malicious traffic_ when it's detected.
+  - [Snort](https://www.snort.org/) and [Zeek](https://zeek.org/) are an examples of __IPS__ systems.
 
 ![NID_system](https://i.imgur.com/VvkHisH.png)
 
 - A __NIDS device__ _is a passive observer that only watches the traffic and sends an alert if it sees something_. This is unlike a NIPS device, which not only monitors traffic, but can take action on the traffic it's monitoring usually by blocking or dropping the traffic. The detection of threats or malicious traffic is usually handled through _signature-based detection_. 
-- __Signatures__ _are unique characteristics of known malicious traffic_. They might be specific sequences of packets or packets with certain values encoded in the specific header field.
-- The detection of threats or malicious traffic is usually handled through signature-based detection. Similar to how antivirus software detects malware.  But similar to antivirus, _less common or targeted attacks might not be detected by a signature-based system, since there might not be signatures developed for these cases_. It's also possible to create custom rules to match traffic that might be considered suspicious but not necessarily malicious.
-- If the traffic is found to be malicious, _a __signature__ can be developed from the traffic and incorporated into the system_. What actually happens when a NID system to detect something malicious? This is configurable, but usually the NID system would log the detection event along with a full packet capture of the malicious traffic.
+  - __Signatures__ _are unique characteristics of known malicious traffic_. They might be specific sequences of packets or packets with certain values encoded in the specific header field.
+  - The detection of threats or malicious traffic is usually handled through signature-based detection. Similar to how antivirus software detects malware.  But similar to antivirus, _less common or targeted attacks might not be detected by a signature-based system, since there might not be signatures developed for these cases_. It's also possible to create custom rules to match traffic that might be considered suspicious but not necessarily malicious.
+  - If the traffic is found to be malicious, _a __signature__ can be developed from the traffic and incorporated into the system_. What actually happens when a NID system to detect something malicious? This is configurable, but usually the NID system would log the detection event along with a full packet capture of the malicious traffic.
 
 #### Unified Threat Management (UTM)
 Previously, you learned about several network security topics, including network hardening best practices, firewall essentials, and the foundations of IEEE 802.1X. In this reading, you will learn about a robust solution for network security, Unified Threat Management (UTM), along with its features, benefits, and risks.
@@ -1523,4 +1522,28 @@ __Benefits of using UTM__
   - Unified Threat Management (UTM) systems offer multiple options in a comprehensive suite of network security tools. UTM solutions can be implemented as hardware and/or software and can protect either a single host or an entire network. 
   - UTM security services and tool options include firewalls, IDS, IPS, antivirus and anti-malware software, spam gateways, web and content filters, data leak/loss prevention, and VPN services. 
   - The benefits of using a UTM solution include having a cost-effective network security system that is flexible and adaptable with a management console that is integrated and centralized. The risks of using UTM include creating a single point of failure for a network security system and it might be an unnecessary use of resources for small businesses.
+
+#### Securing Home Network
+
+__Common Security Vulnerabilities__
+
+Home networks have vulnerabilities to various types of attacks. The most common security attacks on home networks include:
+
+- __Meddler in the middle attacks__ allows a meddler to get between two communication devices or applications. The meddler then replies as the sender and receiver without either one knowing they are not communicating with the correct person, device, or application. These attacks allow the meddler to obtain login credentials and other sensitive information. 
+
+![meddlernmiddle](https://i.imgur.com/N8ABliD.png)
+
+- __Data Theft__ is when data within the network is stolen, copied, sent, or viewed by someone who should not have access. 
+- __Ransomware__ uses malware to keep users from accessing important files on their network. Hackers grant access to the files after receiving a ransom payment. 
+
+- __Keeping Home Networks Secure__
+To protect company data, employees working from home need to take steps to improve the security of their home networks. Home networks can have added protection without expensive equipment or software. You can take steps to keep home networks more secure: 
+  - __Change the default name and password__ using the same password guidelines as your company. 
+  - __Limit access to the home network__ by not sharing access credentials outside of trusted individuals. 
+  - __Create a guest network__ that allows guests to connect to the internet but not your other devices.
+  - __Turn on WiFi network encryption__ requiring a password before a device can access the internet. 
+  - __Turn on the router’s firewall__ to prevent unwanted traffic from entering or leaving your wireless network without your knowledge. Regularly update your router firmware.
+  - __Update to the newest WiFi standard__ which is the most secure standard for home WiFi.
+
+Another security measure that a company can take is for employees to work over a virtual private network, or VPN. Using a VPN creates an encrypted, secure internet connection through which employees can access company data. 
 
