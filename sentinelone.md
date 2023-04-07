@@ -1,12 +1,12 @@
-![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
-
-SentinelOne encompasses __AI-powered prevention, detection, response, and threat hunting__ across user endpoints, containers, cloud workloads, and IoT devices. Learn more by watching this video of [SentinelOne Explained in 2-mins](https://youtu.be/Fzji8wNJEc4).
-
 # Table of Contents
 - [S1 Partner Portal & All Resources](#s1-resources)
 - [Sales Fundamentals](#sales-fundamentals)
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
 
+
+![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
+
+SentinelOne encompasses __AI-powered prevention, detection, response, and threat hunting__ across user endpoints, containers, cloud workloads, and IoT devices. Learn more by watching this video of [SentinelOne Explained in 2-mins](https://youtu.be/Fzji8wNJEc4).
 
 Tomer Weingarten, CEO and Co-Founder, SentinelOne describes S1 functions as follows:
 
