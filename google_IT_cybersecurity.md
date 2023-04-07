@@ -1524,9 +1524,6 @@ __Benefits of using UTM__
   - The benefits of using a UTM solution include having a cost-effective network security system that is flexible and adaptable with a management console that is integrated and centralized. The risks of using UTM include creating a single point of failure for a network security system and it might be an unnecessary use of resources for small businesses.
 
 #### Securing Home Network
-
-__Common Security Vulnerabilities__
-
 Home networks have vulnerabilities to various types of attacks. The most common security attacks on home networks include:
 
 - __Meddler in the middle attacks__ allows a meddler to get between two communication devices or applications. The meddler then replies as the sender and receiver without either one knowing they are not communicating with the correct person, device, or application. These attacks allow the meddler to obtain login credentials and other sensitive information. 
