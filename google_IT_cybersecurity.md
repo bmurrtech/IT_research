@@ -1411,4 +1411,116 @@ The four messages exchanged in order are the AP which sends ANonce to the client
 - Two keys are used for encryption and confirmation of EAPoL packets and the encapsulating protocol carries these messages. 
 - Two keys are used for sending and receiving message integrity codes and finally, there's a temporal key which is actually used to encrypt data.
 
-> Wi-Fi Password Best Practices: A long and complex passphrase that wouldn't be found in a dictionary would increase the amount of time and resources and attacker would need to break the passphrase. Changing the SSID to something uncommon and unique would also make rainbow tables attack less likely. It would require an attacker to do the computations themselves, increasing the time and resources required to pull off an attack. 
+> Wi-Fi Password Best Practices: A long and complex passphrase that wouldn't be found in a dictionary would increase the amount of time and resources and attacker would need to break the passphrase. Changing the SSID to something uncommon and unique would also make rainbow tables attack less likely. It would require an attacker to do the computations themselves, increasing the time and resources required to pull off an attack.
+
+
+## Network Monitoring
+
+#### Sniffing the Network
+![sniffing_network](https://i.imgur.com/irHncwt.png)
+
+- In order to monitor what type of traffic is on your network you need a mechanism to capture packets from network traffic for analysis and potential logging. __Packet sniffing or packet capture__ _is the process of intercepting network packets in their entirety for analysis._
+- __Promiscuous mode__ _is a special mode for ethernet network interfaces that basically says give me all the packets._
+
+> Note: admin or root privileges are needed to place an interface into promiscuous mode and to begin to capture packets.
+
+- __Port mirroring__ allows the switch to take all packets from a specified port, port range or the entire VLAN and mirror the packets to a specified switch port.
+- There's another handy the less advanced way that you can get access to packets in a switch network environment. You can insert a hub into the topology with the device or devices you'd like to monitor traffic on connected to the hub and our monitoring machine. Hubs are a quick and dirty way of getting packets mirrored to your capture interface. 
+
+> Note: Hubs obviously have drawbacks though like reduced throughput and the potential for introducing collisions.
+
+- But _if we wanted to capture and analyze all wireless traffic that we're able to receive in the immediate area_, we can place our wireless interface into a mode called __monitor mode__ which allows us to scan across channels to see all wireless traffic being sent by APs and clients.  To capture wireless traffic all you need is an interface placed into monitor mode. 
+- You need to be near enough to the AP and client to receive a signal, and then _you can begin capturing traffic right out of the air_. There are a number of open source __wireless capture and monitoring utilities__, like __aircrack-ng and Kismet__.
+- 
+- > Note: It's important to call out that if a wireless network is encrypted, you can still capture the packets, _but you won't be able to decode the traffic payloads without knowing the password for the wireless network_.
+
+#### Wireshark and TCPDump
+- __Tcpdump__ is _a super popular lightweight command line-based utility_ that you can use to capture and analyze packets. It does things like converting the source and destination IP addresses into the dotted quad format we're most used to and it shows the port numbers being used by the communications. 
+
+![tcpdump](https://i.imgur.com/eU0zB3L.png)
+
+> Breakdown of TCPDump: The first bit of information is fairly straightforward. It's a timestamp that represents when the packet on this line was processed by the kernel in local time. Next the Layer 3 protocol is identified. In this case, it's IPV4. After this, the connection quad is shown. This is the source address, source port, destination address, and destination port. Next the TCP flags and the TCP sequence number are set on the packet, if there are any. This is followed by the act number, TCP window size, then TCP options if there are any set. Finally, we have payload size in bytes. 
+
+![wireshark_GUI](https://i.imgur.com/7f1bo1Y.png)
+
+- __Wireshark__ is a GUI packet capture and analysis tool, and is superious to TCPDump in numerous ways:
+  -  Wireshark can decode encrypted payloads if the encryption key is known.
+  -  It can identify and extract data payloads from file transfers through protocols like SMB or HTTP.
+  -  It has filter string fucntions. This allows filter rules like finding HTTP requests with specific strings in the URL, which would look like `http.request.uri matches q=wireshark`.
+  -  But it's way more powerful when it comes to application and packet analysis compared to Tcpdump.
+  -  it also understands and can follow TCP stream or sessions. This lets you quickly reassemble and view both sides of the TCP session so you can easily view the full two-way exchange of information between parties. 
+  -  ability to decode WPA and WEP encrypted wireless packets if the passphrase is known. 
+  -  It's also able to view Bluetooth traffic with the right hardware, along with USB traffic in other protocols like Zigbee. 
+  -  It also supports file carving or extracting data payloads from files transferred over unencrypted protocols like HTTP file transfers or FTP.
+  -  It's able to extract audio streams from unencrypted VOIP traffic. 
+
+> WireShark GUI Breakdown: The list of packets are up top, followed by the layered representation of a selected packet from the list. Lastly, the X and ascii representation of the selected packet are at the bottom. The packet list view is color-coded to distinguish between different types of traffic in the capture. The color-coded is user configurable. The defaults are green for TCP packets, light blue for UDP traffic, and dark blue for DNS traffic. Black also highlights problematic TCP packets, like out-of-order or repeated packets. Above the packet list pane is a display filter box which allows complex filtration of packets to be shown. 
+
+- __Traffic analysis__ is done using packet captures and packet analysis. Traffic on a network is basically a flow of packets. Now being able to capture and inspect those packets is important to understanding what type of traffic is flowing on our networks that we'd like to protect.
+
+> How-to [enable promiscuous mode on Mac OS X](https://danielmiessler.com/blog/entering-promiscuous-mode-os-x/) and [Windows](http://lifeofageekadmin.com/?p=3601).
+
+#### Intrusion Detection/Prevention Systems
+![ids_ips](https://i.imgur.com/8Iaky8H.png)
+
+> Note: The location of the NIDS must be considered carefully When you deploy a system. It needs to be located in the network topology in a way that it has access to the traffic we'd like to monitor. A good way that you can get access to network traffic is using the port mirroring functionality found in many enterprise switches. This allows all packets on a port range or entire villain to be mirrored to another port where our needs hosts would be connected. With this configuration, our NIDS machine would be able to see all packets flowing in and out of hosts on the switch segment.
+
+- __Intrusion detection and prevention systems__ or __IDS/IPS__. IDS or IPS systems operate by monitoring network traffic and analyzing it.
+-  The difference between an _IDS_ and an _IPS_ system is that __IDS__ is _only a detection system_. It won't take action to block or prevent an attack when one is detected, it will only log and alert.
+-  But an __IPS system__ _can adjust firewall rules on the fly to block or drop the malicious traffic_ when it's detected.
+- [Snort](https://www.snort.org/) and [Zeek](https://zeek.org/) are an examples of __IPS__ systems.
+
+![NID_system](https://i.imgur.com/VvkHisH.png)
+
+- A __NIDS device__ _is a passive observer that only watches the traffic and sends an alert if it sees something_. This is unlike a NIPS device, which not only monitors traffic, but can take action on the traffic it's monitoring usually by blocking or dropping the traffic. The detection of threats or malicious traffic is usually handled through _signature-based detection_. 
+- __Signatures__ _are unique characteristics of known malicious traffic_. They might be specific sequences of packets or packets with certain values encoded in the specific header field.
+- The detection of threats or malicious traffic is usually handled through signature-based detection. Similar to how antivirus software detects malware.  But similar to antivirus, _less common or targeted attacks might not be detected by a signature-based system, since there might not be signatures developed for these cases_. It's also possible to create custom rules to match traffic that might be considered suspicious but not necessarily malicious.
+- If the traffic is found to be malicious, _a __signature__ can be developed from the traffic and incorporated into the system_. What actually happens when a NID system to detect something malicious? This is configurable, but usually the NID system would log the detection event along with a full packet capture of the malicious traffic.
+
+#### Unified Threat Management (UTM)
+Previously, you learned about several network security topics, including network hardening best practices, firewall essentials, and the foundations of IEEE 802.1X. In this reading, you will learn about a robust solution for network security, Unified Threat Management (UTM), along with its features, benefits, and risks.
+
+UTM solutions stretch beyond the traditional firewall to include an array of network security tools with a single management interface. UTM simplifies the configuration and enforcement of security controls and policies, saving time and resources. Security event logs and reporting are also centralized and simplified to provide a holistic view of network security events.
+
+__UTM options and configurations__
+UTM solutions are available with a variety of options and configurations to meet the network security needs of an organization
+
+- __UTM hardware and software options:__
+  - Stand-alone UTM network appliance
+  - Set of UTM networked appliances or devices
+  - UTM server software application(s)
+- __Extent of UTM protection options:__
+  - Single host
+  - Entire network
+
+- __UTM security service and tool options can include:__
+  - __Firewall__: Can be the first line of defense in catching phishing attacks, spam, viruses, malware, and other potential threats that attempt to access an organization’s network. Firewalls can be hardware devices or software applications. Firewalls filter and inspect packets of data attempting to enter and exit a managed network. Rules can be configured to permit or prevent certain types of packets from entering the network. 
+  - __Intrusion detection system (IDS)__: Passively monitors packets of data and network traffic for unusual patterns that could indicate an attack. IDS devices can monitor entire networks (NIDS) or just a single host (HIDS). IDS identifies, logs, and alerts IT Support about suspicious traffic. However, IDS does not prevent an attack from occurring. This system gives IT Support professionals the opportunity to inspect flagged events to determine how to handle the threat on a case by case basis.   
+  - __Intrusion prevention system (IPS)__: Actively monitors packets and network traffic for potential malicious attacks. IPS systems can be configured to automatically block attacks or to allow manual interventions. IPS devices can monitor entire networks (NIPS) or just a single host (HIPS).
+  - __Antivirus software__: Uses a signature database to obtain the profiles of malicious files, such as spyware, Trojans, malware, worms, and more. The antivirus software monitors the organization’s network and systems for these virus signatures. Once identified, the software will block, quarantine, or destroy them.
+  - __Anti-malware software__: Scans information streams for known malicious malware signatures and blocks threats. Additionally, anti-malware software can use heuristic analysis to detect novel malware threats by identifying key behaviors and characteristics. The software can also use sandboxing to isolate suspicious files. 
+  - __Spam gateway__: Filters, identifies, and quarantines spam email. Spam gateways are network servers that use Domain Name Server (DNS) management tools to protect against spam.
+  - __Web and content filters__: Block user access to risky and malicious websites. When a user attempts to access an unauthorized or suspicious website using a browser, the UTM web filter can prevent the website from loading. The filter can also be customized to block certain types of websites or specific URLs, like social media or other websites that might be a distraction in the workplace. 
+  - __Data leak/loss prevention (DLP)__: Monitors outgoing network traffic for personal, sensitive, and confidential data. DLP includes a verification system to determine if the external data transfer is authorized or malicious, and can block unauthorized attempts.  
+  - __Virtual Private Network (VPN)__: Encrypts data and creates a private “tunnel” to safely transmit the data through a public network. 
+
+__Stream-based vs. proxy-based UTM inspections__
+- UTM solutions offers two methods for inspecting packets in UTM firewalls, IPS, IDS, and VPNs:
+  - __Stream-based inspection, also called flow-based inspection__: UTM devices inspects data samples from packets for malicious content and threats as the packets flow through the device in a stream of data. This process minimizes the duration of the security inspection, which keeps network data flowing at a faster rate than a proxy-based inspection.  
+  - __Proxy-based inspection__: A UTM network appliance works as a proxy server for the flow of network traffic. The UTM appliance intercepts packets and uses them to reconstruct files. Then the UTM device will analyze the file for threats before allowing the file to continue on to its intended destination. Although this security screening process is more thorough than the stream-based inspection technique, proxy-based inspections are slower in the transmission of data.
+
+__Benefits of using UTM__
+- UTM solutions can offer multiple benefits to an organization:
+  - UTM can be cost-effective: Reduces the time and resources needed to manage multiple stand-alone security tools. Purchasing a suite of integrated tools may also be less expensive than buying each tool separately. 
+  - UTM is flexible and adaptable: Offers flexible solutions and options for security management. The security services and tools in a UTM can be implemented in any combination that is appropriate for each network environment.
+  - UTM offers integrated and centralized management: Consolidates multiple security tools into a central management console. This simplifies monitoring and addressing security threats, as well as streamlines the management of  updates to the UTM components. The central management feature also helps IT Support staff identify and stop the full extent of an attack across an entire network. 
+
+- __Risks of using UTM__
+  - __UTM can become a single point of failure in a network security attack__: If an attack disables an entire UTM solution, there would be no other backup security services or tools to stop that attack. One of the core principles of information systems management is to design and implement redundant, backup, and failover systems. When one element of an IT system is attacked or experiences a failure, there should always be a backup or parallel system to replace it. 
+  - __UTM might be a waste of resources for small businesses__: Small businesses may not need a robust security solution like UTM. The time and money needed to purchase, implement, and manage a complex UTM system may not provide a significant return on security benefits for a smaller network. Cybercriminals are more likely to attack larger targets.
+
+- __Key Takeaways__
+  - Unified Threat Management (UTM) systems offer multiple options in a comprehensive suite of network security tools. UTM solutions can be implemented as hardware and/or software and can protect either a single host or an entire network. 
+  - UTM security services and tool options include firewalls, IDS, IPS, antivirus and anti-malware software, spam gateways, web and content filters, data leak/loss prevention, and VPN services. 
+  - The benefits of using a UTM solution include having a cost-effective network security system that is flexible and adaptable with a management console that is integrated and centralized. The risks of using UTM include creating a single point of failure for a network security system and it might be an unnecessary use of resources for small businesses.
+
