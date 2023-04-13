@@ -1,9 +1,9 @@
 # Table of Contents
-- [S1 Partner Portal & All Resources](#s1-resources)
+- [Partner Portal & All Resources](#s1-resources)
 - [Sales Fundamentals](#sales-fundamentals)
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
-- [SentinelOne Sales Fundamentals Cert](#sales-fundamentals-cert-1)
-- [SentinelOne Threat Services](#threat-serviecs)
+- [Sales Fundamentals Cert](#sales-fundamentals-cert-1)
+- [Threat Services](#threat-serviecs)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -127,7 +127,9 @@ __Completion 4/7/2023__
 (redacted for privacy reasons)
 
 # Threat Services
-[All Threat Services Data Sheet](https://partners.sentinelone.com/prm/English/s/assets?id=338789&q=threat)
+[Master S1 Service Offering/Overview](https://partners.sentinelone.com/prm/English/s/assets?id=386841)
+
+[Threat Services Data Sheet](https://partners.sentinelone.com/prm/English/s/assets?id=338789&q=threat)
 
 ### ___Singularity_ Top Value Propositions__
   - A single platform with consolidated security functions that make security and IT teams more effective and efficient.
@@ -200,7 +202,7 @@ zero additional agents, hardware, or network changes.
 deployment gaps?) . What is the current process of uncovering existing deployment gaps or adding new devices and achieving coverage of managed devices (for
 example, after activity)? What is the current process to fix deployment gaps? Would a peer-to-peer agent installation process be beneficial in closing deployment
 gaps?
-- Full Visibility Do you know every IP-connected device on your network? (Khen was your last inventory taken?)
+- Full Visibility Do you know every IP-connected device on your network? (when was your last inventory taken?)
 - IoT IoT devices have notoriously poor OS security and are rarely patched and therefore present an easy point of entry for attackers. do you currently inventory IoT devices on your network? Do you have a quick process to identify which IoT devices may be more susceptible to attack (for example, which IoT devices are
 at risk of Ripple20 vulnerabilities)?
 
@@ -267,7 +269,7 @@ Would you be interested in a solution that can provide automated and continuous 
 Singularity Mobile is our mobile threat defense solution delivered as a local, on-device agent providing behavioral protection against mobile malware, phishing, and MITM. Singularity Mobile brings behavioral AI-driven protection, detection, and response to iOS, Android, and ChromeOS devices. SentinelOne delivers mobile threat defense that is local, adaptive, and real-time.
 
 - Did you know? McAfee Labs reports __1.6M new pieces of mobile malware in Q2 2020__. By comparison, there were 120k and 80k new pieces of malware for Linux and IoT, respectively. 
-- __MDM or Mopile Device Management__ provides admin tools for:
+- __MDM or Mobile Device Management__ provides admin tools for:
   - Policy and Governance
   - PIN code enforcement
   - Track the mobile device
@@ -298,3 +300,82 @@ Singularity Mobile is our mobile threat defense solution delivered as a local, o
 - __Detect threats across devices, apps, and networks__, not just securing a mobile container.
 - __MDM integration__ simplifies deployment and automates response. 
 - SentinelOne's mobile solution __protects different OSes__: _iOS, Android, and ChromeOS_.
+
+## Singularity Marketplace
+[S1 Marketplace](https://partners.sentinelone.com/prm/English/s/assets?id=338785&q=marketplac)
+
+Singularity™ Marketplace is an ecosystem to help customers extend the SentinelOne Singularity™ XDR platform with bite-sized, one-click applications to help enterprises unify prevention, section, and response across attack surfaces and implement and embrace XDR.
+
+![s1_marketplace](https://i.imgur.com/MH82eLS.png)
+
+- __Collaborative Defense-in-Depth__ - Maximize and layer trusted solutions across your security stack for premium protection without the distractions &
+effort of context switching—especially during time-sensitive triage and response.
+- __Streamlined Operations & Workflows__ - Achieve single-pane visibility & analysis for siloed data streams with one agent for all XDR telemetry, then simplify & connect security processes without custom logic, code, or configuration.
+- __Unified Cross-System Response__ - Defeat high velocity threats in real time by automating and orchestrating your security tools across different domains to execute on a unified response and remediation strategy.
+
+
+#### Endpoint Secuirty Layers
+
+![security_framework](https://i.imgur.com/4JqM2RP.png)
+
+__Identity__- Who manages Active Directory? The Keys protect the data - what is protecting the keys?
+__Prevent__ - Prevention. Stopping threats before they have any effects. Realm of AV/NGAV technology or harden AD configuration. 
+__Detect, Investigate and Respond__ - Detection, Investigation and Respond. The domain of the SOC and threat hunting teams - giving the security team an active tool to stop the bleeding. Realm of EDT, ITDR, and EDR.
+__Resolve__ - Getting back to normal operations, get back as fast as possible so we can get back to business. This may involve multiple teams which is a huge effort and time-consuming.
+
+#### Buyer Doubts
+- __Can SentinelOne support my business?__ There is always a concern when bringing in a new solution, is this solution going to break my environment? This potentially could lead to greater pain than I am trying to solve. We have many compelling stories for many types of customers, use cases, verticals, complex environment, etc. It is on you to be pro-actively demonstrating the different Services and Products we offer, Peer reviews, Customer stories and/or references to vouch for SentinelOne.
+- __Does SentinelOne work better than the competition?__ The security teams and leaders can't afford to make a mistake, so when they are
+comparing competitors, they are actually focused on the question: does it work better than the competition in MY environment? Ensure you understand the customer's environment and needs, because it will come down to who's technology they are going to understand better. Sales and SE alignment is crucial as it is on you to explain how SentinelOne's security architecture design works better , now AND in the future.
+- __Does SentinelOne work in MY environment?__ This is the main reason we lead the mdiscussion towards a Proof of Concept (POC). There is no "cookie-cutter" - as much as we provide Best Practices to the POC and equip our partners with all the knowledge and tools they need to run a successful POC (Look for the SentinelOne Partner Pre- Sales Proficient course), we have to listen to our customers, what their requirements and needs are and ensure we are addressing them, showing how the SentinelOne solution helps solve their pain points and problems.
+-  __Does the product work?__ Usually it is resolved by Market research and Peer company conversations and Third Party Validations. Our competitors might throw this FIJD at the prospect and it is our mission to prove that the product works, it's not buggy and the ease of use makes a great user experience. A demo and a Proof of Concept (POC) will also help resolve this doubt. _Pro Tip_: For Malware testing capabilities leverage the MITRE ATT&CK validation, which emulates real-life, live attacks.
+-  __How long will this solution be viable?__ Will SentinelOne be here in a year? Especially with how the market is changing - what is SentinelOne's viability as a company. SentinelOne Inc. raised Sl.2 billion in one of the cybersecurity industry's largest initial public offerings., and we are growing strong.
+
+#### Common Objections
+_Objection 1_
+- _SentinelOne requires a reboot which leads to downtime for their solution to be operational. Reboots are also required for upgrades._
+- _SentinelOne requires ONE reboot after an initial agent installation._
+
+__Reboot: Key Takeaways__
+- For migration from legacy technology, a reboot will be required for the removal of that solution.
+- There are multiple detection engines within the SentinelOne agent, you could install the agent without a reboot and be protected. A reboot is only required to initiate behavioral detections and enables  ‘storylines’ capabilities which re-links event data context-rich to a context-rich view. The other detection engines are active, on installation without requiring a reboot.
+- The reboot enables the automatic remediation and recovery capability of the platform.
+- Upgrades do _not_ require a reboot.
+
+_Objection 2_
+- _The SentinelOne agent is heavy and requires significant tuning and monitoring._
+- _SentinelOne is aligned with other Next Gen Endpoint solutions with respect to disk, processor usage and memory footprint._
+
+__Heavy Resources: Helpful Facts__
+- Performance metrics are in line with other Next Gen EPP solutions.
+- SentinelOne provides capabilities that other products do not, such as automated event re-linking, remediation and rollback.
+- SentinelOne has a robust exclusion catalog, interoperability settings and performance control metrics, such as performance caps.
+
+_Objection 3_
+- _SentinelOne doesn't have Sandbox integration or functionality._
+- _SentinelOne provides a similar context to sandbox technologies as part of 'Storylines', captured event telemetry and timeline visualization and corresponding data._
+
+__No Sandbox: Helpful Facts__
+- Storylines provide similar functionality to a sandbox, virtually as if you had a sandbox in each agent capturing event telemetry, timeline visualization and corresponding data.
+- SentinelOne has API integrations with major sandbox vendors and customers can choose the sandbox that best fits their needs.
+
+_Objection 4_
+- _SentinelOne performs alert monitoring, triage and investigation on detected threats, not proactive threat hunting._
+- _SentinelOne provides threat hunting services as part of Vigilance Respond and Vigilance Pro. We also include threat hunting as part of the Managed Detection and Response offering._
+
+__No Sandbox: Helpful Facts__ 
+- SentinelOne provides threat hunting services as part of Vigilance Respond and Vigilance Pro including a fully managed MDR service and proactive threat hunting as part of the service.
+
+_Objection 5_
+- _SentinelOne only performs alert monitoring, triage and investigation on detected threats, not full, end-to-end Managed Services._
+- _SentinelOne offers two Managed Services options - Vigilance Respond and Vigilance Pro. Deployment assistance can be provided with GO - Guided Onboarding, and/or Technical Account Manager (TAM)._
+
+__No Managed Services: Helpful Facts__
+- SentinelOne offers comprehensive Managed Detection and Response (MDR) options depending on your specific needs.
+- SentinelOne has highly skilled experts that support this service (Vigilance) which includes full-service Managed Detection and Response (MDR).
+- Managed Services include both MDR and Threat Hunting on a single SKU.
+- Guided onboarding and Technical Account Manager options are available to assist with deployment.
+
+_Objection 6_
+SentinelOne only has SMB and Mid-Enterprise customers.
+
