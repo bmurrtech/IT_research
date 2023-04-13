@@ -2,6 +2,9 @@
 - [S1 Partner Portal & All Resources](#s1-resources)
 - [Sales Fundamentals](#sales-fundamentals)
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
+- [SentinelOne Sales Fundamentals Cert](#sales-fundamentals-cert-1)
+- [SentinelOne Threat Services](#threat-serviecs)
+- [SentinelOne Sales Applied](#s1-sales-applied)
 
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
@@ -120,5 +123,66 @@ Discover why customers choose SentinelOne over the following competitors:
 - [SentinelOne Vs Palo Alto Networks](https://www.sentinelone.com/vs/palo-alto-networks/) - Customers choose SentinelOne over Palo Alto Networks for endpoint & cloud protection, detection, and response
 - [SentinelOne Vs Trend Micro](https://www.sentinelone.com/vs/trend-micro/) - Customers prefer SentinelOne over Trend Micro to protect, detect, and recover from cyber threats spanning endpoints and cloud workloads
 
+# Sales Fundamentals Cert 1
+__Completion 4/7/2023__ 
+![sales_cert1](https://i.imgur.com/2IrMSM0.png)
+(redacted for privacy reasons)
 
+# Threat Services
+[All Threat Services Data Sheet](https://partners.sentinelone.com/prm/English/s/assets?id=338789&q=threat)
 
+### ___Singularity_ Top Value Propositions__
+  - A single platform with consolidated security functions that make security and IT teams more effective and efficient.
+  - Reduce the risk of cyber-attacks disrupting business operations.
+  - A strategic partner for customers with a broad portfolio of products and services.
+  - Seamlessly integrate with existing security investments to improve ROI.
+
+#### Singularity Questions
+- __Time to Value__ question: How many technologies do you typically use to achieve resolution? How long does it take?
+- __RCA or Root Cause Analysis__ question: "How do you perform event correlation and Root Cause Analysis (RCA)?"
+- __Numbers and Diversity__ question: How many agents are you running on the endpoint and what are their roles? Does this vary by the operating system?
+
+#### Top Singularity Differences
+  - Multi-tenant SaaS platform, with a single resource-efficient agent.
+  - Automatically correlate atomic events into the rich story context.
+  - Remediate all affected endpoints with a single click.
+  - Up to 365 days context retention for all EDR activities.
+  - Up level SOC resources to enable proactive threat hunting with automated hunting rules.
+
+### Vigilance and Viglance Pro
+[Vigilance Data Sheet](https://assets.sentinelone.com/vdi1/sentinel-one-vigilan?lb-mode=overlay#page=1)
+
+![vigilance_how](https://i.imgur.com/tz2vTC2.png)
+
+- __Vigilance__ is a __Managed Detection and Response (MDR)__ and __Digital Forensics Incident Response (DFIR)__ tool with the following features:
+  - __Vigilance Respond__: Managed Detection & Response to augment your security operations. Triage, Resolution, and Escalation when necessary.
+  - __Vigilance Respond PRO__: MDR + Digital Forensics & Incident Response form a security safety net. Extended investigation and response, faster SLAs, and direct IR Pro access.
+
+![vigilance_respond_vs_pro](https://i.imgur.com/RhBaLs5.png)
+
+### Watchtower and Watchtower Pro
+- [WatchTower Data Sheet](https://assets.sentinelone.com/gss/sentinelone-watchtow?lb-mode=overlay#page=1)
+- [WatchTower Monthly Report](https://www.sentinelone.com/?s=watchtower+report)
+
+- __Watchtower__ is SentinelOne’s _active campaign threat hunting service targeting global APT campaigns, novel attacker techniques, and emerging trends in cybercrime_. Emerging Cyber Threats
+- __Watchtower Pro__ is SentinelOne’s customized threat hunting and compromise assessment service tailored to your unique environment. This service also provides access to the Signal Hunting Library and inherits all of the benefits of WatchTower. 
+
+![watchtower_vs_pro](https://i.imgur.com/JmrsHHo.png)
+
+![threat_at_glance](https://i.imgur.com/S5FKkfp.png)
+
+#### WatchTower Top Value Props
+- Augment Your Existing SOC Resources with a Global Team of Elite Analysts, Hunters, and Responders.
+- Offload 24x7 Monitoring and Triage to Refocus on More Strategic Initiatives.
+- Reduce Alert and Managerial Fatigue with Cleaner Dashboards and Minimized Customer Escalations.
+- Support for private labeled MDR to extend current customer and/or management services.
+
+#### WatchTower Questiosn to Ask
+- __Reducing IT Friction__ Do you have a fully staffed SOC? Are your existing SOC personnel and resources sufficient to provide peace of mind? Many attacks and breaches occur during holidays and weekends when attackers know organizations are not fully staffed. Therefore, it might be useful to discuss the merits of a 24x7 - 365-day MDR service to augment their existing resources.
+- __Optimizing Time To Value__ How quickly are you typically able to respond to an escalated security incident? Are you outsourcing incident response? Does your organization have an Incident Response retainer with a 3rd party firm? Does your cyber insurer have a specific contracted IR firm they utilize/mandate for a breach?
+- __Integration__ How are you currently integrating threat hunting into your cybersecurity program? What does that process look like? Would your organization benefit from a managed threat hunting offering? How difficult is it for you to threat hunt using your existing toolset?
+
+#### Threat Services Top Differences
+- With Vigilance Respond and Vigilance Respond Pro, customers not only receive MDR services but also active campaign hunting for advanced persistent threats (APT) and cybercrime with WatchTower at no additional cost (a separate SKU for competitive offerings).
+- SentinelOne offers better value for our threat services than the competition; with Vigilance Respond Pro, DFIR hours are included in the package, whereas competitive offerings require you to purchase additional IR services on top of MDR—both at a significantly higher cost.
+- With WatchTower Pro, customers benefit from customized threat hunting and two compromise assessments per year as part of the service. Competitors sell one-off compromise assessments (entirely separate from their threat hunting SKUs) at a significant cost.
