@@ -238,6 +238,8 @@ The recent Attivo Networks acquisition expands the Singularity" XDR platform's v
 prime target for cyber attacks as it provides authentication and authorization for critical enterprise resources. SentinelOne replaces the inadequate, complex, and
 expensive approaches to AD security with a straightforward and modern identity security suite.
 
+![s1_identity](https://imgur.com/NNFnKEd)
+
 #### Identity Value Prop
 - Singularity Identityprotects Active Directory (AD) and Azure AD assets, including domain controllers and domain-joined endpoints in real-time.
 - Singularity Ranger AD Assessor delivers continuous identity assessment of misconfigurations, vulnerabilities, and active threats targeting AD and Azure AD in
@@ -256,3 +258,43 @@ Would you be interested in a solution that can provide automated and continuous 
 - Continually assess your identity risk to check for vulnerabilities in real-time.
 - Replaces the need for manual, costly and disruptive audits.
 - Real time detection of active AD attacks.
+
+## Singularity Mobile
+[Mobile Datasheet](https://assets.sentinelone.com/mobile-threat-defense/ds-singularity-mobile)
+
+![s1_mobile](https://imgur.com/lxEG4b8)
+
+Singularity Mobile is our mobile threat defense solution delivered as a local, on-device agent providing behavioral protection against mobile malware, phishing, and MITM. Singularity Mobile brings behavioral AI-driven protection, detection, and response to iOS, Android, and ChromeOS devices. SentinelOne delivers mobile threat defense that is local, adaptive, and real-time.
+
+- Did you know? McAfee Labs reports __1.6M new pieces of mobile malware in Q2 2020__. By comparison, there were 120k and 80k new pieces of malware for Linux and IoT, respectively. 
+- __MDM or Mopile Device Management__ provides admin tools for:
+  - Policy and Governance
+  - PIN code enforcement
+  - Track the mobile device
+  - Control, Lock or Wipe device
+
+> MDM is Compliance and Governance Team in the Org uses MTD: IT
+
+- __MTD or Mobile Threat Detection__ detects and prevents malicous attacks such as:
+  - Exploits, malware, phishing, malicious apps
+  - Rogue APS, MITM, SSL-stripping
+  - Reconnaissance scans
+  - Profile/configuration changes
+  - System tampering
+  - Deep inspection/sandbox apps
+
+#### Singularity Mobile Top Value Prop
+- Protection against and detection of mobile malware and phishing, both known and unknown, and Man-in-The-Middle (MiTM) attacks.
+- Local AI engine never collects user content or messages: user privacy AND security. 
+- Integration with major MDMs (mobile device managers) for simplified deployment and automated response action.
+
+#### Singularity Mobile Questions to Ask
+- How are you protecting mobile devices from malware and phishing attacks?
+- Do you utilize any Chromebooks in your environment, if so, how are you protecting those devices? 
+
+#### Singularity Mobile Top Differences
+- __AI-powered protection__ works locally, without relying on cloud connectivity.
+- __Behavioral detection__ of zero-day malware and unknown phishing attacks.
+- __Detect threats across devices, apps, and networks__, not just securing a mobile container.
+- __MDM integration__ simplifies deployment and automates response. 
+- SentinelOne's mobile solution __protects different OSes__: _iOS, Android, and ChromeOS_.
