@@ -3,7 +3,7 @@
 - [Sales Fundamentals](#sales-fundamentals)
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
 - [Sales Fundamentals Cert](#sales-fundamentals-cert-1)
-- [Threat Services](#threat-serviecs)
+- [Threat Services](#threat-services)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -314,16 +314,16 @@ effort of context switching—especially during time-sensitive triage and respon
 - __Unified Cross-System Response__ - Defeat high velocity threats in real time by automating and orchestrating your security tools across different domains to execute on a unified response and remediation strategy.
 
 
-#### Endpoint Secuirty Layers
+## Endpoint Secuirty Layers
 
 ![security_framework](https://i.imgur.com/4JqM2RP.png)
 
-__Identity__- Who manages Active Directory? The Keys protect the data - what is protecting the keys?
-__Prevent__ - Prevention. Stopping threats before they have any effects. Realm of AV/NGAV technology or harden AD configuration. 
-__Detect, Investigate and Respond__ - Detection, Investigation and Respond. The domain of the SOC and threat hunting teams - giving the security team an active tool to stop the bleeding. Realm of EDT, ITDR, and EDR.
-__Resolve__ - Getting back to normal operations, get back as fast as possible so we can get back to business. This may involve multiple teams which is a huge effort and time-consuming.
+- __Identity__- Who manages Active Directory? The Keys protect the data - what is protecting the keys?
+- __Prevent__ - Prevention. Stopping threats before they have any effects. Realm of AV/NGAV technology or harden AD configuration. 
+- __Detect, Investigate and Respond__ - Detection, Investigation and Respond. The domain of the SOC and threat hunting teams - giving the security team an active tool to stop the bleeding. Realm of EDT, ITDR, and EDR.
+- __Resolve__ - Getting back to normal operations, get back as fast as possible so we can get back to business. This may involve multiple teams which is a huge effort and time-consuming.
 
-#### Buyer Doubts
+## Buyer Doubts
 - __Can SentinelOne support my business?__ There is always a concern when bringing in a new solution, is this solution going to break my environment? This potentially could lead to greater pain than I am trying to solve. We have many compelling stories for many types of customers, use cases, verticals, complex environment, etc. It is on you to be pro-actively demonstrating the different Services and Products we offer, Peer reviews, Customer stories and/or references to vouch for SentinelOne.
 - __Does SentinelOne work better than the competition?__ The security teams and leaders can't afford to make a mistake, so when they are
 comparing competitors, they are actually focused on the question: does it work better than the competition in MY environment? Ensure you understand the customer's environment and needs, because it will come down to who's technology they are going to understand better. Sales and SE alignment is crucial as it is on you to explain how SentinelOne's security architecture design works better , now AND in the future.
@@ -384,5 +384,4 @@ _Small: Helpful Facts_
 - With over 5,500 customers, from SMBs to large enterprises to Fortune10s - SentinelOne's diversity speaks to the capabilities of the Platform.
 - SentinelOne has over 150 positive Gartner Peer Reviews - 4.9 aggregate score.
 - Customers shared with us they enjoy the simplicity of the solution, ease of use and flexibility but also the level of feature depth that we provide.
-
 
