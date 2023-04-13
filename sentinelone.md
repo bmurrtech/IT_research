@@ -4,8 +4,6 @@
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
 - [SentinelOne Sales Fundamentals Cert](#sales-fundamentals-cert-1)
 - [SentinelOne Threat Services](#threat-serviecs)
-- [SentinelOne Sales Applied](#s1-sales-applied)
-
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -186,3 +184,75 @@ __Completion 4/7/2023__
 - With Vigilance Respond and Vigilance Respond Pro, customers not only receive MDR services but also active campaign hunting for advanced persistent threats (APT) and cybercrime with WatchTower at no additional cost (a separate SKU for competitive offerings).
 - SentinelOne offers better value for our threat services than the competition; with Vigilance Respond Pro, DFIR hours are included in the package, whereas competitive offerings require you to purchase additional IR services on top of MDR—both at a significantly higher cost.
 - With WatchTower Pro, customers benefit from customized threat hunting and two compromise assessments per year as part of the service. Competitors sell one-off compromise assessments (entirely separate from their threat hunting SKUs) at a significant cost.
+
+## Singularity Ranger
+Singularity Ranger finds and fingerprints ail IP-enabIed devices, from network to cloud to IoT, enhancing enterprise visibility and proactive network attack surface
+control. Ranger transforms Sentinel agents into distributed network sensors that autonomously protect infrastructure from suspicious and malicious devices, ail with
+zero additional agents, hardware, or network changes.
+
+#### Ranger Top Value Prop
+- Always know what is on your network, with advanced ML device fingerprinting to inventory and categorize assets.
+- Protect yourself from device-based threats with I-click isolation of suspicious devices.
+- Efficiently plug gaps in your network attack surface with automated peer-to-peer agent deployment.
+
+#### Ranger Questions to Ask
+- Rollout Agent How do you know if you have completed your agent rollout? (for example, do you have 100% coverage across managed endpoints or are there any
+deployment gaps?) . What is the current process of uncovering existing deployment gaps or adding new devices and achieving coverage of managed devices (for
+example, after activity)? What is the current process to fix deployment gaps? Would a peer-to-peer agent installation process be beneficial in closing deployment
+gaps?
+- Full Visibility Do you know every IP-connected device on your network? (Khen was your last inventory taken?)
+- IoT IoT devices have notoriously poor OS security and are rarely patched and therefore present an easy point of entry for attackers. do you currently inventory IoT devices on your network? Do you have a quick process to identify which IoT devices may be more susceptible to attack (for example, which IoT devices are
+at risk of Ripple20 vulnerabilities)?
+
+#### Ranger Top Differences
+- Ranger is woven into our existing agent: zero new software agents, hardware, or network changes make getting started easy.
+- Configurable ML device fingerprinting algorithms efficiently categorize connected devices by function, without spamming your network.
+- Securely, efficiently, and automatically deploy agents to unsecured endpoints with configurable peer-to-peer job automation.
+
+## Cloud Workload Detection and Reponse
+Singularity Cloud provides EDR for workloads running in cloud instances, containers, and Kubernetes clusters, to protect against malware like crypto-miners and
+ransomaare. A single, no-sidecar agent protects the K8s worker, ail its pods, and all its containers. Singularity'* Cloud fits easily into existing DevOps provisioning
+and maintenance practices and maintains workload stability by not tainting kernels.
+
+#### Cloud WDR Value Prop
+- Industry-leading workload protection, detection, and response across on-prem, AWS, Azure, and Google Cloud.
+- Multi-cloud visibility and control.
+- Infrastructure as Code (IaC) integration, for cloud workload protection, that does not slow you down.
+- 
+#### Cloud WDR Questions to Ask
+- How are you protecting your servers and containers from malware and ransomware?
+- How do you or your IR, SOC, or Security team investigate incidents as they move across your hybrid cloud network?
+- Are you deployed in both an on-prem data center AND a public cloud? Khich Cloud Service Providers (CSPs) do you use?
+- What is your mix of Linux vs. Windows servers (roughly)? What flavor of containers are you using?
+
+
+#### Cloud WDR Top Differences
+- App Control Engine prevents unauthorized code from hijacking your Ws and containers.
+- Imutable Resource-efficient one agent protects the Kubernetes worker node, all its pods, and ail their containers. Complete visibility into containers, without the
+overhead of sidecars.
+- No kernel panics because our Linux and Kubernetes agents operate entirely in user-space, there are no tainted kernels and no kernel panics. DevOps can update
+their host OS at will without fear of agent conflict.
+
+## Singularity Identity
+The recent Attivo Networks acquisition expands the Singularity" XDR platform's visibility and actionability across identity security surfaces. Active Directory is a
+prime target for cyber attacks as it provides authentication and authorization for critical enterprise resources. SentinelOne replaces the inadequate, complex, and
+expensive approaches to AD security with a straightforward and modern identity security suite.
+
+#### Identity Value Prop
+- Singularity Identityprotects Active Directory (AD) and Azure AD assets, including domain controllers and domain-joined endpoints in real-time.
+- Singularity Ranger AD Assessor delivers continuous identity assessment of misconfigurations, vulnerabilities, and active threats targeting AD and Azure AD in
+real-time.
+- Singularity Hologram detects, misdirects, and isolates attackers that have established footholds in-network through indistinguishable decoys of production
+OSes, applications, and more.
+
+#### Identity Questions to Ask
+- How would you know if your Active Directory is under attack?
+- Do you have visibility to exposure/vulnerabilities that an attacker would take advantage of in AD?
+- Who is responsible for the hardening of your Active Directory data?
+- How do you assess the risk posture of your organization from identity attacks targeting AD and Azure AD? When was the last time you audited your AD infrastructure?
+Would you be interested in a solution that can provide automated and continuous auditing of AD?
+
+### Identity Differences
+- Continually assess your identity risk to check for vulnerabilities in real-time.
+- Replaces the need for manual, costly and disruptive audits.
+- Real time detection of active AD attacks.
