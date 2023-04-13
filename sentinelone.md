@@ -336,7 +336,7 @@ _Objection 1_
 - _SentinelOne requires a reboot which leads to downtime for their solution to be operational. Reboots are also required for upgrades._
 - _SentinelOne requires ONE reboot after an initial agent installation._
 
-__Reboot: Key Takeaways__
+_Reboot: Key Takeaways_
 - For migration from legacy technology, a reboot will be required for the removal of that solution.
 - There are multiple detection engines within the SentinelOne agent, you could install the agent without a reboot and be protected. A reboot is only required to initiate behavioral detections and enables  ‘storylines’ capabilities which re-links event data context-rich to a context-rich view. The other detection engines are active, on installation without requiring a reboot.
 - The reboot enables the automatic remediation and recovery capability of the platform.
@@ -346,7 +346,7 @@ _Objection 2_
 - _The SentinelOne agent is heavy and requires significant tuning and monitoring._
 - _SentinelOne is aligned with other Next Gen Endpoint solutions with respect to disk, processor usage and memory footprint._
 
-__Heavy Resources: Helpful Facts__
+_Heavy Resources: Helpful Facts_
 - Performance metrics are in line with other Next Gen EPP solutions.
 - SentinelOne provides capabilities that other products do not, such as automated event re-linking, remediation and rollback.
 - SentinelOne has a robust exclusion catalog, interoperability settings and performance control metrics, such as performance caps.
@@ -355,7 +355,7 @@ _Objection 3_
 - _SentinelOne doesn't have Sandbox integration or functionality._
 - _SentinelOne provides a similar context to sandbox technologies as part of 'Storylines', captured event telemetry and timeline visualization and corresponding data._
 
-__No Sandbox: Helpful Facts__
+_No Sandbox: Helpful Facts_
 - Storylines provide similar functionality to a sandbox, virtually as if you had a sandbox in each agent capturing event telemetry, timeline visualization and corresponding data.
 - SentinelOne has API integrations with major sandbox vendors and customers can choose the sandbox that best fits their needs.
 
@@ -363,19 +363,26 @@ _Objection 4_
 - _SentinelOne performs alert monitoring, triage and investigation on detected threats, not proactive threat hunting._
 - _SentinelOne provides threat hunting services as part of Vigilance Respond and Vigilance Pro. We also include threat hunting as part of the Managed Detection and Response offering._
 
-__No Sandbox: Helpful Facts__ 
+_No Sandbox: Helpful Facts_
 - SentinelOne provides threat hunting services as part of Vigilance Respond and Vigilance Pro including a fully managed MDR service and proactive threat hunting as part of the service.
 
 _Objection 5_
 - _SentinelOne only performs alert monitoring, triage and investigation on detected threats, not full, end-to-end Managed Services._
 - _SentinelOne offers two Managed Services options - Vigilance Respond and Vigilance Pro. Deployment assistance can be provided with GO - Guided Onboarding, and/or Technical Account Manager (TAM)._
 
-__No Managed Services: Helpful Facts__
+_No Managed Services: Helpful Facts_
 - SentinelOne offers comprehensive Managed Detection and Response (MDR) options depending on your specific needs.
 - SentinelOne has highly skilled experts that support this service (Vigilance) which includes full-service Managed Detection and Response (MDR).
 - Managed Services include both MDR and Threat Hunting on a single SKU.
 - Guided onboarding and Technical Account Manager options are available to assist with deployment.
 
 _Objection 6_
-SentinelOne only has SMB and Mid-Enterprise customers.
+- _SentinelOne only has SMB and Mid-Enterprise customers._
+- _SentinelOne has over 5,500 customers that range in size from SMB to Fortune 10 and all sizes in between._
+
+_Small: Helpful Facts_
+- With over 5,500 customers, from SMBs to large enterprises to Fortune10s - SentinelOne's diversity speaks to the capabilities of the Platform.
+- SentinelOne has over 150 positive Gartner Peer Reviews - 4.9 aggregate score.
+- Customers shared with us they enjoy the simplicity of the solution, ease of use and flexibility but also the level of feature depth that we provide.
+
 
