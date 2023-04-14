@@ -13,9 +13,7 @@ All graphics and conent is intellectual property subject to copyright laws prote
 
 SentinelOne encompasses __AI-powered prevention, detection, response, and threat hunting__ across user endpoints, containers, cloud workloads, and IoT devices. Learn more by watching this video of [SentinelOne Explained in 2-mins](https://youtu.be/Fzji8wNJEc4).
 
-For more in-depth look at SentinelOne:
-
-<p><a href="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Ffast.wistia.net%2Fembed%2Fiframe%2Fq38113oezq&amp;display_name=Wistia%2C%2BInc.&amp;url=https%3A%2F%2Fsentinelone-education.wistia.com%2Fmedias%2Fq38113oezq&amp;image=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2Fa891981f2787583830bc2385448be612.jpg%3Fimage_crop_resized%3D960x540&amp;key=40cb30655a7f4a46adaaf18efb05db21&amp;type=text%2Fhtml&amp;schema=wistia&amp;wvideo=q38113oezq"><img src="https://embed-ssl.wistia.com/deliveries/a891981f2787583830bc2385448be612.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=6b0aeae0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Ffast.wistia.net%2Fembed%2Fiframe%2Fq38113oezq&amp;display_name=Wistia%2C%2BInc.&amp;url=https%3A%2F%2Fsentinelone-education.wistia.com%2Fmedias%2Fq38113oezq&amp;image=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2Fa891981f2787583830bc2385448be612.jpg%3Fimage_crop_resized%3D960x540&amp;key=40cb30655a7f4a46adaaf18efb05db21&amp;type=text%2Fhtml&amp;schema=wistia&amp;wvideo=q38113oezq"></a></p>
+For more in-depth look at SentinelOne see the [Basic Technical Sales Pitch](https://i.imgur.com/q38113oezq)
 
 Tomer Weingarten, CEO and Co-Founder, SentinelOne describes S1 functions as follows:
 
@@ -294,7 +292,7 @@ Would you be interested in a solution that can provide automated and continuous 
 
 Singularity Mobile is our mobile threat defense solution delivered as a local, on-device agent providing behavioral protection against mobile malware, phishing, and MITM. Singularity Mobile brings behavioral AI-driven protection, detection, and response to iOS, Android, and ChromeOS devices. SentinelOne delivers mobile threat defense that is local, adaptive, and real-time.
 
-#### Are Your Mobile Devices Safe?
+### Are Your Mobile Devices Safe?
 - Work happens anywhere, anytime. Mobiles access vital resources. BYOD too.
 - Mobile is how users verify enterprise trust/identity (i.e. MFA/2FA).
 - Phishing attacks on mobile devices are increasingly happening. Mobile credential theft is a critical attack technique.
@@ -350,25 +348,18 @@ effort of context switching—especially during time-sensitive triage and respon
 - [__Data Management__](https://www.sentinelone.com/platform/data-platform/) - DataSet drives better collaboration between DevOps, IT, engineering, and security teams with a unified LIVE data analytics platform.
 - [__Binary Vault__](https://sentinelone-education.wistia.com/medias/l3bip7tjqf) - Binary Vault is a subscription enabling the upload of observed executables, both malicious and benign, to the SentinelOne Cloud. Once there, Security teams may download the files for local analysis and integration with sandbox and SOAR solutions.
 
-### Endpoint Secuirty Layers
-
-![security_framework](https://i.imgur.com/4JqM2RP.png)
-
-- __Identity__- Who manages Active Directory? The Keys protect the data - what is protecting the keys?
-- __Prevent__ - Prevention. Stopping threats before they have any effects. Realm of AV/NGAV technology or harden AD configuration. 
-- __Detect, Investigate and Respond__ - Detection, Investigation and Respond. The domain of the SOC and threat hunting teams - giving the security team an active tool to stop the bleeding. Realm of EDT, ITDR, and EDR.
-- __Resolve__ - Getting back to normal operations, get back as fast as possible so we can get back to business. This may involve multiple teams which is a huge effort and time-consuming.
-
 ### Singularity Storyline (STAR)
 
 ![s1_storyline](./media/s1_storyline.gif)
+
+![Deep-dive of Storyline Dashboard](https://sentinelone-education.wistia.com/medias/ieu9xi1yae)
 
 __Storyline Active Response (STAR)__ allows customers to write Automated Policy, Detection and Response Actions. This enables your Security team to “teach” SentinelOne what to stop with extensible, automated XDR.
 - Eliminate mundane tasks and noise
 - Eliminate clicks, tab switching, and consoles
 - Integrate multiple products and workflows
 
-#### What is Data Ingest?
+### What is Data Ingest?
 - Data ingestion is the _process of obtaining and importing data for immediate use or storage in a database_. To ingest something is to take something in or absorb something.
 - When buying XDR Ingestion, the customer starts pushing data into SentinelOne XDR Platform via one of several mechanisms - they can query their Data next to EDR.
 - Data Ingest Use Cases:
@@ -376,7 +367,7 @@ __Storyline Active Response (STAR)__ allows customers to write Automated Policy,
   - __Multiple Vendors and Products__ - When a user wants to bring all of their Data from their various products and query/hunt/retain it all together, to benefit from SentinelOne workflows.
   - __Data Lake/SIEM Cost__ - When a user can not afford long-term retention in their current Data Lake/SIEM platform. Also, many customers have to exclude certain data that they would like to collect/analyze/retain due to excessive cost. In addition, the performance of traditional SIEM platforms degrades as the volume of data increases.
 
-#### XDR Platform SKUs Details
+### XDR Platform SKUs Details
 - __Data Retention__ The platform _comes with a 14 days retention_ for all create/ingest Data.
 - __Open XDR Data Ingest__ The platform _comes with the license to ingest_ and an initial amount of XDR Data.
 - __STAR - Storyline Active Response__ The platform _comes with STAR_ which allows customers to write Automated Policy, Detection and Response Actions. _This enables the SOC team to "teach" SentinelOne what to stop with extensible, automated XDR_. The platform comes with the ability to _create 100 Rules_.
@@ -384,7 +375,10 @@ __Storyline Active Response (STAR)__ allows customers to write Automated Policy,
 > All options above can be expandable at an additional cost.
 
 ### Singularity Control and Complete
+[SentinelOne Comparison Table between __Core__/ __Control__/ __Complete__](https://www.sentinelone.com/platform-packages/)
+
 [Singularity Control Datasheet](https://www.sentinelone.com/platform/singularity-control/)
+
 [Singularity Complete Datasheet](https://sentinelone.csod.com/content/sentinelone/publications/9350/scormcontent/index.html#)
 
 __Singulatity Control__ is made for organizations seeking the best-of-breed security with the addition of “security suite” features for endpoint management.
@@ -410,26 +404,51 @@ __Singularity Complete__ is made for enterprises that need modern endpoint prote
   - Custom detections and automated hunting rules with Storyline Active Response (STAR™).
   - Timelines, remote shell, file fetch, sandbox integrations, and more.
 
-#### Control/Complete Top Value Prop
+### Control/Complete Top Value Prop
 - A single platform with consolidated security functions that make security and IT teams more effective and efficient.
 - Reduce the risk of cyber-attacks disrupting business operations.
 - A strategic partner for customers with a broad portfolio of products and services.
 - Seamlessly integrate with existing security investments to improve ROI.
 
-#### Control/Complete Questions to Ask
+### Control/Complete Questions to Ask
 - Numbers and Diversity - How many agents are you running on the endpoint and what are their roles? Does this vary by the operating system?
 - Ransomware - How do you currently handle advanced attacks and fileless attacks? How do you handle Ransomware attacks?
 - RCA - How do you perform event correlation and Root Cause Analysis (RCA)?
 - Time to Value - How many technologies do you typically use to achieve resolution? How long does it take?
 
-#### Control/Complete Top Differences
+### Control/Complete Top Differences
 - Multi-tenant SaaS platform, with a single resource-efficient agent.
 - Automatically correlate atomic events into the rich story context.
 - Remediate all affected endpoints with a single click.
 - Up to 365 days context retention for all EDR activities.
 - Up level SOC resources to enable proactive threat hunting with automated hunting rules.
 
+## What is Multi Tenancy?
+According to Wikipedia, a software multitenancy is an architecture in which a single instance of software runs on a server and serves multiple tenants. Systems designed in such manner are "shared". A tenant is a group of users who share a common access with specific privileges to the software instance.
+
+### Benefits of Multi Tenancy
+- __Scalability__ -  Whether you’re managing a handful of endpoints or thousands, scalability, agility and  stability will help you solve today AND tomorrow's challenges so you can growth your business confidently. 
+- __Automation__ - We often spend countless hours on manual tasks that are prone to errors. Automation is the only way for organizations to accelerate their digital transformation by freeing IT and security teams of repetitive tasks so that they can focus on driving transformative projects. 
+- __Efficency__ - Comprehensive ease of use of the platform helps drive processes and improves operational maturity.
+
+> __SentinelOne Hierarchy__ is organized as follows: Global > Account > Site > Group
+
+### Threat Hunting Capabilities 
+
+- [__Deep Visibility__](https://sentinelone-education.wistia.com/medias/ce4g2xvtsh), you get full access to _the who, what, when, where, and why of every situation_. This not only enables strong root cause analysis but gives you the in-depth insights necessary to best protect your organization. See [Deep Visibility knowledge base](https://support.sentinelone.com/hc/en-us/sections/360006475094-Deep-Visibility) for more details.
+  - This helps achieve:
+    - high efficacy in detection of unknown, novel attacks
+    - greatly reduced false positive rates (because many attack and reconnaissance techniques are actually part of the normal flow of applications and IT operations)
+- [__Remote Script Orchestration (RSO)/Remote Ops__](https://sentinelone-education.wistia.com/medias/ieu9xi1yae) lets you run scripts to collect data and respond to events on endpoints remotely. You can collect forensic artifacts, execute complex scripts and commands, install and uninstall IR tools and more, on hundreds of endpoints simultaneously. See [RSO knowledge database](https://support.sentinelone.com/hc/en-us/articles/1500010484822-Remote-Script-Orchestration-RSO).
+- [__Full Remote Shell__](https://youtu.be/1JfjfxFT0LY) gives your security team a rapid way to investigate attacks, collect forensic data, and remediate breaches no matter where the compromised endpoints are located, eliminating uncertainty and greatly reducing any downtime that results from an attack. See [Full Remote Shell database](https://support.sentinelone.com/hc/en-us/sections/360005935333-SentinelOne-Remote-Shell) for more details.
+
 # Selling SentinelOne
+
+[SentinelOne 1-page Sales Card](https://partners.sentinelone.com/prm/English/s/assets?id=266098)
+
+[Basic Technical Sales Pitch](https://i.imgur.com/q38113oezq)
+
+[Deep Technical Sales Pitch](https://i.imgur.com/cigr3fsx17)
 
 ### Pain and Forces Driving Change
 
@@ -486,7 +505,7 @@ __Best-In-Class Response__
 - 1-click automated remediation capabilities
 - Custom, real-time detections
 - Quickly run scripts on one or multiple endpoints
-- __SentinelOne Storyline Active Response (STAR)™__ cloud-based automated hunting, detection, and response engine
+- __SentinelOne Storyline Active Response (STAR)__ cloud-based automated hunting, detection, and response engine
 
 __Flexible, Efficient IT and Security__
 - __Singularity XDR is a native and open platform__. Customers can utilize Singularity XDR as their security platform and enable 1-click integrations with their existing security portfolio
@@ -494,7 +513,27 @@ __Flexible, Efficient IT and Security__
 - Enterprise-grade and self-serviced
 - SentinelOne provides a cloud, hybrid, and on-premises solution
 
+## The Security Architecture Diagram
+
+![security_framework](https://i.imgur.com/4JqM2RP.png)
+
+- The Security Architecture Diagram is a framework of the building blocks of a customer's environment. In this lesson, we will walk you through how things fit together and the goal is to get some insight into the environment.
+- The purpose of this Security Architecture Diagram is to start a conversation to drive the discovery of the customer's initiatives, goals, and decision processes.
+- __Identity__- Who manages Active Directory? The Keys protect the data - what is protecting the keys?
+- __Prevent__ - Prevention. Stopping threats before they have any effects. Realm of AV/NGAV technology or harden AD configuration. 
+- __Detect, Investigate and Respond__ - Detection, Investigation and Respond. The domain of the SOC and threat hunting teams - giving the security team an active tool to stop the bleeding. Realm of EDT, ITDR, and EDR.
+- __Resolve__ - Getting back to normal operations, get back as fast as possible so we can get back to business. This may involve multiple teams which is a huge effort and time-consuming.
+
+### Know Your Audience
+
+It is critical that you know your audience. People in different roles have different motivations, different levels of technical depth, and different pain points. Below is a typical org structure in the different organizations. 
+
+![](https://i.imgur.com/TJ6uxGz.png)
+
 ## Buyer Doubts
+
+![buyer_doubts](https://i.imgur.com/q1Yp8QX.png)
+
 - __Can SentinelOne support my business?__ There is always a concern when bringing in a new solution, is this solution going to break my environment? This potentially could lead to greater pain than I am trying to solve. We have many compelling stories for many types of customers, use cases, verticals, complex environment, etc. It is on you to be pro-actively demonstrating the different Services and Products we offer, Peer reviews, Customer stories and/or references to vouch for SentinelOne.
 - __Does SentinelOne work better than the competition?__ The security teams and leaders can't afford to make a mistake, so when they are
 comparing competitors, they are actually focused on the question: does it work better than the competition in MY environment? Ensure you understand the customer's environment and needs, because it will come down to who's technology they are going to understand better. Sales and SE alignment is crucial as it is on you to explain how SentinelOne's security architecture design works better , now AND in the future.
