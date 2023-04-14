@@ -5,6 +5,9 @@
 - [Sales Fundamentals Cert](#sales-fundamentals-cert-1)
 - [Threat Services](#threat-services)
 - [Sales Applied Cert](#sales-applied-cert-2)
+- [The XDR Difference](#the-xdr-difference)
+- [Product Overview](#sentinelone-product-and-services-overview)
+- [Cybersecuirty Glossary](#cybersecurity-glossary)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -390,3 +393,51 @@ __Completion Date: 4/14/2023__
 
 (redacted for privacy reasons)
 
+# The XDR Difference
+(See S1 PDF for more info)[https://assets.sentinelone.com/cybersecurity-industry/cybersecurity-alphabet-soup]
+
+### How Is XDR Different From SIEM?
+- When we talk about XDR, some people think that we are describing a Security Information &
+Event Management (SIEM) tool in a different way. But XDR and SIEM are two different things.
+- SIEM collects, aggregates, analyzes, and stores large volumes of log data from across the
+enterprise. SIEM started its journey with a very broad approach: collecting available log and
+event data from almost any source across the enterprise to be stored for several use cas-
+es. These included governance and compliance, rule-based pattern matching, heuristic/
+behavioral threat detection like UEBA, and hunting across telemetry sources for IOCs or
+atomic indicators.
+- SIEM tools, however, require a lot of fine-tuning and effort to implement. Security teams
+can also get overwhelmed by the sheer number of alerts that come from a SIEM, causing
+the SOC to ignore critical alerts. In addition, even though a SIEM captures data from dozens
+of sources and sensors, it is still a passive analytical tool that issues alerts.
+- The XDR platform aims to solve the challenges of the SIEM tool for effective detection and
+response to targeted attacks and includes behavior analysis, threat intelligence, behavior
+profiling, and analytics.
+
+### How Is XDR Different From SOAR?
+- Security Orchestration & Automated Response (SOAR) platforms are used by mature se-
+curity operations teams to construct and run multi-stage playbooks that automate actions
+across an API-connected ecosystem of security solutions. In contrast, XDR will enable eco-
+system integrations via Marketplace and provide mechanisms to automate simple actions
+against 3rd-party security controls.
+- SOAR is complex, costly, and requires a highly mature SOC to implement and maintain part-
+ner integrations and playbooks. XDR is meant to be ‘SOAR-lite’: a simple, intuitive, zero-code
+solution that provides actionability from the XDR platform to connected security tools.
+
+# SentinelOne Product and Services Overview
+
+# Cybersecurity Glossary
+[S1 Cybersecurity 101 Glossary](https://www.sentinelone.com/cybersecurity-101/)
+
+- __EDR - Endpoint Detection and Response__: EDR provides an organization with the ability to monitor endpoints for suspicious behavior and record every single activity and event. It then correlates information to provide critical context to detect advanced threats and finally runs automated response activity such as isolating an infected endpoint from the network in near real-time. EDR data is also a critical component of forensic investigations which is why many cyber insurers are now mandating EDR capabilities in the underwriting process. Therefore, EDR is now not only a technology initiative but also a business risk imperative for most customers.
+- __XDR - Extended detection and response__: XDR is the evolution of EDR, Endpoint Detection, and Response. XDR automatically collects and correlates data across multiple security vectors, facilitating faster threat detection so that security analysts can respond quickly before the scope of the threat broadens.
+- __MXDR - Managed Extended Detection and Response__: MXDR extends MDR services across the enterprise to get a fully managed solution that includes security analytics and operations, advanced threat hunting, detection and rapid response across endpoint, network, and cloud environments.
+- __SASE - A Secure Access Service Edge__: SASE is a technology used to deliver wide area network (WAN) and security controls as a cloud computing service directly to the source of connection (user, device, Internet of things (IoT) device, or edge computing location) rather than a data center. It uses cloud and edge computing technologies to reduce the latency that results from backhauling all WAN traffic over long distances to one or a few corporate data centers, due to the increased movement off-premises of dispersed users and their applications. This also helps organizations support dispersed users and their devices with digital transformation and application modernization initiatives.
+- __IAM - Identity Access Management__: Identity management, also known as identity and access management, is a framework of policies and technologies to ensure that the right users have the appropriate access to technology resources. 
+- __NAT - Network traffic analysis__: NTA is a method of monitoring network availability and activity to identify anomalies, including security and operational issues.
+- __IR - Incident response__: IR is an organized approach to addressing and managing the aftermath of a security breach or cyberattack, also known as an IT incident, computer incident or security incident. The goal is to handle the situation in a way that limits damage and reduces recovery time and costs.
+- __CIRT - Cyber Incident Response Team__: This group is responsible for responding to security breaches, viruses and other potentially catastrophic incidents in enterprises that face significant security risks. In addition to technical specialists capable of dealing with specific threats, it should include experts who can guide enterprise executives on appropriate communication in the wake of such incidents. The CIRT team typically operates in conjunction with other enterprise groups, such as site security, public relations and disaster recovery teams.
+- __DFIR - Digital forensics and incident response__: DFIR services are advisory services that help clients identify the extent of, and deal with, events and requirements such as security and IT incident investigations, forensic response and triage, and security breaches.
+- __SIEM - Security information and event management__: SIEM technology supports threat detection, compliance and security incident management through the collection and analysis (both near real-time and historical) of security events, as well as a wide variety of other event and contextual data sources. The core capabilities are a broad scope of log event collection and management, the ability to analyze log events and other data across disparate sources, and operational capabilities (such as incident management, dashboards and reporting). SIEM tools are very passive tools and do not provide any response actions. This essentially differentiates SIEM from XDR.
+- __SOAR - Security Orchestration, Automation, and Response__: SOAR refers to technologies that enable organizations to collect inputs monitored by the security operations team. For example, alerts from the SIEM system and other security technologies — where incident analysis and triage can be performed by leveraging a combination of human and machine power — help define, prioritize and drive standardized incident response activities. SOAR tools allow an organization to define incident analysis and response procedures in a digital workflow format.
+- __Workflow__: A workflow consists of an orchestrated and repeatable pattern of activity, enabled by the systematic organization of resources into processes that transform materials, provide services, or process information.
+- [Read more about the differences between EDR, SIEM, SOAR, and XDR](https://www.sentinelone.com/blog/understanding-the-difference-between-edr-siem-soar-and-xdr/)
