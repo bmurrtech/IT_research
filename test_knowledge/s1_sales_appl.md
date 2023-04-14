@@ -19,7 +19,7 @@ __Which is NOT a key use case for Singularity Ranger?__
 __What is a great entry point into an organization?__
 - [ ] Security Engineer
 - [ ] X CTO
-- [ ] Security Architect 
+- [x] Security Architect 
 - [ ] X Dev Ops
 
 __I have a customer with SentinelOne EPP/EDR licenses - what upsell options do you have?__
@@ -156,7 +156,7 @@ __SentinelOne is a full AV replacement technology__
 
 __Which statement is INCORRECT SenntinelOne Static AI engine is...__
 - [ ] X first layer protection in SentinelOne's overall solution
-- [ ] activated when a running process access a file 
+- [ ] X activated when a running process access a file 
 - [ ] activated when a file is written to disk 
 - [ ] activated when a network connection is made
 
@@ -172,7 +172,7 @@ __What of the following is a critical key differentiator of SentinelOne?__
 - [ ] Active Threat Hunting using deep visibility sensors 
 - [ ] Pre-Execution Static AI
 
-__Which of the following is incorrect? Singularity™ Storyline™ is__
+__Which of the following is incorrect? Singularity Storyline is__
 - [x] Patented, Real-time, machine-build context supporting Windows and Linux Oses only 
 - [ ] Drives high-velocity, instantaneous protection 
 - [ ] Offering 1-Click recovery & response 
@@ -205,7 +205,7 @@ __What is NOT a SentinelOne Upsell Product?__
 __Which of the following is the Economic Buyer?__
 - [ ] Security Architect 
 - [ ] IT Operations
-- [ ] CTO
+- [x] CTO
 - [x] CISO 
 
 __Please complete the following sentence "Singularity™ Ranger offers ______ and _______."___
@@ -227,10 +227,10 @@ __What are the SentinelOne Platform Multi-tenancy key capabilities? (Select all 
 - [x] Automation 
 
 __With regards to Zero-Day threats, which statement is correct?__
-- [ ] X All of the above
+- [ ] All of the above
 - [ ] SentinelOne uses Sandboxing to contain Zero-Day threats 
 - [ ] SentinelOne uses WatchTower to detect and stop Zero-Day threats 
-- [ ] SentinelOne leverages pre-execution AI to detect zero-day threats in real time
+- [x] SentinelOne leverages pre-execution AI to detect zero-day threats in real time
 
 __What are SentinelOne Key Differentiators? (Select all that apply)__
 - [x] Best-in-Class Response 
@@ -244,3 +244,9 @@ __Singularity Cloud Workload Protection delivers autonomous workload protection 
 - [x] Virtual Machines 
 - [ ] Desktops & Laptops 
 - [x] Kubernetes Clusters 
+
+__SentinelOne Singularity platform components include__
+- [ ] Remediation & Recovery
+- [x] All of the above
+- [ ] Prevention & Endpoint Control 
+- [ ] Detection & Response 
