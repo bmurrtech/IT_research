@@ -4,6 +4,7 @@
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
 - [Sales Fundamentals Cert](#sales-fundamentals-cert-1)
 - [Threat Services](#threat-services)
+- [Sales Applied Cert](#sales-applied-cert-2)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -122,7 +123,7 @@ Discover why customers choose SentinelOne over the following competitors:
 - [SentinelOne Vs Trend Micro](https://www.sentinelone.com/vs/trend-micro/) - Customers prefer SentinelOne over Trend Micro to protect, detect, and recover from cyber threats spanning endpoints and cloud workloads
 
 # Sales Fundamentals Cert 1
-__Completion 4/7/2023__ 
+__Completion Date: 4/7/2023__ 
 ![sales_cert1](https://i.imgur.com/2IrMSM0.png)
 (redacted for privacy reasons)
 
@@ -384,4 +385,9 @@ _Small: Helpful Facts_
 - With over 5,500 customers, from SMBs to large enterprises to Fortune10s - SentinelOne's diversity speaks to the capabilities of the Platform.
 - SentinelOne has over 150 positive Gartner Peer Reviews - 4.9 aggregate score.
 - Customers shared with us they enjoy the simplicity of the solution, ease of use and flexibility but also the level of feature depth that we provide.
+
+# Sales Applied Cert 2
+__Completion Date: 4/14/2023__
+![sales_appl_2](https://i.imgur.com/WJxyjBb.png)
+(redacted for privacy reasons)
 
