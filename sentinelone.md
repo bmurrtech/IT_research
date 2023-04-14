@@ -39,25 +39,6 @@ Tomer Weingarten, CEO and Co-Founder, SentinelOne describes S1 functions as foll
 __The SeninelOne Difference__
 ![trusted_proven](https://i.imgur.com/KYLErzH.png)
 
-__No Dependencies or Compromises__
-- We have the greatest feature parity across operating systems: __All OSes__ - Windows, macOS, Linux, Cloud 
-- Affordable data retention for up to 365 days
-- Automatically discover and recover unsecured endpoints; supports peer-to-peer agent rollout
-- SentinelOne's agent provides detection, protection, and _self-remediation_ without a dependency on cloud connectivity. Many competitive offerings require cloud connectivity for full protection and don't include self/auto-remediation of threats
-
-__Best-In-Class Response__
-- SentinelOne has consistently had the highest number of Analytic Detections, fewest Missed Detections, fewest Delayed Detections, and fewest Detection Changes of any vendor in MITRE's Engenuity testing year-over-year 
-- 1-click automated remediation capabilities
-- Custom, real-time detections
-- Quickly run scripts on one or multiple endpoints
-- __SentinelOne Storyline Active Response (STAR)™__ cloud-based automated hunting, detection, and response engine
-
-__Flexible, Efficient IT and Security__
-- __Singularity XDR is a native and open platform__. Customers can utilize Singularity XDR as their security platform and enable 1-click integrations with their existing security portfolio
-- One management console
-- Enterprise-grade and self-serviced
-- SentinelOne provides a cloud, hybrid, and on-premises solution
-
 # S1 Resources
 
 See the [Sentinel One Partner Portal](https://partners.sentinelone.com/English/#home_login) to get access to Partner Program Guides, Sales Decks, Case Studies, Battle Cards, The Partner Demo Toolkit, and so much more.
@@ -91,37 +72,8 @@ The Two Anti-virus Worlds Converge:
   - __AV +__ : 40% say they have an AV, but they want to improve it
   - __+ / EDR / +__ : 30% say they do _not_ have an EDR, but they want to add one/improve existing EDR.
   - __Converge__ : 30% say they want to merge AV and EDR into one. Convergance is expected to grow as AI-awareness increases.
-  
-- __Information to Gather__:
-  - Determine where they are coming from and where they want to go.
-  - Determine who are the stakeholders/decision-makers.
-  - What is driving the initative? (i.e we are on McAffe, we want to improve)
-  - What is their dominatn perspective?
 
-![pain_forces](https://i.imgur.com/2hYcZmg.png)
-  
- - __Forces Driving Change__
-   - Growing Attack Surface: COVID-19 caused a massive transformation in the way in which people work. No longer are workers primarily confined to the traditional security boundaries of the corporate office. A distributed and primarily work-from-home workforce creates unique security challenges that need to be continually addressed. Along with the migration of workloads to the cloud,  a firm's security perimeter now extends much further into networks no longer solely under their control.
-   - The growing impact of a security event: Security events have far-reaching implications and force difficult business decisions. For example, how does a firm deal with a ransomware attack initiated by a hostile government or terrorist-affiliated entity when legislation prevents the transfer of funds to these organizations? What is the risk to the business if sensitive/confidential information is shared as part of an extortion campaign by a threat actor?
-   - Security Cost: There are always typical cost concerns and the pressure to maintain, if not decrease security costs. There is constant pressure from the CFO on the CISO to reduce/contain/constrain the security budget. The CISO is tasked with doing more with less either in terms of human resources or security tools. Therefore _the ability to consolidate tools, improve operational efficiency, and reduce time to resolution_ are all imperatives to the business.
-   - Many Audits/Compliances: Your customers face an ever-increasing landscape of audits and compliance requirements. Your ability to improve a firm's ability to respond/pass audits and achieve regulatory compliance mandates can be highly beneficial in securing and maintaining strong and lasting business relationships. 
 
-> Did you know? A new _ransomware attack will occur every 11 seconds_ this year, according to Cybersecurity Ventures. The cost of these attacks is expected to reach $20 billion this year.  - [Forbes](https://www.forbes.com/sites/forbestechcouncil/2021/04/30/why-ransomware-costs-businesses-much-more-than-money/?sh=77455a2b71c6)
-> As of the fourth quarter of 2021, the __average length of interruption after ransomware__ attacks on businesses and organizations in the United States __was 20 days.__  - [Statista](https://www.statista.com/statistics/1275029/length-of-downtime-after-ransomware-attack/#:~:text=Length%20of%20impact%20after%20a%20ransomware%20attack%20Q1%202020%2D%20Q4%202021&text=As%20of%20the%20fourth%20quarter,quarter%20of%202021%2C%2022%20days.)
-
-- __Common Pain-points__:
-  - What are the common pain points potential customers experience and the forces driving change in the industry?
-  - _Asking the right questions_ to discover some of these would be beneficial.
-     - "How concerned are you about ransomware?"
-     - "What is your current response processes look like?"
-     - "How confident are you that you have security installed on a 100% of your endpoints?"
-  - Security Technology is Too Disruptive: IT Security rides a fine line of strong protections and not being a burden/impediment to the business. Legacy AV agents are bloated and inefficient and therefore consume valuable system resources such as memory and computing - this makes them challenging for traditional desktops but especially challenging in virtual environments or DevOps. Linux agents that operate in the kernel are difficult to maintain during OS updates and cause friction for developers while potentially degrading security until the EPP/EDR agent is updated to match the updated OS. 
-  - Challenges in Hiring and Training Security Experts: It is very challenging nowadays to hire competent security people, to train and onboard them. _SentinelOne provides the best and most sophisticated detection and protection mechanisms_ (as validated by MITRE Engenuity testing) while at the same time making the technology accessible to security practitioners of all levels of experience. SentinelOne up-levels the security analyst and reduces the time and experience required to identify and resolve threats.
-  - Recover from an Attack: The challenges of recovering from an attack can align with a direct financial cost but there may be hidden costs: business interruption losses and downtime, legal expenses, fines, brand, and reputational damage are just to name a few. Over 140+ Incident Response firms across the globe deploy SentinelOne during their investigation and remediation activities. When cyber professionals want to eradicate all potential sources of compromise, they turn to SentinelOne.
-  - Making the Right Data Available/Visible: Logs. More data = more cost. Data is almost always a security pain point - there is either too much or too little. Too much data can be difficult, and costly, to navigate. Too little data can create blind spots and hamper threat hunts and investigations. Many SIEM solutions get very expensive as more data is retained for longer periods of time. _SentinelOne XDR provides a cost-effective and highly performant platform for data collection, threat detection, and response. Therefore, customers no longer have to suffer from the high cost of increased data collection and retention or the inherent performance degradation that is associated with increased data collection._
-  - Lack of Visibility: The old saying that "You can't protect what you don't know about" applies here. These unknown, unprotected, unpatched, and highly vulnerable systems provide a point of entry for attackers. Whether it is Shadow IT assets, assets acquired through M&A activity, or poor inventory management; organizations suffer from a lack of visibility into the devices on their network. _Once compromised, the attacker has the potential for lateral movement within the network to target higher-value assets. SentinelOne closes this visibility gap by identifying managed systems that do not have SentinelOne installed while providing a mechanism to auto-deploy the SentinelOne agent to these devices, In addition, SentinelOne can locate and profile unknown, IoT, or rogue devices enhancing visibility while delivering policies to mitigate lateral movement in the event of a compromise of these vulnerable systems._
-
-# Why Choose SentinelOne
 ![why_s1](https://i.imgur.com/ZUaSo7T.png)
 Discover why customers choose SentinelOne over the following competitors:
 - [Why SentinelOne](https://www.sentinelone.com/why-sentinelone/) - SentinelOne is autonomous cybersecurity built for what’s next. Learn more about how we are different
@@ -133,11 +85,6 @@ Discover why customers choose SentinelOne over the following competitors:
 - [SentinelOne Vs Carbon Black](https://www.sentinelone.com/vs/carbon-black/) - Customers choose SentinelOne over VMware Carbon Black for endpoint & cloud protection, detection, and response
 - [SentinelOne Vs Palo Alto Networks](https://www.sentinelone.com/vs/palo-alto-networks/) - Customers choose SentinelOne over Palo Alto Networks for endpoint & cloud protection, detection, and response
 - [SentinelOne Vs Trend Micro](https://www.sentinelone.com/vs/trend-micro/) - Customers prefer SentinelOne over Trend Micro to protect, detect, and recover from cyber threats spanning endpoints and cloud workloads
-
-# Sales Fundamentals Cert 1
-__Completion Date: 4/7/2023__ 
-![sales_cert1](https://i.imgur.com/2IrMSM0.png)
-(redacted for privacy reasons)
 
 # Threat Services
 [Master S1 Service Offering/Overview](https://partners.sentinelone.com/prm/English/s/assets?id=386841)
@@ -434,7 +381,115 @@ against 3rd-party security controls.
 ner integrations and playbooks. XDR is meant to be ‘SOAR-lite’: a simple, intuitive, zero-code
 solution that provides actionability from the XDR platform to connected security tools.
 
+### What Is MXDR?
+- Managed Extended Detection and Response (MXDR) extends MDR services across the
+enterprise to get a fully managed solution that includes security analytics and operations,
+advanced threat hunting, detection and rapid response across endpoint, network, and
+cloud environments.
+- An MXDR service augments the customer’s XDR capabilities with MDR services for addi-
+tional monitoring, investigations, threat hunting, and response capabilities.
+
+### Why XDR Gaining Traction?
+- XDR is the [all-in-one secuirty package](https://youtu.be/QikuJsgsgxk). XDR replaces siloed security and helps organizations address cybersecurity challeng-
+es from a unified standpoint. With a single pool of raw data comprising information from
+across the entire ecosystem, XDR allows faster, deeper, and more effective threat detection
+and response than EDR, collecting and collating data from a wider range of sources.
+- XDR provides more visibility and context into threats; incidents that would not otherwise
+have been addressed before will surface to a higher level of awareness, allowing security
+teams to remediate and reduce any further impact and minimize the scope of the attack.
+- A typical ransomware attack traverses the network, lands in an email inbox, and then at-
+tacks the endpoint. Addressing security by looking at each of those independently puts
+organizations at a disadvantage. XDR integrates disparate security controls to provide auto-
+mated or one-click response actions across the enterprise security estate such as disabling
+user access, forcing multi-factor authentication on suspected account compromise, block-
+ing inbound domains and file hashes and more – all via custom rules written by the user or
+by logic built into the prescriptive response engine.
+- This comprehensive visibility leads to several benefits, including:
+  - Reducing Mean Time to Detect (MTTD) by correlating across data sources.
+  - Reducing Mean Time to Investigate (MTTI) by accelerating triage and reducing time to
+investigate and scope.
+  - Reducing Mean time to respond (MTTR) by enabling simple, fast, and relevant automation.
+  - Improving visibility across the entire security estate.
+- Moreover, thanks to AI and automation, XDR helps reduce the burden of manual work on
+security analysts. An XDR solution can proactively and rapidly detect sophisticated threats,
+increasing the security or SOC team’s productivity and returning a massive boost in ROI for
+the organization.
+
 # SentinelOne Product and Services Overview
+- Singularity™ Platform Bundles
+- Singularity™ XDR Platform - Data Retention and Data Ingest
+- SentinelOne Threat Services
+- SentinelOne Network Visibility and Control
+- SentinelOne Cloud Workload Protection Platform
+- SentinelOne Singularity™ Identity
+- Mobile Threat Defense (MTD)
+- Limitless Integrations
+- Other SentinelOne Products and Services
+
+### Pain and Forces Driving Change
+- Typical pain points are important to understand as there are many pain points we hear from our prospects. Awareness of some common pain points can help you ask probing questions to uncover specific pain points for your prospects. 
+- __Current Endpoint Solution is leaving companies too exposed__: This pain is applicable in almost every single engagement. _Legacy Signature-based security_ technologies (such as Symantec, Sophos, Trend, etc.) are _leaving companies vulnerable to threats such as ransomware_.
+- __Information to Gather__:
+  - Determine where they are coming from and where they want to go.
+  - Determine who are the stakeholders/decision-makers.
+  - What is driving the initative? (i.e we are on McAffe, we want to improve)
+  - What is their dominatn perspective?
+  - 
+![pain_forces](https://i.imgur.com/2hYcZmg.png)
+
+### Pain Points
+ - __Respondiong to Threats or Being Proactive__ Our prospects understand how to respond to threats. But _they don't understand what it means to be proactive_ or more importantly, they don't know there is a _better way to respond to threats_.
+    - __S1 Solution__: _SentinelOne Rollback capability_ gets prospects excited, but they won't come asking for SentinelOne because of it.
+    - __Questions__: _What is your current response processes look like? If your customer gets hit with ransomware on an endpoint thereby creating a security event: What does that look like? How do they notify the business? What are their mitigation actions?_
+  - __Lack of Visibilty/Too Complex Secuirty Architecture__: The old saying that _"You can't protect what you don't know about"_ applies here. Whether it is Shadow IT assets, assets acquired through M&A activity, or poor inventory management; organizations suffer from a lack of visibility into the devices on their network. _These __unknown__, unprotected, unpatched, and __highly vulnerable__ systems provide a point of entry for attackers_. Once compromised, the attacker has the potential for lateral movement within the network to target higher-value assets.
+    - __S1 Solution__: _SentinelOne closes this visibility gap by identifying managed systems that do not have SentinelOne installed while providing a mechanism to auto-deploy the SentinelOne agent to these devices, In addition, SentinelOne can locate and profile unknown, IoT, or rogue devices enhancing visibility while delivering policies to mitigate lateral movement in the event of a compromise of these vulnerable systems._
+    - __Questions__: How confident are you that you have security installed on a 100% of your endpoints?
+  - __Security Technology is Too Disruptive__:  Legacy AV agents are bloated and inefficient and therefore consume valuable system resources such as memory and computing - this makes them challenging for traditional desktops but especially challenging in virtual environments or DevOps.
+    - __S1 Solution__: _SentinelOne solves this problem by providing efficient and __lightweight agents__ while supporting the nuances of various OS types (Windows, macOS, Linux)._
+  - __Challenges Hiring and Training Secuirty Experts__: It is very challenging nowadays to hire competent security people, to train and onboard them. In addition, retaining top-level talent is extremely difficult. Legacy EDR vendors (like CarbonBlack or Crowdstrike) require a very sophisticated skill set to operate and utilize to their full potential.
+    - __S1 Solution__: _SentinelOne up-levels the security analyst and reduces the time and experience required to identify and resolve threats, thanks to the intuitive Storylines and S1 dashboard._
+  - __Rising Cost of Maintaining Secure Environment__: Many organizations rely on a Defense-in-Depth approach to security which can result in an ever-increasing set of security tools (and cost) to manage.
+    - __S1 Solution__:_SentinelOne's XDR strategy enhances the value of these various tools through centralized reporting, telemetry collection, detection, and response across an ecosystem of security tools._
+  - __Recover from an Attack__: The challenges of recovering from an attack can align with a direct financial cost but there may be hidden costs: business interruption losses and downtime, legal expenses, fines, brand, and reputational damage are just to name a few.
+    - __S1 Solution__: _Over 140+ Incident Response firms across the globe deploy SentinelOne during their investigation and remediation activities. When cyber professionals want to eradicate all potential sources of compromise, they turn to SentinelOne._ __Entry Point__: Learning more about how _reliant or dependent they think they might be on backup systems_ could help you better position SentinelOne's solution.
+  - __Making the Right Data Available/Visible__: Data is almost always a security pain point - there is either too much or too little. Many SIEM solutions get very expensive as more data is retained for longer periods of time. In addition, performance degrades as more data is collected and retained. _SentinelOne XDR provides a cost-effective and highly performant platform for data collection, threat detection, and response.
+    - __S1 Solution__: Therefore, customers no longer have to suffer from the high cost of increased data collection and retention or the inherent performance degradation that is associated with increased data collection._
+
+> Did you know? A new _ransomware attack will occur every 11 seconds_ this year, according to Cybersecurity Ventures. The cost of these attacks is expected to reach $20 billion this year.  - [Forbes](https://www.forbes.com/sites/forbestechcouncil/2021/04/30/why-ransomware-costs-businesses-much-more-than-money/?sh=77455a2b71c6)
+
+### Factors Driving Change
+- __Everchanging Threat Landscape__: An ever-changing threat landscape has boards and CEOs worried about the potential impact on their business coming to their security operations.
+- __Growing Surface Attack__: COVID-19 caused a massive transformation in the way in which people work. No longer are workers primarily confined to the traditional security boundaries of the corporate office. A distributed and primarily work-from-home workforce creates unique security challenges that need to be continually addressed. Along with the migration of workloads to the cloud,  a firm's security perimeter now extends much further into networks no longer solely under their control. 
+- __Growing Impact of a Security Event or Incident__: Security events have far-reaching implications and force difficult business decisions. For example, how does a firm deal with a ransomware attack initiated by a hostile government or terrorist-affiliated entity when legislation prevents the transfer of funds to these organizations? What is the risk to the business if sensitive/confidential information is shared as part of an extortion campaign by a threat actor? 
+- __Security Cost__: There are always typical cost concerns and the pressure to maintain, if not decrease security costs. There is constant pressure from the CFO on the CISO to reduce/contain/constrain the security budget. The CISO is tasked with doing more with less either in terms of human resources or security tools. Therefore the ability to consolidate tools, improve operational efficiency, and reduce time to resolution are all imperatives to the business.
+- __Cyber Insurance and Regulations__: _EDR is becoming a business requirement, not a technical luxury_. With a deeper understanding of the security controls that directly impact breach prevention, insurers are requiring certain core technologies, such as EDR, Multi-Factor Authenticator (MFA), Disaster Recovery and more. _An organization’s security profile drives its cyber insurance policy premium and a lack of the required technology could lead to increased premiums or even denied coverage._
+- __Many Audits__: Your customers face an ever-increasing landscape of audits and compliance requirements. Your ability to improve a firm's ability to respond/pass audits and achieve regulatory compliance mandates can be highly beneficial in securing and maintaining strong and lasting business relationships.
+
+> As of the fourth quarter of 2021, the __average length of interruption after ransomware__ attacks on businesses and organizations in the United States __was 20 days.__  - [Statista](https://www.statista.com/statistics/1275029/length-of-downtime-after-ransomware-attack/#:~:text=Length%20of%20impact%20after%20a%20ransomware%20attack%20Q1%202020%2D%20Q4%202021&text=As%20of%20the%20fourth%20quarter,quarter%20of%202021%2C%2022%20days.)
+
+__No Dependencies or Compromises__
+- We have the greatest feature parity across operating systems: __All OSes__ - Windows, macOS, Linux, Cloud 
+- Affordable data retention for up to 365 days
+- Automatically discover and recover unsecured endpoints; supports peer-to-peer agent rollout
+- SentinelOne's agent provides detection, protection, and _self-remediation_ without a dependency on cloud connectivity. Many competitive offerings require cloud connectivity for full protection and don't include self/auto-remediation of threats
+
+__Best-In-Class Response__
+- SentinelOne has consistently had the highest number of Analytic Detections, fewest Missed Detections, fewest Delayed Detections, and fewest Detection Changes of any vendor in MITRE's Engenuity testing year-over-year 
+- 1-click automated remediation capabilities
+- Custom, real-time detections
+- Quickly run scripts on one or multiple endpoints
+- __SentinelOne Storyline Active Response (STAR)™__ cloud-based automated hunting, detection, and response engine
+
+__Flexible, Efficient IT and Security__
+- __Singularity XDR is a native and open platform__. Customers can utilize Singularity XDR as their security platform and enable 1-click integrations with their existing security portfolio
+- One management console
+- Enterprise-grade and self-serviced
+- SentinelOne provides a cloud, hybrid, and on-premises solution
+
+# Sales Fundamentals Cert 1
+__Completion Date: 4/7/2023__ 
+![sales_cert1](https://i.imgur.com/2IrMSM0.png)
+(redacted for privacy reasons)
 
 # Cybersecurity Glossary
 [S1 Cybersecurity 101 Glossary](https://www.sentinelone.com/cybersecurity-101/)
