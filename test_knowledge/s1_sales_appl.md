@@ -142,3 +142,105 @@ __To help you overcome the objection, what questions can you ask when the Sentin
 - [x] Do you have to reboot as you uninstall your current agent?
 - [ ] Do you have a preferred sandbox you use?
 - [x] How important is it for you to go "back to business as usual" in case of an attack?
+
+__Why do we use AI in endpoint security?__
+
+- [ ] Signatures are no longer needed
+- [x] All of the above
+- [ ] Eliminate reliance on the Cloud 
+- [ ] Real-time Response
+
+__SentinelOne is a full AV replacement technology__
+- [ ] False
+- [x] True 
+
+__Which statement is INCORRECT SenntinelOne Static AI engine is...__
+- [ ] X first layer protection in SentinelOne's overall solution
+- [ ] activated when a running process access a file 
+- [ ] activated when a file is written to disk 
+- [ ] activated when a network connection is made
+
+__What is the name of SentinelOne's Managed Detection and Response (MDR) Threat Service?__
+- [ ] Platform Pro 
+- [ ] XDR Power Tools 
+- [x] Vigilance
+- [ ] WatchTower
+
+__What of the following is a critical key differentiator of SentinelOne?__
+- [ ] XDR visibility 
+- [x] Real-time detection and response without any human intervention 
+- [ ] Active Threat Hunting using deep visibility sensors 
+- [ ] Pre-Execution Static AI
+
+__Which of the following is incorrect? Singularity™ Storyline™ is__
+- [x] Patented, Real-time, machine-build context supporting Windows and Linux Oses only 
+- [ ] Drives high-velocity, instantaneous protection 
+- [ ] Offering 1-Click recovery & response 
+- [ ] Long time EDR data retention for active custom queries
+
+__SentinelOne Singularity platform supports protection of:__
+- [ ] Endpoints 
+- [ ] IoT 
+- [x] All of the above
+- [ ] Cloud Workloads
+
+__What is the SentinelOne's ActiveEDR Advanced/Threat Hunting functionality?__
+- [ ] Static AI Machine Learning
+- [x] Deep Visibility 
+- [ ] Behavioral AI Machine Learning 
+- [ ] Detection
+
+__When SentinelOne responds to a threat, what options are available? (Select all that apply)__
+- [x] Cleanup - Rollback 
+- [x] Disconnect - Remote Shell 
+- [x] Kill - Quarantine 
+- [x] Delete file - Send console message to end point
+
+__What is NOT a SentinelOne Upsell Product?__
+- [ ] Singularity Identity
+- [x] Singularity CyberResilience 
+- [ ] Singularity Data Management
+- [ ] Singularity Mobile 
+
+__Which of the following is the Economic Buyer?__
+- [ ] Security Architect 
+- [ ] IT Operations
+- [ ] CTO
+- [x] CISO 
+
+__Please complete the following sentence "Singularity™ Ranger offers ______ and _______."___
+- [ ] Compliance Reporting and Risk Assessment 
+- [ ] Network Monitoring and Control
+- [x] IoT Discovery and Control
+- [ ] Mobile Discovery and Management 
+
+__According to the Gartner MQ covered in this enablement module, which statement is true?__
+- [ ] SentinelOne was named Leader in the MQ and achieved 2 out of 3 highest rankings for Gartner critical capabilities
+- [ ] SentinelOne raised to strong Visionary with ability to execute.
+- [ ] SentinelOne mainted Visionary status and achieved the highest rankings across the Gartner Critical Capabilities
+- [x] SentinelOne was named a Leader in the MQ and achieved the highest ranking for all Gartner critical capabilities across all EPP vendors.
+
+__What are the SentinelOne Platform Multi-tenancy key capabilities? (Select all that apply)__
+- [x] Scalability
+- [x] Efficiency 
+- [ ] Reporting
+- [x] Automation 
+
+__With regards to Zero-Day threats, which statement is correct?__
+- [ ] X All of the above
+- [ ] SentinelOne uses Sandboxing to contain Zero-Day threats 
+- [ ] SentinelOne uses WatchTower to detect and stop Zero-Day threats 
+- [ ] SentinelOne leverages pre-execution AI to detect zero-day threats in real time
+
+__What are SentinelOne Key Differentiators? (Select all that apply)__
+- [x] Best-in-Class Response 
+- [ ] Multi-purpose Platform 
+- [x] No Dependencies or Compromise 
+- [x] Flexible, Efficient IT and Security
+
+__Singularity Cloud Workload Protection delivers autonomous workload protection and EDR for________? (Select all that apply)___
+- [x] Docker Containers 
+- [ ] Home Security Systems
+- [x] Virtual Machines 
+- [ ] Desktops & Laptops 
+- [x] Kubernetes Clusters 
