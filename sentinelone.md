@@ -389,5 +389,6 @@ _Small: Helpful Facts_
 # Sales Applied Cert 2
 __Completion Date: 4/14/2023__
 ![sales_appl_2](https://i.imgur.com/WJxyjBb.png)
+
 (redacted for privacy reasons)
 
