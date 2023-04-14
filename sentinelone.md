@@ -1,6 +1,6 @@
 # Table of Contents
 - [Partner Portal & All Resources](#s1-resources)
-- [Sales Fundamentals](#sales-fundamentals)
+- [Why SentinelOne](#why-sentinelone)
 - [SentinelOne VS Competitors](#why-choose-sentinelone)
 - [Sales Fundamentals Cert](#sales-fundamentals-cert-1)
 - [Threat Services](#threat-services)
@@ -60,7 +60,7 @@ __Registering to the Partner Portal__
 
 - Once your account is regsitered and activated, visit [Partner Portal Assets Library](https://partners.sentinelone.com/prm/English/s/assets) for access to all reseller resources.
 
-# Sales Fundamentals
+# Why SentinelOne
 
 ### Endpoint Technology Evolution
 ![AV_EDR_convergence](https://i.imgur.com/wF4eQwb.png)
@@ -94,8 +94,6 @@ The Two Anti-virus Worlds Converge:
 
 > Did you know? A new _ransomware attack will occur every 11 seconds_ this year, according to Cybersecurity Ventures. The cost of these attacks is expected to reach $20 billion this year.  - [Forbes](https://www.forbes.com/sites/forbestechcouncil/2021/04/30/why-ransomware-costs-businesses-much-more-than-money/?sh=77455a2b71c6)
 > As of the fourth quarter of 2021, the __average length of interruption after ransomware__ attacks on businesses and organizations in the United States __was 20 days.__  - [Statista](https://www.statista.com/statistics/1275029/length-of-downtime-after-ransomware-attack/#:~:text=Length%20of%20impact%20after%20a%20ransomware%20attack%20Q1%202020%2D%20Q4%202021&text=As%20of%20the%20fourth%20quarter,quarter%20of%202021%2C%2022%20days.)
-
-  
 
 - __Common Pain-points__:
   - What are the common pain points potential customers experience and the forces driving change in the industry?
