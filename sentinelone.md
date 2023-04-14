@@ -57,7 +57,10 @@ __Registering to the Partner Portal__
 
 # Why SentinelOne
 
+![s1_value](https://i.imgur.com/MSlLXuq.png)
+
 ### Endpoint Technology Evolution
+
 ![AV_EDR_convergence](https://i.imgur.com/wF4eQwb.png)
 
 The Two Anti-virus Worlds Converge:
@@ -72,7 +75,6 @@ The Two Anti-virus Worlds Converge:
   - __AV +__ : 40% say they have an AV, but they want to improve it
   - __+ / EDR / +__ : 30% say they do _not_ have an EDR, but they want to add one/improve existing EDR.
   - __Converge__ : 30% say they want to merge AV and EDR into one. Convergance is expected to grow as AI-awareness increases.
-
 
 ![why_s1](https://i.imgur.com/ZUaSo7T.png)
 Discover why customers choose SentinelOne over the following competitors:
@@ -355,67 +357,35 @@ __Completion Date: 4/14/2023__
 (See S1 PDF for more info)[https://assets.sentinelone.com/cybersecurity-industry/cybersecurity-alphabet-soup]
 
 ### How Is XDR Different From SIEM?
-- When we talk about XDR, some people think that we are describing a Security Information &
-Event Management (SIEM) tool in a different way. But XDR and SIEM are two different things.
-- SIEM collects, aggregates, analyzes, and stores large volumes of log data from across the
-enterprise. SIEM started its journey with a very broad approach: collecting available log and
-event data from almost any source across the enterprise to be stored for several use cas-
-es. These included governance and compliance, rule-based pattern matching, heuristic/
-behavioral threat detection like UEBA, and hunting across telemetry sources for IOCs or
-atomic indicators.
-- SIEM tools, however, require a lot of fine-tuning and effort to implement. Security teams
-can also get overwhelmed by the sheer number of alerts that come from a SIEM, causing
-the SOC to ignore critical alerts. In addition, even though a SIEM captures data from dozens
-of sources and sensors, it is still a passive analytical tool that issues alerts.
-- The XDR platform aims to solve the challenges of the SIEM tool for effective detection and
-response to targeted attacks and includes behavior analysis, threat intelligence, behavior
-profiling, and analytics.
+- When we talk about XDR, some people think that we are describing a Security Information & Event Management (SIEM) tool in a different way. But XDR and SIEM are two different things.
+- SIEM collects, aggregates, analyzes, and stores large volumes of log data from across the enterprise. SIEM started its journey with a very broad approach: collecting available log and event data from almost any source across the enterprise to be stored for several use cases. These included governance and compliance, rule-based pattern matching, heuristic/ behavioral threat detection like UEBA, and hunting across telemetry sources for IOCs or atomic indicators.
+- SIEM tools, however, require a lot of fine-tuning and effort to implement. Security teams can also get overwhelmed by the sheer number of alerts that come from a SIEM, causing the SOC to ignore critical alerts. In addition, even though a SIEM captures data from dozens of sources and sensors, it is still a passive analytical tool that issues alerts.
+- The XDR platform aims to solve the challenges of the SIEM tool for effective detection and response to targeted attacks and includes behavior analysis, threat intelligence, behavior profiling, and analytics.
 
 ### How Is XDR Different From SOAR?
-- Security Orchestration & Automated Response (SOAR) platforms are used by mature se-
-curity operations teams to construct and run multi-stage playbooks that automate actions
-across an API-connected ecosystem of security solutions. In contrast, XDR will enable eco-
-system integrations via Marketplace and provide mechanisms to automate simple actions
-against 3rd-party security controls.
-- SOAR is complex, costly, and requires a highly mature SOC to implement and maintain part-
-ner integrations and playbooks. XDR is meant to be ‘SOAR-lite’: a simple, intuitive, zero-code
-solution that provides actionability from the XDR platform to connected security tools.
+- Security Orchestration & Automated Response (SOAR) platforms are used by mature security operations teams to construct and run multi-stage playbooks that automate actions across an API-connected ecosystem of security solutions. In contrast, XDR will enable ecosystem integrations via Marketplace and provide mechanisms to automate simple actions against 3rd-party security controls.
+- SOAR is complex, costly, and requires a highly mature SOC to implement and maintain partner integrations and playbooks. XDR is meant to be ‘SOAR-lite’: a simple, intuitive, zero-code solution that provides actionability from the XDR platform to connected security tools.
 
 ### What Is MXDR?
-- Managed Extended Detection and Response (MXDR) extends MDR services across the
-enterprise to get a fully managed solution that includes security analytics and operations,
-advanced threat hunting, detection and rapid response across endpoint, network, and
-cloud environments.
-- An MXDR service augments the customer’s XDR capabilities with MDR services for addi-
-tional monitoring, investigations, threat hunting, and response capabilities.
+- Managed Extended Detection and Response (MXDR) extends MDR services across the enterprise to get a fully managed solution that includes security analytics and operations, advanced threat hunting, detection and rapid response across endpoint, network, and cloud environments.
+- An MXDR service augments the customer’s XDR capabilities with MDR services for additional monitoring, investigations, threat hunting, and response capabilities.
 
 ### Why XDR Gaining Traction?
-- XDR is the [all-in-one secuirty package](https://youtu.be/QikuJsgsgxk). XDR replaces siloed security and helps organizations address cybersecurity challeng-
-es from a unified standpoint. With a single pool of raw data comprising information from
-across the entire ecosystem, XDR allows faster, deeper, and more effective threat detection
-and response than EDR, collecting and collating data from a wider range of sources.
-- XDR provides more visibility and context into threats; incidents that would not otherwise
-have been addressed before will surface to a higher level of awareness, allowing security
-teams to remediate and reduce any further impact and minimize the scope of the attack.
-- A typical ransomware attack traverses the network, lands in an email inbox, and then at-
-tacks the endpoint. Addressing security by looking at each of those independently puts
-organizations at a disadvantage. XDR integrates disparate security controls to provide auto-
-mated or one-click response actions across the enterprise security estate such as disabling
-user access, forcing multi-factor authentication on suspected account compromise, block-
-ing inbound domains and file hashes and more – all via custom rules written by the user or
-by logic built into the prescriptive response engine.
+- XDR is the [all-in-one secuirty package](https://youtu.be/QikuJsgsgxk). XDR replaces siloed security and helps organizations address cybersecurity challenges from a unified standpoint. With a single pool of raw data comprising information from across the entire ecosystem, XDR allows faster, deeper, and more effective threat detection and response than EDR, collecting and collating data from a wider range of sources. 
+- XDR provides more visibility and context into threats; incidents that would not otherwise have been addressed before will surface to a higher level of awareness, allowing security teams to remediate and reduce any further impact and minimize the scope of the attack.
+- A typical ransomware attack traverses the network, lands in an email inbox, and then attacks the endpoint. Addressing security by looking at each of those independently puts organizations at a disadvantage. XDR integrates disparate security controls to provide automated or one-click response actions across the enterprise security estate such as disabling user access, forcing multi-factor authentication on suspected account compromise, blocking inbound domains and file hashes and more – all via custom rules written by the user or by logic built into the prescriptive response engine.
 - This comprehensive visibility leads to several benefits, including:
   - Reducing Mean Time to Detect (MTTD) by correlating across data sources.
   - Reducing Mean Time to Investigate (MTTI) by accelerating triage and reducing time to
 investigate and scope.
   - Reducing Mean time to respond (MTTR) by enabling simple, fast, and relevant automation.
   - Improving visibility across the entire security estate.
-- Moreover, thanks to AI and automation, XDR helps reduce the burden of manual work on
-security analysts. An XDR solution can proactively and rapidly detect sophisticated threats,
-increasing the security or SOC team’s productivity and returning a massive boost in ROI for
-the organization.
+- Moreover, thanks to AI and automation, XDR helps reduce the burden of manual work on security analysts. An XDR solution can proactively and rapidly detect sophisticated threats, increasing the security or SOC team’s productivity and returning a massive boost in ROI for the organization.
 
 # SentinelOne Product and Services Overview
+
+![s1_automation](https://i.imgur.com/zWKdQ6I.png)
+
 - Singularity™ Platform Bundles
 - Singularity™ XDR Platform - Data Retention and Data Ingest
 - SentinelOne Threat Services
@@ -427,6 +397,9 @@ the organization.
 - Other SentinelOne Products and Services
 
 ### Pain and Forces Driving Change
+
+![pain_forces](https://i.imgur.com/2hYcZmg.png)
+
 - Typical pain points are important to understand as there are many pain points we hear from our prospects. Awareness of some common pain points can help you ask probing questions to uncover specific pain points for your prospects. 
 - __Current Endpoint Solution is leaving companies too exposed__: This pain is applicable in almost every single engagement. _Legacy Signature-based security_ technologies (such as Symantec, Sophos, Trend, etc.) are _leaving companies vulnerable to threats such as ransomware_.
 - __Information to Gather__:
@@ -434,8 +407,6 @@ the organization.
   - Determine who are the stakeholders/decision-makers.
   - What is driving the initative? (i.e we are on McAffe, we want to improve)
   - What is their dominatn perspective?
-  - 
-![pain_forces](https://i.imgur.com/2hYcZmg.png)
 
 ### Pain Points
  - __Respondiong to Threats or Being Proactive__ Our prospects understand how to respond to threats. But _they don't understand what it means to be proactive_ or more importantly, they don't know there is a _better way to respond to threats_.
@@ -466,6 +437,8 @@ the organization.
 - __Many Audits__: Your customers face an ever-increasing landscape of audits and compliance requirements. Your ability to improve a firm's ability to respond/pass audits and achieve regulatory compliance mandates can be highly beneficial in securing and maintaining strong and lasting business relationships.
 
 > As of the fourth quarter of 2021, the __average length of interruption after ransomware__ attacks on businesses and organizations in the United States __was 20 days.__  - [Statista](https://www.statista.com/statistics/1275029/length-of-downtime-after-ransomware-attack/#:~:text=Length%20of%20impact%20after%20a%20ransomware%20attack%20Q1%202020%2D%20Q4%202021&text=As%20of%20the%20fourth%20quarter,quarter%20of%202021%2C%2022%20days.)
+
+![challenges](https://i.imgur.com/RJSABjw.png)
 
 __No Dependencies or Compromises__
 - We have the greatest feature parity across operating systems: __All OSes__ - Windows, macOS, Linux, Cloud 
