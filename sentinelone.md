@@ -1,13 +1,4 @@
-Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-
-This work is licensed under a
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
-
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
-
-[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+All graphics and conent is intellectual property subject to copyright laws protected via [licensing owned by SentienlOne](https://www.sentinelone.com/legal/). Please do not copy, redistribute, or modify.
 
 # Table of Contents
 - [Partner Portal & All Resources](#s1-resources)
@@ -56,8 +47,11 @@ __Registering to the Partner Portal__
 - Once your account is regsitered and activated, visit [Partner Portal Assets Library](https://partners.sentinelone.com/prm/English/s/assets) for access to all reseller resources.
 
 # Why SentinelOne
+[Why S1 Sales Deck - L1](https://partners.sentinelone.com/prm/English/s/assets?id=328616&q=l1)
 
 ![s1_value](https://i.imgur.com/MSlLXuq.png)
+
+![s1_automation](https://i.imgur.com/zWKdQ6I.png)
 
 ### Endpoint Technology Evolution
 
@@ -76,7 +70,6 @@ The Two Anti-virus Worlds Converge:
   - __+ / EDR / +__ : 30% say they do _not_ have an EDR, but they want to add one/improve existing EDR.
   - __Converge__ : 30% say they want to merge AV and EDR into one. Convergance is expected to grow as AI-awareness increases.
 
-![why_s1](https://i.imgur.com/ZUaSo7T.png)
 Discover why customers choose SentinelOne over the following competitors:
 - [Why SentinelOne](https://www.sentinelone.com/why-sentinelone/) - SentinelOne is autonomous cybersecurity built for what’s next. Learn more about how we are different
 - [SentinelOne Vs CrowdStrike](https://www.sentinelone.com/vs/crowdstrike/) - With the rising speed and complexity of cyber threats, leading enterprises around the globe are leaving CrowdStrike’s human-powered solutions behind for real-time, autonomous cybersecurity. See what’s possible with SentinelOne
@@ -384,7 +377,7 @@ investigate and scope.
 
 # SentinelOne Product and Services Overview
 
-![s1_automation](https://i.imgur.com/zWKdQ6I.png)
+![singlarity_gif](./media/singularityXDR.gif)
 
 - Singularity™ Platform Bundles
 - Singularity™ XDR Platform - Data Retention and Data Ingest
@@ -458,6 +451,61 @@ __Flexible, Efficient IT and Security__
 - One management console
 - Enterprise-grade and self-serviced
 - SentinelOne provides a cloud, hybrid, and on-premises solution
+
+### Singularity Storyline (STAR)
+
+![s1_storyline](./media/s1_storyline.gif)
+
+__Storyline Active Response (STAR)__ allows customers to write Automated Policy, Detection and Response Actions. This enables your Security team to “teach” SentinelOne what to stop with extensible, automated XDR.
+- Eliminate mundane tasks and noise
+- Eliminate clicks, tab switching, and consoles
+- Integrate multiple products and workflows
+
+### Singularity Control and Complete
+[Singularity Control Datasheet](https://www.sentinelone.com/platform/singularity-control/)
+[Singularity Complete Datasheet](https://sentinelone.csod.com/content/sentinelone/publications/9350/scormcontent/index.html#)
+
+__Singulatity Control__ is made for organizations seeking the best-of-breed security with the addition of “security suite” features for endpoint management.
+- Singularity™  Control includes the following features:
+ - Built-in Static AI and Behavioral AI analysis prevent and detect a wide range of attacks in real-time before they cause damage. Core protects against known and unknown malware, Trojans, hacking tools, ransomware, memory exploits, script misuse, bad macros, and more.
+ - Sentinels are autonomous which means they apply prevention and detection technology with or without cloud connectivity and will trigger protective responses in real-time.
+ - Recovery is fast and gets users back and working in minutes without re-imaging and without writing scripts. Any unauthorized changes that occur during an attack can be reversed with 1-Click Remediation and 1-Click Rollback for Windows.
+ - Secure SaaS management access. Choose from US, EU, APAC localities. Data-driven dashboards, policy management by site and group, incident analysis with MITRE ATT&CK integration, and more.
+ - Firewall Control for control of network connectivity to and from
+ - devices including location awareness.
+ - Device Control for control of USB devices and Bluetooth/BLE peripherals.
+ - Rogue visibility to uncover devices on the network that need Sentinel agent protection.
+ - Vulnerability Management, in addition to Application Inventory, for insight into 3rd party apps that have known vulnerabilities mapped to the MITRE CVE database.
+
+__Singularity Complete__ is made for enterprises that need modern endpoint protection and control plus advanced EDR features that we call ActiveEDR®. Complete also has patented Storyline™ tech that automatically contextualizes all OS process relationships [even across reboots] every second of every day and stores them for your future investigations. Storyline™ saves analysts from tedious event correlation tasks and gets them to the root cause fast. Singularity™  Complete is designed to lighten the load on security administrators, SOC analysts, threat hunters, and incident responders by automatically correlating telemetry and mapping it into the MITRE ATT&CK® framework. The most discerning global enterprises run Singularity™ Complete for their unyielding cybersecurity demands.
+
+- Complete includes all Core and Control features plus:
+  - Patented Storyline™ for fast RCA and easy pivots.
+  - Integrated ActiveEDR® visibility to both benign and malicious data.
+  - Data retention options to suit every need, from 14 to 365+ days.
+  - Hunt by MITRE ATT&CK ® Technique.
+  - Mark benign Storylines as threats for enforcement by the EPP functions.
+  - Custom detections and automated hunting rules with Storyline Active Response (STAR™).
+  - Timelines, remote shell, file fetch, sandbox integrations, and more.
+
+#### Control/Complete Top Value Prop
+- A single platform with consolidated security functions that make security and IT teams more effective and efficient.
+- Reduce the risk of cyber-attacks disrupting business operations.
+- A strategic partner for customers with a broad portfolio of products and services.
+- Seamlessly integrate with existing security investments to improve ROI.
+
+#### Control/Complete Questions to Ask
+- Numbers and Diversity - How many agents are you running on the endpoint and what are their roles? Does this vary by the operating system?
+- Ransomware - How do you currently handle advanced attacks and fileless attacks? How do you handle Ransomware attacks?
+- RCA - How do you perform event correlation and Root Cause Analysis (RCA)?
+- Time to Value - How many technologies do you typically use to achieve resolution? How long does it take?
+
+#### Control/Complete Top Differences
+- Multi-tenant SaaS platform, with a single resource-efficient agent.
+- Automatically correlate atomic events into the rich story context.
+- Remediate all affected endpoints with a single click.
+- Up to 365 days context retention for all EDR activities.
+- Up level SOC resources to enable proactive threat hunting with automated hunting rules.
 
 # Sales Fundamentals Cert 1
 __Completion Date: 4/7/2023__ 
