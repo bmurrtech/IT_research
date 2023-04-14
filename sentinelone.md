@@ -92,30 +92,34 @@ Discover why customers choose SentinelOne over the following competitors:
   - A strategic partner for customers with a broad portfolio of products and services.
   - Seamlessly integrate with existing security investments to improve ROI.
 
-#### Singularity Questions
+### Singularity Questions
 - __Time to Value__ question: How many technologies do you typically use to achieve resolution? How long does it take?
 - __RCA or Root Cause Analysis__ question: "How do you perform event correlation and Root Cause Analysis (RCA)?"
 - __Numbers and Diversity__ question: How many agents are you running on the endpoint and what are their roles? Does this vary by the operating system?
 
-#### Top Singularity Differences
+### Top Singularity Differences
   - Multi-tenant SaaS platform, with a single resource-efficient agent.
   - Automatically correlate atomic events into the rich story context.
   - Remediate all affected endpoints with a single click.
   - Up to 365 days context retention for all EDR activities.
   - Up level SOC resources to enable proactive threat hunting with automated hunting rules.
 
-### Vigilance and Viglance Pro
+## Vigilance and Viglance Pro
 [Vigilance Data Sheet](https://assets.sentinelone.com/vdi1/sentinel-one-vigilan?lb-mode=overlay#page=1)
 
 ![vigilance_how](https://i.imgur.com/tz2vTC2.png)
 
-- __Vigilance__ is a __Managed Detection and Response (MDR)__ and __Digital Forensics Incident Response (DFIR)__ tool with the following features:
-  - __Vigilance Respond__: Managed Detection & Response to augment your security operations. Triage, Resolution, and Escalation when necessary.
-  - __Vigilance Respond PRO__: MDR + Digital Forensics & Incident Response form a security safety net. Extended investigation and response, faster SLAs, and direct IR Pro access.
+__Vigilance__ is a __Managed Detection and Response (MDR)__ and __Digital Forensics Incident Response (DFIR)__ tool with the following features:
+
+### Vigilance Respond
+Managed Detection & Response to augment your security operations. Triage, Resolution, and Escalation when necessary.
+
+### Vigilance Respond PRO
+MDR + Digital Forensics & Incident Response form a security safety net. Extended investigation and response, faster SLAs, and direct IR Pro access.
 
 ![vigilance_respond_vs_pro](https://i.imgur.com/RhBaLs5.png)
 
-### Watchtower and Watchtower Pro
+## Watchtower and Watchtower Pro
 - [WatchTower Data Sheet](https://assets.sentinelone.com/gss/sentinelone-watchtow?lb-mode=overlay#page=1)
 - [WatchTower Monthly Report](https://www.sentinelone.com/?s=watchtower+report)
 
@@ -126,18 +130,18 @@ Discover why customers choose SentinelOne over the following competitors:
 
 ![threat_at_glance](https://i.imgur.com/S5FKkfp.png)
 
-#### WatchTower Top Value Props
+### WatchTower Top Value Props
 - Augment Your Existing SOC Resources with a Global Team of Elite Analysts, Hunters, and Responders.
 - Offload 24x7 Monitoring and Triage to Refocus on More Strategic Initiatives.
 - Reduce Alert and Managerial Fatigue with Cleaner Dashboards and Minimized Customer Escalations.
 - Support for private labeled MDR to extend current customer and/or management services.
 
-#### WatchTower Questiosn to Ask
+### WatchTower Questiosn to Ask
 - __Reducing IT Friction__ Do you have a fully staffed SOC? Are your existing SOC personnel and resources sufficient to provide peace of mind? Many attacks and breaches occur during holidays and weekends when attackers know organizations are not fully staffed. Therefore, it might be useful to discuss the merits of a 24x7 - 365-day MDR service to augment their existing resources.
 - __Optimizing Time To Value__ How quickly are you typically able to respond to an escalated security incident? Are you outsourcing incident response? Does your organization have an Incident Response retainer with a 3rd party firm? Does your cyber insurer have a specific contracted IR firm they utilize/mandate for a breach?
 - __Integration__ How are you currently integrating threat hunting into your cybersecurity program? What does that process look like? Would your organization benefit from a managed threat hunting offering? How difficult is it for you to threat hunt using your existing toolset?
 
-#### Threat Services Top Differences
+### Threat Services Top Differences
 - With Vigilance Respond and Vigilance Respond Pro, customers not only receive MDR services but also active campaign hunting for advanced persistent threats (APT) and cybercrime with WatchTower at no additional cost (a separate SKU for competitive offerings).
 - SentinelOne offers better value for our threat services than the competition; with Vigilance Respond Pro, DFIR hours are included in the package, whereas competitive offerings require you to purchase additional IR services on top of MDR—both at a significantly higher cost.
 - With WatchTower Pro, customers benefit from customized threat hunting and two compromise assessments per year as part of the service. Competitors sell one-off compromise assessments (entirely separate from their threat hunting SKUs) at a significant cost.
@@ -147,12 +151,12 @@ Singularity Ranger finds and fingerprints ail IP-enabIed devices, from network t
 control. Ranger transforms Sentinel agents into distributed network sensors that autonomously protect infrastructure from suspicious and malicious devices, ail with
 zero additional agents, hardware, or network changes.
 
-#### Ranger Top Value Prop
+### Ranger Top Value Prop
 - Always know what is on your network, with advanced ML device fingerprinting to inventory and categorize assets.
 - Protect yourself from device-based threats with I-click isolation of suspicious devices.
 - Efficiently plug gaps in your network attack surface with automated peer-to-peer agent deployment.
 
-#### Ranger Questions to Ask
+### Ranger Questions to Ask
 - Rollout Agent How do you know if you have completed your agent rollout? (for example, do you have 100% coverage across managed endpoints or are there any
 deployment gaps?) . What is the current process of uncovering existing deployment gaps or adding new devices and achieving coverage of managed devices (for
 example, after activity)? What is the current process to fix deployment gaps? Would a peer-to-peer agent installation process be beneficial in closing deployment
@@ -161,7 +165,7 @@ gaps?
 - IoT IoT devices have notoriously poor OS security and are rarely patched and therefore present an easy point of entry for attackers. do you currently inventory IoT devices on your network? Do you have a quick process to identify which IoT devices may be more susceptible to attack (for example, which IoT devices are
 at risk of Ripple20 vulnerabilities)?
 
-#### Ranger Top Differences
+### Ranger Top Differences
 - Ranger is woven into our existing agent: zero new software agents, hardware, or network changes make getting started easy.
 - Configurable ML device fingerprinting algorithms efficiently categorize connected devices by function, without spamming your network.
 - Securely, efficiently, and automatically deploy agents to unsecured endpoints with configurable peer-to-peer job automation.
@@ -171,19 +175,19 @@ Singularity Cloud provides EDR for workloads running in cloud instances, contain
 ransomaare. A single, no-sidecar agent protects the K8s worker, ail its pods, and all its containers. Singularity'* Cloud fits easily into existing DevOps provisioning
 and maintenance practices and maintains workload stability by not tainting kernels.
 
-#### Cloud WDR Value Prop
+### Cloud WDR Value Prop
 - Industry-leading workload protection, detection, and response across on-prem, AWS, Azure, and Google Cloud.
 - Multi-cloud visibility and control.
 - Infrastructure as Code (IaC) integration, for cloud workload protection, that does not slow you down.
 - 
-#### Cloud WDR Questions to Ask
+### Cloud WDR Questions to Ask
 - How are you protecting your servers and containers from malware and ransomware?
 - How do you or your IR, SOC, or Security team investigate incidents as they move across your hybrid cloud network?
 - Are you deployed in both an on-prem data center AND a public cloud? Khich Cloud Service Providers (CSPs) do you use?
 - What is your mix of Linux vs. Windows servers (roughly)? What flavor of containers are you using?
 
 
-#### Cloud WDR Top Differences
+### Cloud WDR Top Differences
 - App Control Engine prevents unauthorized code from hijacking your Ws and containers.
 - Imutable Resource-efficient one agent protects the Kubernetes worker node, all its pods, and ail their containers. Complete visibility into containers, without the
 overhead of sidecars.
@@ -197,14 +201,14 @@ expensive approaches to AD security with a straightforward and modern identity s
 
 ![s1_identity](https://imgur.com/NNFnKEd)
 
-#### Identity Value Prop
+### Identity Value Prop
 - Singularity Identityprotects Active Directory (AD) and Azure AD assets, including domain controllers and domain-joined endpoints in real-time.
 - Singularity Ranger AD Assessor delivers continuous identity assessment of misconfigurations, vulnerabilities, and active threats targeting AD and Azure AD in
 real-time.
 - Singularity Hologram detects, misdirects, and isolates attackers that have established footholds in-network through indistinguishable decoys of production
 OSes, applications, and more.
 
-#### Identity Questions to Ask
+### Identity Questions to Ask
 - How would you know if your Active Directory is under attack?
 - Do you have visibility to exposure/vulnerabilities that an attacker would take advantage of in AD?
 - Who is responsible for the hardening of your Active Directory data?
@@ -240,23 +244,23 @@ Singularity Mobile is our mobile threat defense solution delivered as a local, o
   - System tampering
   - Deep inspection/sandbox apps
 
-#### Singularity Mobile Top Value Prop
+### Singularity Mobile Top Value Prop
 - Protection against and detection of mobile malware and phishing, both known and unknown, and Man-in-The-Middle (MiTM) attacks.
 - Local AI engine never collects user content or messages: user privacy AND security. 
 - Integration with major MDMs (mobile device managers) for simplified deployment and automated response action.
 
-#### Singularity Mobile Questions to Ask
+### Singularity Mobile Questions to Ask
 - How are you protecting mobile devices from malware and phishing attacks?
 - Do you utilize any Chromebooks in your environment, if so, how are you protecting those devices? 
 
-#### Singularity Mobile Top Differences
+### Singularity Mobile Top Differences
 - __AI-powered protection__ works locally, without relying on cloud connectivity.
 - __Behavioral detection__ of zero-day malware and unknown phishing attacks.
 - __Detect threats across devices, apps, and networks__, not just securing a mobile container.
 - __MDM integration__ simplifies deployment and automates response. 
 - SentinelOne's mobile solution __protects different OSes__: _iOS, Android, and ChromeOS_.
 
-## Singularity Marketplace
+### Singularity Marketplace
 [S1 Marketplace](https://partners.sentinelone.com/prm/English/s/assets?id=338785&q=marketplac)
 
 Singularity™ Marketplace is an ecosystem to help customers extend the SentinelOne Singularity™ XDR platform with bite-sized, one-click applications to help enterprises unify prevention, section, and response across attack surfaces and implement and embrace XDR.
@@ -268,8 +272,7 @@ effort of context switching—especially during time-sensitive triage and respon
 - __Streamlined Operations & Workflows__ - Achieve single-pane visibility & analysis for siloed data streams with one agent for all XDR telemetry, then simplify & connect security processes without custom logic, code, or configuration.
 - __Unified Cross-System Response__ - Defeat high velocity threats in real time by automating and orchestrating your security tools across different domains to execute on a unified response and remediation strategy.
 
-
-## Endpoint Secuirty Layers
+### Endpoint Secuirty Layers
 
 ![security_framework](https://i.imgur.com/4JqM2RP.png)
 
@@ -286,7 +289,7 @@ comparing competitors, they are actually focused on the question: does it work b
 -  __Does the product work?__ Usually it is resolved by Market research and Peer company conversations and Third Party Validations. Our competitors might throw this FIJD at the prospect and it is our mission to prove that the product works, it's not buggy and the ease of use makes a great user experience. A demo and a Proof of Concept (POC) will also help resolve this doubt. _Pro Tip_: For Malware testing capabilities leverage the MITRE ATT&CK validation, which emulates real-life, live attacks.
 -  __How long will this solution be viable?__ Will SentinelOne be here in a year? Especially with how the market is changing - what is SentinelOne's viability as a company. SentinelOne Inc. raised Sl.2 billion in one of the cybersecurity industry's largest initial public offerings., and we are growing strong.
 
-#### Common Objections
+### Common Objections
 _Objection 1_
 - _SentinelOne requires a reboot which leads to downtime for their solution to be operational. Reboots are also required for upgrades._
 - _SentinelOne requires ONE reboot after an initial agent installation._
@@ -348,6 +351,14 @@ __Completion Date: 4/14/2023__
 
 # The XDR Difference
 (See S1 PDF for more info)[https://assets.sentinelone.com/cybersecurity-industry/cybersecurity-alphabet-soup]
+
+### Why XDR?
+Take the Next Leap in the Evolution of EDR. Extend Beyond the Endpoint With End-to-End Enterprise Visibility, Protection, and Response.
+- __See__: Maximize visibility across every corner of the enterprise.
+- __Protect__: Protection with unrivaled speed, coverage, and efficiency.
+- __Resolve__: Automate response across the entire connected security ecosystem.
+
+![xdr_handle_objections](https://i.imgur.com/UpuaKDt.png)
 
 ### How Is XDR Different From SIEM?
 - When we talk about XDR, some people think that we are describing a Security Information & Event Management (SIEM) tool in a different way. But XDR and SIEM are two different things.
@@ -460,6 +471,21 @@ __Storyline Active Response (STAR)__ allows customers to write Automated Policy,
 - Eliminate mundane tasks and noise
 - Eliminate clicks, tab switching, and consoles
 - Integrate multiple products and workflows
+
+#### What is Data Ingest?
+- Data ingestion is the _process of obtaining and importing data for immediate use or storage in a database_. To ingest something is to take something in or absorb something.
+- When buying XDR Ingestion, the customer starts pushing data into SentinelOne XDR Platform via one of several mechanisms - they can query their Data next to EDR.
+- Data Ingest Use Cases:
+  - __Integration with a Specific Vendor__ - When a user wants to integrate with a specific vendor in multiple ways and amongst other things wants to ingest Data so they can search it.
+  - __Multiple Vendors and Products__ - When a user wants to bring all of their Data from their various products and query/hunt/retain it all together, to benefit from SentinelOne workflows.
+  - __Data Lake/SIEM Cost__ - When a user can not afford long-term retention in their current Data Lake/SIEM platform. Also, many customers have to exclude certain data that they would like to collect/analyze/retain due to excessive cost. In addition, the performance of traditional SIEM platforms degrades as the volume of data increases.
+
+#### XDR Platform SKUs Details
+- __Data Retention__ The platform _comes with a 14 days retention_ for all create/ingest Data.
+- __Open XDR Data Ingest__ The platform _comes with the license to ingest_ and an initial amount of XDR Data.
+- __STAR - Storyline Active Response__ The platform _comes with STAR_ which allows customers to write Automated Policy, Detection and Response Actions. _This enables the SOC team to "teach" SentinelOne what to stop with extensible, automated XDR_. The platform comes with the ability to _create 100 Rules_.
+
+> All options above can be expandable at an additional cost.
 
 ### Singularity Control and Complete
 [Singularity Control Datasheet](https://www.sentinelone.com/platform/singularity-control/)
