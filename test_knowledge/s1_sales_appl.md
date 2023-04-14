@@ -10,14 +10,8 @@ __Which SentinelOne feature allows IOT visibility & control as an upsell of Rogu
 - [ ] SDK 
 - [ ] CWPP 
 
-__Which SentinelOne feature allows IOT visibility & control as an upsell of Rogues? __
-- [ ] Vigilance 
-- [x] Ranger 
-- [ ] SDK 
-- [ ] CWPP 
-
 __Which is NOT a key use case for Singularity Ranger?__
-- [ ] Know device-based risks 
+- [ ] X Know device-based risks 
 - [ ] X Global Enterprise Asset Inventory 
 - [ ] X Proactive Network Attack Surface Control 
 - [x] Kubernetes Protection
@@ -26,13 +20,13 @@ __What is a great entry point into an organization?__
 - [ ] Security Engineer
 - [ ] X CTO
 - [ ] Security Architect 
-- [x] Dev Ops
+- [ ] X Dev Ops
 
 __I have a customer with SentinelOne EPP/EDR licenses - what upsell options do you have?__
 - [ ] Ranger
 - [ ] Cloud Workload Protection 
-- [ ] X Vigilance 
-- [ ] All of the above
+- [ ] Vigilance 
+- [x] All of the above
 
 __What is a question you would ask when prospecting for Singularity Identity? (Select all that apply)__
 - [ ] How do you respond when a malicious IoT device is on your network?
@@ -55,7 +49,7 @@ __What are some of the Common Objections and Doubt Resolutions a prospect will a
 
 
 __What is a question to ask when prospecting for Singularity Ranger?__
-- [ ] How many technologies do you typically use to achieve resolution?
+- [ ] X How many technologies do you typically use to achieve resolution?
 - [ ] How are you protecting mobile devices from malware and phishing attacks?
 - [ ] X How would you know if your Active Directory is under attack?
 - [ ] Do you know every IP-connected device on your network?
@@ -78,8 +72,8 @@ __What is an EDR competitive differentiator for SentinelOne?__
 __What features do you get with Vigilance Respond?__
 - [ ] 24x7, 365 follow-the sun 
 - [ ] Accelerated threat resolution 
-- [ ] X Fewer alerts, more context 
-- [ ] All of the above
+- [ ] Fewer alerts, more context 
+- [x] All of the above
 
 __Match the following Integrations in SentinelOne’s Marketplace to the outcomes they help drive__
 - Response = One-click or automated cross-product
@@ -90,7 +84,7 @@ __Why would a customer choose the Vigilance PRO offering?__
 - [ ] Intelligence driven Threat Hunting 
 - [ ] Managed Detection and Response 
 - [ ] Rogues 
-- [ ] Digital Forensics and Incident Response 
+- [x] Digital Forensics and Incident Response 
 
 __Why is it essential we protect mobile?__
 - [ ] Active Directory is a prime target for cyber-attacks Identity and it is on the rise according to Gartner
@@ -101,8 +95,8 @@ __Why is it essential we protect mobile?__
 __When starting the conversation and the discovery process, what are some important questions to ask?__
 - [ ] What is changing? What is the cause of the change?
 - [ ] What are the teams or processes and/or integrations as part of the initiatives?
-- [ ] All of the above
-- [ ] X How are you driving change to reach your security goals?
+- [x] All of the above
+- [ ] How are you driving change to reach your security goals?
 
 __Match the Common Myth with the Truth that will help you overcome that objection__
 - SentinelOne only has SMB and Mid-Enterprise customers = SentinelOne has over 5,500 customers, from SMBs to large enterprises
@@ -132,19 +126,19 @@ __Based on the Security Architecture Diagram, what are the Endpoint security Lay
 - [ ] Identify, Hack, Deceive and Remove
 
 __What is the Security Architecture Diagram?__
-- [ ] It is a conversation framework of the building blocks of a customer's environment
+- [x] It is a conversation framework of the building blocks of a customer's environment
 - [ ] It is an App Control framework to help encrypt your essential digital assets
-- [ ] X It is a diagram for the Security Maturity of any company
+- [ ] It is a diagram for the Security Maturity of any company
 - [ ] It is SentinelOne’s Singularity™ XDR framework
 
 __To help you overcome the objection, what questions can you ask when the SentinelOne only has SMB customers objection comes up? (Select all that apply)__
 - [x] Would external parties' evaluations help alleviate those concerns?
-- [ ] What customer (size, industry, verticals etc.) reference would you be comfortable chatting with?
-- [ ] X Do you have to reboot as you uninstall your current agent?
-- [ ] X Do you have a preferred sandbox you use?
+- [x] What customer (size, industry, verticals etc.) reference would you be comfortable chatting with?
+- [ ] Do you have to reboot as you uninstall your current agent?
+- [ ] Do you have a preferred sandbox you use?
 
 __To help you overcome the objection, what questions can you ask when the SentinelOne requires a reboot common objection comes up? (Select all that apply)__
-- [ ] X How many exclusions do you have in your current solution?
+- [ ] How many exclusions do you have in your current solution?
 - [x] Do you have to reboot as you uninstall your current agent?
 - [ ] Do you have a preferred sandbox you use?
 - [x] How important is it for you to go "back to business as usual" in case of an attack?
