@@ -1,12 +1,9 @@
 __Which of these is a Top Value Prop of Singularity™ Platform Bundles?__
 
-X Always know what is on your network
-
-O A single platform with consolidated security functions
-
-? Offload 24x7 Monitoring and Triage to Refocus on More Strategic Initiatives
-
-X Industry-leading workload protection, detection, and response
+-  [ ] Always know what is on your network
+-  [x] A single platform with consolidated security functions
+-  [ ] Offload 24x7 Monitoring and Triage to Refocus on More Strategic Initiatives
+-  [ ] Industry-leading workload protection, detection, and response
 
 
 __What are the potential Use Cases for Data Ingest?__
@@ -60,5 +57,7 @@ __What were SentinelOne’s 2022 MITRE Engenuity ATT&CK Evaluation Highlights? (
 - [x] 100% Detection – 19 of 19 Attack Steps
 - [x] 100% Real-Time – 0 delays
 
-__What are the 3 XDR Platform SKUs Details? __
-- 
+__What are the 3 XDR Platform SKUs Details?__
+1. Data Retention 
+2. Open XDR Data Ingest
+3. STAR - Storyline Active Response
