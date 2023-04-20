@@ -1246,7 +1246,7 @@ __Logs analysis systems__ are configured using user-defined rules to match inter
 
 ### Network Hardware Hardening
 
-- To protect against this rogue DHCP server attack, enterprise switches off a feature called DHCP snooping. A switch that has DHCP snooping will monitor DHCP traffic being sent across it. It will also track IP assignments and map them to hosts connected to switch ports. This basically builds a map of assigned IP addresses to physical switch ports. This information can also be used to protect against IP spoofing and ARP poisoning attacks.
+- _To protect against this rogue DHCP server attack, enterprise switches off a feature called __DHCP snooping___. A switch that has DHCP snooping will monitor DHCP traffic being sent across it. It will also track IP assignments and map them to hosts connected to switch ports. This basically builds a map of assigned IP addresses to physical switch ports. This information can also be used to protect against IP spoofing and ARP poisoning attacks.
 
 ![dhcp_snooping](https://i.imgur.com/BnIGnFw.png)
 
@@ -1499,7 +1499,7 @@ The four messages exchanged in order are the AP which sends ANonce to the client
 
 ![NID_system](https://i.imgur.com/VvkHisH.png)
 
-- A __NIDS device__ _is a passive observer that only watches the traffic and sends an alert if it sees something_. This is unlike a NIPS device, which not only monitors traffic, but can take action on the traffic it's monitoring usually by blocking or dropping the traffic. The detection of threats or malicious traffic is usually handled through _signature-based detection_. 
+- A __NIDS device__ _is a passive observer that only watches the traffic and __sends an alert if it sees something___. This is unlike a __NIPS device__, which monitors traffic, and _can take action on the traffic it's monitoring usually __by blocking or dropping the traffic___. The detection of threats or malicious traffic is usually handled through _signature-based detection_. 
   - __Signatures__ _are unique characteristics of known malicious traffic_. They might be specific sequences of packets or packets with certain values encoded in the specific header field.
   - The detection of threats or malicious traffic is usually handled through signature-based detection. Similar to how antivirus software detects malware.  But similar to antivirus, _less common or targeted attacks might not be detected by a signature-based system, since there might not be signatures developed for these cases_. It's also possible to create custom rules to match traffic that might be considered suspicious but not necessarily malicious.
   - If the traffic is found to be malicious, _a __signature__ can be developed from the traffic and incorporated into the system_. What actually happens when a NID system to detect something malicious? This is configurable, but usually the NID system would log the detection event along with a full packet capture of the malicious traffic.
