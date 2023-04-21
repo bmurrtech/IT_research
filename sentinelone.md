@@ -595,6 +595,68 @@ _Small: Helpful Facts_
 - SentinelOne has over 150 positive Gartner Peer Reviews - 4.9 aggregate score.
 - Customers shared with us they enjoy the simplicity of the solution, ease of use and flexibility but also the level of feature depth that we provide.
 
+### Pre-Sales Demo Flow
+This 4 simple steps Demo Flow will help you make your demo count.
+
+#### Consensus
+Step 1: Arriving at Consensus - This first critical moment of agreement comes before you even begin a live demo. __Identify what would be the desired outcomes and plan accordingly.__
+- Before the meeting, spend time with the customer who is championing you in their company. 
+- Learn about their stakeholders and ask what challenges those individuals are facing that might impact the use of your product. As you introduce the SentinelOne XDR story and introduce the platform, you’ll use that information to help drive the team towards agreeable outcomes.
+- __A few simple questions that will help__
+  - I understand that your primary objective/challenge(s) is/are _____. _Is that still your main goal(s)_?
+  - I’m here to demonstrate how the SentinelOne platform can improve your ______. Is that still a key metric for you?
+  - The reason we’re meeting today is to _______. Is that correct?
+
+#### Climatic Moments
+Step 2: __Create an "aha!" moment.__ Deliver Climatic Moments Presenting can come with obstacles: “managing attention spans, dueling distractions, running against the clock etc.”  It’s very important to establish, at the beginning of the session, that you are talking about the same things.
+- Grab the audience attention by sharing a few statements like “we are here to solve problems 1, 2 and 3 – and that is what we are going to show you in the demonstration today…”
+- Think like a Magician - Start product demos with a theoretical bang! It would be very helpful to share some success stories, like a real user testimonial, to build trust and confidence.
+  - SentinelOne Protects [TGI Fridays](https://assets.sentinelone.com/casestudy/sentinel-one-tgif-cs-1) from Headquarters to the Table - Strong, easy to deploy, and simple to manage.
+  - Managing endpoints across the enterprise with limited time and staff? No problem! Watch why [FIM Bank](https://assets.sentinelone.com/casestudy/sentinel-one-fim-ban) chose SentinelOne's Vigilance MDR to augment their SOC. Global financial institutions trust the SentinelOne platform to save time through ActiveEDR and unparalleled protection.
+ - Learn why [Aston Martin designates SentinelOne as its official cybersecurity partner](https://www.youtube.com/watch?v=LjfsHzlmm4E), and what made SentinelOne Singularity Complete and Vigilance MDR more compelling than other solutions on the market—including Aston Martin's incumbent legacy AV provider.
+- __Few simple suggestions that will help__
+  - Pay special attention to any comments from prospects that begin with phrases like: “I need…”/“I don’t know…”/“The problem is….”/“I’ve noticed…”/“If we could….”.
+  - Give tailored examples of real product uses and impact that illustrate how other users just like them have navigated some problem or benefited from your solution. They’ll move from passive listeners to proactive and will remember you.
+  - Include stats relevant to the stakeholders you’re meeting, like implementation time, availability, or accuracy.
+  - Activate the customer's [Reticular Activating System (RAS)](https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/reticular-activating-system) - What information makes it to your brain and what you ignore or filter out.
+
+#### Contentment
+Step 3: Feeling Contentment - __Stakeholders must feel contentment, excitement, and confidence at the thought of implementing the solution.__ The goal of is simply to get buyers to the point of having enough comfort with you that they’re willing to commit to further conversations. This is the acceptance that SentinelOne is a potential solution to their problem.
+- _Curiosity_ means your audience wants to learn more. Encourage discussion by providing answers that illustrate value, give more detail to how the SentinelOne Solution would benefit them, and introduce deeper functionality. 
+- _Concern_ isn’t an automatic red flag but implies a level of suspicion! This means they believe the SentinelOne Solution could potentially solve important issues.  Demonstrate expertise by addressing the customer problem areas that come up during session discussions. 
+- _Confusion_ could be indicating lack of understanding or feelings of uncertainty around the SentinelOne Solution. Actively address by speaking in clear, friendly terms that build confidence in the relationship, simplify the benefits of the SentinelOne solution. Provide examples and success stories that resonate with the perceived complications of the prospect.
+
+#### Commitment
+Step 4: Making a Commitment - No matter how the SentinelOne demo ended - we are moving forward. The ultimate goal of a great Pre-Sales demo is to __achieve “commitment”, that includes much more than just a signed contract.__
+- A customer “Commitment” can result in:
+  - Follow-up Technical / Architectural session
+  - Next meeting with additional Corp Stakeholders
+  - Meeting with Sales around Procurement / Discuss Pricing
+  - Beginning business contracting / negotiations
+
+#### Partner Demo Toolkit
+![demo_kit_why_use](https://i.imgur.com/Yl6pSBd.png)
+[How to Use the Demo Toolkit](https://sentinelone-education.wistia.com/medias/jlbbqgjzur)
+SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to create an __easily consumable demo environment__ with the latest tools.  Everything is included in a single box, and the installation and updates are completely automatic.
+- _Where Can I Find the Partner Demo Toolkit?_
+  - Under the Technical Tab on the Partner Portal 
+  - You can find the Partner Demo Toolkit landing page with all the information shared in the following videos.
+  - Request a valid API Key for the Partner Demo Toolkit from: [https://forms.gle/4nyafx2NLrdCgGfm7](https://forms.gle/4nyafx2NLrdCgGfm7)
+- _How to Create a Partner Demo via Toolkit_
+
+>  Please note that before starting either demo, __ensure that your policy is set to Detect/Detect, all Engines are ON, Scan New Agents is OFF, and all DeepVisibility artifacts are ON__.
+
+  - Create and configure a new Windows 10/11 Virtual Machine
+  - Configure your virtual machine to use the NAT-Network
+  - Obtain a valid _Site-Token_ from your _NFR-Console_
+  - [Request a valid API Key](https://forms.gle/4nyafx2NLrdCgGfm7) for the Partner Demo Toolkit
+  - The script will ask for:
+    - API-Key
+    - Install token for S1 Agent (this is obtained from your S1 NFR Instance)
+    - Name of the demo machine - give it name
+    - Keyboard layout: `EN-US`, `de-DE`, `it-IT`, `fr-FR`
+    - (Optional) API-Token for your NFR-Instance
+
 # Sales Certs
 
 ### Sales Fundamentals
