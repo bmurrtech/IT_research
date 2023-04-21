@@ -637,7 +637,25 @@ Step 4: Making a Commitment - No matter how the SentinelOne demo ended - we are 
 
 # Demo Toolkit
 ![demo_kit_why_use](https://i.imgur.com/Yl6pSBd.png)
-[How to Use the Demo Toolkit](https://sentinelone-education.wistia.com/medias/jlbbqgjzur)
+- [How to Create the Demo Toolkit](https://sentinelone-education.wistia.com/medias/jlbbqgjzur)
+- [__Demo Toolkit Tutorial - Full__](https://sentinelone-education.wistia.com/medias/fi2qhf61i1)
+- [__Demo Toolkit Tutorial - Redacted__](https://sentinelone-education.wistia.com/medias/fi2qhf61i1)
+
+> Run the `.bat` file 5-10 minutes BEFORE the presentation.
+
+- [9-min S1 Macro Virus Demonstration Video](https://sentinelone-education.wistia.com/medias/wyukbbfjdw)
+- [5-min S1 Live Virus Demonstartion Video](https://sentinelone-education.wistia.com/medias/hmo05lovzz)
+
+> __Macro Virus__ - A __macro virus__ is _a type of computer virus that could be stored in macros within a Microsoft 365 file (such as a document, presentation, workbook, or template)_.,  Explain to the prospect that __macros__ are _heavily used in business environments_ (i.e. an Excel spreadsheet getting current exchange rates). All modern, definition-based AV prodcuts such as Windows Defender, McAffee, Norton, Anti-virus Defender, _should_ be able to detect, and block, __known__ macro viruses. But what if this is a new macro virus? If it isn't on the definition-based AV list, it will not be blocked. 
+> __How did my computer infected with a macro virus?__  You can activate it __just by performing normal everyday tasks, like editing a Word document or opening your emails__. Example: __1999 Melissa Virus__ A now-classic example of a macro virus is the Melissa Virus from 1999. After a user opened an email containing a document infected with the virus, the virus would send itself to the first 50 addresses in the user’s contact list. Melissa had grave implications for company and web servers that carried the large volumes of emails being created. _It successfully crippled hundreds of networks_, __including__ those of __Microsoft and the United States Marine Corp.__ IBM Watson Research Center in Hawthorne, N.Y. He said that Melissa had “spread more widely and rapidly than any P.C. virus in history.”
+> - The most common ways to spread macro viruses include:
+>   - Phishing emails with attachments
+>   - Malicious files on disks or memory sticks
+>   - Files from the internet or an internal intranet
+>   - Files from a network
+
+- [Dashboard Overview & Deployment](https://sentinelone-education.wistia.com/medias/t7kg6uftt1)
+
 SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to create an __easily consumable demo environment__ with the latest tools.  Everything is included in a single box, and the installation and updates are completely automatic.
 - _Where Can I Find the Partner Demo Toolkit?_
   - Under the Technical Tab on the Partner Portal 
@@ -658,6 +676,8 @@ SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to 
     - Keyboard layout: `EN-US`, `de-DE`, `it-IT`, `fr-FR`
     - (Optional) API-Token for your NFR-Instance
 
+> The EPP Demo only encrypts the files under \Users\Sentinel\Documents for safety reasons.
+
 # Sales Certs
 
 ### Sales Fundamentals
@@ -673,6 +693,10 @@ _Completion Date: 4/14/2023_
 (redacted for privacy reasons)
 
 # Cybersecurity Glossary
+[Day-in-the-life of SOC Analyst](https://sentinelone-education.wistia.com/medias/j74hnjwhzb)
+[Deployment Best Practices](https://support.sentinelone.com/hc/en-us/articles/360011333674-Deployment-Project-Plan-Best-Practice)
+[S1 Knowledge Base](https://support.sentinelone.com/hc/en-us/sections/7549008464663-Welcome)
+[S1 Help & Resources](https://support.sentinelone.com/hc/en-us/articles/360056646194-Help-and-Resources)
 [S1 Cybersecurity 101 Glossary](https://www.sentinelone.com/cybersecurity-101/)
 
 - __EDR - Endpoint Detection and Response__: EDR provides an organization with the ability to monitor endpoints for suspicious behavior and record every single activity and event. It then correlates information to provide critical context to detect advanced threats and finally runs automated response activity such as isolating an infected endpoint from the network in near real-time. EDR data is also a critical component of forensic investigations which is why many cyber insurers are now mandating EDR capabilities in the underwriting process. Therefore, EDR is now not only a technology initiative but also a business risk imperative for most customers.
