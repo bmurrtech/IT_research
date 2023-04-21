@@ -9,6 +9,7 @@ All graphics and conent is intellectual property subject to copyright laws prote
 - [Demo Kit Setup](demo-toolkit)
 - [Sales Certs](#sales-certs)
 - [Cybersecuirty Glossary](#cybersecurity-glossary)
+- [Troubleshooting Issues](#troubleshooting)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -226,6 +227,11 @@ at risk of Ripple20 vulnerabilities)?
 - Configurable ML device fingerprinting algorithms efficiently categorize connected devices by function, without spamming your network.
 - Securely, efficiently, and automatically deploy agents to unsecured endpoints with configurable peer-to-peer job automation.
 
+### Ranger Deployment Overview
+[In-depth Ranger Console Review](https://sentinelone-education.wistia.com/medias/9aynqgv6eo)
+[3-min Ranger Deployment](https://sentinelone-education.wistia.com/medias/mdq340f9jy)
+![ranger_deploy](https://i.imgur.com/vF6o9cd.png)
+
 ## [Cloud Workload Detection and Reponse](https://youtu.be/sxw8MIPRiRA)
 [WDR Datasheet](https://assets.sentinelone.com/cloud-security/singularity-cloud-vm-workload-detection?lb-mode=overlay&&lb-width=100&lb-height=100)
 [WDR Sales Deck](https://partners.sentinelone.com/prm/English/s/assets?id=328618&q=cloud)
@@ -246,6 +252,7 @@ and maintenance practices and maintains workload stability by not tainting kerne
 - What is your mix of Linux vs. Windows servers (roughly)? What flavor of containers are you using?
 
 ### Cloud WDR Top Differences
+![kubernetes_sentinel](https://i.imgur.com/NTJ9PbW.png)
 - App Control Engine prevents unauthorized code from hijacking your Ws and containers.
 - Imutable Resource-efficient one agent protects the Kubernetes worker node, all its pods, and ail their containers. Complete visibility into containers, without the
 overhead of sidecars.
@@ -643,6 +650,7 @@ Step 4: Making a Commitment - No matter how the SentinelOne demo ended - we are 
 
 > Run the `.bat` file 5-10 minutes BEFORE the presentation.
 
+- [12-min AWS & Kubernetes Cloud Protection Demo](https://sentinelone-education.wistia.com/medias/bdsqw6eqs9)
 - [9-min S1 Macro Virus Demonstration Video](https://sentinelone-education.wistia.com/medias/wyukbbfjdw)
 - [5-min S1 Live Virus Demonstartion Video](https://sentinelone-education.wistia.com/medias/hmo05lovzz)
 
@@ -678,23 +686,163 @@ SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to 
 
 > The EPP Demo only encrypts the files under \Users\Sentinel\Documents for safety reasons.
 
-# Sales Certs
+# Troubleshooting
+### Agent Communication Troubleshooting
+[Agent Communication Troubleshooting](https://sentinelone-education.wistia.com/medias/au4j7lwe7v)
+- Troubleshoot and fix offline Agent and communication issues.
+- Check network connectivity to the Management Console from a Windows endpoint.
+- Check and adjust the SentinelOne Agent proxy server configuration.
+- Let SentinelOne co-exist with other security vendors.
 
-### Sales Fundamentals
-_Completion Date: 4/7/2023_
-![sales_cert1](https://i.imgur.com/2IrMSM0.png)
+#### How to Troubleshoot
+Agents can lose connectivity with the Management Console for multiple reasons: installation corruption, proxy settings, firewall restrictions, DNS issues, and more.
+1. Ping to Console.sentinelone.net and verify that the address resolves.
+2. Test Telnet to Console.sentinelone.net in port 443.
+3. Try to connect to the Management using the _local internet browser_ to verify the certificate (3rd-party browsers will not work; i.e. Google Chrome, Firefox)
+4. [Check if there are any other anti-virus applications installed](https://support.sentinelone.com/hc/en-us/articles/360050677434).
 
-(redacted for privacy reasons)
+> Best Practice: Uninstall third-party anti-virus software before you install SentinelOne. Other security software often prevents Agent installation or affects its performance.
 
-### Sales Applied
-_Completion Date: 4/14/2023_
-![sales_appl_2](https://i.imgur.com/WJxyjBb.png)
+6. Check if there is a proxy server configuration. > Start (right-click) > Settings > Network & Internet > Proxy > Check if Proxy settings are accurate by using the Sentinel CTL Commands (see below)
+7. If invalid certificate: > Download and install the certificate from certiticate authority 
 
-(redacted for privacy reasons)
+![s1_ctl](https://i.imgur.com/ADv4e4R.png)
+
+```
+cd "C:\Program Files\SentinelOne\Sentinel Agent..." 
+SentinelCtl.exe config | find "proxy"
+SentinelCtl.exe config server.proxy "http://10.0.0.4:8080" -k "[passphrase]"
+```
+
+> To get the passphrase, use the S1 Management Console > click on the endpoint > Actions (button) > Search for "passphrase" > Show Passphrase > Copy the phrase > Paste it after the `-k "[passphrase]"
+
+### Endpoint Performance Troubleshooting
+- Use the Agent Activity Analyzer on Windows to identify performance issues.
+- Run the Agent Activity Analyzer through the Management Console and SentinelCommand Line Tools (SentinelCTL).
+  - Sentinels (sidebar) > Click Agent > Click Actions > Troubleshooting >  Search for Fetch Logs > Check "Agent Logs" > Click Fetch Logs (button).
+  - There is also a CTL [CLI log fetch option](https://support.sentinelone.com/hc/en-us/articles/360055283454). See below. 
+- Create Interoperability and Performance Focus path exclusions
+
+[Log Fetch Video Tutorial](https://sentinelone-education.wistia.com/medias/fcpp7txw6r) 
+```
+cd "C:\Program Files\SentinelOne\Sentinel Agent..." 
+SentinelCtl.exe create_agent_analyzer_report -o C:\Temp\last_15_min.txt -m 15
+```
+![sentinelctl](https://i.imgur.com/uRj6t0u.png)
+![sentinelctl_examples](https://i.imgur.com/EYqVfjT.png)
+
+- High CPU utilization immediately after installation/upgrade of SentinelOne.
+- High memory utilization immediately after installation/upgrade of SentinelOne.
+- Software suddenly stops working or is not working correctly immediately after installation/upgrade of SentinelOne.
+- Collecting logs to submit to support for additional support and troubleshooting.
+- Setting an exclusion to resolve a performance issue and testing.
+
+### Interoperability Troubleshooting
+Exclusions are important for app functionality on endpoints.
+[Interoperability Video Tutorial](https://sentinelone-education.wistia.com/medias/53tyvsjhh8)
+[Tool - Process Explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)
+- To exclude certain apps/processes, navigate to:
+
+```
+> S1 Management Console > Sentinels > Exclusions > New Exclusions (button) > Create Exclusiong/Add from Exclusions Catalog > Set the OS (Windows) > Select/Enter path to exclusion > Set exculsion type (i.e. file) > Set the "Exclusions Mode" to either _Interoperability_ or _Interoperability - Extended_ > Click Excluded from Current Scope (button)
+```
+
+> Note: Pre-defined interoperability exclusions are available from the catalog.
+
+- Temporarily disable the SentinelOne Agent to troubleshoot interoperability issues.
+- Use Sysinternals Process Explorer to examine Process details.
+- Use the Knowledge Base and Exclusions Catalog to check for known interoperability cases.
+- Create an Interoperability path exclusion to prevent SentinelOne DLL injection.
+- Sometimes it can be necessary to disable the agent to prove or disprove an interoperability issue. This video walks through the following:
+  - Disabling the agent so that you can prove/disprove an issue with an application. For example, if you disable the agent, but an issue still exists, the problem most likely doesn't lie with SentinelOne and the application.
+  - Adding exclusions to prevent and resolve interoperability issues.
+  - Collecting logs for SentinelOne support.
+
+### Agent Installation or Upgrade Troubleshooting
+[Agent Installation/Upgrade Troubleshooting Video Tutorial](https://sentinelone-education.wistia.com/medias/j2r0jyz6fw)
+- Fetch Agent and endpoint logs through the Management Console.
+- Use the Offline Log Collector to collect Agent logs on the endpoint.
+- Troubleshoot using the Windows Agent install and upgrade logs.
+- Collect data before you submit a support ticket.
+
+```
+cd "C:\Program Files\SentinelOne\Sentinel Agent..." 
+cd Tools
+LogCollector.exe WorkingDirectory=C:\Temp
+```
+- Now check the `temp` directory for any S1 install logs.
+
+```
+cd %temp%
+```
+
+- If the clean install is from MSI, and the MSI fails before handing off to the Sentinellnstaller, the log filename is `MSI* . LOG` __This is the file we want to submit with our support ticket.__ However, there are a few additional troubleshooting steps before opening a ticket we can take:
+  - Scroll to the bottom of the log, hit `CTRL + F` to search up for "failed".
+  - Look through the log for any clues for what caused the failed installation (i.e. "Missing siteKey, aborting", or "a connection with the server could not be established"). 
+
+- Try checking the `Mitigation policy` status. If the status reads `Mitigation policy: none` there is a communication issue. Check the status bu running the following cmdlet:
+
+```
+cd "C:\Program Files\SentinelOne\Sentinel Agent..." 
+SentinelCtl.exe status
+# to generate a text file of the output
+SentinelCtl.exe status > C:\Temp\s1status.txt
+SentinelCtl.exe config > C:\Temp\s1config.txt
+```
+
+- If it was a successful install, you will find logs in the following path: `C:\ProgramData\Sentinel\UserCrashDumps`. There should be logs here that automatically generated after a successful installation.
+
+
+#### Submitting a Support Ticket
+[Support Portal](https://suport.sentinelone.com)
+
+Before you submit a new ticket to SentinelOne Support, collect all available information to make the solution as optimal as you can and help us resolve the issue as quickly as possible.
+
+Fill in and send the following contents to support:
+- Contact details: Name of company and name of the contact
+- Issue impact:
+  - Impact of issue (severity)
+  - Number of affected endpoints
+
+
+- __Management basics__:
+  - Management Console URL
+  - Management Console version
+
+
+- For issues with __specific endpoints__:
+  - Agent name, version, and OS
+  - Other security software installed on Agents
+  - Agent Fetched Log Files or URL to them if too big to attach
+  - If the Agent has a crash issue, send Process Monitor report and Process Memory dump
+- For issues with detections:
+  - Malware File or Hash of malware files
+  - URL Link to Alert
+
+- For issues with __errors__:
+  - Steps to recreate error message or issue
+  - Screenshots of issue and error messages (if relevant)
+
+- For __performance__ issues:
+  - On Windows, collect and send the WPR report
+  - RAM and other hardware specs
+  - Process Monitor report (if relevent)
+  - On Linux, run this command and send the output:
+
+```
+top -b -n 12 -d 5 > ~/topOutput.txt
+```
+
+- For __interoperability__ issues:
+  - Agent logs
+  - Name of affected process/application
+  - Crash dump files
 
 # Cybersecurity Glossary
 [Day-in-the-life of SOC Analyst](https://sentinelone-education.wistia.com/medias/j74hnjwhzb)
 [Deployment Best Practices](https://support.sentinelone.com/hc/en-us/articles/360011333674-Deployment-Project-Plan-Best-Practice)
+[_Remote Script Orchestartion_ can deploy a script and locate stolen devices](https://sentinelone-education.wistia.com/medias/96pxbjib1q)
+[Remote Shell Access](https://sentinelone-education.wistia.com/medias/p0wwv8ixa0)
 [S1 Knowledge Base](https://support.sentinelone.com/hc/en-us/sections/7549008464663-Welcome)
 [S1 Help & Resources](https://support.sentinelone.com/hc/en-us/articles/360056646194-Help-and-Resources)
 [S1 Cybersecurity 101 Glossary](https://www.sentinelone.com/cybersecurity-101/)
