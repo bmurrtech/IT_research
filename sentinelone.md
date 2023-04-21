@@ -3,9 +3,10 @@ All graphics and conent is intellectual property subject to copyright laws prote
 # Table of Contents
 - [Partner Portal & All Resources](#s1-resources)
 - [Why SentinelOne](#why-sentinelone)
-- [The XDR Difference](#the-xdr-difference)
+- [The XDR Difference](#why-xdr)
 - [Threat Services](#threat-services)
 - [Selling SentinelOne](#selling-sentinelone)
+- [Demo Kit Setup](demo-toolkit)
 - [Sales Certs](#sales-certs)
 - [Cybersecuirty Glossary](#cybersecurity-glossary)
 
@@ -83,7 +84,7 @@ Discover why customers choose SentinelOne over the following competitors:
 - [SentinelOne Vs Palo Alto Networks](https://www.sentinelone.com/vs/palo-alto-networks/) - Customers choose SentinelOne over Palo Alto Networks for endpoint & cloud protection, detection, and response
 - [SentinelOne Vs Trend Micro](https://www.sentinelone.com/vs/trend-micro/) - Customers prefer SentinelOne over Trend Micro to protect, detect, and recover from cyber threats spanning endpoints and cloud workloads
 
-### Why XDR?
+# Why XDR?
 [See S1 PDF for more info](https://assets.sentinelone.com/cybersecurity-industry/cybersecurity-alphabet-soup)
 
 Take the Next Leap in the Evolution of EDR. Extend Beyond the Endpoint With End-to-End Enterprise Visibility, Protection, and Response.
@@ -634,7 +635,7 @@ Step 4: Making a Commitment - No matter how the SentinelOne demo ended - we are 
   - Meeting with Sales around Procurement / Discuss Pricing
   - Beginning business contracting / negotiations
 
-#### Partner Demo Toolkit
+# Demo Toolkit
 ![demo_kit_why_use](https://i.imgur.com/Yl6pSBd.png)
 [How to Use the Demo Toolkit](https://sentinelone-education.wistia.com/medias/jlbbqgjzur)
 SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to create an __easily consumable demo environment__ with the latest tools.  Everything is included in a single box, and the installation and updates are completely automatic.
