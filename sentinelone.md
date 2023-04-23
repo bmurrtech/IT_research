@@ -6,8 +6,7 @@ All graphics and conent is intellectual property subject to copyright laws prote
 - [The XDR Difference](#why-xdr)
 - [Threat Services](#threat-services)
 - [Selling SentinelOne](#selling-sentinelone)
-- [Demo Kit Setup](demo-toolkit)
-- [Sales Certs](#sales-certs)
+- [Demo Kit Setup](#demo-toolkit)
 - [Cybersecuirty Glossary](#cybersecurity-glossary)
 - [Troubleshooting Issues](#troubleshooting)
 
@@ -839,13 +838,13 @@ top -b -n 12 -d 5 > ~/topOutput.txt
   - Crash dump files
 
 # Cybersecurity Glossary
-[Day-in-the-life of SOC Analyst](https://sentinelone-education.wistia.com/medias/j74hnjwhzb)
-[Deployment Best Practices](https://support.sentinelone.com/hc/en-us/articles/360011333674-Deployment-Project-Plan-Best-Practice)
-[_Remote Script Orchestartion_ can deploy a script and locate stolen devices](https://sentinelone-education.wistia.com/medias/96pxbjib1q)
-[Remote Shell Access](https://sentinelone-education.wistia.com/medias/p0wwv8ixa0)
-[S1 Knowledge Base](https://support.sentinelone.com/hc/en-us/sections/7549008464663-Welcome)
-[S1 Help & Resources](https://support.sentinelone.com/hc/en-us/articles/360056646194-Help-and-Resources)
-[S1 Cybersecurity 101 Glossary](https://www.sentinelone.com/cybersecurity-101/)
+- [Day-in-the-life of SOC Analyst](https://sentinelone-education.wistia.com/medias/j74hnjwhzb)
+- [Deployment Best Practices](https://support.sentinelone.com/hc/en-us/articles/360011333674-Deployment-Project-Plan-Best-Practice)
+- [_Remote Script Orchestartion_ can deploy a script and locate stolen devices](https://sentinelone-education.wistia.com/medias/96pxbjib1q)
+- [Remote Shell Access](https://sentinelone-education.wistia.com/medias/p0wwv8ixa0)
+- [S1 Knowledge Base](https://support.sentinelone.com/hc/en-us/sections/7549008464663-Welcome)
+- [S1 Help & Resources](https://support.sentinelone.com/hc/en-us/articles/360056646194-Help-and-Resources)
+- [S1 Cybersecurity 101 Glossary](https://www.sentinelone.com/cybersecurity-101/)
 
 - __EDR - Endpoint Detection and Response__: EDR provides an organization with the ability to monitor endpoints for suspicious behavior and record every single activity and event. It then correlates information to provide critical context to detect advanced threats and finally runs automated response activity such as isolating an infected endpoint from the network in near real-time. EDR data is also a critical component of forensic investigations which is why many cyber insurers are now mandating EDR capabilities in the underwriting process. Therefore, EDR is now not only a technology initiative but also a business risk imperative for most customers.
 - __XDR - Extended detection and response__: XDR is the evolution of EDR, Endpoint Detection, and Response. XDR automatically collects and correlates data across multiple security vectors, facilitating faster threat detection so that security analysts can respond quickly before the scope of the threat broadens.
