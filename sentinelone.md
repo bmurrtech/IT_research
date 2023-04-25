@@ -7,8 +7,9 @@ All graphics and conent is intellectual property subject to copyright laws prote
 - [Threat Services](#threat-services)
 - [Selling SentinelOne](#selling-sentinelone)
 - [Demo Kit Setup](#demo-toolkit)
-- [Cybersecuirty Glossary](#cybersecurity-glossary)
+- [Deploy SentinelOne](#deploy-s1)
 - [Troubleshooting Issues](#troubleshooting)
+- [Cybersecuirty Glossary](#cybersecurity-glossary)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
 
@@ -684,6 +685,41 @@ SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to 
     - (Optional) API-Token for your NFR-Instance
 
 > The EPP Demo only encrypts the files under \Users\Sentinel\Documents for safety reasons.
+
+# Deploy S1
+Installing SentinelOne via CLI using msiexec`. Est. install time ~10mins. 
+
+- Copy the SentinelOne installer to the endpoint
+- Change the `SITE_TOKEN` to the client-specific S1 token.
+
+```
+#example
+SITE_TOKEN="asdfasdfasdf56ae68aer6ta6s8t7a6e46aset8"
+```
+
+> Don't forget the quotes!
+
+- cd to the SentinelOne installer
+- Run the ideal msiexec for your circumstance (see below) 
+
+
+__Quite-mode Install, No restart__
+
+```
+msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /norestart /quiet /l* s1log.txt
+```
+
+__Install Status, Display Installer Progress, No Restart__
+
+```
+msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /norestart /l* s1log.txt
+```
+
+__Force Restart, Install Status__
+
+```
+msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /forcerestart /l* s1log.txt
+```
 
 # Troubleshooting
 ### Agent Communication Troubleshooting
