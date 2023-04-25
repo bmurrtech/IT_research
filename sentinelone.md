@@ -687,7 +687,11 @@ SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to 
 > The EPP Demo only encrypts the files under \Users\Sentinel\Documents for safety reasons.
 
 # Deploy S1
-Installing SentinelOne via CLI using msiexec`. Est. install time ~10mins. 
+![s1install](https://i.imgur.com/UPsOLVs.png)
+
+Installing SentinelOne via CLI using msiexec`. Est. install time ~10mins.
+
+> Reboot is not required for XDR protection on first install; however, Storyline will not work unless endpoint is rebooted.
 
 - Copy the SentinelOne installer to the endpoint
 - Change the `SITE_TOKEN` to the client-specific S1 token.
@@ -702,20 +706,19 @@ SITE_TOKEN="asdfasdfasdf56ae68aer6ta6s8t7a6e46aset8"
 - cd to the SentinelOne installer
 - Run the ideal msiexec for your circumstance (see below) 
 
-
-__Quite-mode Install, No restart__
-
-```
-msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /norestart /quiet /l* s1log.txt
-```
-
-__Install Status, Display Installer Progress, No Restart__
+__Installation Status, No Restart__
 
 ```
 msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /norestart /l* s1log.txt
 ```
 
-__Force Restart, Install Status__
+__Quite-mode Install (No Installation Status), No restart__
+
+```
+msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /norestart /quiet /l* s1log.txt
+```
+
+__Force Restart, w/Installation Status__
 
 ```
 msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOKEN="INSERTCLIENTKEYTOKEN"  /forcerestart /l* s1log.txt
