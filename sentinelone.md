@@ -394,6 +394,18 @@ __Singulatity Control__ is made for organizations seeking the best-of-breed secu
  - Built-in Static AI and Behavioral AI analysis prevent and detect a wide range of attacks in real-time before they cause damage. Core protects against known and unknown malware, Trojans, hacking tools, ransomware, memory exploits, script misuse, bad macros, and more.
  - Sentinels are autonomous which means they apply prevention and detection technology with or without cloud connectivity and will trigger protective responses in real-time.
  - Recovery is fast and gets users back and working in minutes without re-imaging and without writing scripts. Any unauthorized changes that occur during an attack can be reversed with 1-Click Remediation and 1-Click Rollback for Windows.
+
+> Note: VSS snapshots are a necessary component of the rollback and remdiation feature. See [Article1](https://www.cybervigilance.uk/post/sentinelone-how-does-rollback-work) and [Article2](https://www.sentinelone.com/blog/dont-touch-backup-buddy-ransomware-trying-increase-payout/) for refrence.
+> Here are few common methods seen in the wild:
+> 1. Call WinExec (“vssadmin.exe Delete Shadows /All /Quiet”).
+> 2. Create the registry key in HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindows NTCurrentVersionSystemRestore with “DisableSR” as the entry and “1” as the value disable 
+> Safe mode, using the “bcedit” utility with the appropriate parameters.
+> 3. Disable Recovery Mode and hide the boot menu options (also using bcedit)
+> 4. Stopping the Windows Error Reporting (WER) service, and disabling its autostart on future boots. We’ve seen this happen for Windows Defender and other Windows
+> services as well.
+> 5. Disable VSS using WMI, to evade detection by AV signatures.
+
+
  - Secure SaaS management access. Choose from US, EU, APAC localities. Data-driven dashboards, policy management by site and group, incident analysis with MITRE ATT&CK integration, and more.
  - Firewall Control for control of network connectivity to and from
  - devices including location awareness.
