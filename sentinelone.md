@@ -855,14 +855,23 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 
 __Find Uninstall Passphrase via Management Console__
 - Is the endpoint already decommissioned?
-  - __Yes__: Navitgate to: `> Sentinels (left pane) > Endpoints (tab) > Click "Select Filters" (search bar) > Click "View More Filters" (far right) > Check the "Decommissioned" box > Click "Back to Filters" > Click "Yes" in the "Decommissioned" column > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase`
-  - __No__: Navigate to: `> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase`
+- __Yes__: Navitgate to:
+
+```
+> Sentinels (left pane) > Endpoints (tab) > Click "Select Filters" (search bar) > Click "View More Filters" (far right) > Check the "Decommissioned" box > Click "Back to Filters" > Click "Yes" in the "Decommissioned" column > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase
+```
+
+- __No__: Navigate to:
+ 
+```
+ > Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase`
+```
 
 __Uninstall via CLI__
 - Copy the SentinelOne installer to the endpoint
 - `cd` to the SentinelOne installer file path
 - Insert the passphrase obtained from the Management Console in the following section: `UNINSTALL_KEY="[passphrase]"` (see screenshot of CLI execution below).
-- 
+
 ![cli_s1_uninstall](https://i.imgur.com/Qq0UMQm.png)
 
 - Run the ideal msiexec for your circumstance (see below):
@@ -892,7 +901,11 @@ _For `MSI` Installer_
 ```
 
 __Uninstall via Management Console__
-- You can uninstall the agentin the Management Console as follows: `> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Endpoint Actions" > Select "Uninstall" from the extened menu > Confirm you are certian that you wish to uninstall the agent > Click the Uninstall button.
+- You can uninstall the agentin the Management Console as follows:
+ 
+```
+> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Endpoint Actions" > Select "Uninstall" from the extened menu > Confirm you are certian that you wish to uninstall the agent > Click the Uninstall button.
+```
 
 
 #### Submitting a Support Ticket
