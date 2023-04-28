@@ -847,7 +847,7 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 [Uninstall SentinelOne Options How-to Video](https://sentinelone-education.wistia.com/medias/kphlzsaloc)
 
 - You can uninstall agents via the S1 Management Console or the CLI.
-- (Windows only) To unisntall many agents at once, you can use a script that runs the API, gets the passphrases, then runs uninstall for the Windows agents.
+- (Windows only) To uninstall many agents at once, you can use a script that runs the API, gets the passphrases, then runs uninstall for the Windows agents.
 - To uninstall agents via CLI, you __must have the passphrase or each agent if anti-tamper is enabled__.  
   - _Anti-tamper_ is a policy setting in the Management Console.
   - You can find this setting as follows: `> Sentinels (left pane) > Policy (tab) > Agent (section) > Security Settings > _Anti-tampering_ (toggle)`
@@ -855,7 +855,7 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 
 __Find Uninstall Passphrase via Management Console__
 - Is the endpoint already decommissioned?
-- __Yes__: Navitgate to:
+- __Yes__: Navigate to:
 
 ```
 > Sentinels (left pane) > Endpoints (tab) > Click "Select Filters" (search bar) > Click "View More Filters" (far right) > Check the "Decommissioned" box > Click "Back to Filters" > Click "Yes" in the "Decommissioned" column > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase
@@ -901,10 +901,10 @@ _For `MSI` Installer_
 ```
 
 __Uninstall via Management Console__
-- You can uninstall the agentin the Management Console as follows:
+- You can uninstall the agent in the Management Console as follows:
  
 ```
-> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Endpoint Actions" > Select "Uninstall" from the extened menu > Confirm you are certian that you wish to uninstall the agent > Click the Uninstall button.
+> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Endpoint Actions" > Select "Uninstall" from the extended menu > Confirm you are certain that you wish to uninstall the agent > Click the Uninstall button.
 ```
 
 
