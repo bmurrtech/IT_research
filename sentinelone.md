@@ -842,6 +842,57 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 
 - If it was a successful install, you will find logs in the following path: `C:\ProgramData\Sentinel\UserCrashDumps`. There should be logs here that automatically generated after a successful installation.
 
+### Uninstalling Agent
+[Uninstall SentinelOne Options How-to Video](https://sentinelone-education.wistia.com/medias/kphlzsaloc)
+
+- You can uninstall agents via the S1 Management Console or the CLI.
+- (Windows only) To unisntall many agents at once, you can use a script that runs the API, gets the passphrases, then runs uninstall for the Windows agents.
+- To uninstall agents via CLI, you __must have the passphrase or each agent if anti-tamper is enabled__.  
+  - _Anti-tamper_ is a policy setting in the Management Console.
+  - You can find this setting as follows: `> Sentinels (left pane) > Policy (tab) > Agent (section) > Security Settings > _Anti-tampering_ (toggle)`
+  - The following is a list of exit codes and translation of results for the `EXE` and `MSI` installers:
+
+__Find Uninstall Passphrase via Management Console__
+- Is the endpoint already decommissioned?
+  - __Yes__: Navitgate to: `> Sentinels (left pane) > Endpoints (tab) > Click "Select Filters" (search bar) > Click "View More Filters" (far right) > Check the "Decommissioned" box > Click "Back to Filters" > Click "Yes" in the "Decommissioned" column > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase`
+  - __No__: Navigate to: `> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Show Passphrase" > Copy the passphrase`
+
+__Uninstall via CLI__
+- Copy the SentinelOne installer to the endpoint
+- `cd` to the SentinelOne installer file path
+- Insert the passphrase obtained from the Management Console in the following section: `UNINSTALL_KEY="[passphrase]"` (see screenshot of CLI execution below).
+- 
+![cli_s1_uninstall](https://i.imgur.com/Qq0UMQm.png)
+
+- Run the ideal msiexec for your circumstance (see below):
+
+__Quite-mode Install, No restart__
+`msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi UNINSTALL_KEY="[passphrase]  /norestart /quiet /l* s1log.txt`
+
+__Install Status, Display Installer Progress, No Restart__
+`msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi UNINSTALL_KEY="[passphrase]  /norestart /l* s1log.txt`
+
+__Force Restart, Install Status__
+`msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi UNINSTALL_KEY="[passphrase]  /forcerestart /l* s1log.txt`
+
+__Uninstall Exit Codes for Windows Agents__
+
+_For `EXE` Installer_
+```
+0 - Success
+1 - General error, unspecified
+1633 - Platform not supported (min. requirements not met)
+Any other value means the installer crashed in an unexpected manner
+```
+_For `MSI` Installer_
+```
+0 - Success
+1 - Failure, unspecified
+```
+
+__Uninstall via Management Console__
+- You can uninstall the agentin the Management Console as follows: `> Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Endpoint Actions" > Select "Uninstall" from the extened menu > Confirm you are certian that you wish to uninstall the agent > Click the Uninstall button.
+
 
 #### Submitting a Support Ticket
 [Support Portal](https://suport.sentinelone.com)
