@@ -396,7 +396,12 @@ __Singulatity Control__ is made for organizations seeking the best-of-breed secu
  - Sentinels are autonomous which means they apply prevention and detection technology with or without cloud connectivity and will trigger protective responses in real-time.
  - Recovery is fast and gets users back and working in minutes without re-imaging and without writing scripts. Any unauthorized changes that occur during an attack can be reversed with 1-Click Remediation and 1-Click Rollback for Windows.
 
-> Note: VSS snapshots are a necessary component of the rollback and remediation feature. See [Article1](https://www.cybervigilance.uk/post/sentinelone-how-does-rollback-work) and [Article2](https://www.sentinelone.com/blog/dont-touch-backup-buddy-ransomware-trying-increase-payout/) for refrence.
+> Note: VSS snapshots are a necessary component of the rollback and remediation feature. See [Article1](https://www.cybervigilance.uk/post/sentinelone-how-does-rollback-work) and [Article2](https://www.sentinelone.com/blog/dont-touch-backup-buddy-ransomware-trying-increase-payout/) for reference.
+> VSS shadow copies need to be __at least 10% of the total drive space__ at any given time.
+> All endpoints need A) VSS shadow copies enabled (if the device has a D: drive with space, that's a good place to store them with the following command: `vssadmin
+> Resize ShadowStorage /For=C: /On=D: /MaxSize=10%`
+> B) at least 10% of the total drive space must be dedicated to shadow copies in order for S1 to recover/rollback >ransomware.
+> See [additional VSS CLI commands](https://www.thewindowsclub.com/use-vssadmin-command-line-to-manage-vss-in-windows) to modify shadow copies further.
 > Here are few common methods seen in the wild:
 > 1. Call WinExec (“vssadmin.exe Delete Shadows /All /Quiet”).
 > 2. Create the registry key in HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindows NTCurrentVersionSystemRestore with “DisableSR” as the entry and “1” as the value disable 
@@ -405,7 +410,6 @@ __Singulatity Control__ is made for organizations seeking the best-of-breed secu
 > 4. Stopping the Windows Error Reporting (WER) service, and disabling its autostart on future boots. We’ve seen this happen for Windows Defender and other Windows
 > services as well.
 > 5. Disable VSS using WMI, to evade detection by AV signatures.
-
 
  - Secure SaaS management access. Choose from US, EU, APAC localities. Data-driven dashboards, policy management by site and group, incident analysis with MITRE ATT&CK integration, and more.
  - Firewall Control for control of network connectivity to and from
