@@ -1,4 +1,4 @@
-All graphics and conent is intellectual property subject to copyright laws protected via [licensing owned by SentienlOne](https://www.sentinelone.com/legal/). Please do not copy, redistribute, or modify.
+All graphics and content is intellectual property subject to copyright laws protected via [licensing owned by SentienlOne](https://www.sentinelone.com/legal/). Please do not copy, redistribute, or modify.
 
 # Table of Contents
 - [Partner Portal & All Resources](#s1-resources)
@@ -46,7 +46,7 @@ __Registering to the Partner Portal__
 
 > Note: Please check your spam folder for the Partner Portal confirmation email. Have any challenges? Questions? Contact us at channel@sentinelone.com
 
-- Once your account is regsitered and activated, visit [Partner Portal Assets Library](https://partners.sentinelone.com/prm/English/s/assets) for access to all reseller resources.
+- Once your account is registered and activated, visit [Partner Portal Assets Library](https://partners.sentinelone.com/prm/English/s/assets) for access to all reseller resources.
 
 # Why SentinelOne
 [Why S1 Sales Deck - L1](https://partners.sentinelone.com/prm/English/s/assets?id=328616&q=l1)
@@ -72,7 +72,7 @@ The Two Anti-virus Worlds Converge:
 - Typically, the __industry landscape for AV and EDR today__ ranges from three different initiatives:
   - __AV +__ : 40% say they have an AV, but they want to improve it
   - __+ / EDR / +__ : 30% say they do _not_ have an EDR, but they want to add one/improve existing EDR.
-  - __Converge__ : 30% say they want to merge AV and EDR into one. Convergance is expected to grow as AI-awareness increases.
+  - __Converge__ : 30% say they want to merge AV and EDR into one. Convergence is expected to grow as AI-awareness increases.
 
 Discover why customers choose SentinelOne over the following competitors:
 - [Why SentinelOne](https://www.sentinelone.com/why-sentinelone/) - SentinelOne is autonomous cybersecurity built for what’s next. Learn more about how we are different
@@ -110,7 +110,7 @@ Take the Next Leap in the Evolution of EDR. Extend Beyond the Endpoint With End-
 - An MXDR service augments the customer’s XDR capabilities with MDR services for additional monitoring, investigations, threat hunting, and response capabilities.
 
 ### Why XDR Gaining Traction?
-- XDR is the [all-in-one secuirty package](https://youtu.be/QikuJsgsgxk). XDR replaces siloed security and helps organizations address cybersecurity challenges from a unified standpoint. With a single pool of raw data comprising information from across the entire ecosystem, XDR allows faster, deeper, and more effective threat detection and response than EDR, collecting and collating data from a wider range of sources. 
+- XDR is the [all-in-one security package](https://youtu.be/QikuJsgsgxk). XDR replaces siloed security and helps organizations address cybersecurity challenges from a unified standpoint. With a single pool of raw data comprising information from across the entire ecosystem, XDR allows faster, deeper, and more effective threat detection and response than EDR, collecting and collating data from a wider range of sources. 
 - XDR provides more visibility and context into threats; incidents that would not otherwise have been addressed before will surface to a higher level of awareness, allowing security teams to remediate and reduce any further impact and minimize the scope of the attack.
 - A typical ransomware attack traverses the network, lands in an email inbox, and then attacks the endpoint. Addressing security by looking at each of those independently puts organizations at a disadvantage. XDR integrates disparate security controls to provide automated or one-click response actions across the enterprise security estate such as disabling user access, forcing multi-factor authentication on suspected account compromise, blocking inbound domains and file hashes and more – all via custom rules written by the user or by logic built into the prescriptive response engine.
 - This comprehensive visibility leads to several benefits, including:
@@ -158,7 +158,7 @@ investigate and scope.
   - Up to 365 days context retention for all EDR activities.
   - Up level SOC resources to enable proactive threat hunting with automated hunting rules.
 
-## Vigilance and Viglance Pro
+## Vigilance and Vigilance Pro
 [Vigilance Data Sheet](https://assets.sentinelone.com/vdi1/sentinel-one-vigilan?lb-mode=overlay#page=1)
 
 ![vigilance_how](https://i.imgur.com/tz2vTC2.png)
@@ -190,7 +190,7 @@ MDR + Digital Forensics & Incident Response form a security safety net. Extended
 - Reduce Alert and Managerial Fatigue with Cleaner Dashboards and Minimized Customer Escalations.
 - Support for private labeled MDR to extend current customer and/or management services.
 
-### WatchTower Questiosn to Ask
+### WatchTower Questions to Ask
 - __Reducing IT Friction__ Do you have a fully staffed SOC? Are your existing SOC personnel and resources sufficient to provide peace of mind? Many attacks and breaches occur during holidays and weekends when attackers know organizations are not fully staffed. Therefore, it might be useful to discuss the merits of a 24x7 - 365-day MDR service to augment their existing resources.
 - __Optimizing Time To Value__ How quickly are you typically able to respond to an escalated security incident? Are you outsourcing incident response? Does your organization have an Incident Response retainer with a 3rd party firm? Does your cyber insurer have a specific contracted IR firm they utilize/mandate for a breach?
 - __Integration__ How are you currently integrating threat hunting into your cybersecurity program? What does that process look like? Would your organization benefit from a managed threat hunting offering? How difficult is it for you to threat hunt using your existing toolset?
@@ -204,7 +204,7 @@ MDR + Digital Forensics & Incident Response form a security safety net. Extended
 [Ranger Datasheet](https://assets.sentinelone.com/iotranger/sentinel-one-ranger-)
 [Ranger Sales Deck](https://partners.sentinelone.com/prm/English/s/assets?id=338784&q=ranger)
 
-Singularity Ranger finds and fingerprints ail IP-enabIed devices, from network to cloud to IoT, enhancing enterprise visibility and proactive network attack surface
+Singularity Ranger finds and fingerprints ail IP-enabled devices, from network to cloud to IoT, enhancing enterprise visibility and proactive network attack surface
 control. Ranger transforms Sentinel agents into distributed network sensors that autonomously protect infrastructure from suspicious and malicious devices, ail with
 zero additional agents, hardware, or network changes.
 
@@ -248,13 +248,13 @@ and maintenance practices and maintains workload stability by not tainting kerne
 ### Cloud WDR Questions to Ask
 - How are you protecting your servers and containers from malware and ransomware?
 - How do you or your IR, SOC, or Security team investigate incidents as they move across your hybrid cloud network?
-- Are you deployed in both an on-prem data center AND a public cloud? Khich Cloud Service Providers (CSPs) do you use?
+- Are you deployed in both an on-prem data center AND a public cloud? Which Cloud Service Providers (CSPs) do you use?
 - What is your mix of Linux vs. Windows servers (roughly)? What flavor of containers are you using?
 
 ### Cloud WDR Top Differences
 ![kubernetes_sentinel](https://i.imgur.com/NTJ9PbW.png)
-- App Control Engine prevents unauthorized code from hijacking your Ws and containers.
-- Imutable Resource-efficient one agent protects the Kubernetes worker node, all its pods, and ail their containers. Complete visibility into containers, without the
+- App Control Engine prevents unauthorized code from hijacking your VMs and containers.
+- Immutable Resource-efficient one agent protects the Kubernetes worker node, all its pods, and ail their containers. Complete visibility into containers, without the
 overhead of sidecars.
 - No kernel panics because our Linux and Kubernetes agents operate entirely in user-space, there are no tainted kernels and no kernel panics. DevOps can update
 their host OS at will without fear of agent conflict.
@@ -395,7 +395,7 @@ __Singulatity Control__ is made for organizations seeking the best-of-breed secu
  - Sentinels are autonomous which means they apply prevention and detection technology with or without cloud connectivity and will trigger protective responses in real-time.
  - Recovery is fast and gets users back and working in minutes without re-imaging and without writing scripts. Any unauthorized changes that occur during an attack can be reversed with 1-Click Remediation and 1-Click Rollback for Windows.
 
-> Note: VSS snapshots are a necessary component of the rollback and remdiation feature. See [Article1](https://www.cybervigilance.uk/post/sentinelone-how-does-rollback-work) and [Article2](https://www.sentinelone.com/blog/dont-touch-backup-buddy-ransomware-trying-increase-payout/) for refrence.
+> Note: VSS snapshots are a necessary component of the rollback and remediation feature. See [Article1](https://www.cybervigilance.uk/post/sentinelone-how-does-rollback-work) and [Article2](https://www.sentinelone.com/blog/dont-touch-backup-buddy-ransomware-trying-increase-payout/) for refrence.
 > Here are few common methods seen in the wild:
 > 1. Call WinExec (“vssadmin.exe Delete Shadows /All /Quiet”).
 > 2. Create the registry key in HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindows NTCurrentVersionSystemRestore with “DisableSR” as the entry and “1” as the value disable 
@@ -479,8 +479,8 @@ According to Wikipedia, a software multitenancy is an architecture in which a si
 - __Information to Gather__:
   - Determine where they are coming from and where they want to go.
   - Determine who are the stakeholders/decision-makers.
-  - What is driving the initative? (i.e we are on McAffe, we want to improve)
-  - What is their dominatn perspective?
+  - What is driving the initiative? (i.e we are on McAffe, we want to improve)
+  - What is their dominant perspective?
 
 ### Pain Points
  - __Respondiong to Threats or Being Proactive__ Our prospects understand how to respond to threats. But _they don't understand what it means to be proactive_ or more importantly, they don't know there is a _better way to respond to threats_.
@@ -521,7 +521,7 @@ __No Dependencies or Compromises__
 - SentinelOne's agent provides detection, protection, and _self-remediation_ without a dependency on cloud connectivity. Many competitive offerings require cloud connectivity for full protection and don't include self/auto-remediation of threats
 
 __Best-In-Class Response__
-- SentinelOne has consistently had the highest number of Analytic Detections, fewest Missed Detections, fewest Delayed Detections, and fewest Detection Changes of any vendor in MITRE's Engenuity testing year-over-year 
+- SentinelOne has consistently had the highest number of Analytic Detections, fewest Missed Detections, fewest Delayed Detections, and fewest Detection Changes of any vendor in MITRE's Ingenuity testing year-over-year 
 - 1-click automated remediation capabilities
 - Custom, real-time detections
 - Quickly run scripts on one or multiple endpoints
@@ -557,7 +557,7 @@ It is critical that you know your audience. People in different roles have diffe
 - __Can SentinelOne support my business?__ There is always a concern when bringing in a new solution, is this solution going to break my environment? This potentially could lead to greater pain than I am trying to solve. We have many compelling stories for many types of customers, use cases, verticals, complex environment, etc. It is on you to be pro-actively demonstrating the different Services and Products we offer, Peer reviews, Customer stories and/or references to vouch for SentinelOne.
 - __Does SentinelOne work better than the competition?__ The security teams and leaders can't afford to make a mistake, so when they are
 comparing competitors, they are actually focused on the question: does it work better than the competition in MY environment? Ensure you understand the customer's environment and needs, because it will come down to who's technology they are going to understand better. Sales and SE alignment is crucial as it is on you to explain how SentinelOne's security architecture design works better , now AND in the future.
-- __Does SentinelOne work in MY environment?__ This is the main reason we lead the mdiscussion towards a Proof of Concept (POC). There is no "cookie-cutter" - as much as we provide Best Practices to the POC and equip our partners with all the knowledge and tools they need to run a successful POC (Look for the SentinelOne Partner Pre- Sales Proficient course), we have to listen to our customers, what their requirements and needs are and ensure we are addressing them, showing how the SentinelOne solution helps solve their pain points and problems.
+- __Does SentinelOne work in MY environment?__ This is the main reason we lead the discussion towards a Proof of Concept (POC). There is no "cookie-cutter" - as much as we provide Best Practices to the POC and equip our partners with all the knowledge and tools they need to run a successful POC (Look for the SentinelOne Partner Pre- Sales Proficient course), we have to listen to our customers, what their requirements and needs are and ensure we are addressing them, showing how the SentinelOne solution helps solve their pain points and problems.
 -  __Does the product work?__ Usually it is resolved by Market research and Peer company conversations and Third Party Validations. Our competitors might throw this FIJD at the prospect and it is our mission to prove that the product works, it's not buggy and the ease of use makes a great user experience. A demo and a Proof of Concept (POC) will also help resolve this doubt. _Pro Tip_: For Malware testing capabilities leverage the MITRE ATT&CK validation, which emulates real-life, live attacks.
 -  __How long will this solution be viable?__ Will SentinelOne be here in a year? Especially with how the market is changing - what is SentinelOne's viability as a company. SentinelOne Inc. raised Sl.2 billion in one of the cybersecurity industry's largest initial public offerings., and we are growing strong.
 
@@ -664,9 +664,9 @@ Step 4: Making a Commitment - No matter how the SentinelOne demo ended - we are 
 
 - [12-min AWS & Kubernetes Cloud Protection Demo](https://sentinelone-education.wistia.com/medias/bdsqw6eqs9)
 - [9-min S1 Macro Virus Demonstration Video](https://sentinelone-education.wistia.com/medias/wyukbbfjdw)
-- [5-min S1 Live Virus Demonstartion Video](https://sentinelone-education.wistia.com/medias/hmo05lovzz)
+- [5-min S1 Live Virus Demonstration Video](https://sentinelone-education.wistia.com/medias/hmo05lovzz)
 
-> __Macro Virus__ - A __macro virus__ is _a type of computer virus that could be stored in macros within a Microsoft 365 file (such as a document, presentation, workbook, or template)_.,  Explain to the prospect that __macros__ are _heavily used in business environments_ (i.e. an Excel spreadsheet getting current exchange rates). All modern, definition-based AV prodcuts such as Windows Defender, McAffee, Norton, Anti-virus Defender, _should_ be able to detect, and block, __known__ macro viruses. But what if this is a new macro virus? If it isn't on the definition-based AV list, it will not be blocked. 
+> __Macro Virus__ - A __macro virus__ is _a type of computer virus that could be stored in macros within a Microsoft 365 file (such as a document, presentation, workbook, or template)_.,  Explain to the prospect that __macros__ are _heavily used in business environments_ (i.e. an Excel spreadsheet getting current exchange rates). All modern, definition-based AV products such as Windows Defender, McAffee, Norton, Anti-virus Defender, _should_ be able to detect, and block, __known__ macro viruses. But what if this is a new macro virus? If it isn't on the definition-based AV list, it will not be blocked. 
 > __How did my computer infected with a macro virus?__  You can activate it __just by performing normal everyday tasks, like editing a Word document or opening your emails__. Example: __1999 Melissa Virus__ A now-classic example of a macro virus is the Melissa Virus from 1999. After a user opened an email containing a document infected with the virus, the virus would send itself to the first 50 addresses in the user’s contact list. Melissa had grave implications for company and web servers that carried the large volumes of emails being created. _It successfully crippled hundreds of networks_, __including__ those of __Microsoft and the United States Marine Corp.__ IBM Watson Research Center in Hawthorne, N.Y. He said that Melissa had “spread more widely and rapidly than any P.C. virus in history.”
 > - The most common ways to spread macro viruses include:
 >   - Phishing emails with attachments
@@ -754,7 +754,7 @@ Agents can lose connectivity with the Management Console for multiple reasons: i
 > Best Practice: Uninstall third-party anti-virus software before you install SentinelOne. Other security software often prevents Agent installation or affects its performance.
 
 6. Check if there is a proxy server configuration. > Start (right-click) > Settings > Network & Internet > Proxy > Check if Proxy settings are accurate by using the Sentinel CTL Commands (see below)
-7. If invalid certificate: > Download and install the certificate from certiticate authority 
+7. If invalid certificate: > Download and install the certificate from certificate authority 
 
 ![s1_ctl](https://i.imgur.com/ADv4e4R.png)
 
@@ -794,7 +794,7 @@ Exclusions are important for app functionality on endpoints.
 - To exclude certain apps/processes, navigate to:
 
 ```
-> S1 Management Console > Sentinels > Exclusions > New Exclusions (button) > Create Exclusiong/Add from Exclusions Catalog > Set the OS (Windows) > Select/Enter path to exclusion > Set exculsion type (i.e. file) > Set the "Exclusions Mode" to either _Interoperability_ or _Interoperability - Extended_ > Click Excluded from Current Scope (button)
+> S1 Management Console > Sentinels > Exclusions > New Exclusions (button) > Create Exclusiong/Add from Exclusions Catalog > Set the OS (Windows) > Select/Enter path to exclusion > Set exculsion type (i.e. file) > Set the "Exclusions Mode" to either Interoperability or Interoperability - Extended > Click Excluded from Current Scope (button)
 ```
 
 > Note: Pre-defined interoperability exclusions are available from the catalog.
@@ -830,7 +830,7 @@ cd %temp%
   - Scroll to the bottom of the log, hit `CTRL + F` to search up for "failed".
   - Look through the log for any clues for what caused the failed installation (i.e. "Missing siteKey, aborting", or "a connection with the server could not be established"). 
 
-- Try checking the `Mitigation policy` status. If the status reads `Mitigation policy: none` there is a communication issue. Check the status bu running the following cmdlet:
+- Try checking the `Mitigation policy` status. If the status reads `Mitigation policy: none` there is a communication issue. Check the status by running the following cmdlet:
 
 ```
 cd "C:\Program Files\SentinelOne\Sentinel Agent..." 
@@ -876,7 +876,7 @@ Fill in and send the following contents to support:
 - For __performance__ issues:
   - On Windows, collect and send the WPR report
   - RAM and other hardware specs
-  - Process Monitor report (if relevent)
+  - Process Monitor report (if relevant)
   - On Linux, run this command and send the output:
 
 ```
@@ -891,7 +891,7 @@ top -b -n 12 -d 5 > ~/topOutput.txt
 # Cybersecurity Glossary
 - [Day-in-the-life of SOC Analyst](https://sentinelone-education.wistia.com/medias/j74hnjwhzb)
 - [Deployment Best Practices](https://support.sentinelone.com/hc/en-us/articles/360011333674-Deployment-Project-Plan-Best-Practice)
-- [_Remote Script Orchestartion_ can deploy a script and locate stolen devices](https://sentinelone-education.wistia.com/medias/96pxbjib1q)
+- [_Remote Script Orchestration_ can deploy a script and locate stolen devices](https://sentinelone-education.wistia.com/medias/96pxbjib1q)
 - [Remote Shell Access](https://sentinelone-education.wistia.com/medias/p0wwv8ixa0)
 - [S1 Knowledge Base](https://support.sentinelone.com/hc/en-us/sections/7549008464663-Welcome)
 - [S1 Help & Resources](https://support.sentinelone.com/hc/en-us/articles/360056646194-Help-and-Resources)
