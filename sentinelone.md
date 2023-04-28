@@ -9,6 +9,7 @@ All graphics and content is intellectual property subject to copyright laws prot
 - [Demo Kit Setup](#demo-toolkit)
 - [Deploy SentinelOne](#deploy-s1)
 - [Troubleshooting Issues](#troubleshooting)
+- [Uninstalling Agent](#uninstall-agent)
 - [Cybersecuirty Glossary](#cybersecurity-glossary)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
@@ -842,7 +843,7 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 
 - If it was a successful install, you will find logs in the following path: `C:\ProgramData\Sentinel\UserCrashDumps`. There should be logs here that automatically generated after a successful installation.
 
-### Uninstalling Agent
+# Uninstall Agent
 [Uninstall SentinelOne Options How-to Video](https://sentinelone-education.wistia.com/medias/kphlzsaloc)
 
 - You can uninstall agents via the S1 Management Console or the CLI.
