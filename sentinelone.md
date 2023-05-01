@@ -10,6 +10,7 @@ All graphics and content is intellectual property subject to copyright laws prot
 - [Deploy SentinelOne](#deploy-s1)
 - [Troubleshooting Issues](#troubleshooting)
 - [Uninstalling Agent](#uninstall-agent)
+- [New Site Rollout](#new-site-rollout)
 - [Cybersecuirty Glossary](#cybersecurity-glossary)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
@@ -956,6 +957,22 @@ top -b -n 12 -d 5 > ~/topOutput.txt
   - Agent logs
   - Name of affected process/application
   - Crash dump files
+
+# New Site Rollout
+- Global Site > New Site (+ button)
+
+> Note: New sites will automatically inherit settings from the global site level.
+
+- Set licensing to "Unlimited" (billed per licence)
+- Protection Mode: Detection-only
+- Set all the pararmeters
+- Create Site (button) and Done
+- Sentinels (left pane) > set exclusions to Policies > Exclusions (tab)
+  - Set paths/certs/hash to excluded applications
+  - Open ticket with SOC team for support.
+- Settings (left pane) > Users
+
+![protection_mode](https://i.imgur.com/XYlk7Nb.png)
 
 # Cybersecurity Glossary
 - [Day-in-the-life of SOC Analyst](https://sentinelone-education.wistia.com/medias/j74hnjwhzb)
