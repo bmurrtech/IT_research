@@ -14,10 +14,10 @@ What are the correct methods for uninstalling the SentinelOne Agent?
 
 A successful POC Test Plan exist out of 
 (Select all that apply) 
-- [x] Platform Presentation 
+- [ ] Platform Presentation 
 - [x] Stages and Milestones
 - [x] Success Criteria
-- [ ] Agenda of specific test criteria
+- [x] Agenda of specific test criteria
 
 Which command is used to setup Proxy after SentinelOne Agent installation? 
 - [ ] sentinelctl config server
@@ -32,9 +32,9 @@ What is the main data source to examine Agent Installation errors?
 - [x] Agent Installation Logs
 
 What is the first step in troubleshooting Interoperability issues? 
-- [ ] Disable the Agent 
+- [x] Disable the Agent 
 - [ ] Open a Support Ticket 
-- [x] Add an Exclusion 
+- [ ] Add an Exclusion 
 - [ ] Check for known Interoperability cases
 
 If the SentinelOne Agent is offline then troubleshooting commands to execute on the agent are? 
