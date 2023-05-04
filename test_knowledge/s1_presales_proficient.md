@@ -1,15 +1,9 @@
-What is the name of the batch file mentioned to execute in the Partner Demo Toolkit - EDR demo? 
-- [ ] Start-EDR-Demo.cmd 
-- [x] Install-EDR-Demo.bat 
-- [ ] Enable-EDR.py 
-- [ ] Run-Demo.bat 
-
 What are the proactive useful Tips and Tactics during execution of a POC?
 (Select all that apply)
 - [x] Find time to demonstrate suite features 
 - [x] Populate alerts and hunting data 
 - [x] Deploy to multi type of machines 
-- [ ] Review activity log 
+- [x] Review activity log 
 
 What are the correct methods for uninstalling the SentinelOne Agent?
 (Select all that apply)
@@ -32,7 +26,7 @@ Which command is used to setup Proxy after SentinelOne Agent installation?
 - [ ] sentinelctl config "http://proxy:port" -k "passphrase"
 
 What is the main data source to examine Agent Installation errors?
-- [ ] Agent install errors in Console
+- [?] Agent install errors in Console
 - [ ] SentinelOne KB articles
 - [ ] OS Application Event log 
 - [x] Agent Installation Logs
@@ -40,8 +34,8 @@ What is the main data source to examine Agent Installation errors?
 What is the first step in troubleshooting Interoperability issues? 
 - [ ] Disable the Agent 
 - [ ] Open a Support Ticket 
-- [x] Add an Exclusion 
-- [ ] Check for known Interoperability cases
+- [?] Add an Exclusion 
+- [?] Check for known Interoperability cases
 
 If the SentinelOne Agent is offline then troubleshooting commands to execute on the agent are? 
 - [ ] sentinelctl status > c:\temp\network.txt 
@@ -78,7 +72,7 @@ What is mandatory required to open a SentinelOne Support Ticket?
 (Select all that apply) 
 - [x] Agent Logs 
 - [ ] S1 Product Family + Component 
-- [x] Management platform version + Console URL 
+- [ ] Management platform version + Console URL 
 - [x] Machine Names + Agent Versions + OS type
 
 Which tool can be utilized to troubleshoot Windows endpoint performance issues? 
