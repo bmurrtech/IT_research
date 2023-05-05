@@ -1572,3 +1572,108 @@ To protect company data, employees working from home need to take steps to impro
 
 Another security measure that a company can take is for employees to work over a virtual private network, or VPN. Using a VPN creates an encrypted, secure internet connection through which employees can access company data. 
 
+# System Hardening
+Our end goal overall is risk reduction. Two important terms to know when talking about security risks are attack vectors and attack surfaces.
+-  An __attack vector__ is a method or mechanism by which an attacker or malware gains access to a network or system.
+  -  Some attack vectors are email attachments, network protocols or services, network interfaces and user input. These are different approaches or paths that an attacker could use to compromise the system, if they're able to exploit it. 
+- An __attack surface__ is the sum of all the different attack vectors in a given system.
+  - Think of this as the combination of all possible ways an attacker could interact with our system regardless of known vulnerabilities.
+  - Make sure to think of all avenues that an _outside actor could interact with our systems_ as a potential attack surface.
+- The less complex something is, the less likely there will be undetected flaws. So make sure to disable any extra services or protocols, if they're not totally necessary, then get them out of there.
+- Every additional surface that's operating represents additional attack surfaces that could have an undiscovered vulnerability. That vulnerability could be exploited and lead to compromise. __Only allow access when totally necessary.__
+  - So for example, it's probably not necessary for employees to be able to access printers directly from outside of the local network. You can just adjust firewall rules to prevent that type of access.
+  - Another way to keep things simple is to reduce your software deployments. Instead of having five different software solutions to accomplish five separate tasks, replace them with one unified solution, if you can.
+  -  You should also make sure to disable unnecessary or unused components of software and systems deployed.
+  -   Lots of consumer operating systems ship a bunch of default services and software enabled right out of the box, that you probably won't need. For example, TelNet access for a managed switch has no business being enabled in a real-world environment. You should disable it immediately if you find it on a device.
+  -   Any vendor specific API access should also be disabled if you don't plan on using these services or tools. 
+
+### Host-based Firewalls
+A.K.A., Layered approach to security. What if our access control measures are bypassed or fail in some unforeseen way. As an IT support specialist, this is exactly what you want to think about. How do we keep this component secure if the security systems above it have failed?
+- Host-based firewalls are important to creating multiple layers of security.
+- Our network-based firewall has a duty to protect our internal network by filtering traffic in and out of it. While the host-based firewall on each individual host, protects that one machine.
+- Start with an implicit deny rule, then only permit traffic that we know and trust through. You can think of this as starting with a perfectly secure firewall configuration and then poking holes in it for the specific traffic we require.
+-  A host-based firewall plays a big part in reducing what's accessible to an outside attacker. It provides flexibility while only permitting connections to selective services on a given host from specific networks or IP ranges.
+
+![bastion_hots](https://i.imgur.com/jQULZaD.png)
+-  These are called __bastion hosts or networks__, and are specifically hardened and minimized to reduce what's permitted to run on them. __Bastion hosts__ are usually _xposed to the Internet_, so you should pay special attention to hardening and locking them down to reduce the chances of compromise.
+  - they can also be used as a gateway or access portal into more sensitive services like core authentication servers or domain controllers.
+  - Applications that are allowed to be installed and run on these hosts, would also be restricted to those that are strictly necessary since these machines have one specific purpose.
+  - Part of the host-based firewall rules will likely also provide ackles that allow access from the VPN subnet. It's good practice to keep the network that VPN clients connect into separate using both subnetting and VLANs.
+-  It's good practice to _keep the network that VPN clients connect into separate using both subnetting and VLANs_. This gives you more flexibility to enforce security on these VPN clients. It also lets you build additional layers of defenses.
+
+![VPN_tunnel_bastion](https://i.imgur.com/zQUHNcI.png)
+
+- If the users of the system have administrative rights than they have the ability to change firewall rules and configurations.
+- If management tools allow it, you should also prevent the disabling of the host-based firewall. This can be done with Microsoft Windows machines when administered using Active Directory as an example.
+
+### Logging and Alerging
+![log_alert](https://i.imgur.com/A5IKTIm.png)
+All systems and services running on hosts will create logs of some kind with different levels of detail. It depends on what its logging and what events it's configured to log.
+- So an authentication server would log every authentication attempt whether it's successful or not.
+- A firewall would log traffic that matches rules with details like source and destination addresses and ports being used.
+- When there are a large number of systems located around your network, each with their own log format, it can be challenging to make meaningful sense of all this data. This is where __security information and event management systems or SIEMS__ come in.
+  - A SIEM can be thought of as a centralized log server it is some extra analysis features too.
+  - You can _think of SIEM as a form of centralized logging_ for security administration purposes. Some examples of logging servers and SIEM solutions are the open source, rsyslog, Splunk Enterprise Security, IBM Security Qradar and RSA Security Analytics.
+  - A SIEM system gets logs from a bunch of other systems. It consolidates the logs from all different places and places it in one centralized location. This makes handling logs a lot easier.
+  - By maintaining logs on a dedicated system, it's easier to secure the system from attack. _Logs are usually targeted by attackers after a breach so that they can cover their tracks._ By having critical systems send logs to remote logging server that's locked down, the details of a breach should still be logged.
+  - A forensics team will be able to reconstruct the events that led to the compromise.
+- __Normalization__ is the process of taking log data in different formats and converting it into a standardized format that's consistent with a defined log structure.
+  - For example, log entries from our firewall may have a timestamp using a year, month and day format. While logs from our client machines may use day, month, year format.
+  - To normalize this data, you choose one standard date format then you define what the fields are for the log types that need to be converted. When logs are received from these machines, the log entries are converted into the standard that we defined and stored by the logging server.
+  - If you log too much info, it's difficult to analyze the data and find useful information plus storage requirements for saving the logs become expensive very quickly.
+  - But if you log too little then the information won't provide any useful insights into your systems and network. Finding that middle ground can be difficult. It will vary depending on the unique characteristics of the systems being monitored and the type of activity on the network.
+  - No matter what events are logged, all of them should have information that will help understand what happened and reconstruct the events.
+  - Timestamps are super important to understanding when an event occurred. Fields like source and destination addresses will tell us who was talking to whom. For application logs you can grab useful information from the logged in user associated with the event and from what client they used.
+  - __You should pay attention to patterns and connections between traffic__.
+    - So if you're seeing a _large percentage of Windows hosts, all connecting to specific address outside your network_ that might be worth investigating, it could signal a malware infection. 
+  - Once logs are centralized and standardized you can write automated alerting based on rules.
+    - Maybe you'll want to define an alert rule for repeated unsuccessful attempts to authenticate to a critical authentication server.
+    - You can also write some of your own monitoring and alert systems. 
+    - It can be useful to break down things like commonly used protocols in the network. Quickly see the top talkers in the network and view reported errors over time to reveal patterns.
+
+__User Account Control (UAC)__
+User Account Control (UAC) allows IT administrators to create standard user accounts with limited access rights and privileges for end users. This configuration can prevent users from installing unauthorized programs, changing system settings, tampering with firewalls, and more. In order to perform these types of tasks, administrator credentials must be provided. For less restrictive controls, UAC provides the option to grant end users local administrative privileges for approved activities that require administrative privileges. For more restrictive controls, UAC can require global administrator credentials be entered for each and every administrative change the user attempts to make.
+
+### Anti-virus Protection
+Antivirus software is _signature-based_. This means that it has a database of signatures that identify known malware like the unique file hash of a malicious binary or the file associated with an infection. Antivirus software will monitor and analyze things like new files being created or being modified on the system in order to watch for any behavior that matches a known malware signature. If it detects activity that matches the signature, depending on the signature type, it will attempt to block the malware from harming the system. But some signatures might only be able to detect the malware after the infection has occurred. In that case, it may attempt to quarantine the infected files. If that's not possible, it'll just log and alert the detection event at a high level. This is how all antivirus products work.
+ - There are two issues with antivirus software though.
+   - The first is that they depend on antivirus signatures distributed by the antivirus software vendor.
+   - The second is that they depend on the antivirus vendor discovering new malware and writing new signatures for newly discovered threats.
+ -  Antivirus which is designed to protect systems, actually represents an additional attack surface that attackers can exploit.
+   - It takes arbitrary and potentially malicious binaries as input and performs various operations on them. Because of this, there are a lot of complex code where very serious bugs could exist. Exactly, this kind of vulnerability was found in the sofas antivirus engine back in 2012.
+   - Then why are we still recommending it as a core piece of security design? The short answer is this, it protects against the most common attacks out there on the Internet. The really obvious stuff that still poses a threat to your systems still needs to be defended against. Antivirus is an easy solution to provide that protection.
+   - It doesn't matter how much user education you instill in your employees, there will still be some folks who will click on an email that has an infected attachment. A good way to think about antivirus in today's very noisy external threat environment, is like a filter for the attack noise on the internet today. It lets you remove the background noise and focus on the more important targeted or specific threats.
+
+__Binary Whitelisting Anti-virus__
+
+![binary_whitelisting](https://i.imgur.com/idLkdO7.png)
+
+- If antivirus can't protect us from the threats we don't know about, how do we protect against the unknown that's out there? Well, anti virus operates on a blacklist model, checking against a list of known bad things and blocking what gets matched.
+- There's a class of anti malware software that does the opposite. Binary whitelisting software operates off a white list. It's a list of known good and trusted software and only things that are on the list are permitted to run. Everything else is blocked.
+- Now, imagine if you had to get approval before you could download and install any new software, that would be really annoying, don't you think? Now, imagine that every system update had to be white listed before it could be applied. Obviously, not trusting everything wouldn't be very sustainable. It's for this reason that binary whitelisting software can trust software using a couple different mechanisms.
+  - The _first is using the unique cryptographic hash_ of binaries which are used to identify unique binaries. This is used to whitelist individual executables. The other trust mechanism is a software signing certificate.
+
+![binary_whitelisting2](https://i.imgur.com/qdUlFNk.png)
+
+- Can you guess the downside here? Each new code signing certificate that's trusted represents an increase in attack surface. _An attacker could compromise the code signing certificate of a software vendor that your company trusts. And use that to sign malware that targets your company._ __That would bypass any binary whitelisting defenses in place.__ Not good.
+
+> This exact scenario happened back in [http://www.crn.com/news/security/240148192/bit9-admits-systems-breach-stolen-code-signing-certificates.htm](2013 to a binary whitelisting software company when Bit9 was hacked). Hackers managed to breach their internal network and found an unsecured virtual machine. It had a copy of the code signing certificates private key. _They stole that key and used it to sign malware_ that would have been trusted by all their software installations by default.
+
+### Disk Encryption
+![FDE](https://i.imgur.com/GTat92O.png)
+
+- __Full disk encryption or FDE__ is an important factor in a defense in depth security model. It provides protection from some physical forms of attack.
+- Having the disk fully encrypted protects from data theft and unauthorized tampering even if an attacker has physical access to the disk.
+- Without also knowing the encryption password or having access to the encryption key the data on the hard drive is just meaningless gibberish.
+- FDE drives are _still vulnerable to cyber attacks_:
+  - In order for a system to boot if it has an FDE set up, there are some critical files that must be accessible. They need to be available before the primary disk can be unlocked and the boot process can continue. Because of this all FDE setups have an unencrypted partition on the disk which holds these critical boot files. Examples include things like the kernel and bootloader that are critical to booting the operating system.
+  - These bootup files are actually vulnerable to being replaced with modified potentially malicious files by an attacker with physical access.
+  - While it's possible to compromise a machine this way it would take a sophisticated and determined attacker to do it. There's also protection against this attack in the form of the __secure boot protocol__ which is part of the UEFI specifications.
+
+![secure_boot](https://i.imgur.com/NjkcfWL.png)
+
+- __Secure boot__ _uses public key cryptography to secure these encrypted elements of the boot process_. It does this by integrated code signing and verification of the boot files. Initially secure boot is configured with what's called a platform key, which is the public key corresponding to the private key used to sign the boot files.
+  - Initially secure boot is configured with what's called a __platform key__, _which is the public key corresponding to the private key used to sign the boot files_. This platform key is written to firmware and is used at boot time to verify the signature of the boot files. Only files correctly signed and trusted will be allowed to execute.
+  - When you implement a full disk encryption solution at scale, it's super important to think about how to handle cases where passwords are forgotten. 
+  - If the pass phrases forgotten then the contents of the disk aren't recoverable, _yikes_. This is why lots of enterprise disk encryption solutions have a __key escrow__ functionality. __Key escrow__ _allows the encryption key to be securely stored for later retrieval by an authorized party._ So if someone forgets the passphrase to unlock their encrypted disk for their laptop the systems administrators are able to retrieve the escrow key or recovery pass phrase to unlock the disk.
+- You should compare full disk encryption against __file based encryption__. _That's where only some files or folders are encrypted and not the entire disk._ This is usually implemented as home directory encryption. It serves a slightly different purpose compared to FDE. Home directory or file based encryption only guarantees confidentiality and integrity of files protected by encryption. 
