@@ -1,7 +1,7 @@
 What is an attack vector? 
 - [ ] The severity of the attack
-- [x] The classification of attack type 
-- [ ] A mechanism by which an attacker can interact with your network or systems 
+- [ ] The classification of attack type 
+- [x] A mechanism by which an attacker can interact with your network or systems 
 - [ ] The direction an attack is going in 
 
 Disabling unnecessary components serves which purposes? Check all that apply. 
