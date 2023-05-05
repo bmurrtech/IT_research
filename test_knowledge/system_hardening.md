@@ -49,11 +49,11 @@ How is binary whitelisting a better option than antivirus software?
 What does full-disk encryption protect against? Check all that apply. 
 - [ ] IP spoofing attacks
 - [ ] Malware infections 
-- [ ] Tampering with system files 
+- [x] Tampering with system files 
 - [x] Data theft 
 
 What's the purpose of escrowing a disk encryption key? 
 - [ ] Providing data integrity 
-- [x] Preventing data theft 
-- [ ] Performing data recovery 
+- [ ] Preventing data theft 
+- [x] Performing data recovery 
 - [ ] Protecting against unauthorized access
