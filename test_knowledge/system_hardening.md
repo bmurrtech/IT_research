@@ -53,7 +53,7 @@ What does full-disk encryption protect against? Check all that apply.
 - [x] Data theft 
 
 What's the purpose of escrowing a disk encryption key? 
-- [x] Providing data integrity 
-- [ ] Preventing data theft 
+- [ ] Providing data integrity 
+- [x] Preventing data theft 
 - [ ] Performing data recovery 
 - [ ] Protecting against unauthorized access
