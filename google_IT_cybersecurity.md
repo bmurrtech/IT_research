@@ -1595,10 +1595,10 @@ A.K.A., Layered approach to security. What if our access control measures are by
 -  A host-based firewall plays a big part in reducing what's accessible to an outside attacker. It provides flexibility while only permitting connections to selective services on a given host from specific networks or IP ranges.
 
 ![bastion_hots](https://i.imgur.com/jQULZaD.png)
--  These are called __bastion hosts or networks__, and are specifically hardened and minimized to reduce what's permitted to run on them. __Bastion hosts__ are usually _xposed to the Internet_, so you should pay special attention to hardening and locking them down to reduce the chances of compromise.
-  - they can also be used as a gateway or access portal into more sensitive services like core authentication servers or domain controllers.
-  - Applications that are allowed to be installed and run on these hosts, would also be restricted to those that are strictly necessary since these machines have one specific purpose.
-  - Part of the host-based firewall rules will likely also provide ackles that allow access from the VPN subnet. It's good practice to keep the network that VPN clients connect into separate using both subnetting and VLANs.
+-  These are called __bastion hosts or networks__, and are specifically hardened and minimized to reduce what's permitted to run on them. __Bastion hosts__ are usually _exposed to the Internet_, so you should pay special attention to hardening and locking them down to reduce the chances of compromise.
+   - They can also be used as a gateway or access portal into more sensitive services like core authentication servers or domain controllers.
+   - Applications that are allowed to be installed and run on these hosts, would also be restricted to those that are strictly necessary since these machines have one specific purpose.
+- Part of the __host-based firewall__ rules will likely also provide ackles that allow access from the VPN subnet. It's good practice to keep the network that VPN clients connect into separate using both subnetting and VLANs.
 -  It's good practice to _keep the network that VPN clients connect into separate using both subnetting and VLANs_. This gives you more flexibility to enforce security on these VPN clients. It also lets you build additional layers of defenses.
 
 ![VPN_tunnel_bastion](https://i.imgur.com/zQUHNcI.png)
@@ -1606,7 +1606,7 @@ A.K.A., Layered approach to security. What if our access control measures are by
 - If the users of the system have administrative rights than they have the ability to change firewall rules and configurations.
 - If management tools allow it, you should also prevent the disabling of the host-based firewall. This can be done with Microsoft Windows machines when administered using Active Directory as an example.
 
-### Logging and Alerging
+### Logging and Alerting
 ![log_alert](https://i.imgur.com/A5IKTIm.png)
 All systems and services running on hosts will create logs of some kind with different levels of detail. It depends on what its logging and what events it's configured to log.
 - So an authentication server would log every authentication attempt whether it's successful or not.
