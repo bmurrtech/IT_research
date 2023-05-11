@@ -7,10 +7,11 @@ All graphics and content is intellectual property subject to copyright laws prot
 - [Threat Services](#threat-services)
 - [Selling SentinelOne](#selling-sentinelone)
 - [Demo Kit Setup](#demo-toolkit)
-- [Deploy SentinelOne](#deploy-s1)
+- [Deploy Quickstart](#deploy-s1)
+- [Deploy In-depth](#deploy-s1-detailed)
 - [Troubleshooting Issues](#troubleshooting)
 - [Uninstalling Agent](#uninstall-agent)
-- [New Site Rollout](#new-site-rollout)
+- [New Site Deployment](#new-site-rollout)
 - [Cybersecuirty Glossary](#cybersecurity-glossary)
 
 ![s1_logo](./media/S1_Logo_Horz_RGB_BLK.png)
@@ -704,7 +705,7 @@ SentinelOne has pulled together a __Partner Demo Toolkit (EZPDTK)__ in order to 
 
 > The EPP Demo only encrypts the files under \Users\Sentinel\Documents for safety reasons.
 
-# Deploy S1
+# Deploy S1 Quickstart
 ![s1install](https://i.imgur.com/UPsOLVs.png)
 
 Installing SentinelOne via CLI using msiexec`. Est. install time ~10mins.
@@ -847,6 +848,36 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 ```
 
 - If it was a successful install, you will find logs in the following path: `C:\ProgramData\Sentinel\UserCrashDumps`. There should be logs here that automatically generated after a successful installation.
+
+# Deploy S1 Detailed
+
+### Accounts, Sites, Groups
+![site_tiers](https://i.imgur.com/KuxuOuD.png)
+
+> _The __global scope__ contains all __accounts__, each of which includes one or more __sites__. __Groups__ at the bottom of this hierarchy._
+ 
+- __Global Scope__ - The Global scope encompasses all levels of Singularity deployment. All Accounts are part of the Global scope.
+  - [Architecture](https://support.sentinelone.com/hc/en-us/articles/360037709574-Architecture)
+  - [Introduction to SentinelOne Multi-Site Management](https://support.sentinelone.com/hc/en-us/articles/360008858033-Introduction-to-SentinelOne-Multi-Site-Management)
+- __Account Scope__ - An Account is a logical segment within the deployment with permissions to configure features for specific Sites.  You can use Accounts when you are managing multiple organizations within the deployment, for example for MSSPs with multiple customers. 
+  - [Managing Accounts](https://support.sentinelone.com/hc/en-us/articles/360026187813-Managing-Accounts)
+  - [SentinelOne SKUs and Platform Support](https://support.sentinelone.com/hc/en-us/articles/360059702273-SentinelOne-SKUs-and-Platform-Support)
+- __Site Scope__ - A Site is a segment within an Account, with its own objects and settings, specific or inherited from the parent Account. A Site can belong to only one Account. A Site contains one or more Groups, which are logical groupings of SentinelOne Agents.
+  - [Account, Sites and Licenses](https://support.sentinelone.com/hc/en-us/articles/360004236473-Accounts-Sites-and-Licenses)
+  - [Introduction to SentinelOne Multi-Site Management](https://support.sentinelone.com/hc/en-us/articles/360008858033-Introduction-to-SentinelOne-Multi-Site-Management)
+  - Singularity Platform _Settings are inherited from the Account_ and __cannot be changed__ _on the Site level_.
+  - All Sites in an Account must have different names.
+  - Sites can be renamed, but not deleted.
+  - Sites are physical or logical segments of Accounts.  For example, a site can represent an office in a particular geography.  Each Site is part of one, and only one, Account, and inherits settings from that account. You can customize the inherited settings on a per-Site basis.
+  - SentinelOne Agents are associated with Sites.
+- __Group Scope__ - Group is a sub-type under Sites. There are 3 group types.
+  - [Group Types and Creating Groups](https://support.sentinelone.com/hc/en-us/articles/360004221873-Group-Types-and-Creating-Groups)
+  - [Creating Filters for Endpoints](https://support.sentinelone.com/hc/en-us/articles/360004221853-Creating-Filters-for-Endpoints)
+  - [Endpoint Groups and Filters](https://support.sentinelone.com/hc/en-us/articles/360004221833-Endpoint-Groups-and-Filters-Overview)
+  - _Manual Group_ - Select the endpoints that go in this Group. Endpoints move automatically from this Group to a Dynamic Group if they match a Dynamic Group filter.
+  - _Dynamic Group_ - Create an endpoint filter for this Group. All endpoints that match the filter automatically move to this Group, except for endpoints in Pinned Groups.
+  - _Pinned Group_ - Select the endpoints that go in this Group. Endpoints are pinned to this Group and do not automatically move to other Groups.
+
 
 # Uninstall Agent
 [Uninstall SentinelOne Options How-to Video](https://sentinelone-education.wistia.com/medias/kphlzsaloc)
