@@ -7,7 +7,7 @@ All graphics and content is intellectual property subject to copyright laws prot
 - [Threat Services](#threat-services)
 - [Selling SentinelOne](#selling-sentinelone)
 - [Demo Kit Setup](#demo-toolkit)
-- [Deploy Quickstart](#deploy-s1)
+- [Deploy Quickstart](#deploy-s1-quickstart)
 - [Deploy In-depth](#deploy-s1-detailed)
 - [Troubleshooting Issues](#troubleshooting)
 - [Uninstalling Agent](#uninstall-agent)
@@ -896,6 +896,87 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 
 > If the filter doesn't show up, check the `Group Ranking` (tab) located in `Sentinels` and you'll see a rank # assgined to the groups you created. Simply move the filter you want to rank 1 to see it listed in the navigation pane.
 
+### Roles and Users
+[Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
+[RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
+[Introduction to SentinelOne Multi-Site Management](https://support.sentinelone.com/hc/en-us/articles/360008858033-Introduction-to-SentinelOne-Multi-Site-Management)
+
+- A Singularity role has a specific scope; that is:
+  - A role can be global, meaning it can be applied to the entire Singularity deployment. 
+  - A role can be at the account scope, meaning that it can be associated with a user for one or more specific accounts. 
+  - A role can be at the site scope, meaning that it can be associated with the user for one or more specific sites.
+
+> Note that a _users may onlyb be assgined one role_ for an organizational unit (that is, for a site or account). You cannot assign multiple roles to the user for the same organizational unit.  Therefore that one role must have all the permissions needed for that user for that scope. Furthermore, the ability to create roles at _different hierarchies_ depends on the scope of the administrator’s role. So, __for example, a Global administrator can create a role with any scope, with access to any selected accounts or sites.__ An administrator set up with a scope of a specific account can create roles at the account or site level. And a site administrator can create roles only at the site level.
+
+- __Predefined Roles__
+[Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
+[RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
+- You cannot edit the predefined roles. If you need a different permission set, you must create a new role, as shown in the next lesson.
+- _Predefined roles have a Global scope_; that is, you can use them for any organizational level in your deployment.
+- List of _predefined roles_:
+  - __Viewer__ - The Viewer role allows users to see the Management Console features and data, but not take any actions.
+  - __C-Level__ (aka Account Manager) - The C-Level role allows users to _create, edit, and delete reports_, but not take any other actions. Like the Viewer role, C-Level lets users see the Management Console features and data. 
+  - __IT__ - The IT role allows users to edit exclusions, blacklist items, and configure settings such as Notifications, Device Control, and Firewall rules.
+  - __SOC__ - The SOC role allows users to mitigate and remediate threats and isolate endpoints.
+  - __IR Team__ - The IR Team role allows users to respond to threats (as does the SOC role), investigate breaches and IOCs with Deep Visibility, and create incident response and root cause analysis reports.
+  - __Admin__ - The Admin role allows users to use all Management Console features of the SKU and user Scope.
+
+-__Custom Roles__
+Custom roles can be set at the various site levels as follows:
+- Users can be _Global, meaning they have access to tasks and data granted by the Global role in all Accounts and Sites_ that are part of the deployment.
+- Users can have _Account scope, meaning they can access tasks and data granted by the Account role for all Sites in the Account
+- Users can have Site scope, meaning they can access tasks and data for that site only.
+
+#### To _create custom roles_ navigate to:
+
+```
+Settings (left pane) > Select a _Predefined Role_ you want to utilize as a template > > Click "Action" (dropdown button) > Click "Duplicate Role" > Name the custom role > Add/Subtract permissions
+```
+
+![roles_view](https://i.imgur.com/0XPaWxj.png)
+
+ - Reduce your attack surface by __diabling users from being able to change roles__. The "Roles" permission is "the key to the kingdom" when securing our environment as users with this permission would be able to perform the following in Actions > Troubleshooting:
+   - Diable the agent
+   - Enable the agent
+   - Reload
+   - Restart services
+- Custom roles can be set at the _Account or Site level_, too. This limits roles to specific Accounts or Sites (i.e. Account Manager has access to reports only for their client).
+
+> Security Tip: Consdier the sensitivity of the endpoint troubleshooting functionality. The functions in the endpoint Troubleshooting menu - fetching logs, enabling and disabling the agent, restarting services - can cause data that is useful for troubleshooting to be lost.  The predefined Admin role has these privileges but you should consider creating roles for other administrators that do not need to troubleshoot endpoints.
+
+#### Creating Service User APIs
+[Overview of Service Users](https://support.sentinelone.com/hc/en-us/articles/9274967907607-Overview-of-Service-Users)
+[Creating Service Users](https://support.sentinelone.com/hc/en-us/articles/9274954401687-Creating-Service-Users)
+
+- Service users are API token accounts created to integarate applications (i.e. PowerBI, Tableau).
+- To create a new service user navigate to:
+
+```
+Settings (far left pane) > Service Users (left pane) > Actions (dropdown button) > Create New Service User > Assign Name (date __cannot__ be modified later) > Set Expiration Date (date __cannot__ be modified later) > Choose Scope Level > Choose the Account/Site > Assign a Role > Copy/Download the API Token
+```
+
+> Security Tip: Only grant absolutely necessary levels of access. Example: don't give global-level access to an application only needed for one site. Instead assign it site-level access. _Scope of access can be changed after service creation._
+
+- Set need-to-know service user action notifications (be notified of changes to service users/APIs):
+
+```
+Settings (far left pane) > Notifications (tab) > Operations (left pane) > Turn on the following: _Service User Created/Deleted/Modified_
+```
+
+#### Reset User 2FA
+- 2FA is Enabled by default, but you can read more about it below:
+  - [Enabling Two-Factor Authentication](https://support.sentinelone.com/hc/en-us/articles/360004221673-Enabling-Two-Factor-Authentication)
+  - [Resetting Two-Factor Authentication for a User](https://support.sentinelone.com/hc/en-us/articles/360019077354#UUID-6379f67c-217a-4d50-86ce-8b67d5ae31d3)
+
+```
+Settings > Users > Select User > Actions > "Reset 2FA"
+```
+
+#### Plan the Roles You Need
+Take a moment to consider the roles you may need in your deployment. Use a spreadsheet, or a notebook, to list the groups of users and their associated tasks. For example:
+- Site Administrator:  Manage user accounts for the site.
+- Site Incident Responder: Respond to malicious events at the site.
+- Site Reporter: Prepare reports for security incidents for the site.
 
 # Uninstall Agent
 [Uninstall SentinelOne Options How-to Video](https://sentinelone-education.wistia.com/medias/kphlzsaloc)
@@ -960,7 +1041,6 @@ __Uninstall via Management Console__
 ```
 > Sentinels (left pane) > Endpoints (tab) > Find and select the endpoint (checkbox) > Actions (button dropdown) > Search for "Endpoint Actions" > Select "Uninstall" from the extended menu > Confirm you are certain that you wish to uninstall the agent > Click the Uninstall button.
 ```
-
 
 #### Submitting a Support Ticket
 [Support Portal](https://suport.sentinelone.com)
