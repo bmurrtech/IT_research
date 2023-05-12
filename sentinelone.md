@@ -897,9 +897,9 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 > If the filter doesn't show up, check the `Group Ranking` (tab) located in `Sentinels` and you'll see a rank # assgined to the groups you created. Simply move the filter you want to rank 1 to see it listed in the navigation pane.
 
 ### Roles and Users
-[Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
-[RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
-[Introduction to SentinelOne Multi-Site Management](https://support.sentinelone.com/hc/en-us/articles/360008858033-Introduction-to-SentinelOne-Multi-Site-Management)
+- [Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
+- [RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
+- [Introduction to SentinelOne Multi-Site Management](https://support.sentinelone.com/hc/en-us/articles/360008858033-Introduction-to-SentinelOne-Multi-Site-Management)
 
 - A Singularity role has a specific scope; that is:
   - A role can be global, meaning it can be applied to the entire Singularity deployment. 
@@ -909,8 +909,8 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 > Note that a _users may onlyb be assgined one role_ for an organizational unit (that is, for a site or account). You cannot assign multiple roles to the user for the same organizational unit.  Therefore that one role must have all the permissions needed for that user for that scope. Furthermore, the ability to create roles at _different hierarchies_ depends on the scope of the administrator’s role. So, __for example, a Global administrator can create a role with any scope, with access to any selected accounts or sites.__ An administrator set up with a scope of a specific account can create roles at the account or site level. And a site administrator can create roles only at the site level.
 
 - __Predefined Roles__
-[Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
-[RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
+- [Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
+- [RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
 - You cannot edit the predefined roles. If you need a different permission set, you must create a new role, as shown in the next lesson.
 - _Predefined roles have a Global scope_; that is, you can use them for any organizational level in your deployment.
 - List of _predefined roles_:
@@ -935,7 +935,7 @@ Settings (left pane) > Select a _Predefined Role_ you want to utilize as a templ
 
 ![roles_view](https://i.imgur.com/0XPaWxj.png)
 
- - Reduce your attack surface by __diabling users from being able to change roles__. The "Roles" permission is "the key to the kingdom" when securing our environment as users with this permission would be able to perform the following in Actions > Troubleshooting:
+ - Reduce your attack surface by __diabling users from being able to change roles__. Users with this role can cause data that is useful for troubleshooting to be lost.  Therefore you should be careful about granting this permission.The "Roles" permission is "the key to the kingdom" when securing our environment as users with this permission would be able to perform the following in Actions > Troubleshooting:
    - Diable the agent
    - Enable the agent
    - Reload
@@ -945,10 +945,18 @@ Settings (left pane) > Select a _Predefined Role_ you want to utilize as a templ
 > Security Tip: Consdier the sensitivity of the endpoint troubleshooting functionality. The functions in the endpoint Troubleshooting menu - fetching logs, enabling and disabling the agent, restarting services - can cause data that is useful for troubleshooting to be lost.  The predefined Admin role has these privileges but you should consider creating roles for other administrators that do not need to troubleshoot endpoints.
 
 #### Creating Service User APIs
-[Overview of Service Users](https://support.sentinelone.com/hc/en-us/articles/9274967907607-Overview-of-Service-Users)
-[Creating Service Users](https://support.sentinelone.com/hc/en-us/articles/9274954401687-Creating-Service-Users)
+- [Overview of Service Users](https://support.sentinelone.com/hc/en-us/articles/9274967907607-Overview-of-Service-Users)
+- [Creating Service Users](https://support.sentinelone.com/hc/en-us/articles/9274954401687-Creating-Service-Users)
 
 - Service users are API token accounts created to integarate applications (i.e. PowerBI, Tableau).
+  - Can use the API but cannot log in to the Management Console.
+  - Uses the same RBAC and scopes as Console users. Service users can do most of the activities permitted to them by their RBAC permissions and in their access level, but only through the API.
+  - Has a name and optional description but an email address is not required. The name cannot be changed after you create the user, but the description can be changed.
+  - The name of a service user is not required to be unique in the scope or in the environment. We recommend that you use unique names for tracking and auditing.
+  - 2FA and SSO requirements do not apply.
+
+> You can choose the expiration date of the API token when you create a service user. The expiration time can be as long or as short as necessary. After you create the service user, you cannot change the expiration date.
+
 - To create a new service user navigate to:
 
 ```
