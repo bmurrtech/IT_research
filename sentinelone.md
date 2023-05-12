@@ -871,12 +871,30 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
   - Sites are physical or logical segments of Accounts.  For example, a site can represent an office in a particular geography.  Each Site is part of one, and only one, Account, and inherits settings from that account. You can customize the inherited settings on a per-Site basis.
   - SentinelOne Agents are associated with Sites.
 - __Group Scope__ - Group is a sub-type under Sites. There are 3 group types.
+  - Groups are a subtype under Sites > Accounts. Groups are useful for setting custom exclusion lists for user groups (i.e. dev team, HR, etc.).
+
+> Example: You want to whitelist development applications for the dev team, but not for all endpoints at the site to shrink the attack surface. You create a new group called "dev," add dev team devices to that group, and set custom properties for this group.
+
   - [Group Types and Creating Groups](https://support.sentinelone.com/hc/en-us/articles/360004221873-Group-Types-and-Creating-Groups)
   - [Creating Filters for Endpoints](https://support.sentinelone.com/hc/en-us/articles/360004221853-Creating-Filters-for-Endpoints)
   - [Endpoint Groups and Filters](https://support.sentinelone.com/hc/en-us/articles/360004221833-Endpoint-Groups-and-Filters-Overview)
-  - _Manual Group_ - Select the endpoints that go in this Group. Endpoints move automatically from this Group to a Dynamic Group if they match a Dynamic Group filter.
+  - _Manual Group_ - Select the endpoints that go in this Group. _Endpoints move automatically from this Group to a Dynamic Group __if they match a Dynamic Group filter___.
   - _Dynamic Group_ - Create an endpoint filter for this Group. All endpoints that match the filter automatically move to this Group, except for endpoints in Pinned Groups.
-  - _Pinned Group_ - Select the endpoints that go in this Group. Endpoints are pinned to this Group and do not automatically move to other Groups.
+  - _Pinned Group_ - Select the endpoints that go in this Group. _Endpoints are pinned to this Group and __do not automatically move__ to other Groups_.
+
+- __Filters__
+  - [Group Types and Creating Groups](https://support.sentinelone.com/hc/en-us/articles/360004221873-Group-Types-and-Creating-Groups)
+  - [Endpoint Groups and Filters](https://support.sentinelone.com/hc/en-us/articles/360004221833-Endpoint-Groups-and-Filters-Overview)
+  - [Creating Filters for Endpoints](https://support.sentinelone.com/hc/en-us/articles/360004221853-Creating-Filters-for-Endpoints)
+  - [Ranking Dynamic Groups ](https://support.sentinelone.com/hc/en-us/articles/360004196114-Ranking-Dynamic-Groups-)
+
+  - Sentinels > Endpoints > Select Filters (search bar) > Scroll to right > Click "View More Filters" > Select Filters wanted > Click "Save Filter" (text) > Name the Filter. Ex. "Windows_[Site_level]"
+
+> Filters must be created at the __Site__ level to be selectable when creating a new __dynamic group__.
+
+  - __Create a New Group Filter__ - Sentinels > Endpoints > Select Filters (search bar) > Scroll to right > Click "View More Filters" > Select Filters wanted > Click the `+` sign at the _site_ level. > Name the group > Select the group type > Choose "Save and use current query" (radio button) > Name the query filter: Ex. "Windows_[Site_level]" > Next > Create Group > Done
+
+> If the filter doesn't show up, check the `Group Ranking` (tab) located in `Sentinels` and you'll see a rank # assgined to the groups you created. Simply move the filter you want to rank 1 to see it listed in the navigation pane.
 
 
 # Uninstall Agent
