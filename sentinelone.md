@@ -744,6 +744,7 @@ msiexec /i SentinelInstaller_windows_64bit_v22_2_2_394_CCD_Customer.msi SITE_TOK
 ```
 
 # Troubleshooting
+
 ### Agent Communication Troubleshooting
 [Agent Communication Troubleshooting](https://sentinelone-education.wistia.com/medias/au4j7lwe7v)
 - Troubleshoot and fix offline Agent and communication issues.
