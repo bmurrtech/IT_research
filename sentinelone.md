@@ -909,7 +909,7 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
 
 > Note that a _users may onlyb be assgined one role_ for an organizational unit (that is, for a site or account). You cannot assign multiple roles to the user for the same organizational unit.  Therefore that one role must have all the permissions needed for that user for that scope. Furthermore, the ability to create roles at _different hierarchies_ depends on the scope of the administrator’s role. So, __for example, a Global administrator can create a role with any scope, with access to any selected accounts or sites.__ An administrator set up with a scope of a specific account can create roles at the account or site level. And a site administrator can create roles only at the site level.
 
-- __Predefined Roles__
+#### Predefined Roles
 - [Role-based Access Control](https://support.sentinelone.com/hc/en-us/articles/360040936834-Role-Based-Access-Control)
 - [RBAC Permissions](https://support.sentinelone.com/hc/en-us/articles/1500003369401#UUID-a5fb5396-d56e-b2d4-9f16-244a2d9d563d)
 - You cannot edit the predefined roles. If you need a different permission set, you must create a new role, as shown in the next lesson.
@@ -922,7 +922,7 @@ SentinelCtl.exe config > C:\Temp\s1config.txt
   - __IR Team__ - The IR Team role allows users to respond to threats (as does the SOC role), investigate breaches and IOCs with Deep Visibility, and create incident response and root cause analysis reports.
   - __Admin__ - The Admin role allows users to use all Management Console features of the SKU and user Scope.
 
--__Custom Roles__
+#### Custom Roles
 Custom roles can be set at the various site levels as follows:
 - Users can be _Global, meaning they have access to tasks and data granted by the Global role in all Accounts and Sites_ that are part of the deployment.
 - Users can have _Account scope, meaning they can access tasks and data granted by the Account role for all Sites in the Account
@@ -986,6 +986,18 @@ Take a moment to consider the roles you may need in your deployment. Use a sprea
 - Site Administrator:  Manage user accounts for the site.
 - Site Incident Responder: Respond to malicious events at the site.
 - Site Reporter: Prepare reports for security incidents for the site.
+
+#### Initial Agent Install
+The initial deep scan can be CPU and disk intensive. It is hardly noticeable on modern workstations and servers with plenty of resources. But it may be noticeable on servers with very low or already maxed out resources. You may wish to process this phase end of day. The endpoints will be protected as soon as the agent is installed, but a post-install reboot is required for full reporting and control (see note). Reboots will be handled manually as needed.
+
+__Reboot Note__:  For Windows Agent 22.1 and later, most Agent functionality is operational after installation, even if you do not reboot the endpoint. This includes Static AI detection, Deep Visibility™, all Agent menu actions, and all response functions. The Behavioral AI detection and mitigation capability requires a reboot. For earlier Agent versions, most Agent functionality cannot be guaranteed without a reboot. For more details, see: [https://support.sentinelone.com/hc/en-us/articles/360004212634-Installing-Agents-Overview](https://support.sentinelone.com/hc/en-us/articles/360004212634-Installing-Agents-Overview)
+
+__About Behavioral AI__: SentinelOne Behavioral AI (Artificial Intelligence) detects and mitigates the most sophisticated threats. Behavioral AI differentiators:
+Protection against multiple techniques, file-less attacks, and novel attacks
+- Storyline™ tracking builds actionable context in real-time
+- Autonomous operation without cloud reliance for always-on protection
+
+For more details, see: [https://support.sentinelone.com/hc/en-us/articles/360023965293-Behavioral-AI-in-the-Agent](https://support.sentinelone.com/hc/en-us/articles/360023965293-Behavioral-AI-in-the-Agent)
 
 # Uninstall Agent
 [Uninstall SentinelOne Options How-to Video](https://sentinelone-education.wistia.com/medias/kphlzsaloc)
