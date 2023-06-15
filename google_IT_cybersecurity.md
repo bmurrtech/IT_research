@@ -1676,4 +1676,47 @@ __Binary Whitelisting Anti-virus__
   - Initially secure boot is configured with what's called a __platform key__, _which is the public key corresponding to the private key used to sign the boot files_. This platform key is written to firmware and is used at boot time to verify the signature of the boot files. Only files correctly signed and trusted will be allowed to execute.
   - When you implement a full disk encryption solution at scale, it's super important to think about how to handle cases where passwords are forgotten. 
   - If the pass phrases forgotten then the contents of the disk aren't recoverable, _yikes_. This is why lots of enterprise disk encryption solutions have a __key escrow__ functionality. __Key escrow__ _allows the encryption key to be securely stored for later retrieval by an authorized party._ So if someone forgets the passphrase to unlock their encrypted disk for their laptop the systems administrators are able to retrieve the escrow key or recovery pass phrase to unlock the disk.
-- You should compare full disk encryption against __file based encryption__. _That's where only some files or folders are encrypted and not the entire disk._ This is usually implemented as home directory encryption. It serves a slightly different purpose compared to FDE. Home directory or file based encryption only guarantees confidentiality and integrity of files protected by encryption. 
+- You should compare full disk encryption against __file based encryption__. _That's where only some files or folders are encrypted and not the entire disk._ This is usually implemented as home directory encryption. It serves a slightly different purpose compared to FDE. Home directory or file based encryption only guarantees confidentiality and integrity of files protected by encryption.
+
+# Reducing Company Attack Surface
+If you're responsible for an organization of users, there's a delicate balance between security and user productivity. We've seen this balance in action when we dove into the different security tools and systems together. Before you start to design a security architecture, you need to define exactly what you'd like it to accomplish. This will depend on what your company thinks is most important. It will probably have a way it wants different data to be handled and stored.
+
+### Security Goals
+- Does your cyber secuirty instance require certain complaince standards? For example:
+
+__PCI DSS__, or __Payment Card Industry Data Security Standard__
+- Build and maintain a secure network and systems
+- Protect cardholder data
+- Maintain a vulnerabilty managment program
+  - The first requirement is to protect all systems against malware and regularly update antivirus software or programs.
+  - The second is to develop and maintain secure systems and applications. You'll find more detailed implementation procedures within these requirements. They'll cover things like ensuring all systems have anti-virus software installed and making sure the software is kept up-to-date.
+  - They also require that scans are run regularly and logs are maintained.
+  - There are also requirements for ensuring systems and software are protected against known vulnerabilities by applying security patches at least one month from the release of a security patch.
+- Implement strong access control measures
+  - The first is to restrict access to cardholder data by business need to know (password authentication for system access and two-factor authentication for remote access)
+  - The second is to identify and authenticate access to system components.
+  - The third is to restrict physical access to cardholder data (keep in mind since we need to protect systems and data from both _physical_ theft and _virtual_ attacks.)
+-  Regularly monitor and test networks
+  - This refers to things like setting up and configuring intrusion detection systems and conducting vulnerability scans of the network
+  - Just having the systems in place isn't enough. It's really helpful to test defense systems regularly to make sure that they provide the protection that you want. It also ensures that the alerting systems are functional.
+-  Maintain an information security policy
+  - Maintain a policy that addresses information security for all personnel.
+  - The responsibility of information security isn't only on the security teams. Every member of an organization is responsible for information security.
+  - That's why having well-thought-out security policies in place also need to be easy to find and easy to read.
+  
+  ### Measuring and Assecssing Risk
+  Security is all about determining risks or exposure, understanding the likelihood of attacks, and designing defenses around these risks to minimize the impact of an attack. Security risk assessment starts with __threat modeling__.
+- First, we identify likely threats to our systems, then we assign them priorities that correspond to severity and probability. We do this by brainstorming from the perspective of an outside attacker, putting ourselves in a hacker shoes. It helps to start by figuring out what high-value targets an attacker may want to go after. From there, you can start to look at possible attack vectors that could be used to gain access to high-value assets.
+  - High-value data usually includes account information like usernames and passwords. Typically, any kind of user data is considered high-value, especially if payment processing is involved.
+- __Vulnerability scanners__ are services that run on your system within your control that conduct periodic scans of configured networks. 
+![vul_scanners](https://i.imgur.com/3HHRclN.png)
+  - One way to find these out is to perform regular vulnerability scanning. Some of these tools are [Nessus](https://www.tenable.com/products/nessus-vulnerability-scanner), [OpenVAS](http://www.openvas.org/), and [Qualys](https://www.qualys.com/forms/freescan/).
+  - The service then conducts scans to find and discover hosts on the network. Once hosts are found, either through a ping sweep or port scanning, more detailed scans are run against discovered hosts. Scans upon scans upon scans.
+  - A port scan of either common ports or all possible valid ports is conducted against discovered hosts to determine what services are listening. These services are then probed to try to discover more info about the type of service and what version is listening on the relevant port.
+  - This information can then be checked against databases of known vulnerabilities. If a vulnerable version of a service is discovered, the scanner will add it to its report. Once the scan is finished, the discovered vulnerabilities and hosts are compiled in a report. That way an analyst can quickly and easily see where the problem areas are on the network.
+  - Vulnerability scanning can _only detect __known__ and disclosed vulnerabilities_ and insecure configurations. That's why it's important for you to have an automated vulnerability scan conducted regularly.
+  - Severity of vulnerbiilty or __Common Vulnerability Scoring System__ (__CVSS__) takes into account a number of things like:
+    - how likely the vulnerability is to be exploited
+    - type of access the vulnerability would provide to an attacker and whether or not it can be exploited remotely or not
+- __Penetration testing__ is the _practice of attempting to break into a system_ or network to verify the systems in place.
+  - The results of the penetration testing reports will also show you where weak points or blind spots exist. These tests help improve defenses and guide future security projects. 
