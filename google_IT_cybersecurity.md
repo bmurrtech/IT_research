@@ -1682,12 +1682,12 @@ __Binary Whitelisting Anti-virus__
 If you're responsible for an organization of users, there's a delicate balance between security and user productivity. We've seen this balance in action when we dove into the different security tools and systems together. Before you start to design a security architecture, you need to define exactly what you'd like it to accomplish. This will depend on what your company thinks is most important. It will probably have a way it wants different data to be handled and stored.
 
 ### Security Goals
-- Does your cyber secuirty instance require certain complaince standards? For example:
+- Does your cyber security instance require certain compliance standards? For example:
 
 __PCI DSS__, or __Payment Card Industry Data Security Standard__
 - Build and maintain a secure network and systems
 - Protect cardholder data
-- Maintain a vulnerabilty managment program
+- Maintain a vulnerability management program
   - The first requirement is to protect all systems against malware and regularly update antivirus software or programs.
   - The second is to develop and maintain secure systems and applications. You'll find more detailed implementation procedures within these requirements. They'll cover things like ensuring all systems have anti-virus software installed and making sure the software is kept up-to-date.
   - They also require that scans are run regularly and logs are maintained.
@@ -1704,7 +1704,7 @@ __PCI DSS__, or __Payment Card Industry Data Security Standard__
   - The responsibility of information security isn't only on the security teams. Every member of an organization is responsible for information security.
   - That's why having well-thought-out security policies in place also need to be easy to find and easy to read.
   
-  ### Measuring and Assecssing Risk
+  ### Measuring and Assessing Risk
   Security is all about determining risks or exposure, understanding the likelihood of attacks, and designing defenses around these risks to minimize the impact of an attack. Security risk assessment starts with __threat modeling__.
 - First, we identify likely threats to our systems, then we assign them priorities that correspond to severity and probability. We do this by brainstorming from the perspective of an outside attacker, putting ourselves in a hacker shoes. It helps to start by figuring out what high-value targets an attacker may want to go after. From there, you can start to look at possible attack vectors that could be used to gain access to high-value assets.
   - High-value data usually includes account information like usernames and passwords. Typically, any kind of user data is considered high-value, especially if payment processing is involved.
@@ -1715,7 +1715,7 @@ __PCI DSS__, or __Payment Card Industry Data Security Standard__
   - A port scan of either common ports or all possible valid ports is conducted against discovered hosts to determine what services are listening. These services are then probed to try to discover more info about the type of service and what version is listening on the relevant port.
   - This information can then be checked against databases of known vulnerabilities. If a vulnerable version of a service is discovered, the scanner will add it to its report. Once the scan is finished, the discovered vulnerabilities and hosts are compiled in a report. That way an analyst can quickly and easily see where the problem areas are on the network.
   - Vulnerability scanning can _only detect __known__ and disclosed vulnerabilities_ and insecure configurations. That's why it's important for you to have an automated vulnerability scan conducted regularly.
-  - Severity of vulnerbiilty or __Common Vulnerability Scoring System__ (__CVSS__) takes into account a number of things like:
+  - Severity of vulnerability or __Common Vulnerability Scoring System__ (__CVSS__) takes into account a number of things like:
     - how likely the vulnerability is to be exploited
     - type of access the vulnerability would provide to an attacker and whether or not it can be exploited remotely or not
 - __Penetration testing__ is the _practice of attempting to break into a system_ or network to verify the systems in place.
