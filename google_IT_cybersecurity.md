@@ -1766,7 +1766,6 @@ You can build the world's best security systems, but they won't protect you if t
 
 > If someone enter their password into a phishing site or even suspects they did, it's important to change their password as soon as possible. If you can, your organization should try to detect these types of password disclosures using tools like Password Alert. 
 
-
 # Malware Library
 A growing library and of various malware and how they attack/harm endpoints.
 
@@ -1775,11 +1774,11 @@ Sorce: [Bleepingcompter](https://www.bleepingcomputer.com/news/security/microsof
 
 ![html_phish](https://i.imgur.com/xUtphRT.png)
 
-__What is it?__
+__What is an HTML phishing attack?__
 
-- A phishing email that contains an HTML email attachment.
+- A phishing email that contains a seemingly harmless HTML email attachment.
 
-__How does it get in?__
+__How does it get past security filters?_
 
 - Attackers behind these phishing campaigns have stolen more than 400,000 legitimate Office 365 and Outlook Web Access credentials which are used to bypass secure email gateways (SEGs).
 
@@ -1787,18 +1786,18 @@ __How does it get in?__
 
 - "They take advantage of configuration settings that ensure delivery of emails even when the email solution detects phishing."
 
-- In some cases, the created archives are password-protected for additional detection evasion against endpoint security controls. 
+- In order to better avoid being caught by endpoint security solutions, some archives are given password-protection encryption to make them harder to detect.
 
-__What does it do?__
+__How does HTML turn into ransomware?__
 
 - A phishing HTML attachment could include a harmless link to a known website, thus not being seen as malicious. However, when a user clicks on the link the HTML file decodes a Base64 code of a JavaScript file which then auto-downloads malware files from a command and control server (C2) to install on the victim's device.
 
+- HTML smuggling has been used to install malicious software like AsyncRAT, NJRAT, and TrickBot. These trojans can be used to gain access to networks and deploy ransomware.
 
-HTML smuggling campaigns are also used to drop the AsyncRAT or NJRAT remote access trojans, or the TrickBot trojan used to breach networks and deploy ransomware.
 
-__How to defend against it?__
+__How can I defend myself and my organization?__
 
-- Microsoft suggests admins use behavior rules to check for commonly characteristics of HTML smuggling, including:
+- Microsoft advises administrators to use behavioral rules to identify any signs of HTML smuggling, such as:
    - An attached ZIP file contains JavaScript
    - An attachment is password-protected
    - An HTML file contains a suspicious script code
@@ -1809,18 +1808,21 @@ __How to defend against it?__
   - Block execution of potentially obfuscated scripts
   - Block executable files from running unless they meet a prevalence, age, or trusted list criterion
 
-- Enable the file extension viewing (this is disabled by default). To enable file extensions in Windows 10, please follow these steps:
+- IT admins should implement blocking or auditing protocols for endpoints when it comes to HTML smuggling activities, such as:
   - Search for __Folder Options__ in the Windows 10 Start Menu and when 'File Explorer Options' appears, click on it.
   - When the File Explorer Options screen appears, click on the __View__ tab and scroll through the Advanced settings until you see an option labeled __"Hide extensions for known file types"__.
   - Uncheck the option: __Hide extensions for known file types__.
   - Click __Apply__ and __OK__ to close the window.
-  - Now, you should be able to see malious file extensions:
+  - Now, you should be able to see (malicious) file extensions.
 
 ![file_ext](https://i.imgur.com/ibYwonK.png)
 
-- In addition to the above, users may prevent automatic JavaScript code execution by associating .js and .jse files with a text editor like Notepad.
+- JavaScript attachments with .js extension should never be opened or downloaded. If it's accidentally downloaded, it should be immediately deleted.
 
 - Furthermore, if an attachment or email link downloads an attachment ending with a _.js extension (JavaScript), it should never be opened_ and automatically be deleted.
 
-- Ultimately, the best defense is to train users not to open files downloaded via links in emails and attachments.
+  - In addition, endusers could prevent automatic JavaScript code execution by configuring `.js` and `.jse` files top open with a text editor like Notepad.
+
+- Ultimately, the best way to secure an organization from malicious attacks is to educate the users on the dangers associated with opening files coming from emails or attachments. Awareness and caution should be exercised when dealing with these types of files.
+
 
