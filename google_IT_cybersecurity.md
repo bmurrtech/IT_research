@@ -1678,7 +1678,7 @@ __Binary Whitelisting Anti-virus__
   - If the pass phrases forgotten then the contents of the disk aren't recoverable, _yikes_. This is why lots of enterprise disk encryption solutions have a __key escrow__ functionality. __Key escrow__ _allows the encryption key to be securely stored for later retrieval by an authorized party._ So if someone forgets the passphrase to unlock their encrypted disk for their laptop the systems administrators are able to retrieve the escrow key or recovery pass phrase to unlock the disk.
 - You should compare full disk encryption against __file based encryption__. _That's where only some files or folders are encrypted and not the entire disk._ This is usually implemented as home directory encryption. It serves a slightly different purpose compared to FDE. Home directory or file based encryption only guarantees confidentiality and integrity of files protected by encryption.
 
-# Reducing Company Attack Surface
+# Cyber Risk in the Workplace
 If you're responsible for an organization of users, there's a delicate balance between security and user productivity. We've seen this balance in action when we dove into the different security tools and systems together. Before you start to design a security architecture, you need to define exactly what you'd like it to accomplish. This will depend on what your company thinks is most important. It will probably have a way it wants different data to be handled and stored.
 
 ### Security Goals
@@ -1719,4 +1719,50 @@ __PCI DSS__, or __Payment Card Industry Data Security Standard__
     - how likely the vulnerability is to be exploited
     - type of access the vulnerability would provide to an attacker and whether or not it can be exploited remotely or not
 - __Penetration testing__ is the _practice of attempting to break into a system_ or network to verify the systems in place.
-  - The results of the penetration testing reports will also show you where weak points or blind spots exist. These tests help improve defenses and guide future security projects. 
+  - The results of the penetration testing reports will also show you where weak points or blind spots exist. These tests help improve defenses and guide future security projects.
+
+### Privacy Policy
+When you're supporting systems that handle customer data, it's super-important to protect it from unauthorized and inappropriate access. It's not to defend against external threats. It also protects the data against misuse by employees. This type of behavior would fall under your company's privacy policies.
+-  Privacy policies oversee the access and use of sensitive data. They also define what appropriate and authorized use is and what provisions or restrictions are in place when it comes to how the data is used.
+- you also need a way to enforce these policies. Periodic audits on cases where sensitive data was accessed can get you there. This was enabled by our logging and monitoring systems.
+- Auditing data access logs is super important. It helps us ensure that sensitive data is only accessed by people who are authorized to access it and that they use it for the right reasons.
+- It's good practice to apply the principle of least privilege here. By not allowing access to this type of data by default, you should require anyone that needs access to first make an access request with a justification for getting the data.
+  - They should be required to specify what data they need access to.
+  - Also have a time limit that should be called out in the request.
+  - Any access that doesn't have a corresponding request should be flagged as a high priority potential breach.
+- Divide data into two types: _sensitive data_ and _non-sensitive_.
+  - If something is considered sensitive or confidential, have stipulations that this data shouldn't be stored on media that's easily lost or stolen, like USB sticks or portable hard drives.
+  - It also makes sense to include laptops and mobile devices, like phones and tablets in the removable media classification. 
+
+### Data Destruction
+Data destruction is removing or destroying data stored on electronic devices  so that an operating system or application cannot read it. Data destruction is required when a company no longer needs a device, when there are unused or multiple copies of data, or you are required to destroy specific data. 
+
+There are three categories of data destruction methods: recycling, physical destruction, and third-party destruction.
+
+
+#### Recycling
+Recycling includes methods that allow for device reuse after data destruction. This option is recommended if you hope to reuse devices internally, sell surplus equipment, or your devices are on loan and are due to be returned. Standard recycling methods include the following:
+- __Erasing/wiping__: cleans all data off a device’s hard drive by overwriting it. Erasing or wiping data can be done manually or with data-destruction software. This method is practical when you only have a few devices that need data destroyed, as it takes a long time. Note that it may take multiple passes to wipe highly sensitive data completely. 
+- __Low-level formatting__: erases all data written on the hard drive by replacing it with zeros. Low-level reformatting can be done using a tool such as [HDDGURU](https://hddguru.com/) on a PC or the Disk Utility function on a Mac. 
+- __Standard formatting__: erases the path to the data and not the data itself. Both PCs and Macs have internal tools that can perform a standard format, Disk Management on a PC or Disk Utility on a Mac. _Note that standard formatting does not remove the data from the device, enabling data rediscovery using software._
+
+#### Physical Destruction
+Physical destruction includes any method that physically destroys a device to make it difficult to retrieve data from it. You should only use physical destruction if you do not need to reuse the device. However, _only completely destroying the device ensures the destruction of all data with physical methods_. Physical destruction methods include the following:
+
+- __Drilling__ holes directly into the device wipes data out on the sections where there are holes. However, _individuals can recover data from the areas that are still intact_.
+- __Shredding__ includes the physical shredding of hard drives, memory cards, CDs, DVDs, and other electronic storage devices. Shredding reduces the potential for recovery. Shredding requires special equipment or outsourcing to another facility. 
+- __Degaussing__ uses a high-powered magnet which destroys the data on the device. This method effectively destroys large data storage devices and renders the hard drive unusable. As electronic technology changes, _this method may become obsolete_.
+- __Incinerating__ destroys data by burning the device. Most companies do not have an incinerator on-site. Devices need to be transported to a facility for incineration. Due to this, _devices can be lost or stolen in transit_.
+
+### User Habit
+You can build the world's best security systems, but they won't protect you if the users are going to be practicing unsafe security. If a user writes their password on a Post-it Note, sticks it to their laptop, then leaves the laptop unlocked and unintended at a cafe, you could have a disaster on your hands.
+- You should never upload confidential information onto a third-party service that hasn't been evaluated by your company.
+-  If we require 20-character passwords that have to be changed every three months, our _users will almost definitely write them down_.  Since direct brute-force attacks against authentication infrastructure should be easily detected and blocked by intrusion prevention systems, they can be considered pretty low-risk, but the theft of a password database would be a super serious breach.
+-  Now, we can relax the password requirements a bit and not ask for overly long passwords. We can even adjust the mandatory password rotation time period. Password reuse is another common user behavior. People don't want a bunch of passwords to memorize.
+-  it's important to make sure employees use new and unique passwords and don't reuse them from other services. It's also important to have a password change system check against old passwords.
+-   A much greater risk in the workplace that users should be educated on is credential theft from phishing emails. Phishing emails are pretty effective. If an email that seems authentic actually leads to a fake login page, users can blindly enter their credentials into the fake site and disclose their credentials to an attacker.
+-  You can also combat phishing attacks with good spam filtering combined with good user education. 
+
+> If someone enter their password into a phishing site or even suspects they did, it's important to change their password as soon as possible. If you can, your organization should try to detect these types of password disclosures using tools like Password Alert. 
+
+- 
