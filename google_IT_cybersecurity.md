@@ -37,6 +37,8 @@ No warranties are given. The license may not give you all of the permissions nec
 - [Generating Hash and Verifying Linux Lab](#hashing-and-hash-verification-lab)
 - [Various Secuirty Methods](physical-privacy-and-security-components)
 - [Securing Network Architecture](#securing-network-architecture)
+- [Cyber Risks at Work](#cyber-risk-in-the-workplace)
+- [Malware Library](#malware-library)
 
 # Intro to IT Security
 
@@ -1739,7 +1741,6 @@ Data destruction is removing or destroying data stored on electronic devices  so
 
 There are three categories of data destruction methods: recycling, physical destruction, and third-party destruction.
 
-
 #### Recycling
 Recycling includes methods that allow for device reuse after data destruction. This option is recommended if you hope to reuse devices internally, sell surplus equipment, or your devices are on loan and are due to be returned. Standard recycling methods include the following:
 - __Erasing/wiping__: cleans all data off a device’s hard drive by overwriting it. Erasing or wiping data can be done manually or with data-destruction software. This method is practical when you only have a few devices that need data destroyed, as it takes a long time. Note that it may take multiple passes to wipe highly sensitive data completely. 
@@ -1765,4 +1766,61 @@ You can build the world's best security systems, but they won't protect you if t
 
 > If someone enter their password into a phishing site or even suspects they did, it's important to change their password as soon as possible. If you can, your organization should try to detect these types of password disclosures using tools like Password Alert. 
 
-- 
+
+# Malware Library
+A growing library and of various malware and how they attack/harm endpoints.
+
+### HTML Smuggling Phishing Attack
+Sorce: [Bleepingcompter](https://www.bleepingcomputer.com/news/security/microsoft-warns-of-surge-in-html-smuggling-phishing-attacks/)
+
+![html_phish](https://i.imgur.com/xUtphRT.png)
+
+__What is it?__
+
+- A phishing email that contains an HTML email attachment.
+
+__How does it get in?__
+
+- Attackers behind these phishing campaigns have stolen more than 400,000 legitimate Office 365 and Outlook Web Access credentials which are used to bypass secure email gateways (SEGs).
+
+- "Phishers continue to find success in using compromised accounts on email marketing services to send malicious emails from legitimate IP ranges and domains," Microsoft's security experts said.
+
+- "They take advantage of configuration settings that ensure delivery of emails even when the email solution detects phishing."
+
+- In some cases, the created archives are password-protected for additional detection evasion against endpoint security controls. 
+
+__What does it do?__
+
+- A phishing HTML attachment could include a harmless link to a known website, thus not being seen as malicious. However, when a user clicks on the link the HTML file decodes a Base64 code of a JavaScript file which then auto-downloads malware files from a command and control server (C2) to install on the victim's device.
+
+
+HTML smuggling campaigns are also used to drop the AsyncRAT or NJRAT remote access trojans, or the TrickBot trojan used to breach networks and deploy ransomware.
+
+__How to defend against it?__
+
+- Microsoft suggests admins use behavior rules to check for commonly characteristics of HTML smuggling, including:
+   - An attached ZIP file contains JavaScript
+   - An attachment is password-protected
+   - An HTML file contains a suspicious script code
+   - An HTML file decodes a Base64 code or obfuscates a JavaScript
+
+- For endpoints, admins should block or audit activity associated with HTML smuggling, including:
+  - Block JavaScript or VBScript from launching downloaded executable content
+  - Block execution of potentially obfuscated scripts
+  - Block executable files from running unless they meet a prevalence, age, or trusted list criterion
+
+- Enable the file extension viewing (this is disabled by default). To enable file extensions in Windows 10, please follow these steps:
+  - Search for __Folder Options__ in the Windows 10 Start Menu and when 'File Explorer Options' appears, click on it.
+  - When the File Explorer Options screen appears, click on the __View__ tab and scroll through the Advanced settings until you see an option labeled __"Hide extensions for known file types"__.
+  - Uncheck the option: __Hide extensions for known file types__.
+  - Click __Apply__ and __OK__ to close the window.
+  - Now, you should be able to see malious file extensions:
+
+![file_ext](https://i.imgur.com/ibYwonK.png)
+
+- In addition to the above, users may prevent automatic JavaScript code execution by associating .js and .jse files with a text editor like Notepad.
+
+- Furthermore, if an attachment or email link downloads an attachment ending with a _.js extension (JavaScript), it should never be opened_ and automatically be deleted.
+
+- Ultimately, the best defense is to train users not to open files downloaded via links in emails and attachments.
+
