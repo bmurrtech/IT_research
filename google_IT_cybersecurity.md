@@ -1759,13 +1759,33 @@ Physical destruction includes any method that physically destroys a device to ma
 You can build the world's best security systems, but they won't protect you if the users are going to be practicing unsafe security. If a user writes their password on a Post-it Note, sticks it to their laptop, then leaves the laptop unlocked and unintended at a cafe, you could have a disaster on your hands.
 - You should never upload confidential information onto a third-party service that hasn't been evaluated by your company.
 -  If we require 20-character passwords that have to be changed every three months, our _users will almost definitely write them down_.  Since direct brute-force attacks against authentication infrastructure should be easily detected and blocked by intrusion prevention systems, they can be considered pretty low-risk, but the theft of a password database would be a super serious breach.
--  Now, we can relax the password requirements a bit and not ask for overly long passwords. We can even adjust the mandatory password rotation time period. Password reuse is another common user behavior. People don't want a bunch of passwords to memorize.
+-  Now, we can relax the password requirements a bit and not ask for overly long passwords because of password databases. Password reuse is another common user behavior. People don't want a bunch of passwords to memorize.
 -  it's important to make sure employees use new and unique passwords and don't reuse them from other services. It's also important to have a password change system check against old passwords.
 -   A much greater risk in the workplace that users should be educated on is credential theft from phishing emails. Phishing emails are pretty effective. If an email that seems authentic actually leads to a fake login page, users can blindly enter their credentials into the fake site and disclose their credentials to an attacker.
 -  You can also combat phishing attacks with good spam filtering combined with good user education. 
 
-> If someone enter their password into a phishing site or even suspects they did, it's important to change their password as soon as possible. If you can, your organization should try to detect these types of password disclosures using tools like Password Alert. 
+> If someone enter their password into a phishing site or even suspects they did, it's important to change their password as soon as possible. If you can, your organization should try to detect these types of password disclosures using tools like Password Alert.
 
+### Third-party Security
+In some cases, you have to trust that third party with a lot of potentially sensitive data or access. So how do you make sure that you aren't opening yourself up to a ton of unnecessary risk? Sometimes, vendors will perform tasks for you so they have access to your network and systems. In these cases, it's also important to understand how well secured third party is, a compromise of their infrastructure could lead to a breach of your systems.  
+- Vendor security assessments/questionnaire
+  - You ask vendors to complete a questionnaire that covers different aspects of their security policies, procedures and defenses. The questionnaire is designed to determine whether or not they've implemented good security designs in their organization.
+  - Google recently made their __[vendor security assessment questionnaires available for free](https://vsaq-demo.withgoogle.com/)__. This is a great starting point to design your own vendor security assessment questionnaire.
+  - without a way to verify or prove what's stated in the questionnaire. You have to trust that the company is answering honestly
+- Some of the information on the questionnaire can be verified like third party security audit results and penetration testing reports. In the case of third party software, you might be able to conduct some basic vulnerability assessments and tests to ensure the product has some reasonable security.
+  - Let's say the vendor company requires remote access to the infrastructure device to perform maintenance. If that's the case, then make appropriate adjustments to firewall rules to restrict this access.
+  - If the vendor lets you, evaluate the hardware in a lab environment, first, there you can run in depth vulnerability assessments and penetration testing of the hardware.
+
+### Security Training & Awareness
+To help create this context, it's important for employees to __have a way that they can ask security questions and raise security concerns__. This could be a mailing list where users can ask questions about security concerns or to report things they suspect are security risks. Having the designated communication channel where people can feel comfortable asking questions and getting clear answers back is super important.
+
+- Think of the small things we do every day when we use our computers:
+  - Just entering your password to log in
+  - Locking your screen when you walk away from your computer is helpful.
+  - Being careful about entering your password on websites and check the address of the site you're authenticating against.
+
+- Mandated security training should cover the most common attack types and how to avoid falling victim to them. This includes things like phishing emails and best practices around password use. These trainings often include scenarios that can help test the user's understanding of a particular topic.
+ 
 # Malware Library
 A growing library and of various malware and how they attack/harm endpoints.
 
@@ -1774,7 +1794,7 @@ Sorce: [Bleepingcompter](https://www.bleepingcomputer.com/news/security/microsof
 
 ![html_phish](https://i.imgur.com/xUtphRT.png)
 
-__What is an HTML phishing attack?__
+__What is an HTML smuggling phishing attack?__
 
 - A phishing email that contains a seemingly harmless HTML email attachment.
 
