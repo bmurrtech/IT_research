@@ -1686,7 +1686,18 @@ If you're responsible for an organization of users, there's a delicate balance b
 ### Security Goals
 - Does your cyber security instance require certain compliance standards? For example:
 
-__PCI DSS__, or __Payment Card Industry Data Security Standard__
+- Protected Health Information: This information is regulated by the Health Insurance Portability and Accountability Act (HIPAA). It is personally identifiable health information that relates to:
+  - Past, present, or future physical or mental health or condition of an individual
+  - Administration of health care to the individual by a covered provider (for example, a hospital or doctor)
+  - Past, present, or future payment for the provision of health care to the individual
+- Credit Card or **Payment Card Industry** (**PCI**) Information: __PCI DSS__, or __Payment Card Industry Data Security Standard__ This is information related to credit, debit, or other payment cards. PCI data is governed by the Payment Card Industry Data Security Standard (PCI DSS), a global information security standard designed to prevent fraud through increased control of credit card data.
+- **Personally Identifiable Information** (**PII**): PII is a category of sensitive information associated with a person. Examples include addresses, Social Security Numbers, or similar personal ID numbers.
+- **Federal Information Security Management Act** (**FISMA**) compliance: FISMA requires federal agencies and those providing services on their behalf to develop, document, and implement specific IT security programs and to store data on U.S. soil. For example, organizations like NASA, the National Institutes of Health, the Department of Veteran Affairs—and any contractors processing or storing data for them—need to comply with FISMA.
+- **Export Administration Regulations** (**EAR**) compliance: EAR is a set of U.S. government regulations administered by the U.S. Department of Commerce’s Bureau of Industry and Security (BIS). These regulations govern the export and re-export of commercial and dual-use goods, software, and technology. Dual-use goods are items that can be used both for civilian and military applications. These goods are heavily regulated because they can be classified for civilian use and then transformed for military purposes.
+- **Digital rights management** (**DRM**): Digital Rights Management (DRM) technologies can help ensure data regulations compliance. DRM technology comes in the form of either software or hardware solutions. Organizations can use these DRM capabilities to protect sensitive data. DRM enables organizations to track who has viewed files, control access, and manage how people use the files. It also prevents files from being altered, duplicated, saved, or printed. DRM can help organizations comply with data protection regulations. Content creators can also use DRM applications to restrict what users can do with their material. They can encrypt digital media so only someone with the decryption key can access it. This gives content creators and copyright holders a way to:
+  - Restrict users from editing, saving, sharing, printing, or taking screenshots of content or products
+  - Set expiration dates on media to prevent access beyond that date or limit the number of times users can access the media
+  - Limit access to specific devices, Internet Protocol (IP) addresses, or locations, such as limiting content to people in a specific country
 - Build and maintain a secure network and systems
 - Protect cardholder data
 - Maintain a vulnerability management program
@@ -1785,7 +1796,71 @@ To help create this context, it's important for employees to __have a way that t
   - Being careful about entering your password on websites and check the address of the site you're authenticating against.
 
 - Mandated security training should cover the most common attack types and how to avoid falling victim to them. This includes things like phishing emails and best practices around password use. These trainings often include scenarios that can help test the user's understanding of a particular topic.
- 
+
+### Inicent Response and Recovery
+- Contain the incident (isolate infected machine from rest of network to prevent any lateral spread of malware).
+- Power down, disconnect, and set aside for forensic analysis.
+  - Forensic analysis may need to be done to analyze the attack. This is especially true when it comes to a malware infection. In the case of forensic analysis, affected machines might be investigated very closely to determine exactly what the attacker did. This is usually done by taking an image of the disk, essentially making a virtual copy of the hard drive. This lets the investigator analyze the contents of the disk without the risk of modifying or altering the original files. If that happened, it would compromise the integrity of any forensic evidence. Usually evidence gathering is also part of the incident response process. This provides evidenced to law enforcement if the organization wants to pursue legal action against the attackers.
+- Restore using a _clean_ backup (pre-malware infection) of  machine to a new machine for the enduser to continue workflow.
+  - Depending on the severity of the compromise or infection, it might be necessary to rebuild the system from the ground up. Clean up will typically involve restoring from a backup point to a known good configuration. Infected or corrupted system files can be restored from known good copies. Sometimes cleanup can be very simple and quick.
+- Monitor victim's machine extra closely.
+  - That's when systems need to be thoroughly tested to make sure proper functionality has been restored. Usually, affected systems would also remain under close watch, sometimes with additional detailed monitoring and logging enabled. This is to watch for any additional signs of an intrusion in case something was missed during the cleanup. It's also possible that the attacker will attempt to attack the same target again. There's a very high chance that they use the same or similar attack methodology on other targets in your network.
+- Get a lawyer involved.
+   - Because an incident can have legal implications for the company, a lawyer should be available to consult and advise on the legal aspects of the investigation. It's crucial in order to avoid complications or issues of liability.
+- Work with forensics team to determine how the machine was breached and make necessary improvements.
+  - Update firewall rules and ACLs if an exposure was discovered in the course of the investigation. Create new definitions and rules for intrusion detection systems that can watch for the signs of the same attack again. Stay vigilant and prepared to protect your system from attacks. Remember that at some point, some security breach will happen, just they come and execute your plan to counter attack the breach.
+
+### Bring Your on Device (BYOD)
+Today, an increasing number of companies permit employees to bring their own devices to work. This trend started with employees requesting permission to carry a single smartphone rather than carrying one phone for work and one for personal use. BYODs can become dangerous security threats to companies’ data and networks. IT departments do not have the same level of control over the security of BYOD devices as they would with company-owned devices. Some of the potential threats BYODs pose to company networks, resources, and data include:
+- __Loss or theft__ could result in an organization’s data being stolen or the lost device being used to gain unauthorized access to a company’s network.
+- __Data leakage__ losses can happen when a computing device is lost or compromised; when an employee accidentally saves or sends confidential information to the wrong destination; when a disgruntled employee exposes data maliciously; or when viruses, malware, phishing attacks, etc. penetrate organizations’ networks.   
+- __Data portability__ losses can occur when former employees take company data with them on their BYOD when they resign or are fired by the organization. 
+- __Security vulnerabilities__ are any type of weakness in the security of a device or network that provides access for a threat to penetrate the system.
+- __Meddler in the middle attacks (MITM)__ occur when an attacker monitors the data transfers between two sources with the intent to copy and/or interfere with that information. One of the most common opportunities for an MITM attack arises  when a mobile device accesses important information through a public Wi-Fi connection, such as at a hotel or restaurant. 
+- __Malware__ is malicious software that can be used to steal, modify, or delete data. It can also be used to gain unauthorized access to a device or network.
+- __Jailbreaking__ happens when a manufacturer’s protective restrictions are removed on a mobile device. Without these restrictions, a device becomes vulnerable to the risk of the user unknowingly installing malicious software.
+
+#### BYOD Solutions
+To mitigate these threats, organizations and their IT departments should design security policies for BYOD use inside company networks. Some preventative steps could include:
+
+- Develop a bring your own device (BYOD) policy: IT departments and organizations can create written policies that detail the minimum technology requirements for permitted BYODs, provide instructions for employees on how to properly secure their devices, and list the rules for safe data access and storage. 
+
+- __Use Mobile Device Management (MDM) software__: MDM software can be used to enforce BYOD policy requirements for mobile devices to help secure company data and networks. IT departments can use MDM software to: 
+  - Automatically install apps and updates, including antivirus and anti-malware software
+  - Configure secure connections to an organization’s wireless networks 
+  - Encrypt storage on devices
+  - Require a lock screen and password
+  - Remote wipe a mobile device that is lost or stolen
+  - Block the execution of certain apps
+  - Meet compliance standards
+  - Prevent data being shared or stored in unauthorized locations
+  - Manage devices remotely
+
+- __Use an Enterprise Mobile Management (EMM) system__: MDM policies are specific to mobile operating systems. In order to distribute MDM policies across Android, iOS, and other mobile operating systems, the BYODs can be enrolled through an Enterprise Mobility Management (EMM) system.
+- __Require the use of multi-factor authentication (MFA)__: Users can be authenticated by presenting more than one method of identification. Some common identification factors include:
+  - Something you know: a password or pin number
+  - Something you have: a physical token, like an ATM or bank card, USB device, key fob, or OTP (one-time password)
+  - Something you are: biometric data, like a fingerprint, voice signature, facial recognition, or retina scan 
+  - Somewhere you are: location-dependent access, like a Global Positioning System (GPS) location
+ - Something you do: gestures, like swipe patterns; Turing tests, like CAPTCHA; or normal patterns of behavior, like regular login and logout times
+- __Set an acceptable use policy (AUP)__: Organizations could create policies that set a code of conduct for use of the companies’ data, systems, network, and other resources.
+- __Use non-disclosure agreements (NDA)__: Organizations can create legally binding contracts with employees to assert the confidentiality and security policies for the companies’ data and intellectual property.
+- __Restrict data access__: IT departments should protect company data by limiting access to only those employees who need access to perform their jobs.
+- __Educate staff about data security__: Organizations can provide training manuals and seminars to inform employees about network security risks and to instruct on how to secure their BYODs.
+- __Back up device data__: IT departments need to create backup policies for all important data. This should include a schedule for frequency of backups, storage space for the back-up copies, how long back-ups should be stored, and disaster recovery plans.
+- __Data leakage prevention (DLP)__: IT departments can implement DLP software solutions to help manage and protect confidential information.
+
+Resources for more information
+
+[BYOD](https://www.techtarget.com/whatis/definition/BYOD-bring-your-own-device)
+ - Additional information on how BYOD works, why is it important, level of access options, risks, challenges, policy comparisons, best practices, how to implement a BYOD policy.
+[BYOD policy: An in-depth guide from an IT leader](https://www.dialpad.com/blog/byod-policy/)
+ - Compares BYOD advantages and disadvantages, what should be included in a BYOD policy, tips for reducing security risks, and more.
+[What is MDM?](https://www.manageengine.com/mobile-device-management/what-is-mdm.html)
+ - Introduces the purpose of MDM software, how it works, advantages of using MDM, use cases, and more.
+[Enterprise Mobility Management](https://www.manageengine.com/mobile-device-management/enterprise-mobility-management-emm.html?network=g&device=c&keyword=enterprise%20mobility%20management&campaignid=10047966928&creative=479014654278&matchtype=p&adposition=&placement=&adgroup=108476453023&targetid=kwd-10879221579&gclid=Cj0KCQjwkruVBhCHARIsACVIiOxm1_vkFiOK2IXWj2cw2f_7lJGQdIzjl9sn0nY9nl9i9_TKolc9i_IaAluCEALw_wcB)
+ - Outlines the features, services, and benefits of EMM systems. 
+
 # Malware Library
 A growing library and of various malware and how they attack/harm endpoints.
 
