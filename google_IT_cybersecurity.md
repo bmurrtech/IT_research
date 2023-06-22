@@ -38,6 +38,7 @@ No warranties are given. The license may not give you all of the permissions nec
 - [Various Secuirty Methods](physical-privacy-and-security-components)
 - [Securing Network Architecture](#securing-network-architecture)
 - [Cyber Risks at Work](#cyber-risk-in-the-workplace)
+- [My Security Consultation Document for Small Company](#security-consultation-for-small-company)
 - [Malware Library](#malware-library)
 
 # Intro to IT Security
@@ -1852,14 +1853,152 @@ To mitigate these threats, organizations and their IT departments should design 
 
 Resources for more information
 
-[BYOD](https://www.techtarget.com/whatis/definition/BYOD-bring-your-own-device)
- - Additional information on how BYOD works, why is it important, level of access options, risks, challenges, policy comparisons, best practices, how to implement a BYOD policy.
-[BYOD policy: An in-depth guide from an IT leader](https://www.dialpad.com/blog/byod-policy/)
- - Compares BYOD advantages and disadvantages, what should be included in a BYOD policy, tips for reducing security risks, and more.
-[What is MDM?](https://www.manageengine.com/mobile-device-management/what-is-mdm.html)
- - Introduces the purpose of MDM software, how it works, advantages of using MDM, use cases, and more.
-[Enterprise Mobility Management](https://www.manageengine.com/mobile-device-management/enterprise-mobility-management-emm.html?network=g&device=c&keyword=enterprise%20mobility%20management&campaignid=10047966928&creative=479014654278&matchtype=p&adposition=&placement=&adgroup=108476453023&targetid=kwd-10879221579&gclid=Cj0KCQjwkruVBhCHARIsACVIiOxm1_vkFiOK2IXWj2cw2f_7lJGQdIzjl9sn0nY9nl9i9_TKolc9i_IaAluCEALw_wcB)
- - Outlines the features, services, and benefits of EMM systems. 
+- [BYOD](https://www.techtarget.com/whatis/definition/BYOD-bring-your-own-device)
+  - Additional information on how BYOD works, why is it important, level of access options, risks, challenges, policy comparisons, best practices, how to implement a BYOD policy.
+- [BYOD policy: An in-depth guide from an IT leader](https://www.dialpad.com/blog/byod-policy/)
+  - Compares BYOD advantages and disadvantages, what should be included in a BYOD policy, tips for reducing security risks, and more.
+- [What is MDM?](https://www.manageengine.com/mobile-device-management/what-is-mdm.html)
+  - Introduces the purpose of MDM software, how it works, advantages of using MDM, use cases, and more.
+- [Enterprise Mobility Management](https://www.manageengine.com/mobile-device-management/enterprise-mobility-management-emm.html?network=g&device=c&keyword=enterprise%20mobility%20management&campaignid=10047966928&creative=479014654278&matchtype=p&adposition=&placement=&adgroup=108476453023&targetid=kwd-10879221579&gclid=Cj0KCQjwkruVBhCHARIsACVIiOxm1_vkFiOK2IXWj2cw2f_7lJGQdIzjl9sn0nY9nl9i9_TKolc9i_IaAluCEALw_wcB)
+  - Outlines the features, services, and benefits of EMM systems.
+
+# Security Consultation for Small Company
+_About the organization_: This fictional organization has a small, but growing, employee base, with 50 employees in one small office. The company is an online retailer of the world's finest artisanal, hand-crafted widgets. Since this is a retail company that will be handling customer payment data, the organization would like to be extra cautious about privacy. They don't want customer information falling into the wrong hands. They've hired you on as a security consultant to help bring their operations into better shape.
+
+This document will provide my robust security recommendations and solutions for the following security concerns:
+
+- What is an authentication system and how can it be used to protect a company?
+- What are the best practices for securing an external website?
+- How can you secure an internal website and prevent unauthorized access?
+- What types of remote access solutions are available?
+- What are some basic firewall rules that should be implemented to ensure network security?
+- How can intrusion detection or prevention systems help protect customer data from cyber attacks or breaches?
+- How can wireless networks be secured to prevent unauthorized access or data breaches?
+- What is VLAN configuration and how can it help with network security?
+- How can laptops/mobile devices be configured to ensure data security in case of theft or loss?
+- What policies should be put in place to distribute software application?
+- What are the best practices for creating a security and privacy policy for a company or organization?
+
+### Authentication System
+
+In today’s digital world, everyone must be extra cautious about protecting their sensitive information from unauthorized access. Authenticating identity is crucial security measure for any company of any size. To achieve this, they need to implement robust authentication methods that can verify the identity of their users before granting access to their systems.
+
+One such method is OAuth, which enables users to grant third-party applications access to their resources without sharing their passwords. Another popular method is the use of One-time passwords (OTP), which provides an additional layer of security by generating a unique code that expires after a single use.
+
+Physical tokens such as USB devices with secret tokens on them are also commonly used for authentication purposes. These tokens generate a unique code that users must enter alongside their username and password to gain access.
+
+Single Sign-on (SSO) is another authentication concept that allows users to authenticate once and then gain access to multiple systems without having to log in again. This method not only saves time but also enhances security by reducing the chances of password-related vulnerabilities. The use of a TACACS+ server to check user authentication is one such policy that can help prevent unauthorized entry.
+
+However, virtual authentication can do nothing to prevent a physical breach of security. For example, tailgating is a security breach where an unauthorized person gains access to restricted areas or buildings by following an authorized individual. Tailgating attackers also may use social engineering tactics to enter your premises by pretending to be maintenance personnel or mail carriers. Once these imposters achieve physical access, they can exploit your sensitive corporate resources and cause irreparable damage.
+
+To maintain a secure corporate environment, entry into buildings is usually restricted by using key cards or other entry methods. It's crucial to educate employees on the importance of being vigilant towards strangers and following proper authentication protocols before granting access.
+
+Overall, implementing these authentication methods and raising overall company security awareness can significantly improve the security posture of businesses and companies while ensuring that only authorized personnel can access sensitive company equipment or information.
+
+### External Website Security
+
+Given the sensitive nature of customer information such as personal details and payment information, it is crucial for the organization to be extra cautious in protecting their customers' data. In today's digital age where cyber threats are rampant, ensuring data security is paramount.
+
+This section will explore some measures that the company can take to ensure that their customers' data remains secure while still providing an excellent shopping experience on their website. The focus will be on practical solutions that can be implemented by small businesses like this one with limited resources.
+
+To ensure the safety of the company's external website that permits users to browse and purchase widgets, several security measures need to be implemented. These may include implementing secure login procedures, encrypting sensitive data such as credit card information and personal details of customers, regularly updating software patches and firewalls, conducting regular vulnerability assessments, and ensuring that only authorized personnel have access to sensitive information.
+
+One of the most common attacks is DNS cache poisoning, where an attacker manipulates the DNS server to redirect users to a malicious website. Another attack is the man-in-the-middle attack, where an attacker intercepts communication between two parties and steals sensitive information.
+
+Denial-of-service or DoS attacks are also a threat, where attackers flood the website with traffic or use techniques like ping flood and SYN flood to overload the server. Brute force attacks are another type of attack where attackers try multiple username/password combinations until they gain access.
+
+### Internal Website (Intranet) Security
+
+An internal intranet website is an essential tool for companies to facilitate communication and collaboration among employees. However, this website can also be vulnerable to various cyber attacks that can compromise sensitive information and disrupt business operations.
+
+internal intranet website is becoming increasingly essential for companies to ensure smooth communication and collaboration among their employees. However, with the rise of cyber threats, it is crucial to implement robust security measures to protect sensitive information from DHCP snooping, ARP poisoning attacks, and other malicious activities.
+
+Dynamic ARP Inspection (DAI) and IP Source Guard are two effective security protocols that can prevent ARP spoofing attacks. Additionally, implementing Extensible Authentication Protocol (EAP-TLS) authentication combined with IEEE 802.1X Protocol can provide secure access control for network devices.
+
+By incorporating these security measures in an internal intranet website, companies can ensure safe and secure communication among their employees while protecting sensitive information from cyber threats.
+
+Social engineering and phishing attacks are also prevalent, where attackers trick employees into divulging their login credentials or other confidential information. Therefore, it is crucial for companies to implement robust security measures such as firewalls, encryption protocols, multi-factor authentication systems, and regular employee training on cybersecurity awareness.
+
+### Remote Access Solutions
+
+As remote work becomes increasingly popular, it's important to ensure secure remote access for engineering employees. Symmetric encryption is a crucial tool in cryptography that can be used to secure network traffic and protect sensitive data from unauthorized access. However, even the strongest encryption can be vulnerable to cryptanalysis attacks.
+
+One way to ensure secure remote access is by using HTTPS instead of HTTP when accessing company resources over the internet. HTTPS encrypts data in transit and ensures that it cannot be intercepted or modified by attackers.
+
+Another effective method is through a VPN tunnel, which provides a secure connection between an employee's device and the company's network. This allows employees to securely access company resources as if they were physically present in the office.
+
+A zero-trust approach can also be adopted where every user or device attempting to access company resources is verified and authenticated before being granted access. This approach minimizes the risk of unauthorized access and ensures that only authorized personnel have access to sensitive information.
+
+Overall, it's crucial for companies to take steps towards securing remote access for their engineering employees through various methods such as symmetric encryption, HTTPS, VPN tunnels, and zero-trust policies.
+
+### Firewall and and IDS/IPS Systems for Safeguarding Data
+
+Firewalls are essential components of any network security system. One of the most critical components of a company's cybersecurity infrastructure is its firewall security. Firewalls act as a barrier between an organization's internal network and the outside world, preventing unauthorized access to sensitive data. One type of firewall security that companies use is a network-based firewall that monitors incoming and outgoing traffic based on predetermined rules. Another type is host-based firewalls that are installed on individual devices to control access to specific applications or services. Basic firewall rules should be in place to ensure that only authorized traffic is allowed through the network. In recent years, reverse proxies have gained popularity as a way to enhance firewall security. Reverse proxies like HAProxy, Nginx, and even the Apache web server can act as intermediaries between clients and servers, filtering out malicious traffic before it reaches its destination. Proxies can also be used in conjunction with firewalls to provide an extra layer of protection against cyber threats. By routing all traffic through a proxy server first, organizations can monitor and filter out suspicious activity more effectively.
+
+One of the most common methods used by hackers is email phishing, which can take on various forms such as spear phishing, HTML smuggling, and social engineering. These attacks typically involve tricking employees into divulging sensitive information or downloading malware onto company networks. A spam gateway is another important component of a firewall setup. It filters, identifies, and quarantines spam email before it reaches users' inboxes, reducing the risk of phishing attacks and other email-based threats.
+
+Overall, implementing robust firewall security measures such as reverse proxies, email filters, and host-based firewalls can help companies protect their valuable assets from cyber attacks and maintain their customers' trust. However, an organization with more resources and dedicated SOC analysts could implement additional layers of network security through the implementation of intrusion detection and prevention systems or IDS/IPS. IDS/IPS solutions are commonly used with firewalls to provide an additional layer of security. These systems monitor network traffic for suspicious activity and can block or alert administrators if an intrusion attempt is detected. In addition, employing the use of a NIDS device, or Network Intrusion Detection System, can be used as part of a firewall setup to detect and prevent attacks on the network. It works by analyzing data packets as they pass through the network and comparing them against known attack signatures.
+
+Finally, data leak/loss prevention (DLP) measures should also be implemented as part of a comprehensive firewall strategy. DLP helps to prevent sensitive information from leaving the organization by monitoring outbound traffic for unauthorized data transfers or leaks. By implementing these basic firewall rules, organizations can significantly reduce their risk of cyberattacks and protect their sensitive information from being compromised.
+
+### Wireless Security
+
+Wireless Wi-Fi coverage in the office is a critical aspect of modern business operations. However, with the convenience of wireless connectivity comes the risk of security breaches. One such threat is a rogue access point that can be set up by attackers to intercept and manipulate data transmitted over a wireless network. Another common attack is the man-in-the-middle attack or meddler in the middle where an attacker intercepts communication between two parties to steal sensitive information. Modern hackers can use various techniques aided by cloud computing CPUs and GPUs to crack complex Wi-Fi passwords and gain unauthorized access to sensitive company data through Wi-Fi without ever stepping foot on the business premises. Hashing rainbow tables and brute force attacks are often employed to gain unauthorized access to business networks.
+
+To ensure maximum Wi-Fi security, it's essential to take necessary measures such as setting special character passwords and limiting access to the network. An authentication server can be used to verify users' identities before granting them access. A password salt is another tool in the network security technician’s belt to prevent attackers from gaining easy network access, even thwarting sophisticated rainbow table attacks powered by cloud computing.
+
+As a precaution, creating a guest network is another effective way of ensuring wireless coverage while maintaining security. This separate network provides internet access for guests without exposing your main network to potential threats. Additionally, WiFi network encryption is crucial in protecting your wireless coverage from unauthorized access. Wi-Fi Protected Access 2 (WPA2) is currently the most secure encryption protocol available for wireless networks. Implementing these measures will help ensure that your office's wireless coverage remains secure from potential cyber-attacks.
+
+It should be made abundantly clear to remote works that public Wi-Fi networks are particularly vulnerable to these types of attacks, making it crucial for users to take precautions when connecting to them. One effective way to secure your internet traffic is through a VPN (Virtual Private Network) that encrypts your data and provides a secure connection between your device and the internet.
+
+### VLAN Configuration Recommendations
+
+Any public, internet facing utilities or web services are often the most vulnerable; therefore, configuring VLANs effectively and securely using best practices such as ACLs, subnetting, port mirroring, and Bastion hosts is a critical step in a any company’s security posture. One way to enhance network security is by creating VLANs to separate clients from the production network. VLANs allow for the creation of virtual networks within a physical network, thereby providing an additional layer of security.
+
+However, simply creating VLANs is not enough. It is important to configure them properly with all access control lists (ACLs) and subnetting to ensure that only authorized traffic can pass through them. It is also recommended to disable system admin and prevent the disabling of the host-based firewall.
+
+Port mirroring can be used for monitoring traffic within VLANs, while Bastion hosts are usually exposed to the Internet and act as an access portal into more sensitive services on a private network to core authentication servers or domain controllers.
+
+### Laptop/Mobile Device Security
+
+In today's digital age, laptop security has become more critical than ever. With sensitive information being stored on laptops, it's essential to have the right security configurations in place. One of the key measures to ensure laptop security is to have proper antivirus and anti-malware software installed. This software provides protection against a wide range of threats including viruses, spyware, adware, trojans and other malicious software that can compromise your system's security.
+
+However, it's not just enough to have any antivirus or anti-malware software installed on your laptop. It's important to configure the settings properly and keep them up-to-date with the latest updates and patches. This section will cover some essential configurations that you need to consider when setting up your antivirus and anti-malware software on your laptop.
+
+A long and complex login password is a basic step towards securing your laptop. Pin number access or biometric data like a fingerprint can add an extra layer of protection while accessing the laptop. However, it's not enough to prevent unauthorized access. Disk encryption is another crucial security configuration that can protect your data from theft and hacking attempts. A trusted platform module (TPM) adds an extra layer of security by storing encryption keys and passwords securely. Backing up device data is also essential in case of any unforeseen circumstances like theft, hardware failure, or a ransomware attack
+
+Moreover, GPS tracking can help locate the device in case of loss or theft. By implementing these security configurations, you can ensure that your laptop and its contents are safe from any potential threats.
+
+Mobile devices also have become an integral part of our daily lives, from personal communication to business operations. However, this increased use also comes with the risk of cyber threats and attacks. To mitigate these risks, it is essential to have proper security configurations in place. For starters, a pin code is a simple yet effective security measure that requires users to enter a numeric code to access their device. Similarly, a password can be used instead of a pin code for added complexity and security. Biometric locks such as fingerprint or facial recognition are also becoming increasingly popular as they provide quick and convenient access while ensuring device security.
+
+Antivirus and anti-malware software are crucial tools in protecting mobile devices against malicious software. Enterprise Mobile Management (EMM) solutions can help organizations manage and secure their mobile devices by enforcing MDM policies across Android and iOS platforms.
+
+Multi-factor authentication is another critical security measure that adds an extra layer of protection by requiring users to provide two or more forms of identification before accessing sensitive data. In the event that a mobile device is lost or stolen, remote wipe capabilities can ensure that any sensitive information is erased from the device.
+
+Additionally, blocking the execution of certain apps can prevent unauthorized access to data or malicious activities on a mobile device. By implementing these security configurations, individuals and organizations can better protect themselves against potential cyber threats on their mobile devices.
+
+### Application Policy Recommendations
+
+A certificate is a digital document that contains information about the public key, the entity it belongs to, and a digital signature from another party that has verified this information. It serves as proof of authenticity and helps to establish trust between the user and the application. By using software application certificates, users can be confident that they are downloading legitimate applications from trusted sources. These certificates also provide protection against malware and other security threats.
+
+Public Key Infrastructure (PKI) is a system that plays a critical role in the implementation of cryptography applications. PKI involves the creation, storage, and distribution of digital certificates that are used to verify the authenticity of users and devices. The system is comprised of various components, including a Registration Authority (RA) responsible for verifying user identities, and a Certificate Authority (CA) responsible for issuing digital certificates.
+
+While PKI has proven to be an effective means of securing communication channels, there are alternative approaches such as web-of-trust models that can also provide strong security guarantees. One alternative approach to PKI is using a web of trust where users can verify each other's identities through a decentralized network. Before signing a key or certificate, it is essential to first verify the identity of the person requesting the signature. This can be done through an agreed-upon mechanism, such as checking identification documents like driver's licenses or passports. By establishing this level of verification, individuals can ensure that they are communicating with trusted parties and protect themselves from potential security threats. By signing someone's public key, you are essentially vouching for their identity and saying that you trust that this person is who they claim to be. This system allows for a more secure and trustworthy online environment, where individuals can communicate and transact with confidence knowing that they are dealing with verified identities.
+
+Overall, software application certificates are an essential tool for ensuring the authenticity and security of digital applications in today's rapidly evolving technological landscape.
+
+### Security and Privacy Policy Recommendations
+
+Securing, protecting, and destroying sensitive data is of utmost importance. Authorization policies and procedures play a crucial role in establishing policies and procedures to ensure that users do not make security mistakes while accessing user data. Auditing data access logs is another important policy that helps IT departments keep track of who accessed sensitive information and when. This helps in identifying potential security breaches and taking corrective actions promptly.
+
+When safeguarding customer data, it is also important for a company to differentiate between sensitive and non-sensitive data while formulating policies for application access. By implementing these policies and procedures, organizations can ensure the security of their critical information assets from internal as well as external threats.
+
+As companies collect and store more data than ever before, it becomes increasingly important to dispose of it securely when it is no longer needed. Simply deleting files or formatting a hard drive is not enough, as the data can still be recovered using specialized software tools or other means. This is where data destruction comes into play.
+
+There are several methods for securely erasing or destroying data, ranging from software-based solutions to physical destruction of the storage device. Overwriting with data-destruction software or low-level formatting using tools like HDDGURU or Hirens BootCD can effectively wipe a hard drive clean. For those who require even greater security, physical destruction methods such as drilling holes, shredding, and degaussing (using high-powered magnets) can render a hard drive completely unreadable.
+
+Ensuring that all unused or multiple copies of data are destroyed is crucial in maintaining privacy and preventing potential breaches.
+ 
 
 # Malware Library
 A growing library and of various malware and how they attack/harm endpoints.
