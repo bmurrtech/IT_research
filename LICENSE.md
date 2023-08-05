@@ -1,3 +1,7 @@
+### **Any and all copyright materials used are for educational, non-commercial, illustrative (research, criticism, & comment), unpublished purposes only. Facts themselves are not copyrightable.**
+
+### **Any other works of mine are under the Attribution NonCommercial ShareAlike 4.0 International license.**
+
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
