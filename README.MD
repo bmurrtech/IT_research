@@ -1,4 +1,4 @@
-# My CySec Research
+# My IT Research
 
 ### CySec
 - [Google's IT Cybersecurity](https://github.com/bmurrtech/mind-dump/blob/main/google_IT_cybersecurity.md)
