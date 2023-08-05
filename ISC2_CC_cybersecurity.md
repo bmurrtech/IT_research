@@ -14,18 +14,19 @@ This work is licensed under a
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 # Table of Contents
-[Chapter 1: Security Principles](#Chapter-1)
-[Chapter 2: Incident Response, Business Continuity and Disaster Recovery Concepts](#Chapter-2)
+- [Chapter 1: Security Principles](#chapter-1)
+- [Chapter 2: Incident Response, Business Continuity and Disaster Recovery Concepts](#chapter-2)
 
-# Chapter 1 Security Principles 
-Module 1: Understand the Security Concepts of Information Assurance (D1.1)
-Module 2: Understand the Risk Management Process (D1.2)
-Module 3: Understand Security Controls (D1.3)
-Module 4: Understand Governance Elements (D1.5)
-Module 5: Understand ISC2 Code of Ethics (D1.4)
-[Chapter 1 Glossary](#Chapter-1-Glossary)
+# Chapter 1
+- [Module 1: Understand the Security Concepts of Information Assurance (D1.1)](#understand-security)
+- [Module 2: Understand the Risk Management Process (D1.2)](#understand-risk-management)
+- [Module 3: Understand Security Controls (D1.3)](#security-controls)
+- [Module 4: Understand Governance Elements (D1.5)](#understand-governance)
+- [Module 5: Understand ISC2 Code of Ethics (D1.4)](#isc2-code-of-ethics)
+- [Chapter 1 Glossary](#chapter-1-glossary)
 
-# Understand the Security Concepts of Information Assurance (D1.1)
+# Understand Security
+(D1.1)
 
 ### Confidentiality 
 
@@ -88,7 +89,7 @@ In today’s world of e-commerce and electronic transactions, there are opportun
 #### Privacy
 __Privacy is the right of an individual to control the distribution of information about themselves.__ While security and privacy both focus on the protection of personal and sensitive data, there is a difference between them. With the increasing rate at which data is collected and digitally stored across all industries, the push for privacy legislation and compliance with existing policies steadily grows. In today’s global economy, privacy legislation and regulations on privacy and data protection can impact corporations and industries regardless of physical location. Global privacy is an especially crucial issue when considering requirements regarding the collection and security of personal information. There are several laws that define privacy and data protection, which periodically change. Ensuring that protective security measures are in place is not enough to meet privacy regulations or to protect a company from incurring penalties or fines from mishandling, misuse, or improper protection of personal or private information. An example of a law with multinational implications is the European Union’s General Data Protection Regulation (GDPR) which applies to all organizations, foreign or domestic, doing business in the EU or any persons in the EU. Companies operating or doing business within the United States may also fall under several state legislations that regulate the collection and use of consumer data and privacy. Likewise, member nations of the EU enact laws to put GDPR into practice and sometimes add more stringent requirements. These laws, including national- and state-level laws, dictate that any entity anywhere in the world handling the private data of people in a particular legal jurisdiction must abide by its privacy requirements. As a member of an organization's data protection team, you will not be required to interpret these laws, but you will need an understanding of how they apply to your organization.
 
-# Module 2: Understand the Risk Management Process
+# Understand Risk Management
 (D1.2.1, D1.2.2)
 
 Risks and security-related issues represent an ongoing concern of businesses as well as the field of cybersecurity, but far too often organizations fail to proactively manage risk. Assessing and analyzing risk should be a continuous and comprehensive exercise in any organization. As a member of an organization’s security team, you will work through risk assessment, analysis, mitigation, remediation and communication.
@@ -178,7 +179,7 @@ When a company chooses to ignore a risk and proceed with a risky activity, which
 - [ ] Acceptance
 - [ ] Transference
 
-### Security Controls
+# Security Controls
 __Security Controls are the physical, technical and administrative mechanisms that act as safeguards or countermeasures prescribed for an information system to protect the confidentiality, integrity and availability of the system__ and its information. The implementation of controls should reduce risk, hopefully to an acceptable level.
 
 - __Physical Controls are any physical deterants or tangible secuirty measures that prevent unwanted access.__
@@ -198,7 +199,7 @@ __Security Controls are the physical, technical and administrative mechanisms 
   - Secuirty Awareness Training
   - Password Policy
  
-# Module 4: Understand Governance Elements and Processes
+# Understand Governance
 (Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4)
 
 - __Procedures are the detailed step-by-step instructions to complete a task__ that support departmental or organizational policies.
@@ -206,7 +207,7 @@ __Security Controls are the physical, technical and administrative mechanisms 
 - __Standards to provide a framework to guide__ organizational towards policy compliance.
 - __Regulations/laws are commonly issued in the form of laws by governments__ and typically carry financial penalties for noncompliance.
 
-# Module 5: Understand ISC2 Code of Ethics
+# ISC2 Code of Ethics
 (Domain D1.4.1)
 
 ### IC2 Code of Ethics Preamble
