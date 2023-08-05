@@ -1,3 +1,5 @@
+All graphics and content is intellectual property subject to copyright laws protected via [licensing owned by SentienlOne](https://www.sentinelone.com/legal/). Please do not copy, redistribute, or modify.
+
 ![threatlocker_logo](https://i.imgur.com/nhMXLdH.png)
 
 ### Adding an Organization
