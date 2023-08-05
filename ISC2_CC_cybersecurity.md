@@ -254,8 +254,99 @@ Protected Health Information (PHI) - Information regarding health status, the pr
 - Risk Mitigation - Putting security controls in place to reduce the possible impact and/or likelihood of a specific risk.
 - Risk Tolerance - The level of risk an entity is willing to assume in order to achieve a potential desired result. Source: NIST SP 800-32. Risk threshold, risk appetite and acceptable risk are also terms used synonymously with risk tolerance.
 - Risk Transference - Paying an external party to accept the financial impact of a given risk.
-- Risk Treatment - The determination of the best way to address an identified risk. 
+- Risk Treatment - The determination of the best way to address an identified risk.
 
+# Chapter 2: Incident Response, Business Continuity and Disaster Recovery Concepts
+- [Module 1: Understand incident response D2.3](#understanding-incident-response)
+- [Module 2: Understand business continuity D2.1](#understand-business-continuity)
+- [Module 3: Understand disaster recovery D2.2](#understand-disaster-recovery)
+- [Chapter 2 Glossary](#chapter-2-glossary)
 
+# Understanding Incident Response
 
+### Incident Terminology 
+- Breach: The loss of control, compromise, unauthorized disclosure, unauthorized acquisition, or any similar occurrence where: a person other than an authorized user accesses or potentially accesses personally identifiable information; or an authorized user accesses personally identifiable information for other than an authorized purpose. NIST SP 800-53 Rev. 5
+- Event: Any observable occurrence in a network or system. NIST SP 800-61 Rev 2
+- Exploit: A particular attack. It is named this way because these attacks exploit system vulnerabilities.
+- Incident: An event that actually or potentially jeopardizes the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.
+- Intrusion: A security event, or combination of events, that constitutes a deliberate security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization. IETF RFC 4949 Ver 2
+- Threat: Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service. NIST SP 800-30 Rev 1
+- Vulnerability: Weakness in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. NIST SP 800-30 Rev 1
+- Zero Day: A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.
+
+![incident_response](https://i.imgur.com/OyHf7Pb.png)
+
+- Preparation: Develop a policy approved by management
+  - Identify critical data and systems, single points of failure
+  - Train staff on incident response
+  - Implement an incident response team.(covered in subsequent topic)
+  - Practice Incident Identification (First Response)
+  - Identify Roles and Responsibilities
+  - Plan the coordination of communication between stakeholders
+  - Consider the possibility that a primary method of communication may not be available
+- Detection and Analysis
+  - Monitor all possible attack vectors
+  - Analyze incident using known data and threat intelligence
+  - Prioritize incident response
+  - Standardize incident documentation
+- Containment
+  - Gather evidence
+  - Choose an appropriate containment strategy
+  - Identify the attacker
+  - Isolate the attack
+- Post-Incident Activit
+- Identify evidence that may need to be retained
+  - Document lessons learned
+
+# Understand Business Continuity
+
+- The purpose of implementing a business continuity plan is to ensure the continuity of business operations, particularly during times of significant disruption. In light of an unforeseen event that has caused disturbances in the environment, it is crucial to understand how to effectively sustain and maintain the ongoing functioning of your business.
+- Business continuity planning (BCP) refers to the proactive implementation of protocols and processes aimed at effectively restoring business operations following a disaster or any other major disruption to the organization.
+- Here are some common components of a comprehensive business continuity plan:
+  - List of the BCP team members, including multiple contact methods and backup members
+  - Immediate response procedures and checklists (security and safety procedures, fire suppression procedures, notification of appropriate emergency-response agencies, etc.)
+  - Notification systems and call trees for alerting personnel that the BCP is being enacted
+  - Guidance for management, including designation of authority for specific managers
+  - How/when to enact the plan
+  - Contact numbers for critical members of the supply chain (vendors, customers, possible external emergency providers, third-party partners)
+ 
+- What does business continuity look like in action?
+
+_Imagine that the billing department of a company suffers a complete loss in a fire. The fire occurred overnight, so no personnel were in the building at the time. A Business Impact Analysis (BIA) was performed four months ago and identified the functions of the billing department as very important to the company, but not immediately affecting other areas of work. Through a previously signed agreement, the company has an alternative area in which the billing department can work, and it can be available in less than one week. Until that area can be fully ready, customer billing inquiries will be answered by customer service staff. The billing department personnel will remain in the alternate working area until a new permanent area is available._
+
+# Understand Disaster Recovery
+- The Goal of Disaster Recovery
+  - During the examination of the Business Continuity module, we thoroughly examined the fundamental components of business continuity planning. Following this, disaster recovery planning takes over and completes the necessary steps to mitigate potential risks.
+  - In the unfortunate event of a disaster or business disruption, the Disaster Recovery Plan (DRP) plays a crucial role in directing emergency response personnel. Its ultimate objective is to ensure the complete restoration of normal business operations to their most recent reliable state.
+ 
+_At a hospital in Los Angeles, it took 260 days (about 8 and a half months) to discover that there was a compromise. In this case, the hospital could not return to doing business by using the last backup because it was riddled with a time-based malware that would corrupt all the data on the system as soon as it was restored. The hospital needed to go back nearly a year prior to discovering the incident to restore the entire system, and then restore the remaining data piece-by-piece to avoid reinfection. This scenario highlights the need for multiple levels of backup and retention periods to address the needs of the organization._
+
+- Components of a Disaster Recovery Plan. The following list includes various types of documents worth considering:
+  - Executive summary providing a high-level overview of the plan
+  - Department-specific plans
+  - Technical guides for IT personnel responsible for implementing and maintaining critical backup systems
+  - Full copies of the plan for critical disaster recovery team members
+  - Checklists for certain individuals:
+    - Critical disaster recovery team members will have checklists to help guide their actions amid the chaotic atmosphere of a disaster.
+    - IT personnel will have technical guides helping them get the alternate sites up and running.
+    - Managers and public relations personnel will have simple-to-follow, high-level documents to help them communicate the issue accurately without requiring input from team members who are busy working on the recovery.
+   
+# Chapter 2 Glossary
+- Adverse Events - Events with a negative consequence, such as system crashes, network packet floods, unauthorized use of system privileges, defacement of a web page or execution of malicious code that destroys data.
+- Breach - The loss of control, compromise, unauthorized disclosure, unauthorized acquisition or any similar occurrence where: a person other than an authorized user accesses or potentially accesses personally identifiable information; or an authorized user accesses personally identifiable information for other than an authorized purpose. Source: NIST SP 800-53 Rev. 5
+- Business Continuity (BC) - Actions, processes and tools for ensuring an organization can continue critical operations during a contingency. 
+- Business Continuity Plan (BCP) - The documentation of a predetermined set of instructions or procedures that describe how an organization’s mission/business processes will be sustained during and after a significant disruption.
+- Business Impact Analysis (BIA) - An analysis of an information system’s requirements, functions, and interdependencies used to characterize system contingency requirements and priorities in the event of a significant disruption. Reference: https://csrc.nist.gov/glossary/term/business-impact-analysis
+- Disaster Recovery (DR) - In information systems terms, the activities necessary to restore IT and communications services to an organization during and after an outage, disruption or disturbance of any kind or scale. 
+- Disaster Recovery Plan (DRP) - The processes, policies and procedures related to preparing for recovery or continuation of an organization's critical business functions, technology infrastructure, systems and applications after the organization experiences a disaster. A disaster is when an organization’s critical business function(s) cannot be performed at an acceptable level within a predetermined period following a disruption.
+- Event - Any observable occurrence in a network or system. Source: NIST SP 800-61 Rev 2 
+- Exploit - A particular attack. It is named this way because these attacks exploit system vulnerabilities.
+- Incident - An event that actually or potentially jeopardizes the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.
+- Incident Handling - The mitigation of violations of security policies and recommended practices. Source: NIST SP 800-61 Rev 2
+- Incident Response (IR) - The mitigation of violations of security policies and recommended practices. Source: NIST SP 800-61 Rev 2
+- Incident Response Plan (IRP) - The documentation of a predetermined set of instructions or procedures to detect, respond to and limit consequences of a malicious cyberattack against an organization’s information systems(s). Source: NIST SP 800-34 Rev 1
+- Intrusion - A security event, or combination of security events, that constitutes a security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization. Source: IETF RFC 4949 Ver 2
+- Security Operations Center - A centralized organizational function fulfilled by an information security team that monitors, detects and analyzes events on the network or system to prevent and resolve issues before they result in business disruptions.
+- Vulnerability - Weakness in an information system, system security procedures, internal controls or implementation that could be exploited or triggered by a threat source. Source: NIST SP 800-128.
+- Zero Day - A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.  
 
