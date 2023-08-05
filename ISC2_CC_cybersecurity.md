@@ -13,6 +13,18 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
+# Table of Contents
+[Chapter 1: Security Principles](#Chapter-1)
+[Chapter 2: Incident Response, Business Continuity and Disaster Recovery Concepts](#Chapter-2)
+
+# Chapter 1 Security Principles 
+Module 1: Understand the Security Concepts of Information Assurance (D1.1)
+Module 2: Understand the Risk Management Process (D1.2)
+Module 3: Understand Security Controls (D1.3)
+Module 4: Understand Governance Elements (D1.5)
+Module 5: Understand ISC2 Code of Ethics (D1.4)
+[Chapter 1 Glossary](#Chapter-1-Glossary)
+
 # Understand the Security Concepts of Information Assurance (D1.1)
 
 ### Confidentiality 
@@ -76,7 +88,8 @@ In today’s world of e-commerce and electronic transactions, there are opportun
 #### Privacy
 __Privacy is the right of an individual to control the distribution of information about themselves.__ While security and privacy both focus on the protection of personal and sensitive data, there is a difference between them. With the increasing rate at which data is collected and digitally stored across all industries, the push for privacy legislation and compliance with existing policies steadily grows. In today’s global economy, privacy legislation and regulations on privacy and data protection can impact corporations and industries regardless of physical location. Global privacy is an especially crucial issue when considering requirements regarding the collection and security of personal information. There are several laws that define privacy and data protection, which periodically change. Ensuring that protective security measures are in place is not enough to meet privacy regulations or to protect a company from incurring penalties or fines from mishandling, misuse, or improper protection of personal or private information. An example of a law with multinational implications is the European Union’s General Data Protection Regulation (GDPR) which applies to all organizations, foreign or domestic, doing business in the EU or any persons in the EU. Companies operating or doing business within the United States may also fall under several state legislations that regulate the collection and use of consumer data and privacy. Likewise, member nations of the EU enact laws to put GDPR into practice and sometimes add more stringent requirements. These laws, including national- and state-level laws, dictate that any entity anywhere in the world handling the private data of people in a particular legal jurisdiction must abide by its privacy requirements. As a member of an organization's data protection team, you will not be required to interpret these laws, but you will need an understanding of how they apply to your organization.
 
-# Module 2: Understand the Risk Management Process (D1.2.1, D1.2.2)
+# Module 2: Understand the Risk Management Process
+(D1.2.1, D1.2.2)
 
 Risks and security-related issues represent an ongoing concern of businesses as well as the field of cybersecurity, but far too often organizations fail to proactively manage risk. Assessing and analyzing risk should be a continuous and comprehensive exercise in any organization. As a member of an organization’s security team, you will work through risk assessment, analysis, mitigation, remediation and communication.
 
@@ -185,7 +198,7 @@ __Security Controls are the physical, technical and administrative mechanisms 
   - Secuirty Awareness Training
   - Password Policy
  
-  # Module 4: Understand Governance Elements and Processes
+# Module 4: Understand Governance Elements and Processes
 (Domain D1.5.1, D1.5.2, D1.5.3, D1.5.4)
 
 - __Procedures are the detailed step-by-step instructions to complete a task__ that support departmental or organizational policies.
@@ -209,7 +222,7 @@ The Canons represent the important beliefs held in common by the members of ISC2
 - Provide diligent and competent service to principals.
 - Advance and protect the profession.
 
-# Chapter 1 Glossary:
+# Chapter 1 Glossary
 
 - Adequate Security - Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. Source: OMB Circular A-130
 - Administrative Controls - Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction wit physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager.
@@ -256,7 +269,7 @@ Protected Health Information (PHI) - Information regarding health status, the pr
 - Risk Transference - Paying an external party to accept the financial impact of a given risk.
 - Risk Treatment - The determination of the best way to address an identified risk.
 
-# Chapter 2: Incident Response, Business Continuity and Disaster Recovery Concepts
+# Chapter 2
 - [Module 1: Understand incident response D2.3](#understanding-incident-response)
 - [Module 2: Understand business continuity D2.1](#understand-business-continuity)
 - [Module 3: Understand disaster recovery D2.2](#understand-disaster-recovery)
