@@ -524,9 +524,11 @@ Typical measures used for moderating the potential for elevated risks from misus
 
 # Understand Computer Networking 
 ![ISC2_biz_networking](https://i.imgur.com/Ayox7HD.png)
+
 This diagram represents a small business network, which we will build upon during this lesson. The lines depict wired connections. Notice how all devices behind the firewall connect via the network switch, and the firewall lies between the network switch and the internet. 
 
 ![ISC2_home_network](https://i.imgur.com/7I8zuwO.png)
+
 The network diagram below represents a typical home network. Notice the primary difference between the home network and the business network is that the router, firewall, and network switch are often combined into one device supplied by your internet provider and shown here as the wireless access point. 
 
 ### Networking Models
@@ -545,6 +547,7 @@ The network diagram below represents a typical home network. Notice the primary 
 
 ### Open Systems Interconnection (OSI) Model 
 ![ISC2_network_models](https://i.imgur.com/aVp8ynM.png)
+
 The Application, Presentation, and Session Layers (5-7) are commonly referred to simply as data. However, each layer has the potential to perform encapsulation. Encapsulation is the addition of header and possibly a footer (trailer) data by a protocol used at that layer of the OSI model. Encapsulation is particularly important when discussing Transport, Network and Data Link layers (2-4), which all generally include some form of header. 
 
 - It's worth mapping some common networking terminology to the OSI Model so you can see the value in the conceptual model. Consider the following examples: 
@@ -555,6 +558,7 @@ The Application, Presentation, and Session Layers (5-7) are commonly referred to
   - When discussing switches, bridges or WAPs sending frames, we are discussing the Data Link Layer (2).
 
 The inverse action occurs as data moves up the OSI model layers from Physical to Application. This process is known as de-encapsulation  (or decapsulation). The header and footer are used to properly interpret the data payload and are then discarded. As we move up the OSI model, the data unit becomes smaller. The encapsulation/de-encapsulation process is best depicted visually below: 
+
 ![de-encapsulation](https://i.imgur.com/HaiqF5N.png)
 
 ### Transmission Control Protocol/Internet Protocol (TCP/IP)
@@ -565,6 +569,55 @@ At the Application Layer, TCP/IP protocols include Telnet, **File Transfer Proto
 The most widely used protocol suite is TCP/IP, but it is not just a single protocol; rather, it is a protocol stack comprising dozens of individual protocols. TCP/IP is a platform-independent protocol based on open standards. However, this is both a benefit and a drawback. TCP/IP can be found in just about every available operating system, but it consumes a significant amount of resources and is relatively easy to hack into because it was designed for ease of use rather than for security.
 
 ### Internet Protocol (IPv4 and IPv6)
+IP hosts/devices associate an address with a unique logical address. An IPv4 address is expressed as four octets separated by a dot (.), for example, 216.12.146.140. Each octet may have a value between 0 and 255. However, 0 is the network itself (not a device on that network), and 255 is generally reserved for broadcast purposes. Each address is subdivided into two parts: the network number and the host. The network number assigned by an external organization, such as the Internet Corporation for Assigned Names and Numbers (ICANN), represents the organization’s network. The host represents the network interface within the network.  
+
+![IPv4_32bit](https://i.imgur.com/LLLH4Uo.png)
+
+To ease network administration, networks are typically divided into subnets. Because subnets cannot be distinguished with the addressing scheme discussed so far, a separate mechanism, the subnet mask, is used to define the part of the address used for the subnet. The mask is usually converted to decimal notation like 255.255.255.0.  
+
+| Start Range | End Range |
+| ----------- | ----------- |
+| 10.0.0.0 | 10.255.255.254 |
+| 172.16.0.0 | 172.31.255.254 |
+| 192.168.0.0 | 192.168.255.254 |
+
+The first octet of 127 is reserved for a **computer’s loopback address**. Usually, **the address 127.0.0.1** is used. The loopback address is used to provide a mechanism for self-diagnosis and troubleshooting at the machine level. 
+
+IPv6 is a modernization of IPv4, which addressed a number of weaknesses in the IPv4 environment:
+
+- A much larger address field: IPv6 addresses are 128 bits, which supports 2128 or 340,282,366,920,938,463,463,374,607,431,768,211,456 hosts. This ensures that we will not run out of addresses.
+- Improved security: IPsec is an optional part of IPv4 networks, but a mandatory component of IPv6 networks. This will help ensure the integrity and confidentiality of IP packets and allow communicating partners to authenticate with each other.
+- Improved quality of service (QoS): This will help services obtain an appropriate share of a network’s bandwidth.
+
+An IPv6 address is shown as 8 groups of four digits. Instead of numeric (0-9) digits like IPv4, IPv6 addresses use the hexadecimal range (0000-ffff) and are separated by colons (:) rather than periods (.). An example IPv6 address is **2001:0db8:0000:0000:0000:ffff:0000:0001**. To make it easier for humans to read and type, it can be shortened **by removing the leading zeros at the beginning of each field** and substituting two colons (::) for the longest consecutive zero fields. All fields must retain at least one digit. **After shortening, the example address above is rendered as 2001:db8::ffff:0:1**, which is much easier to type.
+- ::1 is the local loopback address, used the same as 127.0.0.1 in IPv4.
+- The range 2001:db8:: to 2001:db8:ffff:ffff:ffff:ffff:ffff:ffff is reserved for documentation use, just like in the examples above.
+- fc00:: to fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff are addresses reserved for internal network use and are not routable on the internet.
+
+### Ports and Protocols (Applications/Services)
+- Physcial Ports
+  - Physical ports are the ports on the routers, switches, servers, computers, etc. that you connect the wires, e.g., fiber optic cables, Cat5 cables, etc., to create a network.
+- Logical Ports
+  - In the Application Layer of the TCP/IP model (which includes the Session, Presentation, and Application Layers of the OSI model) reside numerous application- or service-specific protocols. Data types are mapped using port numbers associated with services. For example, web traffic (or HTTP) is port 80. Secure web traffic (or HTTPS) is port 443.
+  - Well-known ports (0–1023): These ports are related to the common protocols that are at the core of the Transport Control Protocol/Internet Protocol (TCP/IP) model, Domain Name Service (DNS), Simple Mail Transfer Protocol (SMTP), etc.
+  - Registered ports (1024–49151): These ports are often associated with proprietary applications from vendors and developers. While they are officially approved by the Internet Assigned Numbers Authority (IANA), in practice many vendors simply implement a port of their choosing. Examples include Remote Authentication Dial-In User Service (RADIUS) authentication (1812), Microsoft SQL Server (1433/1434) and the Docker REST API (2375/2376).
+  - Dynamic or private ports (49152–65535): Whenever a service is requested that is associated with well-known or registered ports, those services will respond with a dynamic port that is used for that session and then released.
+
+Secure Ports
+Some network protocols transmit information in clear text, meaning it is not encrypted and should not be used. Clear text information is subject to network sniffing. Network sniffing could also reveal the content of documents and other files if they are sent via insecure protocols. The table below shows some of the insecure protocols along with recommended secure alternatives.
+
+| Insecure Port | Description | Protocol | Secure Alt Port | Protocol |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 21 - FTP | Port 21, File Transfer Protocol (FTP) sends the username and password using plaintext from the client to the server. This could be intercepted by an attacker and later used to retrieve confidential information from the server. The secure alternative, SFTP, on port 22 uses encryption to protect the user credentials and packets of data being transferred. | File Transfer Protocol | 22* - SFTP | Secure File Transfer Protocol |
+| 23 - Telnet | Port 23, telnet, is used by many Linux systems and any other systems as a basic text-based terminal. All information to and from the host on a telnet connection is sent in plaintext and can be intercepted by an attacker. This includes username and password as well as all information that is being presented on the screen, since this interface is all text. Secure Shell (SSH) on port 22 uses encryption to ensure that traffic between the host and terminal is not sent in a plaintext format. | Telnet | 22* - SFTP | Secure Shell |
+| 25 - SMTP | Port 25, Simple Mail Transfer Protocol (SMTP) is the default unencrypted port for sending email messages. Since it is unencrypted, data contained within the emails could be discovered by network sniffing. The secure alternative is to use port 587 for SMTP using Transport Layer Security (TLS) which will encrypt the data between the mail client and the mail server. | Simple Mail Transfer Protocol | 587 - SMTP | SMTP with TLS |
+| 37 - Time | Port 37, Time Protocol, may be in use by legacy equipment and has mostly been replaced by using port 123 for Network Time Protocol (NTP). NTP on port 123 offers better error-handling capabilities, which reduces the likelihood of unexpected errors. | Time Protocol | 123 - NTP | Network Time Protocol |
+| 53 - DNS | Port 53, Domain Name Service (DNS), is still used widely. However, using DNS over TLS (DoT) on port 853 protects DNS information from being modified in transit. | Domain Name Service | 853 - DoT | DNS over TLS (DoT) |
+| 80 - HTTP | Port 80, HyperText Transfer Protocol (HTTP) is the basis of nearly all web browser traffic on the internet. Information sent via HTTP is not encrypted and is susceptible to sniffing attacks. HTTPS using TLS encryption is preferred, as it protects the data in transit between the server and the browser. Note that this is often notated as SSL/TLS. Secure Sockets Layer (SSL) has been compromised is no longer considered secure. It is now recommended for web servers and clients to use Transport Layer Security (TLS) 1.3 or higher for the best protection. | HyperText Transfer Protocol | 443 - HTTPS | HyperText Transfer Protocol (SSL/TLS) |
+| 143 - IMAP | Port 143, Internet Message Access Protocol (IMAP) is a protocol used for retrieving emails. IMAP traffic on port 143 is not encrypted and susceptible to network sniffing. The secure alternative is to use port 993 for IMAP, which adds SSL/TLS security to encrypt the data between the mail client and the mail server. | Internet Message Access Protocol | 993 - IMAP | IMAP for SSL/TLS |
+| 161/162 - SNMP | Ports 161 and 162, Simple Network Management Protocol, are commonly used to send and receive data used for managing infrastructure devices. Because sensitive information is often included in these messages, it is recommended to use SNMP version 2 or 3 (abbreviated SNMPv2 or SNMPv3) to include encryption and additional security features. Unlike many others discussed here, all versions of SNMP use the same ports, so there is not a definitive secure and insecure pairing. Additional context will be needed to determine if information on ports 161 and 162 is secured or not. | Simple Network Management Protocol | 161/162 - SNMP | SNMPv3 |
+| 445 - SMB | Port 445, Server Message Block (SMB), is used by many versions of Windows for accessing files over the network. Files are transmitted unencrypted, and many vulnerabilities are well-known. Therefore, it is recommended that traffic on port 445 should not be allowed to pass through a firewall at the network perimeter. A more secure alternative is port 2049, Network File System (NFS). Although NFS can use encryption, it is recommended that NFS not be allowed through firewalls either. | Server Message Block | 2049 - NFS | Network File System |
+| 389 - LDAP | Port 389, Lightweight Directory Access Protocol (LDAP), is used to communicate directory information from servers to clients. This can be an address book for email or usernames for logins. The LDAP protocol also allows records in the directory to be updated, introducing additional risk. Since LDAP is not encrypted, it is susceptible to sniffing and manipulation attacks. Lightweight Directory Access Protocol Secure (LDAPS) adds SSL/TLS security to protect the information while it is in transit. | Lightweight Directory Access Protocol | 636 - LDAPS | Lightweight Directory Access Protocol Secure |
 
 # Understand Network Cyber Threats and Attacks
 
