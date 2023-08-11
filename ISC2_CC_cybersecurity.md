@@ -223,7 +223,11 @@ The Canons represent the important beliefs held in common by the members of ISC2
 - Provide diligent and competent service to principals.
 - Advance and protect the profession.
 
-# Chapter 1 Glossary
+# Chapter 1 Summary
+- [Chapter 1 Quizlet Flashcards](https://quizlet.com/669177667/chapter-1-security-principles-flash-cards/)
+- [Chapter 1 Overview](https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_01/assets/EDU-CC-70175-ch01_Takeaway.pdf?_&d2lSessionVal=6eLDFtTzOfyS237SfA6UBMP3K&ou=9541)
+
+### Chapter 1 Glossary
 
 - Adequate Security - Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. Source: OMB Circular A-130
 - Administrative Controls - Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction wit physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager.
@@ -345,7 +349,11 @@ _At a hospital in Los Angeles, it took 260 days (about 8 and a half months) to d
     - IT personnel will have technical guides helping them get the alternate sites up and running.
     - Managers and public relations personnel will have simple-to-follow, high-level documents to help them communicate the issue accurately without requiring input from team members who are busy working on the recovery.
    
-# Chapter 2 Glossary
+# Chapter 2 Summary
+- [Chapter 2 Quizlet Flashcards](https://quizlet.com/669183755/chapter-2-incident-response-business-continuity-bc-and-disaster-recovery-dr-concepts-flash-cards/)
+- [Chapter 2 Overview](https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_02/assets/EDU-CC-70185-ch02_Takeaway.pdf?_&d2lSessionVal=6eLDFtTzOfyS237SfA6UBMP3K&ou=9541)
+
+### Chapter 3 Glossary
 - Adverse Events - Events with a negative consequence, such as system crashes, network packet floods, unauthorized use of system privileges, defacement of a web page or execution of malicious code that destroys data.
 - Breach - The loss of control, compromise, unauthorized disclosure, unauthorized acquisition or any similar occurrence where: a person other than an authorized user accesses or potentially accesses personally identifiable information; or an authorized user accesses personally identifiable information for other than an authorized purpose. Source: NIST SP 800-53 Rev. 5
 - Business Continuity (BC) - Actions, processes and tools for ensuring an organization can continue critical operations during a contingency. 
@@ -362,5 +370,147 @@ _At a hospital in Los Angeles, it took 260 days (about 8 and a half months) to d
 - Intrusion - A security event, or combination of security events, that constitutes a security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization. Source: IETF RFC 4949 Ver 2
 - Security Operations Center - A centralized organizational function fulfilled by an information security team that monitors, detects and analyzes events on the network or system to prevent and resolve issues before they result in business disruptions.
 - Vulnerability - Weakness in an information system, system security procedures, internal controls or implementation that could be exploited or triggered by a threat source. Source: NIST SP 800-128.
-- Zero Day - A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.  
+- Zero Day - A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.
+
+# Chapter 3
+- [Module 1: Understand Access Control Concepts D3.1, D3.1.3, D3.1.5, D3.2, D3.2.1, D3.2.2, D3.2.5](#understand-access-control-concepts)
+- [Module 2: Understand Physical Access Controls D3.1, D3.1.1, D3.1.2](#understand-physical-access-controls)
+- [Module 3: Understand Logical Access Controls D3.2, D3.2.3, D3.2.4, D3.2.5](#understand-logical-access-controls)
+- [Module 4: Chapter 3 Summary D3.1, D3.1.1, D3.1.2, D3.1.3, D3.2, D3.2.1, D3.2.2, D3.2.3, D3.2.4, D3.2.5](#chapter-2-glossary)
+- [Module 4: Chapter 3 Summary](#chapter-2-glossary)
+
+# Understand Access Control Concepts
+
+What is Security Control?
+A control is a safeguard or countermeasure designed to preserve Confidentiality, Integrity and Availability of data. This, of course, is the CIA Triad.  
+
+Access control involves limiting what objects can be available to what subjects according to what rules. We will further define objects, subjects and rules later in this chapter. For now, remember these three words, as they are the foundation upon which we will build. 
+
+One brief example of a control is a firewall, which is included in a system or network to prevent something from the outside from coming in and disturbing or compromising the environment. The firewall can also prevent information on the inside from going out into the Web where it could be viewed or accessed by unauthorized individuals. 
+
+### Controls Overview
+Access controls are not just about restricting access to information systems and data, but also about allowing access. It is about granting the appropriate level of access to authorized personnel and processes and denying access to unauthorized functions or individuals.
+
+#### A subject:
+A **subject** can be defined as **any entity that requests access to our assets**. The entity requesting access may be a user, a client, a process or a program, for example. A subject is the initiator of a request for service; therefore, a subject is referred to as “active.”
+- Is a user, a process, a procedure, a client (or a server), a program, a device such as an endpoint, workstation, smartphone or removable storage device with onboard firmware.
+- Is active: It initiates a request for access to resources or services.
+- Requests a service from an object.
+- Should have a level of clearance (permissions) that relates to its ability to successfully access services or resources.
+
+#### An Object
+**An object is a device, process, person, user, program, server, client or other entity that responds to a request for service.** By definition, anything that a subject attempts to access is referred to as an object. 
+- Is a building, a computer, a file, a database, a printer or scanner, a server, a communications resource, a block of memory, an input/output port, a person, a software task, thread or process.
+- Is anything that provides service to a user.
+- Is passive.
+- Responds to a request.
+- May have a classification.
+
+#### A Rule
+An access **rule is an instruction developed to allow or deny access to an object by comparing the validated identity of the subject to an access control list**. One example of a rule is a firewall access control list. A rule can:
+- Compare multiple attributes to determine appropriate access.
+- Allow access to an object.
+- Define how much access is allowed.
+- Deny access to an object.
+- Apply time-based access.
+
+### Defense in Depth
+![defense_n_depth](https://i.imgur.com/amjngig.png)
+As you can see, we are not just looking at system access. We are looking at all access permissions including building access, access to server rooms, access to networks and applications and utilities. These are all implementations of access control and are part of a **layered defense** strategy, also known as **defense in depth**, developed by an organization. **Defense in depth describes an information security strategy that integrates people, technology and operations capabilities to establish variable barriers across multiple layers and missions of the organization. It applies multiple countermeasures in a layered fashion to fulfill security objectives.** 
+- A **technical** example of defense in depth is when a **username and password** are required for logging in to your account, **followed by a code sent to your phone** to verify your identity. Another example of multiple technical layers is when additional **firewalls** are used to separate untrusted networks with differing security requirements, such as the internet from trusted networks that house servers with sensitive data in the organization.
+- For a **non-technical** example, consider the multiple layers of access required to get to the actual data in a data center. First, **a lock** on the door provides a physical barrier to access the data storage devices. Second, a **technical access rule** prevents access to the data via the network. Finally, **a policy, or administrative control defines the rules** that assign access to authorized individuals.
+
+### Principle of Least Privilege
+...is a **standard of permitting only minimum access necessary for users or programs to fulfill their function**. Users are provided access only to the systems and programs they need to perform their specific job or tasks. For example, only individuals working in billing will be allowed to view consumer financial data, and even fewer individuals will have the authority to change or delete that data. This maintains confidentiality and integrity while also allowing availability by providing administrative access with an appropriate password or sign-on that proves the user has the appropriate permissions to access that data.
+
+#### Privileged Access Management
+Privileged access management provides the first and perhaps most familiar use case. Consider a human user identity that is granted various create, read, update, and delete privileges on a database. Without privileged access management, the system’s access control would have those privileges assigned to the administrative user in a static way, effectively “on” 24 hours a day, every day.
+- **Privileged accounts are those with permissions beyond those of normal users, such as managers and administrators.** Broadly speaking, these accounts have elevated privileges and are used by many different classes of users, including:
+  - Systems administrators, who have the principal responsibilities for operating systems, applications deployment and performance management. 
+  - Help desk or IT support staff, who often need to view or manipulate endpoints, servers and applications platforms by using privileged or restricted operations. 
+  - Security analysts, who may require rapid access to the entire IT infrastructure, systems, endpoints and data environment of the organization. 
+Typical measures used for moderating the potential for elevated risks from misuse or abuse of privileged accounts include the following: 
+- More extensive and detailed logging than regular user accounts. The record of privileged actions is vitally important, as both a deterrent (for privileged account holders that might be tempted to engage in untoward activity) and an administrative control (the logs can be audited and reviewed to detect and respond to malicious activity). 
+- More stringent access control than regular user accounts. As we will see emphasized in this course, even nonprivileged users should be required to use MFA methods to gain access to organizational systems and networks. - Privileged users—or more accurately, highly trusted users with access to privileged accounts—should be required to go through additional or more rigorous authentication prior to those privileges. Just-in-time identity should also be considered as a way to restrict the use of these privileges to specific tasks and the times in which the user is executing them. 
+- Deeper trust verification than regular user accounts. Privileged account holders should be subject to more detailed background checks, stricter nondisclosure agreements and acceptable use policies, and be willing to be subject to financial investigation. Periodic or event-triggered updates to these background checks may also be in order, depending on the nature of the organization’s activities and the risks it faces. 
+- More auditing than regular user accounts. Privileged account activity should be monitored and audited at a greater rate and extent than regular usage.
+
+### Segregation of Duties 
+**Segregation of duties is based on the security practice that no one person should control an entire high-risk transaction from start to finish**. Segregation of duties breaks the transaction into separate parts and requires a different person to execute each part of the transaction. For example, an employee may submit an invoice for payment to a vendor (or for reimbursement to themselves), but it must be approved by a manager prior to payment
+
+### Two-Person Integrity 
+- The two-person rule is a security strategy that requires a minimum of two people to be in an area together, making it impossible for a person to be in the area alone. Many access control systems prevent an individual cardholder from entering a selected high-security area unless accompanied by at least one other person. Use of the two-person rule can help reduce insider threats to critical areas by requiring at least two individuals to be present at any time.
+- It is also used for life safety within a security area; if one person has a medical emergency, there will be assistance present.
+
+# Understand Physical Access Controls
+- **Physical access controls are items you can physically touch**. They include physical mechanisms deployed to prevent, monitor, or detect direct contact with systems or areas within a facility. Examples of physical access controls include security guards, fences, motion detectors, locked doors/gates, sealed windows, lights, cable protection, laptop locks, badges, swipe cards, guard dogs, cameras, mantraps/turnstiles, and alarms.
+- Physical access controls include fences, barriers, turnstiles, locks and other features that prevent unauthorized individuals from entering a physical site, such as a workplace.
+- Monitoring - the use of physical access controls and monitoring personnel and equipment entering and leaving as well as auditing/logging all physical events are primary elements in maintaining overall organizational security.
+  - Cameras are normally integrated into the overall security program and centrally monitored. Cameras provide a flexible method of surveillance and monitoring.
+  - A log is a record of events that have occurred. Electronic systems that capture system and security logs within software will be covered in another section.
+  - Security guards are an effective physical security control.
+  - Alarm systems are commonly found on doors and windows in homes and office buildings. In their simplest form, they are designed to alert the appropriate personnel when a door or window is opened unexpectedly.
+
+# Understand Logical Access Controls
+
+- Logical access controls are electronic methods that limit someone from getting access to systems, and sometimes even to tangible assets or areas. Types of logical access controls include: 
+  - Passwords
+  - Biometrics (implemented on a system, such as a smartphone or laptop)
+  - Badge/token readers connected to a system
+
+- **Discretionary access control (DAC) is a specific type of access control policy that is enforced over all subjects and objects in an information system**. In DAC, the policy specifies that a subject who has been granted access to information can do one or more of the following:
+  - Pass the information to other subjects or objects 
+  - Grant its privileges to other subjects 
+  - Change security attributes on subjects, objects, information systems or system components 
+  - Choose the security attributes to be associated with newly created or revised objects; and/or 
+  - Change the rules governing access control; mandatory access controls restrict this capability
+ 
+- Mandatory Access Control (MAC)
+**A mandatory access control (MAC) policy is one that is uniformly enforced across all subjects and objects within the boundary of an information system.** In simplest terms, this means that only properly designated security administrators, as trusted subjects, can modify any of the security rules that are established for subjects and objects within the system. This also means that for all subjects defined by the organization (that is, known to its integrated identity management and access control system), the organization assigns a subset of total privileges for a subset of objects, such that the subject is constrained from doing any of the following:
+- Passing the information to unauthorized subjects or objects
+- Granting its privileges to other subjects
+- Changing one or more security attributes on subjects, objects, the information system or system components
+- Choosing the security attributes to be associated with newly created or modified objects
+- Changing the rules governing access control
+
+- Role-based Access Control
+  - Role-based access control (RBAC), as the name suggests, sets up user permissions based on roles. Each role represents users with similar or identical permissions.
+  - Provides each worker privileges based on what role they have in the organization.
+  - Only Human Resources staff have access to personnel files, for example; only Finance has access to bank accounts; each manager has access to their own direct reports and their own department.
+  - Very high-level system administrators may have access to everything; new employees would have very limited access, the minimum required to do their jobs.
+ 
+# Chapter 3 Summary
+- [Chapter 3 Quizlet Flashcards](https://quizlet.com/669187151/chapter-3-access-controls-concepts-flash-cards/)
+- [Chapter 3 Overview](https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_03/assets/EDU-CC-70255-ch03_Takeaway.pdf?_&d2lSessionVal=6eLDFtTzOfyS237SfA6UBMP3K&ou=9541)
+
+### Chapter 3 Glossary
+- Audit - Independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures. NIST SP 1800-15B
+- Crime Prevention through Environmental Design (CPTED) - An architectural approach to the design of buildings and spaces which emphasizes passive features to reduce the likelihood of criminal activity.
+- Defense in Depth - Information security strategy integrating people, technology, and operations capabilities to establish variable barriers across multiple layers and missions of the organization. Source: NIST SP 800-53 Rev 4
+- Discretionary Access Control (DAC) - A certain amount of access control is left to the discretion of the object’s owner, or anyone else who is authorized to control the object’s access. The owner can determine who should have access rights to an object and what those rights should be. NIST SP 800-192
+- Encrypt - To protect private information by putting it into a form that can only be read by people who have permission to do so.
+- Firewalls - Devices that enforce administrative security policies by filtering incoming traffic based on a set of rules.
+- Insider Threat - An entity with authorized access that has the potential to harm an information system through destruction, disclosure, modification of data, and/or denial of service. NIST SP 800-32
+- iOS - An operating system manufactured by Apple Inc. Used for mobile devices.
+- Layered Defense - The use of multiple controls arranged in series to provide several consecutive controls to protect an asset; also called defense in depth.
+- Linux - An operating system that is open source, making its source code legally available to end users.
+- Log Anomaly - A system irregularity that is identified when studying log entries which could represent events of interest for further surveillance.
+- Logging - Collecting and storing user activities in a log, which is a record of the events occurring within an organization’s systems and networks. NIST SP 1800-25B.
+- Logical Access Control Systems - An automated system that controls an individual’s ability to access one or more computer system resources, such as a workstation, network, application or database. A logical access control system requires the validation of an individual’s identity through some mechanism, such as a PIN, card, biometric or other token. It has the capability to assign different access privileges to different individuals depending on their roles and responsibilities in an organization. NIST SP 800-53 Rev.5.
+- Mandatory Access Control - Access control that requires the system itself to manage access controls in accordance with the organization’s security policies.
+- Mantrap - An entrance to a building or an area that requires people to pass through two doors with only one door opened at a time.
+- Object - Passive information system-related entity (e.g., devices, files, records, tables, processes, programs, domains) containing or receiving information. Access to an object (by a subject) implies access to the information it contains. See subject. Source: NIST SP 800-53 Rev 4
+- Physical Access Controls - Controls implemented through a tangible mechanism. Examples include walls, fences, guards, locks, etc. In modern organizations, many physical control systems are linked to technical/logical systems, such as badge readers connected to door locks.
+- Principle of Least Privilege - The principle that users and programs should have only the minimum privileges necessary to complete their tasks. NIST SP 800-179
+- Privileged Account - An information system account with approved authorizations of a privileged user. NIST SP 800-53 Rev. 4
+- Ransomware - A type of malicious software that locks the computer screen or files, thus preventing or limiting a user from accessing their system and data until money is paid.
+- Role-based access control (RBAC) - An access control system that sets up user permissions based on roles.
+- Rule - An instruction developed to allow or deny access to a system by comparing the validated identity of the subject to an access control list.
+- Segregation of Duties - The practice of ensuring that an organizational process cannot be completed by a single person; forces collusion as a means to reduce insider threats. Also commonly known as Separation of Duties.
+- Subject - Generally an individual, process or device causing information to flow among objects or change to the system state. Source: NIST SP800-53 R4
+- Technical Controls - The security controls (i.e., safeguards or countermeasures) for an information system that are primarily implemented and executed by the information system through mechanisms contained in the hardware, software or firmware components of the system.
+- Turnstile - A one-way spinning door or barrier that allows only one person at a time to enter a building or pass through an area.
+- Unix - An operating system used in software development.
+- User Provisioning - The process of creating, maintaining and deactivating user identities on a system. 
+
 
