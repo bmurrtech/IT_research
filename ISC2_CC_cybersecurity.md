@@ -16,6 +16,9 @@ This work is licensed under a
 # Table of Contents
 - [Chapter 1: Security Principles](#chapter-1)
 - [Chapter 2: Incident Response, Business Continuity and Disaster Recovery Concepts](#chapter-2)
+- [Chapter 3: Access Control Concepts](#chapter-3)
+- [Chapter 4: Network Security](#chapter-4)
+- [Chapter 5: Security Operations](#chapter-5)
 
 # Chapter 1
 - [Module 1: Understand the Security Concepts of Information Assurance (D1.1)](#understand-security)
@@ -513,4 +516,63 @@ Typical measures used for moderating the potential for elevated risks from misus
 - Unix - An operating system used in software development.
 - User Provisioning - The process of creating, maintaining and deactivating user identities on a system. 
 
+# Chapter 4
+- [Module 1: Understand Computer Networking (D4.1.1, D4.1.2)](#understand-computer-networking)
+- [Module 2: Understand Network Cyber Threats and Attacks (D4.1.2, D4.2.2, D4.2.3)](#understand-network-cyber-threats-and-attacks)
+- [Module 3: Understand Network Security Infrastructure (D4.3.1, D4.3.2)](#understand-network-security-infrastructure)
+- [Modual 4: Summary](#chapter-4-summary)
+
+# Understand Computer Networking 
+![ISC2_biz_networking](https://i.imgur.com/Ayox7HD.png)
+This diagram represents a small business network, which we will build upon during this lesson. The lines depict wired connections. Notice how all devices behind the firewall connect via the network switch, and the firewall lies between the network switch and the internet. 
+
+![ISC2_home_network](https://i.imgur.com/7I8zuwO.png)
+The network diagram below represents a typical home network. Notice the primary difference between the home network and the business network is that the router, firewall, and network switch are often combined into one device supplied by your internet provider and shown here as the wireless access point. 
+
+### Networking Models
+- Many different models, architectures and standards exist that provide ways to interconnect different hardware and software systems with each other for the purposes of sharing information, coordinating their activities and accomplishing joint or shared tasks.
+- Computers and networks emerge from the integration of communication devices, storage devices, processing devices, security devices, input devices, output devices, operating systems, software, services, data and people.
+- Translating the organization’s security needs into safe, reliable and effective network systems needs to start with a simple premise. The purpose of all communications is to exchange information and ideas between people and organizations so that they can get work done.
+- Those simple goals can be re-expressed in network (and security) terms such as:
+  - Provide reliable, managed communications between hosts (and users)
+  - Isolate functions in layers
+  - Use packets as the basis of communication
+  - Standardize routing, addressing and control
+  - Allow layers beyond internetworking to add functionality
+  - Be vendor-agnostic, scalable and resilient
+- Networking Terms and Models
+  - 
+
+### Open Systems Interconnection (OSI) Model 
+![ISC2_network_models](https://i.imgur.com/aVp8ynM.png)
+The Application, Presentation, and Session Layers (5-7) are commonly referred to simply as data. However, each layer has the potential to perform encapsulation. Encapsulation is the addition of header and possibly a footer (trailer) data by a protocol used at that layer of the OSI model. Encapsulation is particularly important when discussing Transport, Network and Data Link layers (2-4), which all generally include some form of header. 
+
+- It's worth mapping some common networking terminology to the OSI Model so you can see the value in the conceptual model. Consider the following examples: 
+  - When someone references an image file like a JPEG or PNG, we are talking about the Presentation Layer (6). 
+  - When discussing logical ports such as NetBIOS, we are discussing the Session Layer (5).
+  - When discussing TCP/UDP, we are discussing the Transport Layer (4).
+  - When discussing routers sending packets, we are discussing the Network Layer (3). 
+  - When discussing switches, bridges or WAPs sending frames, we are discussing the Data Link Layer (2).
+
+The inverse action occurs as data moves up the OSI model layers from Physical to Application. This process is known as de-encapsulation  (or decapsulation). The header and footer are used to properly interpret the data payload and are then discarded. As we move up the OSI model, the data unit becomes smaller. The encapsulation/de-encapsulation process is best depicted visually below: 
+![de-encapsulation](https://i.imgur.com/HaiqF5N.png)
+
+### Transmission Control Protocol/Internet Protocol (TCP/IP)
+At the Application Layer, TCP/IP protocols include Telnet, **File Transfer Protocol (FTP), Simple Mail Transport Protocol (SMTP)**, and Domain Name Service (DNS). The two primary Transport Layer protocols of TCP/IP are TCP and UDP. TCP is a full-duplex connection-oriented protocol, whereas UDP is a simplex connectionless protocol. In the Internet Layer, **Internet Control Message Protocol (ICMP)** is used to determine the health of a network or a specific link. ICMP is utilized by ping, traceroute and other network management tools. The ping utility employs ICMP echo packets and bounces them off remote systems. 
+
+![TCP_IP](https://i.imgur.com/5ycfUN7.png)
+
+The most widely used protocol suite is TCP/IP, but it is not just a single protocol; rather, it is a protocol stack comprising dozens of individual protocols. TCP/IP is a platform-independent protocol based on open standards. However, this is both a benefit and a drawback. TCP/IP can be found in just about every available operating system, but it consumes a significant amount of resources and is relatively easy to hack into because it was designed for ease of use rather than for security.
+
+### Internet Protocol (IPv4 and IPv6)
+
+# Understand Network Cyber Threats and Attacks
+
+# Understand Network Security Infrastructure
+
+# Chapter 4 Summary
+- []()
+- []()
+
+### Chapter 4 Glossary
 
