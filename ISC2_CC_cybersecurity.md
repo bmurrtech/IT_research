@@ -775,41 +775,258 @@ VLANs do not guarantee a network’s security. At first glance, it may seem that
 - [Chapter 4 Glossary Flash Cards](https://quizlet.com/669190409/chapter-4-network-security-flash-cards/)
 
 ### Chapter 4 Glossary
-Application programming interface (API) - A set of routines, standards, protocols, and tools for building software applications to access a web-based software application or web tool.
-Bit - The most essential representation of data (zero or one) at Layer 1 of the Open Systems Interconnection (OSI) model.
-Broadcast - Broadcast transmission is a one-to-many (one-to-everyone) form of sending internet traffic.
-Byte - The byte is a unit of digital information that most commonly consists of eight bits.
-Cloud computing - A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. NIST 800-145
-Community cloud - A system in which the cloud infrastructure is provisioned for exclusive use by a specific community of consumers from organizations that have shared concerns (e.g., mission, security requirements, policy and compliance considerations). It may be owned, managed and operated by one or more of the organizations in the community, a third party or some combination of them, and it may exist on or off premises. NIST 800-145 
-De-encapsulation - The opposite process of encapsulation, in which bundles of data are unpacked or revealed.
-Denial-of-Service (DoS) - The prevention of authorized access to resources or the delaying of time-critical operations. (Time-critical may be milliseconds or it may be hours, depending upon the service provided.) Source: NIST SP 800-27 Rev A
-Domain Name Service (DNS) - This acronym can be applied to three interrelated elements: a service, a physical server and a network protocol.
-Encapsulation - Enforcement of data hiding and code hiding during all phases of software development and operational use. Bundling together data and methods is the process of encapsulation; its opposite process may be called unpacking, revealing, or using other terms. Also used to refer to taking any set of data and packaging it or hiding it in another data structure, as is common in network protocols and encryption.
-Encryption - The process and act of converting the message from its plaintext to ciphertext. Sometimes it is also referred to as enciphering. The two terms are sometimes used interchangeably in literature and have similar meanings.
-File Transfer Protocol (FTP) - The internet protocol (and program) used to transfer files between hosts.
-Fragment attack - In a fragment attack, an attacker fragments traffic in such a way that a system is unable to put data packets back together. 
-Hardware - The physical parts of a computer and related devices.
-Hybrid cloud - A combination of public cloud storage and private cloud storage where some critical data resides in the enterprise’s private cloud while other data is stored and accessible from a public cloud storage provider.
-Infrastructure as a Service (IaaS) - The provider of the core computing, storage and network hardware and software that is the foundation upon which organizations can build and then deploy applications.  IaaS is popular in the data center where software and servers are purchased as a fully outsourced service and usually billed on usage and how much of the resource is used.
-Internet Control Message Protocol (ICMP) - An IP network protocol standardized by the Internet Engineering Task Force (IETF) through RFC 792 to determine if a particular service or host is available.
-Internet Protocol (IPv4) - Standard protocol for transmission of data from source to destinations in packet-switched communications networks and interconnected systems of such networks. CNSSI 4009-2015
-Man-in-the-Middle - An attack where the adversary positions himself in between the user and the system so that he can intercept and alter data traveling between them. Source: NISTIR 7711
-Microsegmentation - Part of a zero-trust strategy that breaks LANs into very small, highly localized zones using firewalls or similar technologies. At the limit, this places firewall at every connection point.
-Oversized Packet Attack - Purposely sending a network packet that is larger than expected or larger than can be handled by the receiving system, causing the receiving system to fail unexpectedly. 
-Packet - Representation of data at Layer 3 of the Open Systems Interconnection (OSI) model.
-Payload - The primary action of a malicious code attack.
-Payment Card Industry Data Security Standard (PCI DSS) - An information security standard administered by the Payment Card Industry Security Standards Council that applies to merchants and service providers who process credit or debit card transactions.
-Platform as a Service (PaaS) - The web-authoring or application development middleware environment that allows applications to be built in the cloud before they’re deployed as SaaS assets.
-Private cloud - The phrase used to describe a cloud computing platform that is implemented within the corporate firewall, under the control of the IT department. A private cloud is designed to offer the same features and benefits of cloud systems, but removes a number of objections to the cloud computing model, including control over enterprise and customer data, worries about security, and issues connected to regulatory compliance.
-Protocols - A set of rules (formats and procedures) to implement and control some type of association (that is, communication) between systems. NIST SP 800-82 Rev. 2
-Public cloud - The cloud infrastructure is provisioned for open use by the general public. It may be owned, managed, and operated by a business, academic, or government organization, or some combination of them. It exists on the premises of the cloud provider. NIST SP 800-145
-Simple Mail Transport Protocol (SMTP) - The standard communication protocol for sending and receiving emails between senders and receivers.
-Software - Computer programs and associated data that may be dynamically written or modified during execution. NIST SP 80-37 Rev. 2
-Software as a Service (SaaS) - The cloud customer uses the cloud provider’s applications running within a cloud infrastructure. The applications are accessible from various client devices through either a thin client interface, such as a web browser or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings. Derived from NIST 800-145
-Spoofing - Faking the sending address of a transmission to gain illegal entry into a secure system. CNSSI 4009-2015 
-Transport Control Protocol/Internet Protocol (TCP/IP) Model - Internetworking protocol model created by the IETF, which specifies four layers of functionality: Link layer (physical communications), Internet Layer (network-to-network communication), Transport Layer (basic channels for connections and connectionless exchange of data between hosts), and Application Layer, where other protocols and user applications programs make use of network services.
-Virtual Local Area Network (VLAN) - A logical group of workstations, servers, and network devices that appear to be on the same LAN despite their geographical distribution.
-VPN - A virtual private network (VPN), built on top of existing networks, that can provide a secure communications mechanism for transmission between networks.
-Wireless Area Network (WLAN) - A group of computers and devices that are located in the same vicinity, forming a network based on radio transmissions rather than wired connections. A Wi-Fi is network is a type of WLAN.
-Zenmap - The graphical user interface (GUI) for the Nmap Security Scanner, an open-source application that scans networks to determine everything that is connected as well as other information.
-Zero Trust - Removing the design belief that the network has any trusted space. Security is managed at each possible level, representing the most granular asset. Microsegmentation of workloads is a tool of the model. 
+- Application programming interface (API) - A set of routines, standards, protocols, and tools for building software applications to access a web-based software application or web tool.
+- Bit - The most essential representation of data (zero or one) at Layer 1 of the Open Systems Interconnection (OSI) model.
+- Broadcast - Broadcast transmission is a one-to-many (one-to-everyone) form of sending internet traffic.
+- Byte - The byte is a unit of digital information that most commonly consists of eight bits.
+- Cloud computing - A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. NIST 800-145
+- Community cloud - A system in which the cloud infrastructure is provisioned for exclusive use by a specific community of consumers from organizations that have shared concerns (e.g., mission, security requirements, policy and compliance considerations). It may be owned, managed and operated by one or more of the organizations in the community, a third party or some combination of them, and it may exist on or off premises. NIST 800-145
+- De-encapsulation - The opposite process of encapsulation, in which bundles of data are unpacked or revealed.
+- Denial-of-Service (DoS) - The prevention of authorized access to resources or the delaying of time-critical operations. (Time-critical may be milliseconds or it may be hours, depending upon the service provided.) Source: NIST SP 800-27 Rev A
+- Domain Name Service (DNS) - This acronym can be applied to three interrelated elements: a service, a physical server and a network protocol.
+- Encapsulation - Enforcement of data hiding and code hiding during all phases of software development and operational use. Bundling together data and methods is the process of encapsulation; its opposite process may be called unpacking, revealing, or using other terms. Also used to refer to taking any set of data and packaging it or hiding it in another data structure, as is common in network protocols and encryption.
+- Encryption - The process and act of converting the message from its plaintext to ciphertext. Sometimes it is also referred to as enciphering. The two terms are sometimes used interchangeably in literature and have similar meanings.
+- File Transfer Protocol (FTP) - The internet protocol (and program) used to transfer files between hosts.
+- Fragment attack - In a fragment attack, an attacker fragments traffic in such a way that a system is unable to put data packets back together.
+- Hardware - The physical parts of a computer and related devices.
+- Hybrid cloud - A combination of public cloud storage and private cloud storage where some critical data resides in the enterprise’s private cloud while other data is stored and accessible from a public cloud storage provider.
+- Infrastructure as a Service (IaaS) - The provider of the core computing, storage and network hardware and software that is the foundation upon which organizations can build and then deploy applications.  IaaS is popular in the data center where software and servers are purchased as a fully outsourced service and usually billed on usage and how much of the resource is used.
+- Internet Control Message Protocol (ICMP) - An IP network protocol standardized by the Internet Engineering Task Force (IETF) through RFC 792 to determine if a particular service or host is available.
+- Internet Protocol (IPv4) - Standard protocol for transmission of data from source to destinations in packet-switched communications networks and interconnected systems of such networks. CNSSI 4009-2015
+- Man-in-the-Middle - An attack where the adversary positions himself in between the user and the system so that he can intercept and alter data traveling between them. Source: NISTIR 7711
+- Microsegmentation - Part of a zero-trust strategy that breaks LANs into very small, highly localized zones using firewalls or similar technologies. At the limit, this places firewall at every connection point.
+- Oversized Packet Attack - Purposely sending a network packet that is larger than expected or larger than can be handled by the receiving system, causing the receiving system to fail unexpectedly.
+- Packet - Representation of data at Layer 3 of the Open Systems Interconnection (OSI) model.
+- Payload - The primary action of a malicious code attack.
+- Payment Card Industry Data Security Standard (PCI DSS) - An information security standard administered by the Payment Card Industry Security Standards Council that applies to merchants and service providers who process credit or debit card transactions.
+- Platform as a Service (PaaS) - The web-authoring or application development middleware environment that allows applications to be built in the cloud before they’re deployed as SaaS assets.
+- Private cloud - The phrase used to describe a cloud computing platform that is implemented within the corporate firewall, under the control of the IT department. A private cloud is designed to offer the same features and benefits of cloud systems, but removes a number of objections to the cloud computing model, including control over enterprise and customer data, worries about security, and issues connected to regulatory compliance.
+- Protocols - A set of rules (formats and procedures) to implement and control some type of association (that is, communication) between systems. NIST SP 800-82 Rev. 2
+- Public cloud - The cloud infrastructure is provisioned for open use by the general public. It may be owned, managed, and operated by a business, academic, or government organization, or some combination of them. It exists on the premises of the cloud provider. NIST SP 800-145
+- Simple Mail Transport Protocol (SMTP) - The standard communication protocol for sending and receiving emails between senders and receivers.
+- Software - Computer programs and associated data that may be dynamically written or modified during execution. NIST SP 80-37 Rev. 2
+- Software as a Service (SaaS) - The cloud customer uses the cloud provider’s applications running within a cloud infrastructure. The applications are accessible from various client devices through either a thin client interface, such as a web browser or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings. Derived from NIST 800-145
+- Spoofing - Faking the sending address of a transmission to gain illegal entry into a secure system. CNSSI 4009-2015
+- Transport Control Protocol/Internet Protocol (TCP/IP) Model - Internetworking protocol model created by the IETF, which specifies four layers of functionality: Link layer (physical communications), Internet Layer (network-to-network communication), Transport Layer (basic channels for connections and connectionless exchange of data between hosts), and Application Layer, where other protocols and user applications programs make use of network services.
+- Virtual Local Area Network (VLAN) - A logical group of workstations, servers, and network devices that appear to be on the same LAN despite their geographical distribution.
+- VPN - A virtual private network (VPN), built on top of existing networks, that can provide a secure communications mechanism for transmission between networks.
+- Wireless Area Network (WLAN) - A group of computers and devices that are located in the same vicinity, forming a network based on radio transmissions rather than wired connections. A Wi-Fi is network is a type of WLAN.
+- Zenmap - The graphical user interface (GUI) for the Nmap Security Scanner, an open-source application that scans networks to determine everything that is connected as well as other information.
+- Zero Trust - Removing the design belief that the network has any trusted space. Security is managed at each possible level, representing the most granular asset. Microsegmentation of workloads is a tool of the model.
+
+# Chapter 4
+- [Module 1: Understand Data Security (D5.0, D5.1.1, D5.1.2, D5.1.3)](#data-security)
+- [Module 2: Understand System Hardening (D5.2.1)](#system-hardening)
+- [Module 3: Understand Best Practice Security Policies(D5.3, D5.3.1, D5.3.2, D5.3.3, D5.3.4, D5.3.5, D5.3.6)](#best-practice-security-policies)
+- [Module 4: Undertand Security Awareness Training (D5.4, D5.4.1, D5.4.2, D5.3.2 )](#security-awareness-training)
+- 
+- [Modual 4: Summary](#chapter-4-summary)
+
+# Data Security
+
+### Data Handling
+Data itself goes through its own life cycle as users create, use, share and modify it. Many different models of the life of a data item can be found, but they all have some basic operational steps in common. The data security life cycle model is useful because it can align easily with the different roles that people and organizations perform during the evolution of data from creation to destruction (or disposal). It also helps put the different data states of in use, at rest and in motion, into context. 
+
+All ideas, data, information or knowledge can be thought of as going through six major sets of activities throughout its lifetime. Conceptually, these involve: 
+
+![data_handle_circle](https://i.imgur.com/7qx6ZoU.png)
+
+1. Creating the knowledge, which is usually tacit knowledge at this point.
+2. Storing or recording it in some fashion (which makes it explicit).
+3. Using the knowledge, which may cause the information to be modified, supplemented or partially deleted.
+4. Sharing the data with other users, whether as a copy or by moving the data from one location to another.
+5. Archiving the data when it is temporarily not needed.
+6. Destroying the data when it is no longer needed.
+
+### Data Handling Practices
+Data itself has value and must be handled appropriately.  In this section, we will explore the basics of classifying and labeling data to ensure it is treated and controlled in a manner consistent with the sensitivity of the data. In addition, we will complete the data life cycle by documenting retention requirements and ensuring data that is no longer in use is destroyed. 
+
+#### Classification
+Before any labels can be attached to sets of data that indicate its sensitivity or handling requirements, the potential impact or loss to the organization needs to be assessed. This is our first definition: Classification is the process of recognizing the organizational impacts if the information suffers any security compromises related to its characteristics of confidentiality, integrity and availability. Information is then labeled and handled accordingly. 
+
+Classifications are derived from laws, regulations, contract-specified standards or other business expectations. One classification might indicate “minor, may disrupt some processes” while a more extreme one might be “grave, could lead to loss of life or threaten ongoing existence of the organization.” These descriptions should reflect the ways in which the organization has chosen (or been mandated) to characterize and manage risks.  
+
+The immediate benefit of classification is that it can lead to more efficient design and implementation of security processes, if we can treat the protection needs for all similarly classified information with the same controls strategy. 
+
+#### Data Sensitivity Levels and Labels 
+Security labels are part of implementing controls to protect classified information. It is reasonable to want a simple way of assigning a level of sensitivity to a data asset, such that the higher the level, the greater the presumed harm to the organization, and thus the greater security protection the data asset requires. This spectrum of needs is useful, but it should not be taken to mean that clear and precise boundaries exist between the use of “low sensitivity” and “moderate sensitivity” labeling, for example. 
+
+Unless otherwise mandated, organizations are free to create classification systems that best meet their own needs. In professional practice, it is typically best if the organization has enough classifications to distinguish between sets of assets with differing sensitivity/value, but not so many classifications that the distinction between them is confusing to individuals. Typically, two or three classifications are manageable, and more than four tend to be difficult. 
+
+- Highly restricted: Compromise of data with this sensitivity label could possibly put the organization’s future existence at risk. Compromise could lead to substantial loss of life, injury or property damage, and the litigation and claims that would follow.
+- Moderately restricted: Compromise of data with this sensitivity label could lead to loss of temporary competitive advantage, loss of revenue or disruption of planned investments or activities.
+- Low sensitivity (sometimes called “internal use only”): Compromise of data with this sensitivity label could cause minor disruptions, delays or impacts.
+- Unrestricted public data: As this data is already published, no harm can come from further dissemination or disclosure.
+
+#### Retention
+Information and data should be kept only for as long as it is beneficial, no more and no less. For various types of data, certain industry standards, laws and regulations define retention periods. When such external requirements are not set, it is an organization’s responsibility to define and implement its own data retention policy. Data retention policies are applicable both for hard copies and for electronic data, and no data should be kept beyond its required or useful life. Security professionals should ensure that data destruction is being performed when an asset has reached its retention limit. For the security professional to succeed in this assignment, an accurate inventory must be maintained, including the asset location, retention period requirement, and destruction requirements. Organizations should conduct a periodic review of retained records in order to reduce the volume of information stored and to ensure that only necessary information is preserved. 
+
+Records retention policies indicate how long an organization is required to maintain information and assets. Policies should guarantee that: 
+
+- Personnel understand the various retention requirements for data of different types throughout the organization.
+- The organization appropriately documents the retention requirements for each type of information.
+- The systems, processes and individuals of the organization retain information in accordance with the required schedule but no longer.
+
+_A common mistake_ in records retention is applying the longest retention period to all types of information in an organization. This not only wastes storage but also increases risk of data exposure and adds unnecessary “noise” when searching or processing information in search of relevant records. It may also be in violation of externally mandated requirements such as legislation, regulations or contracts (which may result in fines or other judgments). Records and information no longer mandated to be retained should be destroyed in accordance with the policies of the enterprise and any appropriate legal requirements that may need to be considered.
+
+#### Destruction
+Data that might be left on media after deleting is known as remanence and may be a significant security concern. Steps must be taken to reduce the risk that data remanence could compromise sensitive information to an acceptable level. This can be done by one of several means:  
+
+- Clearing the device or system, which usually involves writing multiple patterns of random values throughout all storage media (such as main memory, registers and fixed disks). This is sometimes called “overwriting” or “zeroizing” the system, although writing zeros has the risk that a missed block or storage extent may still contain recoverable, sensitive information after the process is completed.
+- Purging the device or system, which eliminates (or greatly reduces) the chance that residual physical effects from the writing of the original data values may still be recovered, even after the system is cleared. Some magnetic disk storage technologies, for example, can still have residual “ghosts” of data on their surfaces even after being overwritten multiple times. Magnetic media, for example, can often be altered sufficiently to meet security requirements; in more stringent cases, _degaussing may __not__ be sufficient._
+- Physical destruction of the device or system is the ultimate remedy to data remanence. Magnetic or optical disks and some flash drive technologies may require being mechanically shredded, chopped or broken up, etched in acid or burned; their remains may be buried in protected landfills, in some cases.
+
+### Logging & Monitoring Security Events
+Major controls frameworks emphasize the importance of organizational logging practices. Information that may be relevant to being recorded and reviewed include (but is not limited to): 
+
+- user IDs
+- system activities
+- dates/times of key events (e.g., logon and logoff)
+- device and location identity
+- successful and rejected system and resource access attempts
+- system configuration changes and system protection activation and deactivation events 
+
+Logging and monitoring the health of the information environment is essential to identifying inefficient or improperly performing systems, detecting compromises and providing a record of how systems are used. Robust logging practices provide tools to effectively correlate information from diverse systems to fully understand the relationship between one activity and another.
+
+#### Events
+![SIEM_events](https://i.imgur.com/SFaTUIn.png)
+
+#### Event Details
+![SIEM_event_details](https://i.imgur.com/MRsGHpO.png)
+
+#### Raw Log
+![SIEM_raw_log](https://i.imgur.com/WDSChdP.png)
+
+#### Data Security Event Example
+Here is a data security event example. It’s a raw log, and it is one way to see if someone tried to break into a secure file and hijack the server. Of course, there are other systems now that are a little more user-friendly. But security engineers get very familiar with some of these codes and can figure out exactly who was trying to log it, was it a secure port or a questionable port that they were trying to use to penetrate our site.
+
+![raw_log_sample](https://i.imgur.com/25Q7MhK.png)
+
+#### Event Logging Best Practices
+Different tools are used depending on whether the risk from the attack is from traffic coming into or leaving the infrastructure. Ingress monitoring refers to surveillance and assessment of all inbound communications traffic and access attempts. Devices and tools that offer logging and alerting opportunities for ingress monitoring include: 
+- Firewalls
+- Gateways
+- Remote authentication servers
+- IDS/IPS tools
+- SIEM solutions
+- Anti-malware solutions
+
+_Egress monitoring_ is used to regulate data leaving the organization’s IT environment. The term currently used in conjunction with this effort is _data loss prevention (DLP)_ or data leak protection. The DLP solution should be deployed so that it can inspect all forms of data leaving the organization, including: 
+
+- Email (content and attachments)
+- Copy to portable media
+- File Transfer Protocol (FTP)
+- Posting to web pages/websites
+- Applications/application programming interfaces (APIs)
+
+### Encryption Overview
+![how_encryption_works](https://i.imgur.com/uo358IP.png)
+
+Almost every action we take in our modern digital world involves cryptography. Encryption protects our personal and business transactions; digitally signed software updates verify their creator’s or supplier’s claim to authenticity. Digitally signed contracts, binding on all parties, are routinely exchanged via email without fear of being repudiated later by the sender. 
+
+Cryptography is used to protect information by keeping its meaning or content secret and making it unintelligible to someone who does not have a way to decrypt (unlock) that protected information. The objective of every encryption system is to transform an original set of data, called the plaintext, into an otherwise unintelligible encrypted form, called the ciphertext. 
+
+- Confidentiality: Cryptography provides confidentiality by hiding or obscuring a message so that it cannot be understood by anyone except the intended recipient. Confidentiality keeps information secret from those who are not authorized to have it.
+- Integrity: hash functions and digital signatures can provide integrity services that allow a recipient to verify that a message has not been altered by malice or error. These include simple message integrity controls. Any changes, deliberate or accidental, will result in the two results (by sender and by recipient) being different.
+
+An encryption system is the set of hardware, software, algorithms, control parameters and operational methods that provide a set of encryption services. Plaintext is the data or message in its normal, unencrypted form and format. Its meaning or value to an end user (a person or a process) is immediately available for use. Plaintext can be:
+
+- image, audio or video files in their raw or compressed forms
+- human-readable text and numeric data, with or without markup language elements for formatting and metadata
+- database files or records and fields within a database
+- or anything else that can be represented in digital form for computer processing, transmission and storage
+
+#### Symmetric Encryption
+
+![symmetric_encryption](https://i.imgur.com/n3OQzV8.png)
+
+This image displays how symmetric algorithms work. The central characteristic of a symmetric algorithm is that it uses the same key in both the encryption and the decryption processes. It could be said that the decryption process is just a mirror image of the encryption process. The same key is used for both the encryption and decryption processes. This means that the two parties communicating need to share knowledge of the same key.
+
+- If two parties suspect a specific communication path between them is compromised, they obviously can't share key material along that path. Someone who has compromised communications between the parties would also intercept the key.
+- Distribution of the key is difficult, because the key cannot be sent in the same channel as the encrypted message, or the man-in-the-middle (MITM) would have access to the key. Sending the key through a different channel (band) than the encrypted message is called out-of-band key distribution. Examples of out-of-band key distribution would include sending the key via courier, fax or phone.
+- Any party with knowledge of the key can access (and therefore change) the message.
+- Each individual or group of people wishing to communicate would need to use a different key for each individual or group they want to connect with. This raises the challenge of scalability — the number of keys needed grows quickly as the number of different users or groups increases. Under this type of symmetric arrangement, an organization of 1,000 employees would need to manage 499,500 keys if every employee wanted to communicate confidentially with every other employee.
+
+Primary uses of symmetric algorithms:
+
+- Encrypting bulk data (backups, hard drives, portable media)
+- Encrypting messages traversing communications channels (IPsec, TLS)
+- Streaming large-scale, time-sensitive data (audio/video materials, gaming, etc.)
+
+Other names for symmetric algorithms, which you may encounter, include:
+- Same key
+- Single key
+- Shared key
+- Secret key
+- Session key
+
+#### Asymmetric Encryption
+
+Let’s look at an example that illustrates the use of asymmetric cryptography to achieve different security attributes.
+
+![asymmetric_encryption](https://i.imgur.com/EvzWyKA.png)
+
+The two keys (private and public) are a key pair; they must be used together. This means that any message that is encrypted with a public key can only be decrypted with the corresponding other half of the key pair, the private key. Similarly, signing a message with a sender’s private key can only be verified by the recipient decrypting its signature with the sender’s public key. Therefore, as long as the key holder keeps the private key secure, there exists a method of transmitting a message confidentially. The sender would encrypt the message with the public key of the receiver. Only the receiver with the private key would be able to open or read the message, providing confidentiality. This image shows how asymmetric encryption can be used to send a confidential message across an untrusted channel.
+
+_The problem_, however, has been that _asymmetric cryptography is extremely slow_ compared with its symmetric counterpart. Asymmetric cryptography is impractical for everyday use in encrypting large amounts of data or for frequent transactions where speed is required. This is because asymmetric key cryptography is handling much larger keys and is mathematically intensive, thereby reducing the speed significantly.
+
+#### Hashing
+
+Hashing takes an input set of data (of almost arbitrary size) and returns a fixed-length result called the hash value. A hash function is the algorithm used to perform this transformation. When used with cryptographically strong hash algorithms, this is the most common method of ensuring message integrity today. Hashes have many uses in computing and security, one of which is to create a message digest by applying such a hash function to the plaintext body of a message. To be useful and secure, a cryptographic hash function must demonstrate five main properties: 
+
+- Useful: It is easy to compute the hash value for any given message.
+- Nonreversible: It is computationally infeasible to reverse the hash process or otherwise derive the original plaintext of a message from its hash value (unlike an encryption process, for which there must be a corresponding decryption process).
+- Content integrity assurance: It is computationally infeasible to modify a message such that re-applying the hash function will produce the original hash value.
+- Unique: It is computationally infeasible to find two or more different, sensible messages that hash to the same value.
+- Deterministic: The same input will always generate the same hash, when using the same hashing algorithm.
+
+Cryptographic hash functions have many applications in information security, including digital signatures, message authentication codes and other forms of authentication. They can also be used for fingerprinting, to detect duplicate data or uniquely identify files, and as checksums to detect accidental data corruption. As seen in this image, even the slightest change in the input message results in a completely different hash value.
+
+![hash_checksum](https://i.imgur.com/DtehCqk.png)
+
+# System Hardening
+
+### Configuration Management
+is a process and discipline used to ensure that the only changes made to a system are those that have been authorized and validated. It is both a decision-making process and a set of control processes. If we look closer at this definition, the basic configuration management process includes components such as identification, baselines, updates and patches.  
+# Best Practice Security Policies
+
+# Security Awareness Training
+
+# Chapter 5 Summary
+- [Chapter 5 Overview](https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_05/assets/EDU-CC-70500-ch05_Takeaway.pdf?_&d2lSessionVal=jer3bKa6DKtiPsWEjYQMWNPwQ&ou=9541)
+- [Chapter 5 Glossary Flash Cards]([https://quizlet.com/669190409/chapter-4-network-security-flash-cards/](https://quizlet.com/669194233/chapter-5-security-operations-flash-cards/))
+
+### Chapter 5 Glossary
+- Application Server - A computer responsible for hosting applications to user workstations. NIST SP 800-82 Rev.2
+- Asymmetric Encryption - An algorithm that uses one key to encrypt and a different key to decrypt the input plaintext.
+- Checksum - A digit representing the sum of the correct digits in a piece of stored or transmitted digital data, against which later comparisons can be made to detect errors in the data.
+- Ciphertext - The altered form of a plaintext message so it is unreadable for anyone except the intended recipients. In other words, it has been turned into a secret.
+- Classification - Classification identifies the degree of harm to the organization, its stakeholders or others that might result if an information asset is divulged to an unauthorized person, process or organization. In short, classification is focused first and foremost on maintaining the confidentiality of the data, based on the data sensitivity.
+- Configuration management - A process and discipline used to ensure that the only changes made to a system are those that have been authorized and validated.
+- Cryptanalyst - One who performs cryptanalysis which is the study of mathematical techniques for attempting to defeat cryptographic techniques and/or information systems security. This includes the process of looking for errors or weaknesses in the implementation of an algorithm or of the algorithm itself.
+- Cryptography - The study or applications of methods to secure or protect the meaning and content of messages, files, or other information, usually by disguise, obscuration, or other transformations of that content and meaning.
+- Data Loss Prevention (DLP) - System capabilities designed to detect and prevent the unauthorized use and transmission of information.
+- Decryption - The reverse process from encryption. It is the process of converting a ciphertext message back into plaintext through the use of the cryptographic algorithm and the appropriate key for decryption (which is the same for symmetric encryption, but different for asymmetric encryption). This term is also used interchangeably with the “deciphering.”
+- Degaussing - A technique of erasing data on disk or tape (including video tapes) that, when performed properly, ensures that there is insufficient magnetic remanence to reconstruct data.
+- Digital Signature - The result of a cryptographic transformation of data which, when properly implemented, provides the services of origin authentication, data integrity, and signer non-repudiation. NIST SP 800-12 Rev. 1
+- Egress Monitoring - Monitoring of outgoing network traffic.
+- Encryption - The process and act of converting the message from its plaintext to ciphertext. Sometimes it is also referred to as enciphering. The two terms are sometimes used interchangeably in literature and have similar meanings.
+- Encryption System - The total set of algorithms, processes, hardware, software, and procedures that taken together provide an encryption and decryption capability.
+- Hardening - A reference to the process of applying secure configurations (to reduce the attack surface) and locking down various hardware, communications systems, and software, including operating system, web server, application server, application, etc. Hardening is normally performed based on industry guidelines and benchmarks, such as those provided by the Center for Internet Security (CIS).
+- Hash Function - An algorithm that computes a numerical value (called the hash value) on a data file or electronic message that is used to represent that file or message and depends on the entire contents of the file or message. A hash function can be considered to be a fingerprint of the file or message. NIST SP 800-152
+- Hashing - The process of using a mathematical algorithm against data to produce a numeric value that is representative of that data. Source CNSSI 4009-2015
+- Ingress Monitoring - Monitoring of incoming network traffic.
+- Message Digest - A digital signature that uniquely identifies data and has the property such that changing a single bit in the data will cause a completely different message digest to be generated. NISTIR-8011 Vol.3
+- Operating System - The software “master control application” that runs the computer. It is the first program loaded when the computer is turned on, and its main component, the kernel, resides in memory at all times. The operating system sets the standards for all application programs (such as the Web server) that run in the computer. The applications communicate with the operating system for most user interface and file management operations. NIST SP 800-44 Version 2
+- Patch - A software component that, when installed, directly modifies files or device settings related to a different software component without changing the version number or release details for the related software component. Source: ISO/IEC 19770-2
+- Patch Management - The systematic notification, identification, deployment, installation and verification of operating system and application software code revisions. These revisions are known as patches, hot fixes, and service packs. Source: CNSSI 4009
+- Plaintext - A message or data in its natural format and in readable form; extremely vulnerable from a confidentiality perspective.
+- Records - The recordings (automated and/or manual) of evidence of activities performed or results achieved (e.g., forms, reports, test results), which serve as a basis for verifying that the organization and the information system are performing as intended. Also used to refer to units of related data fields (i.e., groups of data fields that can be accessed by a program and that contain the complete set of information on particular items). NIST SP 800-53 Rev. 4
+- Records Retention - A practice based on the records life cycle, according to which records are retained as long as necessary, and then are destroyed after the appropriate time interval has elapsed.
+- Remanence - Residual information remaining on storage media after clearing. NIST SP 800-88 Rev. 1
+- Request for change (RFC) - The first stage of change management, wherein a change in procedure or product is sought by a stakeholder.
+- Security Governance - The entirety of the policies, roles, and processes the organization uses to make security decisions in an organization.
+- Social engineering - Tactics to infiltrate systems via email, phone, text, or social media, often impersonating a person or agency in authority or offering a gift. A low-tech method would be simply following someone into a secure building.
+- Symmetric encryption - An algorithm that uses the same key in both the encryption and the decryption processes.
+- Web Server - A computer that provides World Wide Web (WWW) services on the Internet. It includes the hardware, operating system, Web server software, and Web site content (Web pages). If the Web server is used internally and not by the public, it may be known as an “intranet server.” NIST SP 800-44 Version 2
+- Whaling Attack - Phishing attacks that attempt to trick highly placed officials or private individuals with sizable assets into authorizing large fund wire transfers to previously unknown entities.  
