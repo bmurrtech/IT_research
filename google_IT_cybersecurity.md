@@ -813,6 +813,60 @@ md5sum -c file.txt.md5
 
 ### Verifying an invalid file
 
+Ref: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3
+Note: Ideal for larger files like .iso or installers.
+
+#### Use Powershell to Checksum
+
+Open a Powershell window and run the following commands:
+
+```ps
+Get-FileHash -Path [C:\path\to\file.iso] -Algorithm [hash_type] | Format-List
+```
+
+Example Input: 
+
+```ps
+Get-FileHash -Path C:\users\<username>\downloads\proxmox-ve_7.3-1.iso -Algorithm SHA256 | Format-List
+```
+
+Example Output:
+
+```
+Algorithm : SHA256
+Hash      : 539A2ACD3A921F76F08C759058A12C7FA97E1E1E4956AD6389F25FD4F3C3085B
+Path      : C:\users\*\downloads\proxmox-ve_7.3-1.iso
+```
+
+Specify which Hash to use by adding a -Algorithm [hash_type]. Hash names available are:
+- MD5
+- SHA1
+- SHA256
+- SHA384
+- MACTripleDES
+- RIPMD160
+
+#### Other OS
+MacOS (Terminal):
+
+`[hash_name] /path/to/file.iso`
+
+Hash names include:
+- md5
+- shasum
+- shasum -1
+- shasum -256
+- Linux
+- md5sum /path/to/file.iso
+- sha1sum /path/to/file.iso
+- sha256sum /path/to/file.iso
+
+#### Using VirusTotal
+- Fast and ideal for smaller file sizes.
+- Go to https://www.virustotal.com/gui/home/upload
+- Click the "Choose file" button and upload the file you wish to check the hash.
+- Compare the hash of the download with the vendor hash. 
+
 Next, we'll demonstrate the security of this process by showing how even a single-character change to the file results in a different hash. First, you'll create a copy of the text file, and insert a single space at the end of the file. Feel free to use any text-editor that you'd like. Head's up that we've included instructions for making this change in Nano. To make a copy of the file, enter this command:
 
 ```ssh
